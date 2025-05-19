@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        .registration-form {
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 24px 32px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            font-family: Arial, sans-serif;
+        }
+        .registration-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .registration-form label {
+            display: block;
+            margin-bottom: 6px;
+            color: #555;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .registration-form input[type="text"],
+        .registration-form input[type="email"],
+        .registration-form input[type="password"] {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+        .registration-form button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .registration-form button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+   
+    <form class="registration-form">
+        <h2>Register</h2>
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="fullname" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+
+        <button type="submit">Register</button>
+    </form>
+    <script>
+        document.querySelector('.registration-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Registration successful!');
+        });
+        </script>
+</body>
+</html>
