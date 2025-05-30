@@ -542,7 +542,7 @@ textarea.form-control {
 }
 
 .navigation {
-  background-image: linear-gradient(to right, transparent 50%, #ffbc3b 50%);
+  background-image: linear-gradient(to right, transparent 50%, #614920 50%);
   transition: .2s ease;
 }
 
@@ -554,7 +554,7 @@ textarea.form-control {
 
 .navbar-nav {
   padding-left: 50px;
-  background: #ffbc3b;
+  background: #614920
 }
 
 @media (max-width: 991px) {
