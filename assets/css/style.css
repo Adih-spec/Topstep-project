@@ -542,7 +542,7 @@ textarea.form-control {
 }
 
 .navigation {
-  background-image: linear-gradient(to right, transparent 50%,  #ffbc3b 50%);
+  background-image: linear-gradient(to right, transparent 50%, #614920 50%);
   transition: .2s ease;
 }
 
@@ -554,7 +554,7 @@ textarea.form-control {
 
 .navbar-nav {
   padding-left: 50px;
-  background:  #ffbc3b;
+  background: #614920
 }
 
 @media (max-width: 991px) {
@@ -564,7 +564,7 @@ textarea.form-control {
 }
 
 .nav-bg {
-  background-color:  #ffbc3b;
+  background-color: #1a1a37;
   margin-top: -46px;
 }
 
@@ -646,7 +646,7 @@ link:focus,
 
 .navbar .dropdown-menu {
   box-shadow: 0px 3px 9px 0px rgba(0, 0, 0, 0.12);
-  border-bottom: 5px solid  #ffbc3b;
+  border-bottom: 5px solid #3a342a;
   padding: 15px;
   top: 96px;
   border-radius: 0;
@@ -713,7 +713,7 @@ link:focus,
 }
 
 .navbar .dropdown-item:hover {
-  color:  #ffbc3b;
+  color: #ffbc3b;
   background: transparent;
 }
 
@@ -741,7 +741,7 @@ link:focus,
 
 .hero-slider .prevArrow:hover,
 .hero-slider .nextArrow:hover {
-  color: #1a1a37;
+  color: #ffbc3b;
 }
 
 .hero-slider .prevArrow {
@@ -765,7 +765,7 @@ link:focus,
 }
 
 .hero-slider .slick-dots li.slick-active button {
-  background: #1a1a37;
+  background: #ffbc3b;
 }
 
 .hero-slider .slick-dots li button {
@@ -782,7 +782,7 @@ link:focus,
 /* banner feature */
 .feature-icon {
   font-size: 50px;
-  color: #1a1a37;
+  color: #ffbc3b;
   display: inline-block;
 }
 
@@ -923,7 +923,7 @@ link:focus,
 /* events */
 .card-date {
   position: absolute;
-  background: #1a1a37;
+  background: #ffbc3b;
   font-family: "futura-bold";
   text-align: center;
   padding: 10px;
