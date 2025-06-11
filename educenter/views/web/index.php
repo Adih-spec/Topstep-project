@@ -1,5 +1,22 @@
-<?php
-include_once '../educenter/header.php';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <?php
+    // If you need to include configuration or styles, do it here.
+    // Example: require_once 'config.php';
+    require_once '../../components/styles.php';
+  ?>
+</head>
+<body>
+  <?php
+include_once '../../components/header.php';
 ?>
 
 <!-- hero slider -->
@@ -484,8 +501,41 @@ include_once '../educenter/header.php';
   </div>
 </section>
 <!-- /blog -->
-
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Login</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="index.html#" class="row">
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginPhone" name="loginPhone" placeholder="Phone">
+                    </div>
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginName" name="loginName" placeholder="Name">
+                    </div>
+                    <div class="col-12">
+                        <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php
-include_once '../educenter/footer.php';
+include_once '../../components/footer.php';
 ?>
+<?php
+include_once '../../components/scripts.php';
+?>
+</body>
+</html>
