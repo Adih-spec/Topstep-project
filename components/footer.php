@@ -21,7 +21,7 @@
       <div class="row">
         <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
           <!-- logo -->
-          <a class="logo-footer" href="index.html"><img class="img-fluid mb-4" src="images/logo.png" alt="logo"></a>
+          <a class="logo-footer" href=""><img src="../../assets/images/tps-logo.png" alt="logo" class="img-fluid mb-4" width="110" height="50"></a>
           <ul class="list-unstyled">
             <li class="mb-2">23621 15 Mile Rd #C104, Clinton MI, 48035, New York, USA</li>
             <li class="mb-2">+1 (2) 345 6789</li>
@@ -43,35 +43,13 @@
         <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
           <h4 class="text-white mb-5">LINKS</h4>
           <ul class="list-unstyled">
-            <li class="mb-3"><a class="text-color" href="courses.html">Courses</a></li>
-            <li class="mb-3"><a class="text-color" href="https://themewagon.github.io/educenter/event.html">Events</a></li>
-            <li class="mb-3"><a class="text-color" href="https://themewagon.github.io/educenter/gallary.html">Gallary</a></li>
-            <li class="mb-3"><a class="text-color" href="https://themewagon.github.io/educenter/faqs.html">FAQs</a></li>
+            <li class="mb-3"><a class="text-color" href="">Programs</a></li>
+            <li class="mb-3"><a class="text-color" href="">Events</a></li>
+            <li class="mb-3"><a class="text-color" href="">Gallery</a></li>
+            <li class="mb-3"><a class="text-color" href="">FAQs</a></li>
           </ul>
         </div>
-        <!-- support -->
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
-          <h4 class="text-white mb-5">SUPPORT</h4>
-          <ul class="list-unstyled">
-            <li class="mb-3"><a class="text-color" href="index.html#">Forums</a></li>
-            <li class="mb-3"><a class="text-color" href="index.html#">Documentation</a></li>
-            <li class="mb-3"><a class="text-color" href="index.html#">Language</a></li>
-            <li class="mb-3"><a class="text-color" href="index.html#">Release Status</a></li>
-          </ul>
-        </div>
-        <!-- support -->
-        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
-          <h4 class="text-white mb-5">RECOMMEND</h4>
-          <ul class="list-unstyled">
-            <li class="mb-3"><a class="text-color" href="index.html#">WordPress</a></li>
-            <li class="mb-3"><a class="text-color" href="index.html#">LearnPress</a></li>
-            <li class="mb-3"><a class="text-color" href="index.html#">WooCommerce</a></li>
-            <li class="mb-3"><a class="text-color" href="index.html#">bbPress</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+
   <!-- copyright -->
   <div class="copyright py-4 bg-footer">
     <div class="container">
@@ -82,7 +60,7 @@
               var CurrentYear = new Date().getFullYear()
               document.write(CurrentYear)
             </script> 
-            © Theme By <a href="https://themefisher.com">themefisher.com</a></p> . All Rights Reserved.
+            © Created By Elite Tech Dev</p> . All Rights Reserved.
         </div>
         <div class="col-sm-5 text-sm-right text-center">
           <ul class="list-inline">
