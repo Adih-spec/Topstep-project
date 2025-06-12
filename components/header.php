@@ -218,7 +218,7 @@
               <a class="nav-link" href="">PROGRAMS</a>
             </li>
             <li class="nav-item @@events">
-              <a class="nav-link" href="">EVENTS</a>
+              <a class="nav-link" href="events.php">EVENTS</a>
             </li>
             <li class="nav-item @@blog">
               <a class="nav-link" href="">BLOG</a>
