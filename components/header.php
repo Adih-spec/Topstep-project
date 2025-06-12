@@ -1,3 +1,145 @@
+<style>
+  #chat-float-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1050;
+  background: linear-gradient(135deg,#ffbc3b 60%,#ffbc3b 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 62px;
+  height: 62px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+#chat-float-btn:hover {
+  box-shadow: 0 6px 24px rgba(255,188,59,0.25);
+  background: linear-gradient(135deg, #ffbc3b 60%, #ffbc3b 100%);
+}
+#chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 40px;
+  z-index: 1060;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.18);
+  width: 340px;
+  max-width: 92vw;
+  animation: chatPopupFadeIn 0.25s;
+}
+@keyframes chatPopupFadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+#chat-popup-header {
+  background: linear-gradient(135deg, #ffbc3b 60%, #ffbc3b 100%);
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 16px 16px 0 0;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+  letter-spacing: 0.2px;
+}
+#chat-popup-header i {
+  margin-right: 7px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+#chat-popup-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+#chat-popup-close:hover {
+  color: #ffd700;
+}
+#chat-popup-body {
+  padding: 18px 18px 14px 18px;
+  font-size: 15px;
+  color: #333;
+  background: #f8fafd;
+  border-radius: 0 0 16px 16px;
+}
+#chat-messages {
+  margin-bottom: 8px;
+  min-height: 48px;
+}
+.chat-message {
+  padding: 8px 15px;
+  border-radius: 18px;
+  max-width: 85%;
+  word-break: break-word;
+  font-size: 15px;
+  box-shadow: 0 1px 4px rgba(0,123,255,0.04);
+  display: inline-block;
+  line-height: 1.5;
+}
+.chat-message.bot {
+  background: #e9f2ff;
+  color: #1a2a3a;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+.chat-message.user {
+  background: linear-gradient(135deg, #ffbc3b 60%, #ffbc3b 100%);
+  color: #fff;
+  align-self: flex-end;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+#chat-form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #ffbc3b33;
+}
+#chat-form input {
+  font-size: 15px;
+  height: 38px;
+  background: #f4f8fb;
+  border: 1px solid #dbe2ea;
+  transition: border 0.2s;
+}
+#chat-form input:focus {
+  border: 1.5px solid #ffbc3b;
+  background: #fff;
+}
+#chat-form button {
+  height: 38px;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: none;
+  border: none;
+  background: linear-gradient(135deg, #ffbc3b 60%, #ffbc3b 100%);
+  transition: background 0.2s;
+}
+#chat-form button:hover {
+  background: linear-gradient(135deg, #ffd700 60%, #ffc107 100%);
+}
+@media (max-width: 500px) {
+  #chat-popup {
+    right: 5vw;
+    width: 98vw;
+    min-width: 0;
+  }
+  #chat-popup-body {
+    padding: 12px 6vw 10px 6vw;
+  }
+}
+
+</style>
 
     <!-- header -->
 <header class="fixed-top header">
@@ -111,3 +253,39 @@
     </div>
 </div>
 
+<!-- chat icon -->
+<!-- Floating Chat Button -->
+
+<!-- Floating Chat Button -->
+<button id="chat-float-btn" title="Chat">
+  <span>&#128172;</span>
+</button>
+
+<div id="chat-popup">
+  <div id="chat-popup-header">
+    <span><i class="ti-comment-alt"></i> Live Chat</span>
+    <button id="chat-popup-close" aria-label="Close">&times;</button>
+  </div>
+  <div id="chat-popup-body" style="max-height: 320px; overflow-y: auto; background: #f8fafd;">
+    <div id="chat-messages" style="display: flex; flex-direction: column; gap: 8px;">
+      <div class="chat-message bot">
+        Hi! How can we help you today?
+      </div>
+    </div>
+    <form id="chat-form" autocomplete="off" style="margin-top: 12px; display: flex; gap: 6px;">
+      <input type="text" id="chat-input" class="form-control" placeholder="Type your message..." style="flex:1; border-radius: 20px; border: 1px solid #dbe2ea; padding-left: 14px;">
+      <button type="submit" class="btn btn-primary" style="border-radius: 20px; padding: 0 18px; font-weight: 500;">Send</button>
+    </form>
+  </div>
+</div>
+
+
+<script>
+document.getElementById('chat-float-btn').onclick = function() {
+  document.getElementById('chat-popup').style.display = 'block';
+};
+document.getElementById('chat-popup-close').onclick = function() {
+  document.getElementById('chat-popup').style.display = 'none';
+};
+</script>
+<!-- end chat icon -->
