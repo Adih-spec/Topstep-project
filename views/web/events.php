@@ -102,8 +102,8 @@ include_once '../../components/header.php';
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card border-0 rounded-0 hover-shadow">
           <div class="card-img position-relative">
-            <img class="card-img-top rounded-0" src="" alt="event thumb">
-            <div class="card-date"><span>27</span><br>May</div>
+            <img class="card-img-top rounded-0" src="images/events/event-1.jpg" alt="event thumb">
+            <div class="card-date"><span>18</span><br>December</div>
           </div>
           <div class="card-body">
             <!-- location -->
@@ -198,7 +198,6 @@ include_once '../../components/header.php';
   </div>
 </section>
 <!-- /courses -->
-
 <?php
 include_once '../../components/footer.php';
 ?>
