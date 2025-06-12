@@ -82,7 +82,7 @@ include_once '../../components/header.php';
 </div>
 
 <!-- hero slider -->
-<section class="hero-section overlay bg-cover" data-background="images/banner/banner-1.jpg">
+<section class="hero-section overlay bg-cover" data-background="../../assets/images/banner/banner-feature.png">
   <div class="container">
     <div class="hero-slider">
       <!-- slider item -->
@@ -412,7 +412,7 @@ include_once '../../components/header.php';
   </div>
 </section>
 <!-- /blog -->
-
+ 
 <?php
 include_once '../../components/footer.php';
 ?>

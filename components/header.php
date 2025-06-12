@@ -209,18 +209,18 @@
         <div class="collapse navbar-collapse" id="navigation">
           <ul class="navbar-nav ml-auto text-center">
             <li class="nav-item active">
-              <a class="nav-link" href="">Home</a>
+              <a class="nav-link" href="index.php">Home</a>
             </li>
-            <li class="nav-item @@about">
-              <a class="nav-link" href="">About</a>
+            <li class="nav-item">
+              <a class="nav-link" href="about.php">About</a>
             </li>
-            <li class="nav-item @@courses">
+            <li class="nav-item">
               <a class="nav-link" href="">PROGRAMS</a>
             </li>
-            <li class="nav-item @@events">
+            <li class="nav-item">
               <a class="nav-link" href="events.php">EVENTS</a>
             </li>
-            <li class="nav-item @@blog">
+            <li class="nav-item">
               <a class="nav-link" href="">BLOG</a>
             </li>
             <li class="nav-item dropdown view">
@@ -236,7 +236,7 @@
                 <a class="dropdown-item" href="">Gallery</a>
               </div>
             </li>
-            <li class="nav-item @@contact">
+            <li class="nav-item">
               <a class="nav-link" href="">CONTACT</a>
             </li>
           </ul>
