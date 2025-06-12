@@ -412,6 +412,7 @@ include_once '../../components/header.php';
   </div>
 </section>
 <!-- /blog -->
+ 
 
 <?php
 include_once '../../components/footer.php';
