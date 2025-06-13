@@ -87,7 +87,7 @@ include_once '../../components/header.php';
           <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="https://themewagon.github.io/educenter/@@page-link">Upcoming Events</a></li>
           <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
         </ul>
-        <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+        <p class="text-lighten">There’s always something exciting happening at our school! From academic milestones to fun-filled celebrations, we believe in creating lasting memories alongside learning. Keep an eye on our calendar to stay informed about upcoming events, special days, and student activities.</p>
       </div>
     </div>
   </div>
@@ -102,14 +102,14 @@ include_once '../../components/header.php';
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card border-0 rounded-0 hover-shadow">
           <div class="card-img position-relative">
-            <img class="card-img-top rounded-0" src="../../assets/images/events/event-1.jpg" alt="event thumb">
-            <div class="card-date"><span>18</span><br>December</div>
+            <img class="card-img-top rounded-0" src="../../assets/images/events/graduation" alt="event thumb">
+            <div class="card-date"><span>26</span><br>July</div>
           </div>
           <div class="card-body">
             <!-- location -->
-            <p><i class="ti-location-pin text-primary mr-2"></i>Dhanmondi Lake, Dhaka</p>
+            <p><i class="ti-location-pin text-primary mr-2"></i>Transcorp Hilton</p>
             <a href="event-single.html">
-              <h4 class="card-title">Firefly training in trauma-informed yoga</h4>
+              <h4 class="card-title">Graduation and award ceremony</h4>
             </a>
           </div>
         </div>
@@ -118,14 +118,14 @@ include_once '../../components/header.php';
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card border-0 rounded-0 hover-shadow">
           <div class="card-img position-relative">
-            <img class="card-img-top rounded-0" src="../../assets/images/events/event-2.jpg" alt="event thumb">
-            <div class="card-date"><span>21</span><br>December</div>
+            <img class="card-img-top rounded-0" src="../../assets/images/events/inter house" alt="event thumb">
+            <div class="card-date"><span>21</span><br>February</div>
           </div>
           <div class="card-body">
             <!-- location -->
-            <p><i class="ti-location-pin text-primary mr-2"></i>Dhanmondi Lake, Dhaka</p>
+            <p><i class="ti-location-pin text-primary mr-2"></i>National Stadium</p>
             <a href="event-single.html">
-              <h4 class="card-title">Research seminar in clinical science.</h4>
+              <h4 class="card-title">Inter house sports</h4>
             </a>
           </div>
         </div>
@@ -134,12 +134,12 @@ include_once '../../components/header.php';
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card border-0 rounded-0 hover-shadow">
           <div class="card-img position-relative">
-            <img class="card-img-top rounded-0" src="../../assets/images/events/event-2.jpg" alt="event thumb">
-            <div class="card-date"><span>23</span><br>December</div>
+            <img class="card-img-top rounded-0" src="../../assets/images/events/zoo" alt="event thumb">
+            <div class="card-date"><span>13</span><br>April</div>
           </div>
           <div class="card-body">
             <!-- location -->
-            <p><i class="ti-location-pin text-primary mr-2"></i>yankari game reserve</p>
+            <p><i class="ti-location-pin text-primary mr-2"></i>National park and zoo</p>
             <a href="event-single.html">
               <h4 class="card-title">An excursion to the zoo</h4>
             </a>
@@ -150,7 +150,7 @@ include_once '../../components/header.php';
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card border-0 rounded-0 hover-shadow">
           <div class="card-img position-relative">
-            <img class="card-img-top rounded-0" src="../../assets/images/events/event-2.jpg" alt="event thumb">
+            <img class="card-img-top rounded-0" src="../../assets/images/events/Teacher" alt="event thumb">
             <div class="card-date"><span>5</span><br>October</div>
           </div>
           <div class="card-body">
@@ -166,7 +166,7 @@ include_once '../../components/header.php';
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card border-0 rounded-0 hover-shadow">
           <div class="card-img position-relative">
-            <img class="card-img-top rounded-0" src="../../assets/images/events/event-2.jpg" alt="event thumb">
+            <img class="card-img-top rounded-0" src="../../assets/images/events/Cultural" alt="event thumb">
             <div class="card-date"><span>15</span><br>March</div>
           </div>
           <div class="card-body">
@@ -182,7 +182,7 @@ include_once '../../components/header.php';
       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card border-0 rounded-0 hover-shadow">
           <div class="card-img position-relative">
-            <img class="card-img-top rounded-0" src="../../assets/images/events/event-2.jpg" alt="event thumb">
+            <img class="card-img-top rounded-0" src="../../assets/images/events/children's day.jpg" alt="event thumb">
             <div class="card-date"><span>27</span><br>May</div>
           </div>
           <div class="card-body">
