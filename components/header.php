@@ -225,7 +225,7 @@
               <a class="nav-link" href="events.php">EVENTS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">BLOG</a>
+              <a class="nav-link" href="admission.php">ADMISSION</a>
             </li>
             <li class="nav-item dropdown view">
               <a class="nav-link dropdown-toggle" href="index.html#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -234,7 +234,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="">Teachers</a>
-                <a class="dropdown-item" href="">Admission</a>
+                <a class="dropdown-item" href="">Blog</a>
                 <a class="dropdown-item" href="">Calendar</a>
                 <a class="dropdown-item" href="">Event Details</a>
                 <a class="dropdown-item" href="">Gallery</a>
