@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us | Topsteps Academy</title>
   <?php require_once '../../components/styles.php'; ?>
+
+  <!-- AOS Animation CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 </head>
 <body>
 
 <?php include_once '../../components/header.php'; ?>
 
 <!-- Page Title -->
-<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg" data-aos="fade-down">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
@@ -29,7 +32,7 @@
 </section>
 
 <!-- About -->
-<section class="section">
+<section class="section" data-aos="fade-right">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -44,7 +47,7 @@
 </section>
 
 <!-- Fun Facts -->
-<section class="section-sm bg-primary text-center">
+<section class="section-sm bg-primary text-center" data-aos="fade-up">
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
@@ -68,7 +71,7 @@
 </section>
 
 <!-- Success Story -->
-<section class="section bg-cover" data-background="../../assets/images/backgrounds/success-story.jpg">
+<section class="section bg-cover" data-background="../../assets/images/backgrounds/success-story.jpg" data-aos="fade-left">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-sm-4 position-relative success-video">
@@ -88,7 +91,7 @@
 </section>
 
 <!-- Our Teachers -->
-<section class="section">
+<section class="section" data-aos="fade-up">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 text-center mb-5">
@@ -96,8 +99,8 @@
         <p class="text-muted">Our teachers bring a wealth of knowledge, experience, and compassion to the classroom—empowering every student to succeed.</p>
       </div>
 
-      <!-- Teacher Card 1 -->
-      <div class="col-lg-4 col-sm-6 mb-4">
+      <!-- Teacher Cards -->
+      <div class="col-lg-4 col-sm-6 mb-4" data-aos="zoom-in">
         <div class="card border-0 rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="images/teachers/teacher-1.jpg" alt="Jacke Masito">
           <div class="card-body">
@@ -112,8 +115,7 @@
         </div>
       </div>
 
-      <!-- Teacher Card 2 -->
-      <div class="col-lg-4 col-sm-6 mb-4">
+      <div class="col-lg-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
         <div class="card border-0 rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="images/teachers/teacher-2.jpg" alt="Clark Malik">
           <div class="card-body">
@@ -128,8 +130,7 @@
         </div>
       </div>
 
-      <!-- Teacher Card 3 -->
-      <div class="col-lg-4 col-sm-6 mb-4">
+      <div class="col-lg-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
         <div class="card border-0 rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="images/teachers/teacher-3.jpg" alt="John Doe">
           <div class="card-body">
@@ -149,7 +150,7 @@
 </section>
 
 <!-- Testimonials -->
-<section class="section bg-light">
+<section class="section bg-light" data-aos="fade-up">
   <div class="container">
     <div class="row text-center mb-5">
       <div class="col-12">
@@ -158,21 +159,21 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4 mb-4" data-aos="fade-right">
         <div class="card p-4 shadow-sm">
           <p class="mb-3">"Topsteps has transformed my child's confidence and academics. The teachers truly care about each student."</p>
           <h5 class="mb-0">— Mrs. Adebayo</h5>
           <small class="text-muted">Parent of Grade 5 Student</small>
         </div>
       </div>
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4 mb-4" data-aos="fade-up">
         <div class="card p-4 shadow-sm">
           <p class="mb-3">"The learning environment is so nurturing. I’ve seen huge improvements in both character and knowledge."</p>
           <h5 class="mb-0">— Mr. Obinna</h5>
           <small class="text-muted">Parent of Grade 7 Student</small>
         </div>
       </div>
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4 mb-4" data-aos="fade-left">
         <div class="card p-4 shadow-sm">
           <p class="mb-3">"I love how Topsteps combines modern tech with core values. My child is learning and growing every day."</p>
           <h5 class="mb-0">— Mrs. Fatima</h5>
@@ -184,7 +185,7 @@
 </section>
 
 <!-- Our Vision -->
-<section class="section bg-white text-center">
+<section class="section bg-white text-center" data-aos="fade-up">
   <div class="container">
     <h2 class="section-title">Our Vision</h2>
     <p class="lead text-muted mx-auto" style="max-width: 800px;">
@@ -194,15 +195,15 @@
 </section>
 
 <!-- Accreditation & Partners -->
-<section class="section bg-light">
+<section class="section bg-light" data-aos="fade-up">
   <div class="container">
     <div class="row text-center mb-4">
       <div class="col-12">
-        <h2 class="section-title  ">Accreditations & Partners</h2>
+        <h2 class="section-title">Accreditations & Partners</h2>
         <p class="text-muted">We are proud to be affiliated with globally recognized institutions and academic bodies.</p>
       </div>
     </div>
-    <div class="row justify-content-center align-items-center  " >
+    <div class="row justify-content-center align-items-center">
       <div class="col-md-2 col-4 mb-3 border-0 rounded-0 hover-shadow">
         <img src="../../assets/images/partners/partner-1.png" class="img-fluid" alt="Partner 1">
       </div>
@@ -241,6 +242,17 @@
     animate();
   });
 </script>
+
+<!-- AOS Animation Script -->
+<!-- AOS Animation Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: false  // Animation will trigger every time the element enters the viewport
+  });
+</script>
+
 
 </body>
 </html>
