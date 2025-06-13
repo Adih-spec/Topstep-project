@@ -200,7 +200,11 @@
   <div class="navigation w-100">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light p-0">
-        <a class="navbar-brand" href=""><img src="../../assets/images/tps-logo.png" alt="logo" class="img-fluid" width="110"></a>
+        <div class="mx-auto">
+          <a class="navbar-brand" href="">
+            <img src="../../assets/images/tps-logo.png" alt="logo" class="img-fluid" width="110">
+          </a>
+        </div>
         <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
           aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
