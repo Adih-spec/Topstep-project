@@ -101,8 +101,8 @@
         <div class="card border-0 rounded-0 hover-shadow">
           <img class="card-img-top rounded-0" src="images/teachers/teacher-1.jpg" alt="Jacke Masito">
           <div class="card-body">
-            <h4 class="card-title">Jacke Masito</h4>
-            <p>Senior Science Teacher</p>
+            <h4 class="card-title">Mrs. Jenita</h4>
+            <p>Head teacher</p>
             <ul class="list-inline">
               <li class="list-inline-item"><a href="#"><i class="ti-facebook"></i></a></li>
               <li class="list-inline-item"><a href="#"><i class="ti-twitter-alt"></i></a></li>
@@ -198,21 +198,21 @@
   <div class="container">
     <div class="row text-center mb-4">
       <div class="col-12">
-        <h2 class="section-title">Accreditations & Partners</h2>
+        <h2 class="section-title  ">Accreditations & Partners</h2>
         <p class="text-muted">We are proud to be affiliated with globally recognized institutions and academic bodies.</p>
       </div>
     </div>
-    <div class="row justify-content-center align-items-center">
-      <div class="col-md-2 col-4 mb-3">
+    <div class="row justify-content-center align-items-center  " >
+      <div class="col-md-2 col-4 mb-3 border-0 rounded-0 hover-shadow">
         <img src="../../assets/images/partners/partner-1.png" class="img-fluid" alt="Partner 1">
       </div>
-      <div class="col-md-2 col-4 mb-3">
+      <div class="col-md-2 col-4 mb-3 border-0 rounded-0 hover-shadow">
         <img src="../../assets/images/partners/partner-2.png" class="img-fluid" alt="Partner 2">
       </div>
-      <div class="col-md-2 col-4 mb-3">
+      <div class="col-md-2 col-4 mb-3 border-0 rounded-0 hover-shadow">
         <img src="../../assets/images/partners/partner-3.png" class="img-fluid" alt="Partner 3">
       </div>
-      <div class="col-md-2 col-4 mb-3">
+      <div class="col-md-2 col-4 mb-3 border-0 rounded-0 hover-shadow">
         <img src="../../assets/images/partners/partner-4.png" class="img-fluid" alt="Partner 4">
       </div>
     </div>
