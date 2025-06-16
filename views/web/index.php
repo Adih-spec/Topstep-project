@@ -100,7 +100,7 @@ include_once '../../components/header.php';
       <div class="hero-slider-item">
         <div class="row">
           <div class="col-md-8">
-            <h1 class="text-white" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".1">Your bright future is our mission</h1>
+            <h1 class="text-white" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".1">Build Future Top Leaders</h1>
             <p class="text-muted mb-4" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".4">To discover the true meaning of education, you need to be a part of TopStep Academy.</p>
             <a href="admission.php." class="btn btn-primary" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".7">Apply now</a>
           </div>
@@ -341,7 +341,7 @@ include_once '../../components/header.php';
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 class="section-title">Latest News</h2>
+        <h2 class="section-title">News Update</h2>
       </div>
     </div>
     <div class="row justify-content-center">
