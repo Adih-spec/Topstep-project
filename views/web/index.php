@@ -126,7 +126,7 @@ include_once '../../components/header.php';
   <div class="container-fluid p-0">
     <div class="row no-gutters">
       <div class="col-xl-4 col-lg-5 align-self-end">
-        <img class="img-fluid w-100" src="images/banner/banner-feature.pngz" alt="banner-feature">
+        <img class="img-fluid w-100" src="../../assets/images/banner/banner-feature.png" alt="banner-feature">
       </div>
       <div class="col-xl-8 col-lg-7">
         <div class="row feature-blocks bg-gray justify-content-between">
@@ -164,13 +164,13 @@ include_once '../../components/header.php';
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-6 order-2 order-md-1">
-        <h2 class="section-title">About TopStep</h2>
-        <p>At Topsteps Academy, we blend academic excellence with innovative learning to build tomorrow leaders.</p>
-        <p></p>
+        <h2 class="section-title">About TopSteps</h2>
+        <p>Topsteps Academy is a premier educational institution dedicated to nurturing well-rounded, future-ready leaders. Our commitment to academic excellence is matched by our focus on character development, innovation, and holistic growth. With a dynamic curriculum, experienced faculty, and a supportive learning environment, we empower students to excel academically, think critically, and embrace lifelong learning. At Topsteps Academy, every child is inspired to reach their highest potential and make a positive impact in the world.</p>
+       
         <a href="about.php" class="btn btn-primary-outline">Learn more</a>
       </div>
       <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
-        <img class="img-fluid w-100" src="assets/images/logo.png" alt="about image">
+        <img class="img-fluid w-100" src="../../assets/images/tps-logo.png" alt="about image">
       </div>
     </div>
   </div>
@@ -203,7 +203,14 @@ include_once '../../components/header.php';
 <!-- /success story -->
 
 <!-- events -->
-      <div class="col-lg-4 col-sm-6 mb-5">
+<section class="section bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-5">
+      <div class="col-12">
+        <h2 class="section-title">Upcoming Events</h2>
+      </div>
+     <div class="row">
+       <div class="col-lg-4 col-sm-6 mb-5">
         <div class="card border-0 rounded-0 hover-shadow">
           <div class="card-img position-relative">
             <img class="card-img-top rounded-0" src="../../assets/images/events/graduation" alt="event thumb">
@@ -250,6 +257,9 @@ include_once '../../components/header.php';
           </div>
         </div>
       </div>
+     </div>
+    </div>
+</section>
     <!-- mobile see all button -->
     <div class="row">
       <div class="col-12 text-center">
