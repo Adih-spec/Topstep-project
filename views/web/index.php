@@ -165,7 +165,7 @@ include_once '../../components/header.php';
     <div class="row align-items-center">
       <div class="col-md-6 order-2 order-md-1">
         <h2 class="section-title">About TopStep</h2>
-        <p></p>
+        <p>At Topsteps Academy, we blend academic excellence with innovative learning to build tomorrow leaders.</p>
         <p></p>
         <a href="about.php" class="btn btn-primary-outline">Learn more</a>
       </div>
@@ -400,6 +400,25 @@ include_once '../../components/header.php';
 </section>
 <!-- /blog -->
  
+<section id="map-section" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-4">Locate Us At</h2>
+    <p class="mb-4">visit our School, find us here!</p>
+    
+    <div class="embed-responsive embed-responsive-16by9 shadow rounded">
+<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d877.5928408963465!2d7.5783444504558295!3d9.040151256401558!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sng!4v1750102211371!5m2!1sen!2sng"
+   width="600" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+    </div>
+  </div>
+</section>
+
+
 <?php
 include_once '../../components/footer.php';
 ?>
