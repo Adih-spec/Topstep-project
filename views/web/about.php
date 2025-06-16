@@ -40,7 +40,7 @@
 <?php include_once '../../components/header.php'; ?>
 
 <!-- Page Title -->
-<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg" data-aos="fade-down">
+<section class="page-title-section overlay" data-background="../../assets/images/student.jpg" data-aos="fade-down">
   <div class="container">
     <div class="row">
       <div class="col-md-8">

@@ -17,72 +17,9 @@
       <?php
 include_once '../../components/header.php';
 ?>
-<!-- Modal -->
-<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content rounded-0 border-0 p-4">
-            <div class="modal-header border-0">
-                <h3>Register</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="login">
-                    <form action="index.html#" class="row">
-                        <div class="col-12">
-                            <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Phone">
-                        </div>
-                        <div class="col-12">
-                            <input type="text" class="form-control mb-3" id="signupName" name="signupName" placeholder="Name">
-                        </div>
-                        <div class="col-12">
-                            <input type="email" class="form-control mb-3" id="signupEmail" name="signupEmail" placeholder="Email">
-                        </div>
-                        <div class="col-12">
-                            <input type="password" class="form-control mb-3" id="signupPassword" name="signupPassword" placeholder="Password">
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary">SIGN UP</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content rounded-0 border-0 p-4">
-            <div class="modal-header border-0">
-                <h3>Login</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="index.html#" class="row">
-                    <div class="col-12">
-                        <input type="text" class="form-control mb-3" id="loginPhone" name="loginPhone" placeholder="Phone">
-                    </div>
-                    <div class="col-12">
-                        <input type="text" class="form-control mb-3" id="loginName" name="loginName" placeholder="Name">
-                    </div>
-                    <div class="col-12">
-                        <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
-                    </div>
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary">LOGIN</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- hero slider -->
-<section class="hero-section overlay bg-cover" data-background="../../assets/images/banner/banner-feature.png">
+<section class="hero-section overlay bg-cover" data-background="../../assets/images/student.jpg">
   <div class="container">
     <div class="hero-slider">
       <!-- slider item -->
@@ -120,6 +57,19 @@ include_once '../../components/header.php';
           </div>
         </div>
       </div>
+      <!-- new slider item with different background image -->
+      <div class="hero-slider-item" style="background-image: url('../../assets/images/banner/banner-feature-2.png'); background-size: cover; background-position: center;">
+        <div class="row">
+          <div class="col-md-8">
+            <h1 class="text-white" data-animation-out="fadeOutLeft" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInRight" data-delay-in=".1">Explore New Horizons</h1>
+            <p class="text-muted mb-4" data-animation-out="fadeOutLeft" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInRight" data-delay-in=".4">
+              Join us for a journey of growth and discovery with our new programs.
+            </p>
+            <a href="programs.html" class="btn btn-primary" data-animation-out="fadeOutLeft" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInRight" data-delay-in=".7">Discover More</a>
+          </div>
+        </div>
+      </div>
+      <!-- end new slider item -->
     </div>
   </div>
 </section>
@@ -130,33 +80,31 @@ include_once '../../components/header.php';
   <div class="container-fluid p-0">
     <div class="row no-gutters">
       <div class="col-xl-4 col-lg-5 align-self-end">
-        <img class="img-fluid w-100" src="images/banner/banner-feature.pngz" alt="banner-feature">
+        <img class="img-fluid w-100" src="../../assets/images/banner/banner-feature.png" alt="banner-feature">
       </div>
       <div class="col-xl-8 col-lg-7">
         <div class="row feature-blocks bg-gray justify-content-between">
           <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
             <i class="ti-book mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
             <h3 class="mb-xl-4 mb-lg-3 mb-4">Scholorship News</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-              et dolore magna aliqua. Ut enim ad</p>
+            <p>Parents of Topsteppers, we have an amazing news for you!!!
+  We are offering scholarships to the best performing students in the school. <a href="scholarship.php"> Learn More...</a>
+            </p>
           </div>
           <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
             <i class="ti-blackboard mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
             <h3 class="mb-xl-4 mb-lg-3 mb-4">Our Notice Board</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-              et dolore magna aliqua. Ut enim ad</p>
+            <p>Get the details of the school recent activity, see what events are coming up. <a href="events.php"> Learn More...</a></p>
           </div>
           <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
             <i class="ti-agenda mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
             <h3 class="mb-xl-4 mb-lg-3 mb-4">Our Achievements</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-              et dolore magna aliqua. Ut enim ad</p>
+            <p>At TopStep Academy we love to challenge the students in new areas to broaden their Horizon to the many possibilities. Here are some of our Achievements as a school<a href="about.php"> Learn More...</a></p>
           </div>
           <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
             <i class="ti-write mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
             <h3 class="mb-xl-4 mb-lg-3 mb-4">Admission Now</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-              et dolore magna aliqua. Ut enim ad</p>
+            <p>Giving your child the best education, we are here to support you, so pick the best for your child pick TOPSTEP!<a href="admission.php"> Learn More...</a></p>
           </div>
         </div>
       </div>
@@ -170,13 +118,13 @@ include_once '../../components/header.php';
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-6 order-2 order-md-1">
-        <h2 class="section-title">About TopStep</h2>
-        <p></p>
-        <p></p>
-        <a href="about.html" class="btn btn-primary-outline">Learn more</a>
+        <h2 class="section-title">About TopSteps</h2>
+        <p>Topsteps Academy is a premier educational institution dedicated to nurturing well-rounded, future-ready leaders. Our commitment to academic excellence is matched by our focus on character development, innovation, and holistic growth. With a dynamic curriculum, experienced faculty, and a supportive learning environment, we empower students to excel academically, think critically, and embrace lifelong learning. At Topsteps Academy, every child is inspired to reach their highest potential and make a positive impact in the world.</p>
+       
+        <a href="about.php" class="btn btn-primary-outline">Learn more</a>
       </div>
       <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
-        <img class="img-fluid w-100" src="images/about/about-us.jpg" alt="about image">
+        <img class="img-fluid w-100" src="../../assets/images/tps-logo.png" alt="about image">
       </div>
     </div>
   </div>
@@ -196,8 +144,11 @@ include_once '../../components/header.php';
       <div class="col-lg-6 col-sm-8">
         <div class="bg-white p-5">
           <h2 class="section-title">Success Stories</h2>
+          <p>Topsteps Academy has nurtured countless success stories — from students gaining admission 
+            into top universities to excelling in leadership, technology, arts, and sciences.
+           Our....... </p>
           <p></p>
-          <p></p>
+            <a href="about.php" class="btn btn-primary-outline">Learn more</a>
         </div>
       </div>
     </div>
@@ -206,63 +157,63 @@ include_once '../../components/header.php';
 <!-- /success story -->
 
 <!-- events -->
-<section class="section bg-gray">
+<section class="section bg-light">
   <div class="container">
-    <div class="row">
+    <div class="row justify-content-center mb-5">
       <div class="col-12">
-        <div class="d-flex align-items-center section-title justify-content-between">
-          <h2 class="mb-0 text-nowrap mr-3">Upcoming Events</h2>
-          <div class="border-top w-100 border-primary d-none d-sm-block"></div>
-          <div>
-            <a href="events.html" class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block">see all</a>
+        <h2 class="section-title">Upcoming Events</h2>
+      </div>
+     <div class="row">
+       <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <div class="card-img position-relative">
+            <img class="card-img-top rounded-0" src="../../assets/images/events/graduation" alt="event thumb">
+            <div class="card-date"><span>26</span><br>July</div>
+          </div>
+          <div class="card-body">
+            <!-- location -->
+            <p><i class="ti-location-pin text-primary mr-2"></i>Transcorp Hilton</p>
+            <a href="events.php">
+              <h4 class="card-title">Graduation and award ceremony</h4>
+            </a>
           </div>
         </div>
       </div>
+      <!-- event -->
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <div class="card-img position-relative">
+            <img class="card-img-top rounded-0" src="../../assets/images/events/inter house" alt="event thumb">
+            <div class="card-date"><span>21</span><br>February</div>
+          </div>
+          <div class="card-body">
+            <!-- location -->
+            <p><i class="ti-location-pin text-primary mr-2"></i>National Stadium</p>
+            <a href="events.php">
+              <h4 class="card-title">Inter house sports</h4>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- event -->
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <div class="card-img position-relative">
+            <img class="card-img-top rounded-0" src="../../assets/images/events/zoo" alt="event thumb">
+            <div class="card-date"><span>13</span><br>April</div>
+          </div>
+          <div class="card-body">
+            <!-- location -->
+            <p><i class="ti-location-pin text-primary mr-2"></i>National park and zoo</p>
+            <a href="events.php">
+              <h4 class="card-title">An excursion to the zoo</h4>
+            </a>
+          </div>
+        </div>
+      </div>
+     </div>
     </div>
-    <div class="row justify-content-center">
-  <!-- event -->
-  <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-    <div class="card border-0 rounded-0 hover-shadow">
-      <div class="card-img position-relative">
-        <img class="card-img-top rounded-0" src="images/events/event-1.jpg" alt="event thumb">
-        <div class="card-date"><span>18</span><br>December</div>
-      </div>
-      <div class="card-body">
-        <!-- location -->
-        <p><i class="ti-location-pin text-primary mr-2"></i>Harvard, Usa</p>
-        <a href="event-single.html"><h4 class="card-title">Toward a public philosophy of justice</h4></a>
-      </div>
-    </div>
-  </div>
-  <!-- event -->
-  <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-    <div class="card border-0 rounded-0 hover-shadow">
-      <div class="card-img position-relative">
-        <img class="card-img-top rounded-0" src="images/events/event-2.jpg" alt="event thumb">
-        <div class="card-date"><span>21</span><br>December</div>
-      </div>
-      <div class="card-body">
-        <!-- location -->
-        <p><i class="ti-location-pin text-primary mr-2"></i>Cambridge, USA</p>
-        <a href="event-single.html"><h4 class="card-title">Research seminar in clinical science.</h4></a>
-      </div>
-    </div>
-  </div>
-  <!-- event -->
-  <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-    <div class="card border-0 rounded-0 hover-shadow">
-      <div class="card-img position-relative">
-        <img class="card-img-top rounded-0" src="images/events/event-3.jpg" alt="event thumb">
-        <div class="card-date"><span>23</span><br>December</div>
-      </div>
-      <div class="card-body">
-        <!-- location -->
-        <p><i class="ti-location-pin text-primary mr-2"></i>Dhanmondi Lake, Dhaka</p>
-        <a href="event-single.html"><h4 class="card-title">Firefly training in trauma-informed yoga</h4></a>
-      </div>
-    </div>
-  </div>
-</div>
+</section>
     <!-- mobile see all button -->
     <div class="row">
       <div class="col-12 text-center">
@@ -344,7 +295,7 @@ include_once '../../components/header.php';
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 class="section-title">Latest News</h2>
+        <h2 class="section-title">News Update</h2>
       </div>
     </div>
     <div class="row justify-content-center">
@@ -413,6 +364,25 @@ include_once '../../components/header.php';
 </section>
 <!-- /blog -->
  
+<section id="map-section" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-4">Locate Us At</h2>
+    <p class="mb-4">visit our School, find us here!</p>
+    
+    <div class="embed-responsive embed-responsive-16by9 shadow rounded">
+<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d877.5928408963465!2d7.5783444504558295!3d9.040151256401558!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sng!4v1750102211371!5m2!1sen!2sng"
+   width="600" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+    </div>
+  </div>
+</section>
+
+
 <?php
 include_once '../../components/footer.php';
 ?>
