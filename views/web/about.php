@@ -8,6 +8,32 @@
 
   <!-- AOS Animation CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- Animate.css (Optional for additional effects) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <!-- Custom Styling (Optional, if needed) -->
+  <style>
+    .hover-shadow:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+    .play-btn {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 60px;
+      color: #007bff;
+      font-size: 24px;
+      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+    .play-btn:hover {
+      transform: scale(1.1);
+      color: #0056b3;
+    }
+  </style>
 </head>
 <body>
 
@@ -31,7 +57,7 @@
   </div>
 </section>
 
-<!-- About -->
+<!-- About Section -->
 <section class="section" data-aos="fade-right">
   <div class="container">
     <div class="row">
@@ -50,22 +76,19 @@
 <section class="section-sm bg-primary text-center" data-aos="fade-up">
   <div class="container">
     <div class="row">
-      <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
-        <h2 class="count text-white" data-count="60">0</h2>
-        <h5 class="text-white">Expert Teachers</h5>
-      </div>
-      <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
-        <h2 class="count text-white" data-count="50">0</h2>
-        <h5 class="text-white">Academic Programs</h5>
-      </div>
-      <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
-        <h2 class="count text-white" data-count="1000">0</h2>
-        <h5 class="text-white">Enrolled Students</h5>
-      </div>
-      <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
-        <h2 class="count text-white" data-count="3737">0</h2>
-        <h5 class="text-white">Satisfied Parents</h5>
-      </div>
+      <?php
+      $facts = [
+        ['count' => 60, 'label' => 'Expert Teachers'],
+        ['count' => 50, 'label' => 'Academic Programs'],
+        ['count' => 1000, 'label' => 'Enrolled Students'],
+        ['count' => 3737, 'label' => 'Satisfied Parents']
+      ];
+      foreach ($facts as $fact): ?>
+        <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+          <h2 class="count text-white" data-count="<?= $fact['count'] ?>">0</h2>
+          <h5 class="text-white"><?= $fact['label'] ?></h5>
+        </div>
+      <?php endforeach; ?>
     </div>
   </div>
 </section>
@@ -99,52 +122,30 @@
         <p class="text-muted">Our teachers bring a wealth of knowledge, experience, and compassion to the classroom—empowering every student to succeed.</p>
       </div>
 
-      <!-- Teacher Cards -->
-      <div class="col-lg-4 col-sm-6 mb-4" data-aos="zoom-in">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/teachers/teacher-1.jpg" alt="Jacke Masito">
-          <div class="card-body">
-            <h4 class="card-title">Mrs. Jenita</h4>
-            <p>Head teacher</p>
-            <ul class="list-inline">
-              <li class="list-inline-item"><a href="#"><i class="ti-facebook"></i></a></li>
-              <li class="list-inline-item"><a href="#"><i class="ti-twitter-alt"></i></a></li>
-              <li class="list-inline-item"><a href="#"><i class="ti-linkedin"></i></a></li>
-            </ul>
+      <?php
+      $teachers = [
+        ['img' => 'teacher-1.jpg', 'name' => 'Mrs. Jenita', 'role' => 'Head Teacher'],
+        ['img' => 'teacher-2.jpg', 'name' => 'Clark Malik', 'role' => 'Language Arts Instructor'],
+        ['img' => 'teacher-3.jpg', 'name' => 'John Doe', 'role' => 'Mathematics Specialist']
+      ];
+      $delay = 0;
+      foreach ($teachers as $teacher):
+      ?>
+        <div class="col-lg-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="<?= $delay ?>">
+          <div class="card border-0 rounded-0 hover-shadow">
+            <img class="card-img-top rounded-0" src="images/teachers/<?= $teacher['img'] ?>" alt="<?= $teacher['name'] ?>">
+            <div class="card-body">
+              <h4 class="card-title"><?= $teacher['name'] ?></h4>
+              <p><?= $teacher['role'] ?></p>
+              <ul class="list-inline">
+                <li class="list-inline-item"><a href="#"><i class="ti-facebook"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="ti-linkedin"></i></a></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="col-lg-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="100">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/teachers/teacher-2.jpg" alt="Clark Malik">
-          <div class="card-body">
-            <h4 class="card-title">Clark Malik</h4>
-            <p>Language Arts Instructor</p>
-            <ul class="list-inline">
-              <li class="list-inline-item"><a href="#"><i class="ti-facebook"></i></a></li>
-              <li class="list-inline-item"><a href="#"><i class="ti-twitter-alt"></i></a></li>
-              <li class="list-inline-item"><a href="#"><i class="ti-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/teachers/teacher-3.jpg" alt="John Doe">
-          <div class="card-body">
-            <h4 class="card-title">John Doe</h4>
-            <p>Mathematics Specialist</p>
-            <ul class="list-inline">
-              <li class="list-inline-item"><a href="#"><i class="ti-facebook"></i></a></li>
-              <li class="list-inline-item"><a href="#"><i class="ti-twitter-alt"></i></a></li>
-              <li class="list-inline-item"><a href="#"><i class="ti-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
+      <?php $delay += 100; endforeach; ?>
     </div>
   </div>
 </section>
@@ -159,32 +160,27 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4 mb-4" data-aos="fade-right">
-        <div class="card p-4 shadow-sm">
-          <p class="mb-3">"Topsteps has transformed my child's confidence and academics. The teachers truly care about each student."</p>
-          <h5 class="mb-0">— Mrs. Adebayo</h5>
-          <small class="text-muted">Parent of Grade 5 Student</small>
+      <?php
+      $testimonials = [
+        ['name' => 'Mrs. Adebayo', 'comment' => 'Topsteps has transformed my child\'s confidence and academics. The teachers truly care about each student.', 'grade' => 'Grade 5'],
+        ['name' => 'Mr. Obinna', 'comment' => 'The learning environment is so nurturing. I’ve seen huge improvements in both character and knowledge.', 'grade' => 'Grade 7'],
+        ['name' => 'Mrs. Fatima', 'comment' => 'I love how Topsteps combines modern tech with core values. My child is learning and growing every day.', 'grade' => 'Grade 3']
+      ];
+      $fade_directions = ['fade-right', 'fade-up', 'fade-left'];
+      foreach ($testimonials as $i => $test): ?>
+        <div class="col-md-4 mb-4" data-aos="<?= $fade_directions[$i] ?>">
+          <div class="card p-4 shadow-sm">
+            <p class="mb-3">"<?= $test['comment'] ?>"</p>
+            <h5 class="mb-0">— <?= $test['name'] ?></h5>
+            <small class="text-muted">Parent of <?= $test['grade'] ?> Student</small>
+          </div>
         </div>
-      </div>
-      <div class="col-md-4 mb-4" data-aos="fade-up">
-        <div class="card p-4 shadow-sm">
-          <p class="mb-3">"The learning environment is so nurturing. I’ve seen huge improvements in both character and knowledge."</p>
-          <h5 class="mb-0">— Mr. Obinna</h5>
-          <small class="text-muted">Parent of Grade 7 Student</small>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4" data-aos="fade-left">
-        <div class="card p-4 shadow-sm">
-          <p class="mb-3">"I love how Topsteps combines modern tech with core values. My child is learning and growing every day."</p>
-          <h5 class="mb-0">— Mrs. Fatima</h5>
-          <small class="text-muted">Parent of Grade 3 Student</small>
-        </div>
-      </div>
+      <?php endforeach; ?>
     </div>
   </div>
 </section>
 
-<!-- Our Vision -->
+<!-- Vision -->
 <section class="section bg-white text-center" data-aos="fade-up">
   <div class="container">
     <h2 class="section-title">Our Vision</h2>
@@ -194,7 +190,7 @@
   </div>
 </section>
 
-<!-- Accreditation & Partners -->
+<!-- Accreditation -->
 <section class="section bg-light" data-aos="fade-up">
   <div class="container">
     <div class="row text-center mb-4">
@@ -204,18 +200,11 @@
       </div>
     </div>
     <div class="row justify-content-center align-items-center">
-      <div class="col-md-2 col-4 mb-3 border-0 rounded-0 hover-shadow">
-        <img src="../../assets/images/partners/partner-1.png" class="img-fluid" alt="Partner 1">
-      </div>
-      <div class="col-md-2 col-4 mb-3 border-0 rounded-0 hover-shadow">
-        <img src="../../assets/images/partners/partner-2.png" class="img-fluid" alt="Partner 2">
-      </div>
-      <div class="col-md-2 col-4 mb-3 border-0 rounded-0 hover-shadow">
-        <img src="../../assets/images/partners/partner-3.png" class="img-fluid" alt="Partner 3">
-      </div>
-      <div class="col-md-2 col-4 mb-3 border-0 rounded-0 hover-shadow">
-        <img src="../../assets/images/partners/partner-4.png" class="img-fluid" alt="Partner 4">
-      </div>
+      <?php for ($i = 1; $i <= 4; $i++): ?>
+        <div class="col-md-2 col-4 mb-3 border-0 rounded-0 hover-shadow">
+          <img src="../../assets/images/partners/partner-<?= $i ?>.png" class="img-fluid" alt="Partner <?= $i ?>">
+        </div>
+      <?php endfor; ?>
     </div>
   </div>
 </section>
@@ -223,7 +212,7 @@
 <?php include_once '../../components/footer.php'; ?>
 <?php include_once '../../components/scripts.php'; ?>
 
-<!-- Optional: Animated Counter Script -->
+<!-- Counter Script -->
 <script>
   const counters = document.querySelectorAll('.count');
   const speed = 200;
@@ -243,16 +232,14 @@
   });
 </script>
 
-<!-- AOS Animation Script -->
-<!-- AOS Animation Script -->
+<!-- AOS Init -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
   AOS.init({
     duration: 1000,
-    once: false  // Animation will trigger every time the element enters the viewport
+    once: false
   });
 </script>
-
 
 </body>
 </html>
