@@ -169,7 +169,12 @@
 
 </style>
 
-    <!-- header -->
+<?php
+// Get current file name without extension
+$currentPage = basename($_SERVER['PHP_SELF'], ".php");
+?>
+
+<!-- header -->
 <header class="fixed-top header">
   <!-- top header -->
   <div class="top-header py-2 bg-white">
@@ -186,11 +191,18 @@
         </div>
         <div class="col-lg-8 text-center text-lg-right">
           <ul class="list-inline">
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="notice.html">notice</a></li>
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="research.html">research</a></li>
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="scholarship.html">SCHOLARSHIP</a></li>
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="index.html#" data-toggle="modal" data-target="#loginModal">login</a></li>
-            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="index.html#" data-toggle="modal" data-target="#signupModal">register</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#">notice</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#">research</a></li>
+            <li class="list-inline-item"><a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" href="#">SCHOLARSHIP</a></li>
+            <li class="list-inline-item dropdown">
+              <a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block dropdown-toggle" href="#" id="loginDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                login
+              </a>
+              <div class="dropdown-menu" aria-labelledby="loginDropdown">
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#loginModal">Staff Login</a>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#loginModal">Admin Login</a>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
@@ -212,19 +224,19 @@
 
         <div class="collapse navbar-collapse" id="navigation">
           <ul class="navbar-nav ml-auto text-center">
-            <li class="nav-item active">
+            <li class="nav-item <?php echo ($currentPage == 'index') ? 'active' : ''; ?>">
               <a class="nav-link" href="index.php">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <?php echo ($currentPage == 'about') ? 'active' : ''; ?>">
               <a class="nav-link" href="about.php">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="">PROGRAMS</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <?php echo ($currentPage == 'events') ? 'active' : ''; ?>">
               <a class="nav-link" href="events.php">EVENTS</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <?php echo ($currentPage == 'admission') ? 'active' : ''; ?>">
               <a class="nav-link" href="admission.php">ADMISSION</a>
             </li>
             <li class="nav-item dropdown view">
@@ -251,6 +263,7 @@
 </header>
 <!-- /header -->
 <!-- Modal -->
+ <!-- register modal -->
 <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content rounded-0 border-0 p-4">
@@ -284,6 +297,41 @@
         </div>
     </div>
 </div>
+<!-- end register modal -->
+
+<!--login modal-->
+  <!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Login</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="index.html#" class="row">
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginPhone" name="loginPhone" placeholder="Phone">
+                    </div>
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginName" name="loginName" placeholder="Name">
+                    </div>
+                    <div class="col-12">
+                        <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- end login modal -->
 
 <!-- chat icon -->
 <!-- Floating Chat Button -->

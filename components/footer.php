@@ -1,3 +1,4 @@
+<!-- footer -->
 <footer>
   <!-- newsletter -->
   <div class="newsletter">
@@ -31,25 +32,45 @@
         </div>
         <!-- company -->
         <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
-          <h4 class="text-white mb-5">COMPANY</h4>
+          <h4 class="text-white mb-5">TOPSETPS ACADEMY</h4>
           <ul class="list-unstyled">
-            <li class="mb-3"><a class="text-color" href="about.html">About Us</a></li>
-            <li class="mb-3"><a class="text-color" href="teacher.html">Our Teacher</a></li>
-            <li class="mb-3"><a class="text-color" href="contact.html">Contact</a></li>
-            <li class="mb-3"><a class="text-color" href="blog.html">Blog</a></li>
+            <li class="mb-3"><a class="text-color" href="about.php">About Us</a></li>
+            <li class="mb-3"><a class="text-color" href="#">Programs</a></li>
+            <li class="mb-3"><a class="text-color" href="admission.php">Admission</a></li>
+            <li class="mb-3"><a class="text-color" href="contact.php">Contact</a></li>
           </ul>
         </div>
         <!-- links -->
         <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
           <h4 class="text-white mb-5">LINKS</h4>
           <ul class="list-unstyled">
-            <li class="mb-3"><a class="text-color" href="">Programs</a></li>
-            <li class="mb-3"><a class="text-color" href="">Events</a></li>
-            <li class="mb-3"><a class="text-color" href="">Gallery</a></li>
-            <li class="mb-3"><a class="text-color" href="">FAQs</a></li>
+            <li class="mb-3"><a class="text-color" href="events.php">Events</a></li>
+            <li class="mb-3"><a class="text-color" href="#">Gallery</a></li>
+            <li class="mb-3"><a class="text-color" href="#">FAQs</a></li>
           </ul>
         </div>
-
+        <!-- support -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5">SUPPORT</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a class="text-color" href="index.html#">Forums</a></li>
+            <li class="mb-3"><a class="text-color" href="index.html#">Documentation</a></li>
+            <li class="mb-3"><a class="text-color" href="index.html#">Language</a></li>
+            <li class="mb-3"><a class="text-color" href="index.html#">Release Status</a></li>
+          </ul>
+        </div>
+        <!-- support -->
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+          <h4 class="text-white mb-5">RECOMMEND</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3"><a class="text-color" href="">Elite Tech Dev</a></li>
+            <li class="mb-3"><a class="text-color" href="">LearnPress</a></li>
+            <li class="mb-3"><a class="text-color" href="">bbPress</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- copyright -->
   <div class="copyright py-4 bg-footer">
     <div class="container">
@@ -60,7 +81,7 @@
               var CurrentYear = new Date().getFullYear()
               document.write(CurrentYear)
             </script> 
-            © Created By Elite Tech Dev</p> . All Rights Reserved.
+            © Theme By <a href="#">Elite Tech Dev</a></p> . All Rights Reserved.
         </div>
         <div class="col-sm-5 text-sm-right text-center">
           <ul class="list-inline">
