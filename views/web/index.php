@@ -29,7 +29,7 @@ include_once '../../components/header.php';
             <h1 class="text-white" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".1">Your bright future is our mission</h1>
             <p class="text-muted mb-4" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".4">
              </p>
-            <a href="contact.html" class="btn btn-primary" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".7">Apply now</a>
+            <a href="admission.php" class="btn btn-primary" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".7">Apply now</a>
           </div>
         </div>
       </div>
@@ -37,10 +37,9 @@ include_once '../../components/header.php';
       <div class="hero-slider-item">
         <div class="row">
           <div class="col-md-8">
-            <h1 class="text-white" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".1">Your bright future is our mission</h1>
-            <p class="text-muted mb-4" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              click here to apply for/p>
-            <a href="contact.html" class="btn btn-primary" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".7">Apply now</a>
+            <h1 class="text-white" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".1">Build Future Top Leaders</h1>
+            <p class="text-muted mb-4" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".4">To discover the true meaning of education, you need to be a part of TopStep Academy.</p>
+            <a href="admission.php." class="btn btn-primary" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".7">Apply now</a>
           </div>
         </div>
       </div>
@@ -49,23 +48,8 @@ include_once '../../components/header.php';
         <div class="row">
           <div class="col-md-8">
             <h1 class="text-white" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">Your bright future is our mission</h1>
-            <p class="text-muted mb-4" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor
-              incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exer</p>
-            <a href="contact.html" class="btn btn-primary" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="zoomIn" data-delay-in=".7">Apply now</a>
-          </div>
-        </div>
-      </div>
-      <!-- new slider item with different background image -->
-      <div class="hero-slider-item" style="background-image: url('../../assets/images/banner/banner-feature-2.png'); background-size: cover; background-position: center;">
-        <div class="row">
-          <div class="col-md-8">
-            <h1 class="text-white" data-animation-out="fadeOutLeft" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInRight" data-delay-in=".1">Explore New Horizons</h1>
-            <p class="text-muted mb-4" data-animation-out="fadeOutLeft" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInRight" data-delay-in=".4">
-              Join us for a journey of growth and discovery with our new programs.
-            </p>
-            <a href="programs.html" class="btn btn-primary" data-animation-out="fadeOutLeft" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInRight" data-delay-in=".7">Discover More</a>
+            <p class="text-muted mb-4" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".4">Our goal is making leaders out of the next generation</p>
+            <a href="admission.php" class="btn btn-primary" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="zoomIn" data-delay-in=".7">Apply now</a>
           </div>
         </div>
       </div>
@@ -295,7 +279,7 @@ include_once '../../components/header.php';
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 class="section-title">News Update</h2>
+        <h2 class="section-title">Latest News</h2>
       </div>
     </div>
     <div class="row justify-content-center">
