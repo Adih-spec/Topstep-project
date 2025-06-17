@@ -145,7 +145,7 @@ include_once '../../components/header.php';
   <div class="container">
     <div class="row justify-content-center mb-5">
       <div class="col-12">
-        <h2 class="section-title">Upcoming Events</h2>
+        <h2 class="section-title row justify-content-center" >Upcoming Events</h2>
       </div>
      <div class="row">
        <div class="col-lg-4 col-sm-6 mb-5">
@@ -213,12 +213,12 @@ include_once '../../components/header.php';
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12">
-        <h2 class="section-title">Our Teachers</h2>
+        <h2 class="section-title row justify-content-center">Our Teachers</h2>
       </div>
       <!-- teacher -->
       <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
         <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/teachers/teacher-1.jpg" alt="teacher">
+          <img class="card-img-top rounded-0" src="../../assets/images/teachers/teacher-1.jpg" alt="teacher">
           <div class="card-body">
             <a href="teacher-single.html">
               <h4 class="card-title">Jacke Masito</h4>
@@ -236,7 +236,7 @@ include_once '../../components/header.php';
       <!-- teacher -->
       <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
         <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/teachers/teacher-2.jpg" alt="teacher">
+          <img class="card-img-top rounded-0" src="../../assets/images/teachers/teacher-2.jpg" alt="teacher">
           <div class="card-body">
             <a href="teacher-single.html">
               <h4 class="card-title">Clark Malik</h4>
@@ -254,7 +254,7 @@ include_once '../../components/header.php';
       <!-- teacher -->
       <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
         <div class="card border-0 rounded-0 hover-shadow">
-          <img class="card-img-top rounded-0" src="images/teachers/teacher-3.jpg" alt="teacher">
+          <img class="card-img-top rounded-0" src="../../assets/images/teachers/teacher-3.jpg" alt="teacher">
           <div class="card-body">
             <a href="teacher-single.html">
               <h4 class="card-title">John Doe</h4>
@@ -279,7 +279,7 @@ include_once '../../components/header.php';
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 class="section-title">Latest News</h2>
+        <h2 class="section-title row justify-content-center">Latest News</h2>
       </div>
     </div>
     <div class="row justify-content-center">
