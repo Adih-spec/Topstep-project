@@ -8,13 +8,13 @@
 
   <!-- AOS Animation CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-  <!-- Animate.css (Optional for additional effects) -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-  <!-- Custom Styling (Optional, if needed) -->
+
+  <!-- Custom Styling -->
   <style>
     .hover-shadow:hover {
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      transition: box-shadow 0.3s ease-in-out;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      transition: box-shadow 0.4s ease-in-out;
     }
     .play-btn {
       display: inline-block;
@@ -26,12 +26,42 @@
       line-height: 60px;
       color: #007bff;
       font-size: 24px;
-      box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.3);
-      transition: transform 0.3s ease;
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .play-btn:hover {
       transform: scale(1.1);
+      box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.4);
       color: #0056b3;
+    }
+    .card-body ul.list-inline li a {
+      transition: color 0.3s ease;
+    }
+    .card-body ul.list-inline li a:hover {
+      color: #007bff;
+    }
+    .card p {
+      transition: transform 0.3s ease-in-out;
+    }
+    .card:hover p {
+      transform: translateY(-5px);
+    }
+
+    /* Section backgrounds (excluding about, header, footer) */
+    .section-sm.bg-primary {
+      background-color: #0056b3 !important;
+    }
+    .section.bg-cover {
+      background-color: #f4f9ff !important;
+    }
+    .section:not(.page-title-section):not(.bg-primary):not(.bg-light):not(.bg-white):not(.bg-cover) {
+      background-color: #f9fafe;
+    }
+    .section.bg-light {
+      background-color: #f1f3f7;
+    }
+    .section.bg-white {
+      background-color: #ffffff;
     }
   </style>
 </head>
@@ -40,7 +70,7 @@
 <?php include_once '../../components/header.php'; ?>
 
 <!-- Page Title -->
-<section class="page-title-section overlay" data-background="../../assets/images/student.jpg" data-aos="fade-down">
+<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg" data-aos="fade-down">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
@@ -57,7 +87,7 @@
   </div>
 </section>
 
-<!-- About Section -->
+<!-- About Section (Do not touch) -->
 <section class="section" data-aos="fade-right">
   <div class="container">
     <div class="row">
@@ -73,7 +103,7 @@
 </section>
 
 <!-- Fun Facts -->
-<section class="section-sm bg-primary text-center" data-aos="fade-up">
+<section class="section-sm bg-primary text-center text-white" data-aos="fade-up">
   <div class="container">
     <div class="row">
       <?php
@@ -96,16 +126,17 @@
 <!-- Success Story -->
 <section class="section bg-cover" data-background="../../assets/images/backgrounds/success-story.jpg" data-aos="fade-left">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-sm-4 position-relative success-video">
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-sm-4 position-relative success-video text-center">
         <a class="play-btn venobox" href="https://youtu.be/nA1Aqp0sPQo" data-vbtype="video">
           <i class="ti-control-play"></i>
         </a>
+        <p class="mt-3 text-white">Watch our journey</p>
       </div>
       <div class="col-lg-6 col-sm-8">
-        <div class="bg-white p-5">
-          <h2 class="section-title">Success Stories</h2>
-          <p>Topsteps Academy has nurtured countless success stories — from students gaining admission into top universities to excelling in leadership, technology, arts, and sciences. Our alumni are proof that a solid educational foundation opens limitless opportunities.</p>
+        <div class="bg-white p-5 rounded shadow-sm" data-aos="fade-up">
+          <h2 class="section-title mb-3">Success Stories</h2>
+          <p class="lead">Topsteps Academy has nurtured countless success stories — from students gaining admission into top universities to excelling in leadership, technology, arts, and sciences.</p>
           <p>Our holistic approach ensures every child discovers their passion, hones their talent, and builds the confidence to lead and inspire. At Topsteps, success is not just a goal — it's a journey we take together.</p>
         </div>
       </div>
@@ -238,6 +269,18 @@
   AOS.init({
     duration: 1000,
     once: false
+  });
+</script>
+
+<!-- Smooth Scroll -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth"
+      });
+    });
   });
 </script>
 
