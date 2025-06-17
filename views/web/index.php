@@ -17,7 +17,6 @@
       <?php
 include_once '../../components/header.php';
 ?>
-
 <!-- hero slider -->
 <section class="hero-section overlay bg-cover" data-background="../../assets/images/student.jpg">
   <div class="container">
@@ -57,7 +56,8 @@ include_once '../../components/header.php';
     </div>
   </div>
 </section>
-<!-- /hero slider -->
+<!-- /hero slider --> 
+
 
 <!-- banner-feature -->
 <section class="bg-gray">
