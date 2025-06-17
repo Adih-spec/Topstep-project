@@ -181,15 +181,7 @@
   </div>
 </section>
 
-<!-- Testimonials -->
-<section class="section bg-light" data-aos="fade-up">
-  <div class="container">
-    <div class="row text-center mb-5">
-      <div class="col-12">
-        <h2 class="section-title">What Parents Say</h2>
-        <p class="text-muted">Real stories from families who trust Topsteps Academy.</p>
-      </div>
-    </div>
+
     <div class="row">
       <?php
       $testimonials = [
