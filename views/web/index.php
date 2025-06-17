@@ -18,46 +18,47 @@
 include_once '../../components/header.php';
 ?>
 
-<!-- hero slider -->
-<section class="hero-section overlay bg-cover" data-background="../../assets/images/student.jpg">
+<section class="hero-section overlay bg-cover">
   <div class="container">
     <div class="hero-slider">
-      <!-- slider item -->
-      <div class="hero-slider-item">
+    
+      <!-- Slider 1 -->
+      <div class="hero-slider-item" data-background="../assets/images/student.jpg">
         <div class="row">
           <div class="col-md-8">
-            <h1 class="text-white" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".1">Your bright future is our mission</h1>
-            <p class="text-muted mb-4" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".4">
-             </p>
-            <a href="admission.php" class="btn btn-primary" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".7">Apply now</a>
+            <h1 class="text-white">Your bright future is our mission</h1>
+            <p class="text-muted mb-4"></p>
+            <a href="admission.php" class="btn btn-primary">Apply now</a>
           </div>
         </div>
       </div>
-      <!-- slider item -->
-      <div class="hero-slider-item">
+
+      <!-- Slider 2 -->
+      <div class="hero-slider-item" data-background="../assets/images/logo.png">
         <div class="row">
           <div class="col-md-8">
-            <h1 class="text-white" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".1">Build Future Top Leaders</h1>
-            <p class="text-muted mb-4" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".4">To discover the true meaning of education, you need to be a part of TopStep Academy.</p>
-            <a href="admission.php." class="btn btn-primary" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".7">Apply now</a>
+            <h1 class="text-white">Build Future Top Leaders</h1>
+            <p class="text-muted mb-4">To discover the true meaning of education, you need to be a part of TopStep Academy.</p>
+            <a href="admission.php" class="btn btn-primary">Apply now</a>
           </div>
         </div>
       </div>
-      <!-- slider item -->
-      <div class="hero-slider-item">
+
+      <!-- Slider 3 -->
+      <div class="hero-slider-item" data-background="../assets/images/teacher.jpg">
         <div class="row">
           <div class="col-md-8">
-            <h1 class="text-white" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">Your bright future is our mission</h1>
-            <p class="text-muted mb-4" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".4">Our goal is making leaders out of the next generation</p>
-            <a href="admission.php" class="btn btn-primary" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="zoomIn" data-delay-in=".7">Apply now</a>
+            <h1 class="text-white">Your bright future is our mission</h1>
+            <p class="text-muted mb-4">Our goal is making leaders out of the next generation</p>
+            <a href="admission.php" class="btn btn-primary">Apply now</a>
           </div>
         </div>
       </div>
-      <!-- end new slider item -->
+
     </div>
   </div>
 </section>
-<!-- /hero slider -->
+
 
 <!-- banner-feature -->
 <section class="bg-gray">
