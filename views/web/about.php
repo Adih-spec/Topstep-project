@@ -72,7 +72,7 @@
 <?php include_once '../../components/header.php'; ?>
 
 <!-- Page Title -->
-<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg" data-aos="fade-down">
+<section class="page-title-section overlay" data-background="../../assets/images/events/Teacher.png" data-aos="fade-down">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
@@ -156,7 +156,7 @@
 
       <?php
       $teachers = [
-        ['img' => 'teacher-1.jpg', 'name' => 'Mrs. Jenita', 'role' => 'Head Teacher'],
+        ['img' => '../../assets/images/teachers/teacher-1.jpg', 'name' => 'Mrs. Jenita', 'role' => 'Head Teacher'],
         ['img' => 'teacher-2.jpg', 'name' => 'Clark Malik', 'role' => 'Language Arts Instructor'],
         ['img' => 'teacher-3.jpg', 'name' => 'John Doe', 'role' => 'Mathematics Specialist']
       ];
