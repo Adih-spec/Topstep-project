@@ -198,10 +198,15 @@ $currentPage = basename($_SERVER['PHP_SELF'], ".php");
               <a class="text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block dropdown-toggle" href="#" id="loginDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 login
               </a>
-              <div class="dropdown-menu" aria-labelledby="loginDropdown">
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#loginModal">Staff Login</a>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#loginModal">Admin Login</a>
-              </div>
+                <div class="dropdown-menu dropdown-menu-right shadow rounded" aria-labelledby="loginDropdown" style="min-width: 200px;">
+                <h6 class="dropdown-header text-uppercase text-muted mb-1" style="font-size: 13px; letter-spacing: 1px;">Login As</h6>
+                <a class="dropdown-item d-flex align-items-center py-2" href="#" data-toggle="modal" data-target="#loginModal">
+                  <i class="ti-user mr-2 text-primary" style="font-size: 18px;"></i> Staff
+                </a>
+                <a class="dropdown-item d-flex align-items-center py-2" href="#" data-toggle="modal" data-target="#loginModal">
+                  <i class="ti-shield mr-2 text-warning" style="font-size: 18px;"></i> Admin
+                </a>
+              
             </li>
           </ul>
         </div>
