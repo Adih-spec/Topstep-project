@@ -82,7 +82,7 @@ include_once '../../components/header.php';
       <div class="hero-slider-item">
         <div class="row">
           <div class="col-md-8">
-            <h1 class="text-white" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".1">Helping kids grow is our biggest joy</h1>
+            <h1 class="text-white" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".1">Helping kids grow is our biggest Joy</h1>
             <p class="text-muted mb-4" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".4">
              </p>
             <a href="admission.php" class="btn btn-primary" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".7">Apply now</a>
@@ -265,6 +265,32 @@ include_once '../../components/header.php';
 </section>
 <!-- /events -->
 
+<section class="bg-gray" id="tutoring">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 order-2 order-md-1">
+        <h2>Tutoring and Extra lessons</h2>
+        <p>We offer personalised tutoring services to help every student succeed
+          Whether they need help catching up or want to get ahead, 
+          our experienced tutors provide one-on-one support tailored to each student's needs. Our tutoring program covers all subjects and grade levels, ensuring that every student receives the attention and guidance they need to excel academically. 
+          With flexible scheduling and a focus on building confidence, 
+          our tutoring services are designed to help students achieve their academic goals and reach their full potential.
+        </p>
+        <ul>
+          <li class="mt-3">Personalised tutoring for all subjects</li>
+          <li class="mt-3">Flexible scheduling to fit your needs</li>
+          <li class="mt-3">Experienced tutors dedicated to student success</li>
+          <li class="mt-3">One-on-one support tailored to each student's needs</li>
+          <li class="mt-3">Build confidence and academic skills</li>
+        </ul>
+        <a href="admission.php" class="btn btn-primary mt-3">Enrol Now</a>
+      </div>
+      <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
+        <img  class="img-fluid w-100" src="../../assets/images/tutor.jpg" alt="Tutoring Image" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div> 
+</section>
 <!-- teachers -->
 <section class="section">
   <div class="container">
