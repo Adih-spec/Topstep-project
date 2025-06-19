@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+  /* Prevent background scroll when modal is open */
+  body.modal-open {
+    overflow: hidden;
+  }
+</style>
     <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -12,6 +18,57 @@
     // Example: require_once 'config.php';
     require_once '../../components/styles.php';
   ?>
+  <!-- Entrance Exam Modal -->
+<div class="modal fade show" id="entranceExamModal" tabindex="-1" aria-modal="true" role="dialog" style="display: block; background: rgba(0,0,0,0.5);">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content border-0 rounded shadow">
+      <div class="modal-body p-0">
+        <button type="button" class="close position-absolute m-3" data-dismiss="modal" aria-label="Close" style="right:0;z-index:10;font-size:2rem;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="container my-5 p-4 border rounded text-center bg-white shadow">
+          <div class="mb-3">
+            <img src="../../assets/images/tps-logo.png" alt="" width="30%">
+            <h1 class="mt-2">TOPSTEPS ACADEMY</h1>
+            <p>plot No. 09, Road 3, Phase 4, before Panraf Hospital, Nyanya,FCT Abuja</p>
+          </div>
+          <h2 class="text-primary">ENTRANCE EXAMINATION</h2>
+          <h3 class="text-danger">Admission into all classes</h3>
+          <h4 class="text-danger mb-4">For your 2024/2025 Academic Year</h4>
+          <div class="mb-4">
+            <h3>Holds on:</h3>
+            <ul class="list-unstyled">
+              <li>Saturday, 20th April 2024</li>
+              <li>Saturday, 27th April 2024</li>
+              <li>Saturday, 4th May 2024</li>
+            </ul>
+          </div>
+          <div class="mb-3">
+            <p><strong>Venue:</strong>Topsteps Academy School Premises</p>
+            <p>Entrance examination forms are available at the school premises</p>
+          </div>
+          <div class="badge bg-warning text-dark p-3 fs-5">Cost of form: &#8358; N5,000</div>
+          <div class="mt-3 fw bold">
+            <p><strong>CONTACT US ON:</strong></p>
+            <ul>
+              <li>08012345678</li>
+              <li>08087654321</li>
+              <li><a href="#twitter">topstepsacademy</a></li>
+            </ul>
+          </div>
+          <div class="mt-4 mb-3">
+            <p>For more information, visit our website:</p>
+            <a href="admission.php" class="btn btn-primary">Visit Our Website</a>
+          </div>
+          <div class="mt-4 p-3 bg-danger text-white rounded">
+            <p>Topsteps Academy is a place where your child can learn and grow.</p>
+            <p>We look forward to welcoming your child to our school!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </head>
 <body>
       <?php
@@ -25,7 +82,7 @@ include_once '../../components/header.php';
       <div class="hero-slider-item">
         <div class="row">
           <div class="col-md-8">
-            <h1 class="text-white" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".1">Your bright future is our mission</h1>
+            <h1 class="text-white" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".1">Helping kids grow is our biggest joy</h1>
             <p class="text-muted mb-4" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".4">
              </p>
             <a href="admission.php" class="btn btn-primary" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".7">Apply now</a>
@@ -370,6 +427,27 @@ include_once '../../components/header.php';
 <?php
 include_once '../../components/footer.php';
 ?>
+<script>
+  // Show modal on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    var modal = document.getElementById('entranceExamModal');
+    if (modal) {
+      modal.classList.add('show');
+      modal.style.display = 'block';
+      modal.removeAttribute('aria-hidden');
+      modal.setAttribute('aria-modal', 'true');
+      document.body.classList.add('modal-open');
+    }
+    // Close modal on close button click
+    modal.querySelector('.close').onclick = function() {
+      modal.classList.remove('show');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      modal.removeAttribute('aria-modal');
+      document.body.classList.remove('modal-open');
+    };
+  });
+</script>
 <?php
 include_once '../../components/scripts.php';
 ?>
