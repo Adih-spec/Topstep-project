@@ -8,6 +8,11 @@
 
   <!-- AOS Animation CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <!-- Animate.css (Optional for additional effects) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <!-- Custom Styling (Optional, if needed) -->
+   <!-- AOS Animation CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
 
   <!-- Custom Styling -->
@@ -46,17 +51,13 @@
     .card:hover p {
       transform: translateY(-5px);
     }
-
-    /* Section backgrounds (excluding about, header, footer) */
     .section-sm.bg-primary {
       background-color: #0056b3 !important;
     }
     .section.bg-cover {
       background-color: #f4f9ff !important;
     }
-    .section:not(.page-title-section):not(.bg-primary):not(.bg-light):not(.bg-white):not(.bg-cover) {
-      background-color: #f9fafe;
-    }
+    
     .section.bg-light {
       background-color: #f1f3f7;
     }
@@ -65,12 +66,13 @@
     }
   </style>
 </head>
+</head>
 <body>
 
 <?php include_once '../../components/header.php'; ?>
 
 <!-- Page Title -->
-<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg" data-aos="fade-down">
+<section class="page-title-section overlay" data-background="../../assets/images/events/Teacher.png" style="background-repeat: no-repeat; background-size: cover;" data-aos="fade-down">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
@@ -87,7 +89,7 @@
   </div>
 </section>
 
-<!-- About Section (Do not touch) -->
+<!-- About Section -->
 <section class="section" data-aos="fade-right">
   <div class="container">
     <div class="row">
@@ -103,7 +105,7 @@
 </section>
 
 <!-- Fun Facts -->
-<section class="section-sm bg-primary text-center text-white" data-aos="fade-up">
+<section class="section-sm bg-primary text-center" data-aos="fade-up">
   <div class="container">
     <div class="row">
       <?php
@@ -126,17 +128,16 @@
 <!-- Success Story -->
 <section class="section bg-cover" data-background="../../assets/images/backgrounds/success-story.jpg" data-aos="fade-left">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6 col-sm-4 position-relative success-video text-center">
+    <div class="row">
+      <div class="col-lg-6 col-sm-4 position-relative success-video">
         <a class="play-btn venobox" href="https://youtu.be/nA1Aqp0sPQo" data-vbtype="video">
           <i class="ti-control-play"></i>
         </a>
-        <p class="mt-3 text-white">Watch our journey</p>
       </div>
       <div class="col-lg-6 col-sm-8">
-        <div class="bg-white p-5 rounded shadow-sm" data-aos="fade-up">
-          <h2 class="section-title mb-3">Success Stories</h2>
-          <p class="lead">Topsteps Academy has nurtured countless success stories — from students gaining admission into top universities to excelling in leadership, technology, arts, and sciences.</p>
+        <div class="bg-white p-5">
+          <h2 class="section-title">Success Stories</h2>
+          <p>Topsteps Academy has nurtured countless success stories — from students gaining admission into top universities to excelling in leadership, technology, arts, and sciences. Our alumni are proof that a solid educational foundation opens limitless opportunities.</p>
           <p>Our holistic approach ensures every child discovers their passion, hones their talent, and builds the confidence to lead and inspire. At Topsteps, success is not just a goal — it's a journey we take together.</p>
         </div>
       </div>
@@ -155,7 +156,7 @@
 
       <?php
       $teachers = [
-        ['img' => 'teacher-1.jpg', 'name' => 'Mrs. Jenita', 'role' => 'Head Teacher'],
+        ['img' => '../../assets/images/teachers/teacher-1.jpg', 'name' => 'Mrs. Jenita', 'role' => 'Head Teacher'],
         ['img' => 'teacher-2.jpg', 'name' => 'Clark Malik', 'role' => 'Language Arts Instructor'],
         ['img' => 'teacher-3.jpg', 'name' => 'John Doe', 'role' => 'Mathematics Specialist']
       ];
@@ -181,7 +182,15 @@
   </div>
 </section>
 
-
+<!-- Testimonials -->
+<section class="section bg-light" data-aos="fade-up">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-12">
+        <h2 class="section-title">What Parents Say</h2>
+        <p class="text-muted">Real stories from families who trust Topsteps Academy.</p>
+      </div>
+    </div>
     <div class="row">
       <?php
       $testimonials = [
@@ -231,7 +240,7 @@
     </div>
   </div>
 </section>
-
+<!-- footer -->
 <?php include_once '../../components/footer.php'; ?>
 <?php include_once '../../components/scripts.php'; ?>
 
@@ -261,18 +270,6 @@
   AOS.init({
     duration: 1000,
     once: false
-  });
-</script>
-
-<!-- Smooth Scroll -->
-<script>
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
-        behavior: "smooth"
-      });
-    });
   });
 </script>
 
