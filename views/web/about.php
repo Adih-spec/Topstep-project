@@ -74,7 +74,7 @@
 <?php include_once '../../components/header.php'; ?>
 
 <!-- Page Title -->
-<section class="page-title-section overlay" data-background="../../assets/images/events/Teacher.png" data-aos="fade-down">
+<section class="page-title-section overlay" data-background="../../assets/images/events/Teacher.png" style="background-repeat: no-repeat; background-size: cover;" data-aos="fade-down">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
