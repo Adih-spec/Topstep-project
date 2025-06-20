@@ -19,6 +19,7 @@
 
   <!-- Custom Styling -->
   <style>
+    
     .hover-shadow:hover {
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
       transition: box-shadow 0.4s ease-in-out;
@@ -128,7 +129,7 @@
 </section>
 
 <!-- Success Story -->
-<section class="section bg-cover" data-background="../../assets/images/backgrounds/success-story.jpg" data-aos="fade-left">
+<section class="section bg-cover" data-background="../../assets/images/about/success-story.png"  style="background-repeat: no-repeat; background-size: cover;" data-aos="fade-left">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-sm-4 position-relative success-video">
@@ -185,12 +186,12 @@
 </section>
 
 <!-- Testimonials Section  -->
-<section  class="section bg-light text-white position-relative" data-background='../../assets/images/about/testimonial.png' data-aos="fade-up">
+<section  class="section bg-light text-white position-relative" data-background='../../assets/images/about/testimonial.png' style="background-repeat: no-repeat; background-size: cover;" data-aos="fade-up">
   <div class="container py-5">
     <div class="row text-center mb-5">
       <div class="col-12">
         <h2 class="section-title text-white">What Parents Say</h2>
-        <p class="text-light">Real stories from families who trust Topsteps Academy.</p>
+        <p class="text-white">Real stories from families who trust Topsteps Academy.</p>
       </div>
     </div>
 
@@ -244,15 +245,19 @@
         <p class="text-muted">We are proud to be affiliated with globally recognized institutions and academic bodies.</p>
       </div>
     </div>
+
     <div class="row justify-content-center align-items-center">
       <?php for ($i = 1; $i <= 4; $i++): ?>
-        <div class="col-md-2 col-4 mb-3 border-0 rounded-0 hover-shadow">
-          <img src="../../assets/images/partners/partner-<?= $i ?>.png" class="img-fluid" alt="Partner <?= $i ?>">
+        <div class="col-md-2 col-4 mb-3">
+          <div class="card border-0 bg-transparent rounded-0 shadow-sm p-2 hover-shadow" data-aos="zoom-in" data-aos-delay="<?= $i * 100 ?>">
+            <img src="../../assets/images/about/partner-<?= $i ?>.png" class="img-fluid" alt="Partner <?= $i ?>">
+          </div>
         </div>
       <?php endfor; ?>
     </div>
   </div>
 </section>
+
 <!-- footer -->
 <?php include_once '../../components/footer.php'; ?>
 <?php include_once '../../components/scripts.php'; ?>
