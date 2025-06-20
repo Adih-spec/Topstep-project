@@ -206,7 +206,7 @@
         ];
         foreach ($testimonials as $test): ?>
           <div class="swiper-slide">
-            <div class="card p-4 shadow-sm text-center mx-auto" style="max-width: 600px;">
+            <div class="card p-4 shadow-sm text-center mx-auto" style="max-width: 600px; height: 200px">
               <p class="mb-3">"<?= $test['comment'] ?>"</p>
               <h5 class="mb-0">— <?= $test['name'] ?></h5>
               <small class="text-muted">Parent of <?= $test['grade'] ?> Student</small>
