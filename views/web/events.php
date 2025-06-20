@@ -79,7 +79,7 @@ include_once '../../components/header.php';
 </div>
 
 <!-- page title -->
-<section class="page-title-section overlay" data-background="images/backgrounds/kids">
+<section class="page-title-section overlay" data-background="../../assets/images/events/kids.jpg" style="background-repeat: no-repeat; background-size: cover; background-position: top;">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
@@ -100,97 +100,97 @@ include_once '../../components/header.php';
     <div class="row">
       <!-- event -->
       <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <div class="card-img position-relative">
-            <img class="card-img-top rounded-0" src="../../assets/images/events/graduation" alt="event thumb">
-            <div class="card-date"><span>26</span><br>July</div>
+        <div class="card border-0 rounded-0 hover-shadow" style="max-width: 370px; max-height: 430px;">
+          <div class="card-img position-relative" style="max-width: 370px; max-height: 220px; overflow: hidden;">
+        <img class="card-img-top rounded-0" src="../../assets/images/events/graduation" alt="event thumb" style="width: 100%; height: 220px; object-fit: cover; max-width: 370px; max-height: 220px;">
+        <div class="card-date"><span>26</span><br>July</div>
           </div>
           <div class="card-body">
-            <!-- location -->
-            <p><i class="ti-location-pin text-primary mr-2"></i>Transcorp Hilton</p>
-            <a href="event-single.html">
-              <h4 class="card-title">Graduation and award ceremony</h4>
-            </a>
+        <!-- location -->
+        <p><i class="ti-location-pin text-primary mr-2"></i>Transcorp Hilton</p>
+        <a href="event-single.html">
+          <h4 class="card-title">Graduation and award ceremony</h4>
+        </a>
           </div>
         </div>
       </div>
       <!-- event -->
       <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <div class="card-img position-relative">
-            <img class="card-img-top rounded-0" src="../../assets/images/events/inter house" alt="event thumb">
-            <div class="card-date"><span>21</span><br>February</div>
+        <div class="card border-0 rounded-0 hover-shadow" style="max-width: 370px; max-height: 430px;">
+          <div class="card-img position-relative" style="max-width: 370px; max-height: 220px; overflow: hidden;">
+        <img class="card-img-top rounded-0" src="../../assets/images/events/inter house" alt="event thumb" style="width: 100%; height: 220px; object-fit: cover; max-width: 370px; max-height: 220px;">
+        <div class="card-date"><span>21</span><br>February</div>
           </div>
           <div class="card-body">
-            <!-- location -->
-            <p><i class="ti-location-pin text-primary mr-2"></i>National Stadium</p>
-            <a href="event-single.html">
-              <h4 class="card-title">Inter house sports</h4>
-            </a>
+        <!-- location -->
+        <p><i class="ti-location-pin text-primary mr-2"></i>National Stadium</p>
+        <a href="event-single.html">
+          <h4 class="card-title">Inter house sports</h4>
+        </a>
           </div>
         </div>
       </div>
       <!-- event -->
       <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <div class="card-img position-relative">
-            <img class="card-img-top rounded-0" src="../../assets/images/events/zoo" alt="event thumb">
-            <div class="card-date"><span>13</span><br>April</div>
+        <div class="card border-0 rounded-0 hover-shadow" style="max-width: 370px; max-height: 430px;">
+          <div class="card-img position-relative" style="max-width: 370px; max-height: 220px; overflow: hidden;">
+        <img class="card-img-top rounded-0" src="../../assets/images/events/zoo" alt="event thumb" style="width: 100%; height: 220px; object-fit: cover; max-width: 370px; max-height: 220px;">
+        <div class="card-date"><span>13</span><br>April</div>
           </div>
           <div class="card-body">
-            <!-- location -->
-            <p><i class="ti-location-pin text-primary mr-2"></i>National park and zoo</p>
-            <a href="event-single.html">
-              <h4 class="card-title">An excursion to the zoo</h4>
-            </a>
+        <!-- location -->
+        <p><i class="ti-location-pin text-primary mr-2"></i>National park and zoo</p>
+        <a href="event-single.html">
+          <h4 class="card-title">An excursion to the zoo</h4>
+        </a>
           </div>
         </div>
       </div>
       <!-- event -->
       <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <div class="card-img position-relative">
-            <img class="card-img-top rounded-0" src="../../assets/images/events/Teacher" alt="event thumb">
-            <div class="card-date"><span>5</span><br>October</div>
+        <div class="card border-0 rounded-0 hover-shadow" style="max-width: 370px; max-height: 430px;">
+          <div class="card-img position-relative" style="max-width: 370px; max-height: 220px; overflow: hidden;">
+        <img class="card-img-top rounded-0" src="../../assets/images/events/Teacher" alt="event thumb" style="width: 100%; height: 220px; object-fit: cover; max-width: 370px; max-height: 220px;">
+        <div class="card-date"><span>5</span><br>October</div>
           </div>
           <div class="card-body">
-            <!-- location -->
-            <p><i class="ti-location-pin text-primary mr-2"></i>Teacher's conference summit</p>
-            <a href="event-single.html">
-              <h4 class="card-title">Teacher's Day</h4>
-            </a>
+        <!-- location -->
+        <p><i class="ti-location-pin text-primary mr-2"></i>Teacher's conference summit</p>
+        <a href="event-single.html">
+          <h4 class="card-title">Teacher's Day</h4>
+        </a>
           </div>
         </div>
       </div>
       <!-- event -->
       <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <div class="card-img position-relative">
-            <img class="card-img-top rounded-0" src="../../assets/images/events/Cultural" alt="event thumb">
-            <div class="card-date"><span>15</span><br>March</div>
+        <div class="card border-0 rounded-0 hover-shadow" style="max-width: 370px; max-height: 430px;">
+          <div class="card-img position-relative" style="max-width: 370px; max-height: 220px; overflow: hidden;">
+        <img class="card-img-top rounded-0" src="../../assets/images/events/Cultural" alt="event thumb" style="width: 100%; height: 220px; object-fit: cover; max-width: 370px; max-height: 220px;">
+        <div class="card-date"><span>15</span><br>March</div>
           </div>
           <div class="card-body">
-            <!-- location -->
-            <p><i class="ti-location-pin text-primary mr-2"></i>Topsteps Academy</p>
-            <a href="event-single.html">
-              <h4 class="card-title">Cultural Day</h4>
-            </a>
+        <!-- location -->
+        <p><i class="ti-location-pin text-primary mr-2"></i>Topsteps Academy</p>
+        <a href="event-single.html">
+          <h4 class="card-title">Cultural Day</h4>
+        </a>
           </div>
         </div>
       </div>
       <!-- event -->
       <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <div class="card-img position-relative">
-            <img class="card-img-top rounded-0" src="../../assets/images/events/children's day.jpg" alt="event thumb">
-            <div class="card-date"><span>27</span><br>May</div>
+        <div class="card border-0 rounded-0 hover-shadow" style="max-width: 370px; max-height: 430px;">
+          <div class="card-img position-relative" style="max-width: 370px; max-height: 220px; overflow: hidden;">
+        <img class="card-img-top rounded-0" src="../../assets/images/events/children's day.jpg" alt="event thumb" style="width: 100%; height: 220px; object-fit: cover; max-width: 370px; max-height: 220px;">
+        <div class="card-date"><span>27</span><br>May</div>
           </div>
           <div class="card-body">
-            <!-- location -->
-            <p><i class="ti-location-pin text-primary mr-2"></i>Eagle Square, Abuja</p>
-            <a href="event-single.html">
-              <h4 class="card-title">children's day</h4>
-            </a>
+        <!-- location -->
+        <p><i class="ti-location-pin text-primary mr-2"></i>Eagle Square, Abuja</p>
+        <a href="event-single.html">
+          <h4 class="card-title">children's day</h4>
+        </a>
           </div>
         </div>
       </div>
