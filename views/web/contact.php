@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     .feedback {
       padding: 10px;
@@ -51,9 +52,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
   <?php include_once '../../components/header.php'; ?>
+  
 
 <!-- page title -->
-<section class="page-title-section overlay" data-background="../../assets/images/contact/download.jpg" style="background-repeat: no-repeat; background-size: cover; background-position: center;">
+<section class="page-title-section overlay" style="background: url('../../assets/images/contact/istockphoto-1500076821-612x612.jpg') no-repeat center center; background-size: cover;">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
@@ -73,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <h2 class="section-title">Contact Us</h2>
+        <h2 class="section-title">Need Help? Reach Out</h2>
       </div>
     </div>
     <div class="row">
@@ -96,10 +98,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="col-lg-5">
         <h3 class="mb-4">Get in Touch</h3>
         <p class="mb-4">We are always here to help you. If you have any questions or need assistance, please feel free to reach out to us.</p>
-        <p class="mb-4">You can contact us via phone, email, or visit our office. We look forward to hearing from you!</p>
-        <a href="tel:+8802057843248" class="text-color h6 d-block">+880 20 5784 3248</a>
-        <a href="mailto:yourmail@email.com" class="mb-5 text-color h6 d-block">topstepsacademy@gmail.com</a>
-        <p>Plot No 899, Cadastral Zone 06-06 close to panraf hospital, <br>Nyanya Abuja, Nigeria</p>
+        <p class="mb-4">You can contact us via our social media platforms, phone, email, or visit our office. We look forward to hearing from you!</p>
+        <div class="">
+        <a href="mailto:topstepsacademy@gmail.com" class="text-color h6 d-block">topstepsacademy@gmail.com</a>
+        <a href="callto:+443003030266" class="text-color mr-3"><i class="fas fa-phone-alt"></i> <strong>CALL</strong> +44 300 303 0266</a>
+        </div>
+        <ul class="list-inline d-inline">
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="contact.html#"><i class="ti-facebook"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="contact.html#"><i class="ti-twitter-alt"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="contact.html#"><i class="ti-linkedin"></i></a></li>
+            <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="contact.html#"><i class="ti-instagram"></i></a></li>
+          </ul>
+        <p >plot No. 09, Road 3, Phase 4, before Panraf Hospital, Nyanya,FCT Abuja</p>
       </div>
     </div>
   </div>
