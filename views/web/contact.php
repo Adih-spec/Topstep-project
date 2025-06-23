@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <?php include_once '../../components/header.php'; ?>
 
 <!-- page title -->
-<section class="page-title-section overlay" data-background="../../assets/images/contact/download.jpg" style="background-repeat: no-repeat; background-size: cover; background-position: center;">
+<section class="page-title-section overlay" data-background="../../assets/images/contact/download.jpg">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p class="mb-4">You can contact us via phone, email, or visit our office. We look forward to hearing from you!</p>
         <a href="tel:+8802057843248" class="text-color h6 d-block">+880 20 5784 3248</a>
         <a href="mailto:yourmail@email.com" class="mb-5 text-color h6 d-block">topstepsacademy@gmail.com</a>
-        <p>Plot No 899, Cadastral Zone 06-06 close to panraf hospital, <br>Nyanya Abuja, Nigeria</p>
+        <p>plot No. 09, Road 3, Phase 4, before Panraf Hospital, Nyanya,FCT Abuja</p>
       </div>
     </div>
   </div>
