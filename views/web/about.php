@@ -6,6 +6,8 @@
   <title>About Us | Topsteps Academy</title>
   <?php require_once '../../components/styles.php'; ?>
 
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <!-- AOS Animation CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <!-- Animate.css (Optional for additional effects) -->
@@ -17,6 +19,7 @@
 
   <!-- Custom Styling -->
   <style>
+    
     .hover-shadow:hover {
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
       transition: box-shadow 0.4s ease-in-out;
@@ -126,7 +129,7 @@
 </section>
 
 <!-- Success Story -->
-<section class="section bg-cover" data-background="../../assets/images/backgrounds/success-story.jpg" data-aos="fade-left">
+<section class="section bg-cover" data-background="../../assets/images/about/success-story.png"  style="background-repeat: no-repeat; background-size: cover;" data-aos="fade-left">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-sm-4 position-relative success-video">
@@ -156,16 +159,16 @@
 
       <?php
       $teachers = [
-        ['img' => '../../assets/images/teachers/teacher-1.jpg', 'name' => 'Mrs. Jenita', 'role' => 'Head Teacher'],
-        ['img' => 'teacher-2.jpg', 'name' => 'Clark Malik', 'role' => 'Language Arts Instructor'],
-        ['img' => 'teacher-3.jpg', 'name' => 'John Doe', 'role' => 'Mathematics Specialist']
+        ['img' => 'teacher-1.png', 'name' => 'Mrs. Jenita', 'role' => 'Head Teacher'],
+        ['img' => 'teacher-2.png', 'name' => 'Clark Malik', 'role' => 'Language Arts Instructor'],
+        ['img' => 'teacher-3.png', 'name' => 'John Doe', 'role' => 'Mathematics Specialist']
       ];
       $delay = 0;
       foreach ($teachers as $teacher):
       ?>
         <div class="col-lg-4 col-sm-6 mb-4" data-aos="zoom-in" data-aos-delay="<?= $delay ?>">
           <div class="card border-0 rounded-0 hover-shadow">
-            <img class="card-img-top rounded-0" src="images/teachers/<?= $teacher['img'] ?>" alt="<?= $teacher['name'] ?>">
+            <img class="card-img-top rounded-0" src="../../assets/images/about/<?= $teacher['img'] ?>" alt="<?= $teacher['name'] ?>">
             <div class="card-body">
               <h4 class="card-title"><?= $teacher['name'] ?></h4>
               <p><?= $teacher['role'] ?></p>
@@ -182,35 +185,46 @@
   </div>
 </section>
 
-<!-- Testimonials -->
-<section class="section bg-light" data-aos="fade-up">
-  <div class="container">
+<!-- Testimonials Section  -->
+<section  class="section bg-light text-white position-relative" data-background='../../assets/images/about/testimonial.png' style="background-repeat: no-repeat; background-size: cover;" data-aos="fade-up">
+  <div class="container py-5">
     <div class="row text-center mb-5">
       <div class="col-12">
-        <h2 class="section-title">What Parents Say</h2>
-        <p class="text-muted">Real stories from families who trust Topsteps Academy.</p>
+        <h2 class="section-title text-white">What Parents Say</h2>
+        <p class="text-white">Real stories from families who trust Topsteps Academy.</p>
       </div>
     </div>
-    <div class="row">
-      <?php
-      $testimonials = [
-        ['name' => 'Mrs. Adebayo', 'comment' => 'Topsteps has transformed my child\'s confidence and academics. The teachers truly care about each student.', 'grade' => 'Grade 5'],
-        ['name' => 'Mr. Obinna', 'comment' => 'The learning environment is so nurturing. I’ve seen huge improvements in both character and knowledge.', 'grade' => 'Grade 7'],
-        ['name' => 'Mrs. Fatima', 'comment' => 'I love how Topsteps combines modern tech with core values. My child is learning and growing every day.', 'grade' => 'Grade 3']
-      ];
-      $fade_directions = ['fade-right', 'fade-up', 'fade-left'];
-      foreach ($testimonials as $i => $test): ?>
-        <div class="col-md-4 mb-4" data-aos="<?= $fade_directions[$i] ?>">
-          <div class="card p-4 shadow-sm">
-            <p class="mb-3">"<?= $test['comment'] ?>"</p>
-            <h5 class="mb-0">— <?= $test['name'] ?></h5>
-            <small class="text-muted">Parent of <?= $test['grade'] ?> Student</small>
+
+    <!-- Swiper Container -->
+    <div class="swiper testimonial-swiper">
+      <div class="swiper-wrapper">
+        <?php
+        $testimonials = [
+          ['name' => 'Mrs. Adebayo', 'comment' => 'Topsteps has transformed my child\'s confidence and academics. The teachers truly care about each student.', 'grade' => 'Grade 5'],
+          ['name' => 'Mr. Obinna', 'comment' => 'The learning environment is so nurturing. I’ve seen huge improvements in both character and knowledge.', 'grade' => 'Grade 7'],
+          ['name' => 'Mrs. Fatima', 'comment' => 'I love how Topsteps combines modern tech with core values. My child is learning and growing every day.', 'grade' => 'Grade 3']
+        ];
+        foreach ($testimonials as $test): ?>
+          <div class="swiper-slide">
+            <div class="card p-4 shadow-sm text-center mx-auto" style="max-width: 600px; height: 200px">
+              <p class="mb-3">"<?= $test['comment'] ?>"</p>
+              <h5 class="mb-0">— <?= $test['name'] ?></h5>
+              <small class="text-muted">Parent of <?= $test['grade'] ?> Student</small>
+            </div>
           </div>
-        </div>
-      <?php endforeach; ?>
+        <?php endforeach; ?>
+      </div>
+
+      <!-- Swiper Pagination -->
+      <div class="swiper-pagination mt-4"></div>
+
+      <!-- Nav Buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
   </div>
 </section>
+
 
 <!-- Vision -->
 <section class="section bg-white text-center" data-aos="fade-up">
@@ -231,15 +245,19 @@
         <p class="text-muted">We are proud to be affiliated with globally recognized institutions and academic bodies.</p>
       </div>
     </div>
+
     <div class="row justify-content-center align-items-center">
       <?php for ($i = 1; $i <= 4; $i++): ?>
-        <div class="col-md-2 col-4 mb-3 border-0 rounded-0 hover-shadow">
-          <img src="../../assets/images/partners/partner-<?= $i ?>.png" class="img-fluid" alt="Partner <?= $i ?>">
+        <div class="col-md-2 col-4 mb-3">
+          <div class="card border-0 bg-transparent rounded-0 shadow-sm p-2 hover-shadow" data-aos="zoom-in" data-aos-delay="<?= $i * 100 ?>">
+            <img src="../../assets/images/about/partner-<?= $i ?>.png" class="img-fluid" alt="Partner <?= $i ?>">
+          </div>
         </div>
       <?php endfor; ?>
     </div>
   </div>
 </section>
+
 <!-- footer -->
 <?php include_once '../../components/footer.php'; ?>
 <?php include_once '../../components/scripts.php'; ?>
@@ -272,6 +290,28 @@
     once: false
   });
 </script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper('.testimonial-swiper', {
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    slidesPerView: 1,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
+</script>
+
 
 </body>
 </html>
