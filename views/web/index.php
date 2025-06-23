@@ -265,32 +265,16 @@ include_once '../../components/header.php';
 </section>
 <!-- /events -->
 
-<section class="bg-gray" id="tutoring">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6 order-2 order-md-1">
-        <h2>Tutoring and Extra lessons</h2>
-        <p>We offer personalised tutoring services to help every student succeed
-          Whether they need help catching up or want to get ahead, 
-          our experienced tutors provide one-on-one support tailored to each student's needs. Our tutoring program covers all subjects and grade levels, ensuring that every student receives the attention and guidance they need to excel academically. 
-          With flexible scheduling and a focus on building confidence, 
-          our tutoring services are designed to help students achieve their academic goals and reach their full potential.
-        </p>
-        <ul>
-          <li class="mt-3">Personalised tutoring for all subjects</li>
-          <li class="mt-3">Flexible scheduling to fit your needs</li>
-          <li class="mt-3">Experienced tutors dedicated to student success</li>
-          <li class="mt-3">One-on-one support tailored to each student's needs</li>
-          <li class="mt-3">Build confidence and academic skills</li>
-        </ul>
-        <a href="admission.php" class="btn btn-primary mt-3">Enrol Now</a>
-      </div>
-      <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
-        <img  class="img-fluid w-100" src="../../assets/images/tutor.jpg" alt="Tutoring Image" class="img-fluid rounded shadow">
-      </div>
-    </div>
-  </div> 
+<!-- Extra Lesson Banner Section -->
+<section class="extra-lesson-banner text-white d-flex align-items-center" style="background: url('../../assets/images/SB3.jpg') center/cover no-repeat; height: 400px; width:100%;">
+  <div class="container text-center">
+    <h2 class="display-4 fw-bold">Need Extra Help with Your Studies?</h2>
+    <p class="lead mb-4">Join our personalized extra lesson programs and get ahead in class!</p>
+    <a href="admission.php" class="btn btn-primary btn-lg">Enroll Now</a>
+  </div>
 </section>
+<!-- /Extra Lesson Banner Section -->
+
 <!-- teachers -->
 <section class="section">
   <div class="container">
