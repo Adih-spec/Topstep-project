@@ -18,7 +18,7 @@
 include_once '../../components/header.php';
 ?>
 <!-- page title -->
-<section class="page-title-section overlay" data-background="../../assets/images/scholarship/scholarship.jpg">
+<section class="page-title-section overlay" data-background="../../assets/images/scholarship-item-5.jpg">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
@@ -40,7 +40,7 @@ include_once '../../components/header.php';
   <div class="container">
     <div class="row mb-5">
       <div class="col-md-6 mb-4 mb-md-0">
-        <img class="img-fluid" src="images/scholarship/scholarship.jpg" alt="scholarship news">
+        <img class="img-fluid" src="../../assets/images/scholarship/scholarship-item-5.jpg" alt="scholarship news">
       </div>
       <div class="col-md-6">
         <h2>ADMISSION PROCESS</h2>
@@ -56,66 +56,69 @@ include_once '../../components/header.php';
         </p>
       </div>
     </div>
-    <div class="row justify-content-center">
-      <!-- scholarship item -->
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <div class="card rounded-0 hover-shadow border-top-0 border-left-0 border-right-0">
-          <img class="card-img-top rounded-0" src="images/scholarship/scholarship-item-1.jpg" alt="scholarship-thumb">
-          <div class="card-body">
-            <p class="mb-1">Engineering</p>
-            <h4 class="card-title mb-3">CHEMICAL ENGINEERING</h4>
-            <ul class="list-styled">
-              <li>institutes</li>
-              <li>Smart-affiliated research</li>
-              <li>Digital Access to Scholarship</li>
-              <li>Smart Catalyst</li>
-              <li>Smart Library Portal</li>
-              <li>Smart research programs</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- scholarship item -->
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <div class="card rounded-0 hover-shadow border-top-0 border-left-0 border-right-0">
-          <img class="card-img-top rounded-0" src="images/scholarship/scholarship-item-2.jpg" alt="scholarship-thumb">
-          <div class="card-body">
-            <p class="mb-1">Design & Arts</p>
-            <h4 class="card-title mb-3">MUSIC & ARTS</h4>
-            <ul class="list-styled">
-              <li>institutes</li>
-              <li>Smart-affiliated research</li>
-              <li>Digital Access to Scholarship</li>
-              <li>Smart Catalyst</li>
-              <li>Smart Library Portal</li>
-              <li>Smart research programs</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- scholarship item -->
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <div class="card rounded-0 hover-shadow border-top-0 border-left-0 border-right-0">
-          <img class="card-img-top rounded-0" src="images/scholarship/scholarship-item-3.jpg" alt="scholarship-thumb">
-          <div class="card-body">
-            <p class="mb-1">Design & Arts</p>
-            <h4 class="card-title mb-3">GRAPHICS DESIGN</h4>
-            <ul class="list-styled">
-              <li>institutes</li>
-              <li>Smart-affiliated research</li>
-              <li>Digital Access to Scholarship</li>
-              <li>Smart Catalyst</li>
-              <li>Smart Library Portal</li>
-              <li>Smart research programs</li>
-            </ul>
-          </div>
-        </div>
+   <div class="row justify-content-center">
+  <!-- Card 1: Grade Classes -->
+  <div class="col-lg-4 col-sm-6 mb-4 d-flex">
+    <div class="card rounded-0 hover-shadow border-top-0 border-left-0 border-right-0 w-100 h-100">
+      <img
+        class="card-img-top rounded-0"
+        src="../../assets/images/scholarship/scholarship-item-5.jpg"
+        alt="scholarship-thumb"
+      />
+      <div class="card-body d-flex flex-column">
+        <h4 class="card-title mb-3">GRADE CLASSES</h4>
+        <ul class="list-styled flex-grow-1">
+         <li><a href="application-process.php" class="btn btn-link p-0">GRADE ONE</a></li>
+         <li><a href="application-process.php" class="btn btn-link p-0">GRADE TWO</a></li>
+         <li><a href="application-process.php" class="btn btn-link p-0">GRADE THREE</a></li>
+         <li><a href="application-process.php" class="btn btn-link p-0">GRADE FOUR</a></li>
+         <li><a href="application-process.php" class="btn btn-link p-0">GRADE FIVE</a></li>
+         <li><a href="application-process.php" class="btn btn-link p-0">GRADE SIX</a></li>
+        </ul>
       </div>
     </div>
   </div>
-</section>
-<!-- /scholarship -->
 
+  <!-- Card 2: Junior Classes -->
+  <div class="col-lg-4 col-sm-6 mb-4 d-flex">
+    <div class="card rounded-0 hover-shadow border-top-0 border-left-0 border-right-0 w-100 h-100">
+      <img
+        class="card-img-top rounded-0"
+        src="../../assets/images/scholarship/scholarship-item-4.jpg"
+        alt="scholarship-thumb"
+      />
+      <div class="card-body d-flex flex-column">
+        <h4 class="card-title mb-3">JUNIOR CLASSES</h4>
+        <ul class="list-styled flex-grow-1">
+          <li><a href="application-process.php" class="btn btn-link p-0">jSS ONE</a></li>
+          <li><a href="application-process.php" class="btn btn-link p-0">JSS TWO</a></li>
+          <li><a href="application-process.php" class="btn btn-link p-0">JSS THREE</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3: Secondary Classes -->
+  <div class="col-lg-4 col-sm-6 mb-4 d-flex">
+    <div class="card rounded-0 hover-shadow border-top-0 border-left-0 border-right-0 w-100 h-100">
+      <img
+        class="card-img-top rounded-0"
+        src="../../assets/images/scholarship/scholarship-item-6.jpg"
+        alt="scholarship-thumb"
+      />
+      <div class="card-body d-flex flex-column">
+        <h4 class="card-title mb-3">SECONDARY CLASSES</h4>
+        <ul class="list-styled flex-grow-1">
+          <li><a href="application-process.php" class="btn btn-link p-0">SSS ONE</a></li>
+          <li><a href="application-process.php" class="btn btn-link p-0">SSS TWO</a></li>
+          <li><a href="application-process.php" class="btn btn-link p-0">SSS THREE</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- /scholarship -->
 <?php
 include_once '../../components/footer.php';
 ?>
