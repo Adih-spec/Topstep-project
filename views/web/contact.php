@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <?php include_once '../../components/header.php'; ?>
 
 <!-- page title -->
-<section class="page-title-section overlay" data-background="../../assets/images/contact/download.jpg">
+<section class="page-title-section overlay" data-background="../../assets/images/contact/download.jpg" style="background-repeat: no-repeat; background-size: cover; background-position: center;">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
