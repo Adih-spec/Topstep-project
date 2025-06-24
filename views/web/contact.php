@@ -117,17 +117,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- /contact -->
 
 <!-- gmap -->
-<div class="embed-responsive embed-responsive-16by9 shadow rounded">
-<iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d126092.12041990612!2d7.6596733!3d9.0291702!3m2!1i1024!2i768!4f13.1!2m1!1stopsteps%20school!5e0!3m2!1sen!2sng!4v1750165071625!5m2!1sen!2sng" 
-  width="600" 
-  height="450" 
-  style="border:0;" 
-  allowfullscreen="" 
-  loading="lazy" 
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+<section class="section pt-0 pb-lg-5">
+  <div class="row justify-content-center">
+    <div class="col">
+      <div class="embed-responsive embed-responsive-16by9 shadow rounded">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d126092.12041990612!2d7.6596733!3d9.0291702!3m2!1i1024!2i768!4f13.1!2m1!1stopsteps%20school!5e0!3m2!1sen!2sng!4v1750165071625!5m2!1sen!2sng" 
+          width="100%" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
     </div>
+  </div>
+  </section>
 <!-- /gmap -->
+
+<!-- Floating Call Button -->
+<a href="tel:+443003030266" class="floating-call-btn" title="Call Us">
+  <i class="fas fa-phone"></i>
+</a>
 
 <!-- jQuery -->
 <script src="plugins/jQuery/jquery.min.js"></script>

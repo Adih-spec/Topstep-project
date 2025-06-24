@@ -40,7 +40,7 @@ include_once '../../components/header.php';
   <div class="container">
     <div class="row mb-5">
       <div class="col-md-6 mb-4 mb-md-0">
-        <img class="img-fluid" src="../../assets/images/scholarship/scholarship-item-5.jpg" alt="scholarship news">
+        <img class="img-fluid" src="../../assets/images/scholarship/scholarship-item-1.jpg" alt="scholarship news">
       </div>
       <div class="col-md-6">
         <h2>ADMISSION PROCESS</h2>

@@ -167,8 +167,57 @@
   }
 </style>
 
+<style>
+  .floating-call-btn {
+    position: fixed;
+    bottom: 115px;
+    right: 30px;
+    z-index: 9999;
+    background: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    font-size: 2rem;
+    transition: background 0.2s, transform 0.2s;
+    text-decoration: none;
+    animation: floatingCallBounce 1.4s infinite;
+    /* Add a happy face emoji for emotion */
+    /* content: "😊"; */
+  }
+  .floating-call-btn::after {
+    /* content: "😊"; */
+    font-size: 1.5rem;
+    margin-left: 6px;
+    display: inline-block;
+    animation: floatingCallFaceWink 2.2s infinite;
+  }
+  .floating-call-btn:hover {
+    background: #0056b3;
+    color: #fff;
+    text-decoration: none;
+    transform: scale(1.08) rotate(-4deg);
+  }
+  /* @keyframes floatingCallFaceWink {
+    0%, 90%, 100% { content: "😊"; }
+    45%, 55% { content: "😉"; }
+  } */
+  @keyframes floatingCallBounce {
+    0%   { transform: translateY(0);}
+    10%  { transform: translateY(-6px);}
+    20%  { transform: translateY(-12px);}
+    30%  { transform: translateY(-18px);}
+    40%  { transform: translateY(-12px);}
+    50%  { transform: translateY(-6px);}
+    60%  { transform: translateY(0);}
+    100% { transform: translateY(0);}
+  }
 </style>
-
+</style>
 <?php
 // Get current file name without extension
 $currentPage = basename($_SERVER['PHP_SELF'], ".php");
