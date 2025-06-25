@@ -302,7 +302,7 @@ $currentPage = basename($_SERVER['PHP_SELF'], ".php");
                 <a class="dropdown-item" href="">Teachers</a>
                 <a class="dropdown-item" href="">Blog</a>
                 <a class="dropdown-item" href="">Calendar</a>
-                <a class="dropdown-item" href="">Event Details</a>
+                <a class="dropdown-item" href="events-details.php">Event Details</a>
                 <a class="dropdown-item" href="">Gallery</a>
               </div>
             </li>
