@@ -49,20 +49,16 @@
           </div>
           <div class="badge bg-warning text-dark p-3 fs-5">Cost of form: &#8358; N5,000</div>
           <div class="mt-3 fw bold">
-            <p><strong>CONTACT US ON:</strong></p>
-            <ul>
-              <li>08012345678</li>
-              <li>08087654321</li>
-              <li><a href="#twitter">topstepsacademy</a></li>
-            </ul>
+            <p>CONTACT US ON: 
+              <br>08012345678 <br>08087654321</p>
           </div>
           <div class="mt-4 mb-3">
             <p>For more information, visit our website:</p>
             <a href="admission.php" class="btn btn-primary">Visit Our Website</a>
           </div>
           <div class="mt-4 p-3 bg-danger text-white rounded">
-            <p>Topsteps Academy is a place where your child can learn and grow.</p>
-            <p>We look forward to welcoming your child to our school!</p>
+            <p class="text-white">Topsteps Academy is a place where your child can learn and grow.</p>
+            <p class="text-white">We look forward to welcoming your child to our school!</p>
           </div>
         </div>
       </div>
@@ -117,42 +113,71 @@ include_once '../../components/header.php';
 
 
 <!-- banner-feature -->
+
+
 <section class="bg-gray">
   <div class="container-fluid p-0">
     <div class="row no-gutters">
+      <!-- Swiper Cube Carousel Column -->
       <div class="col-xl-4 col-lg-5 align-self-end">
-        <img class="img-fluid w-100" src="../../assets/images/banner/banner-feature.png" alt="banner-feature">
+        <div class="swiper mySwiper cubeSwiper">
+          <div class="swiper-wrapper">
+            
+            <div class="swiper-slide">
+              <img class="img-fluid w-100" src="../../assets/images/sw1.jpg" alt="Slide 1">
+            </div>
+           
+            <div class="swiper-slide">
+              <img class="img-fluid w-100" src="../../assets/images/sw2.jpg" alt="Slide 2">
+            </div>
+            
+            <div class="swiper-slide">
+              <img class="img-fluid w-100" src="../../assets/images/sw4.jpg" alt="Slide 3">
+            </div>
+          </div>
+          
+          <div class="swiper-pagination"></div>
+        </div>
       </div>
+
+      <!-- Feature Blocks Column -->
       <div class="col-xl-8 col-lg-7">
         <div class="row feature-blocks bg-gray justify-content-between">
+
           <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
             <i class="ti-book mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
-            <h3 class="mb-xl-4 mb-lg-3 mb-4">Scholorship News</h3>
-            <p>Parents of Topsteppers, we have an amazing news for you!!!
-  We are offering scholarships to the best performing students in the school. <a href="scholarship.php"> Learn More...</a>
+            <h3 class="mb-xl-4 mb-lg-3 mb-4">Scholarship News</h3>
+            <p>Parents of Topsteppers, we have amazing news for you!!!
+              We are offering scholarships to the best performing students in the school. <a href="scholarship.php">Learn More...</a>
             </p>
           </div>
+
           <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
             <i class="ti-blackboard mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
             <h3 class="mb-xl-4 mb-lg-3 mb-4">Our Notice Board</h3>
-            <p>Get the details of the school recent activity, see what events are coming up. <a href="events.php"> Learn More...</a></p>
+            <p>Get the details of the school recent activity, see what events are coming up. <a href="events.php">Learn More...</a></p>
           </div>
-          <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
+
+           <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
             <i class="ti-agenda mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
             <h3 class="mb-xl-4 mb-lg-3 mb-4">Our Achievements</h3>
-            <p>At TopStep Academy we love to challenge the students in new areas to broaden their Horizon to the many possibilities. Here are some of our Achievements as a school<a href="about.php"> Learn More...</a></p>
+            <p>At TopStep Academy we love to challenge the students in new areas to broaden their horizon. Here are some of our achievements as a school <a href="about.php">Learn More...</a></p>
           </div>
-          <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
+
+           <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
             <i class="ti-write mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
             <h3 class="mb-xl-4 mb-lg-3 mb-4">Admission Now</h3>
-            <p>Giving your child the best education, we are here to support you, so pick the best for your child pick TOPSTEP!<a href="admission.php"> Learn More...</a></p>
+            <p>Giving your child the best education. Pick TOPSTEP for their future! <a href="admission.php">Learn More...</a></p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- /banner-feature -->
+
+
+
+
 
 <!-- about us -->
 <section class="section">
@@ -255,24 +280,22 @@ include_once '../../components/header.php';
      </div>
     </div>
 </section>
-    <!-- mobile see all button -->
-    <div class="row">
-      <div class="col-12 text-center">
-        <a href="https://themewagon.github.io/educenter/course.html" class="btn btn-sm btn-primary-outline d-sm-none d-inline-block">sell all</a>
-      </div>
-    </div>
-  </div>
-</section>
+
 <!-- /events -->
 
 <!-- Extra Lesson Banner Section -->
-<section class="extra-lesson-banner text-white d-flex align-items-center" style="background: url('../../assets/images/SB3.jpg') center/cover no-repeat; height: 400px; width:100%;">
+<section class="extra-lesson-banner text-white d-flex align-items-center" style="background-color: #fcbf49; min-height: 70vh;">
   <div class="container text-center">
-    <h2 class="display-4 fw-bold">Need Extra Help with Your Studies?</h2>
-    <p class="lead mb-4">Join our personalized extra lesson programs and get ahead in class!</p>
-    <a href="admission.php" class="btn btn-primary btn-lg">Enroll Now</a>
+    <h2 class="display-4 fw-bold text-dark">Extra Lessons and Tutoring</h2>
+    <p class="lead mb-4 text-dark">
+      Our qualified teachers are here to help and tutor your kids—whether to get ahead of their class or catch up with their mates.
+      We offer extra lessons for all levels, from nursery to secondary school.
+    </p>
+    <a href="admission.php" class="btn btn-dark btn-lg shadow">Enroll Now</a>
   </div>
 </section>
+
+
 <!-- /Extra Lesson Banner Section -->
 
 <!-- teachers -->
