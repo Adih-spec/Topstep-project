@@ -284,8 +284,8 @@ $currentPage = basename($_SERVER['PHP_SELF'], ".php");
             <li class="nav-item <?php echo ($currentPage == 'about') ? 'active' : ''; ?>">
               <a class="nav-link" href="about.php">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">PROGRAMS</a>
+            <li class="nav-item" <?php echo ($currentPage == 'programs') ? 'active' : ''; ?>">
+              <a class="nav-link" href="programs.php">PROGRAMS</a>
             </li>
             <li class="nav-item <?php echo ($currentPage == 'events') ? 'active' : ''; ?>">
               <a class="nav-link" href="events.php">EVENTS</a>
