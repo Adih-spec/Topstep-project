@@ -376,7 +376,6 @@ include_once '../../components/header.php';
   <!-- blog post -->
   <article class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
     <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
-      <img class="card-img-top rounded-0" src="images/blog/post-1.jpg" alt="Post thumb">
       <div class="card-body">
         <!-- post meta -->
         <ul class="list-inline mb-3">
@@ -396,7 +395,6 @@ include_once '../../components/header.php';
   <!-- blog post -->
   <article class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
     <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
-      <img class="card-img-top rounded-0" src="images/blog/post-2.jpg" alt="Post thumb">
       <div class="card-body">
         <!-- post meta -->
         <ul class="list-inline mb-3">
@@ -416,7 +414,6 @@ include_once '../../components/header.php';
   <!-- blog post -->
   <article class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
     <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
-      <img class="card-img-top rounded-0" src="images/blog/post-3.jpg" alt="Post thumb">
       <div class="card-body">
         <!-- post meta -->
         <ul class="list-inline mb-3">
