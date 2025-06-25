@@ -68,12 +68,12 @@ include_once '../../components/header.php';
       <div class="card-body d-flex flex-column">
         <h4 class="card-title mb-3">GRADE CLASSES</h4>
         <ul class="list-styled flex-grow-1">
-         <li><a href="application-process.php" class="btn btn-link p-0">GRADE ONE</a></li>
-         <li><a href="application-process.php" class="btn btn-link p-0">GRADE TWO</a></li>
-         <li><a href="application-process.php" class="btn btn-link p-0">GRADE THREE</a></li>
-         <li><a href="application-process.php" class="btn btn-link p-0">GRADE FOUR</a></li>
-         <li><a href="application-process.php" class="btn btn-link p-0">GRADE FIVE</a></li>
-         <li><a href="application-process.php" class="btn btn-link p-0">GRADE SIX</a></li>
+         <li><a href="admission-process.php" class="btn btn-link p-0">GRADE ONE</a></li>
+         <li><a href="admission-process.php" class="btn btn-link p-0">GRADE TWO</a></li>
+         <li><a href="admission-process.php" class="btn btn-link p-0">GRADE THREE</a></li>
+         <li><a href="admission-process.php" class="btn btn-link p-0">GRADE FOUR</a></li>
+         <li><a href="admission-process.php" class="btn btn-link p-0">GRADE FIVE</a></li>
+         <li><a href="admission-process.php" class="btn btn-link p-0">GRADE SIX</a></li>
         </ul>
       </div>
     </div>
