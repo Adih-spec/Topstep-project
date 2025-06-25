@@ -228,60 +228,59 @@ include_once '../../components/header.php';
   <div class="container">
     <div class="row justify-content-center mb-5">
       <div class="col-12">
-        <h2 class="section-title row justify-content-center" >Upcoming Events</h2>
+        <h2 class="section-title row justify-content-center">Upcoming Events</h2>
       </div>
-     <div class="row">
-       <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <div class="card-img position-relative">
-            <img class="card-img-top rounded-0" src="../../assets/images/events/graduation" alt="event thumb">
-            <div class="card-date"><span>26</span><br>July</div>
+      <div class="row">
+        <div class="col-lg-4 col-sm-6 mb-5 d-flex align-items-stretch">
+          <div class="card border-0 rounded-0 hover-shadow w-100" style="max-width: 370px; margin: 0 auto;">
+            <div class="card-img position-relative" style="max-height: 220px; overflow: hidden;">
+              <img class="card-img-top rounded-0" src="../../assets/images/events/graduation" alt="event thumb" style="width:100%; height:220px; object-fit:cover;">
+              <div class="card-date"><span>26</span><br>July</div>
+            </div>
+            <div class="card-body">
+              <!-- location -->
+              <p><i class="ti-location-pin text-primary mr-2"></i>Transcorp Hilton</p>
+              <a href="events.php">
+                <h4 class="card-title">Graduation and award ceremony</h4>
+              </a>
+            </div>
           </div>
-          <div class="card-body">
-            <!-- location -->
-            <p><i class="ti-location-pin text-primary mr-2"></i>Transcorp Hilton</p>
-            <a href="events.php">
-              <h4 class="card-title">Graduation and award ceremony</h4>
-            </a>
+        </div>
+        <!-- event -->
+        <div class="col-lg-4 col-sm-6 mb-5 d-flex align-items-stretch">
+          <div class="card border-0 rounded-0 hover-shadow w-100" style="max-width: 370px; margin: 0 auto;">
+            <div class="card-img position-relative" style="max-height: 220px; overflow: hidden;">
+              <img class="card-img-top rounded-0" src="../../assets/images/events/inter house" alt="event thumb" style="width:100%; height:220px; object-fit:cover;">
+              <div class="card-date"><span>21</span><br>February</div>
+            </div>
+            <div class="card-body">
+              <!-- location -->
+              <p><i class="ti-location-pin text-primary mr-2"></i>National Stadium</p>
+              <a href="events.php">
+                <h4 class="card-title">Inter house sports</h4>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- event -->
+        <div class="col-lg-4 col-sm-6 mb-5 d-flex align-items-stretch">
+          <div class="card border-0 rounded-0 hover-shadow w-100" style="max-width: 370px; margin: 0 auto;">
+            <div class="card-img position-relative" style="max-height: 220px; overflow: hidden;">
+              <img class="card-img-top rounded-0" src="../../assets/images/events/zoo" alt="event thumb" style="width:100%; height:220px; object-fit:cover;">
+              <div class="card-date"><span>13</span><br>April</div>
+            </div>
+            <div class="card-body">
+              <!-- location -->
+              <p><i class="ti-location-pin text-primary mr-2"></i>National park and zoo</p>
+              <a href="events.php">
+                <h4 class="card-title">An excursion to the zoo</h4>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      <!-- event -->
-      <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <div class="card-img position-relative">
-            <img class="card-img-top rounded-0" src="../../assets/images/events/inter house" alt="event thumb">
-            <div class="card-date"><span>21</span><br>February</div>
-          </div>
-          <div class="card-body">
-            <!-- location -->
-            <p><i class="ti-location-pin text-primary mr-2"></i>National Stadium</p>
-            <a href="events.php">
-              <h4 class="card-title">Inter house sports</h4>
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- event -->
-      <div class="col-lg-4 col-sm-6 mb-5">
-        <div class="card border-0 rounded-0 hover-shadow">
-          <div class="card-img position-relative">
-            <img class="card-img-top rounded-0" src="../../assets/images/events/zoo" alt="event thumb">
-            <div class="card-date"><span>13</span><br>April</div>
-          </div>
-          <div class="card-body">
-            <!-- location -->
-            <p><i class="ti-location-pin text-primary mr-2"></i>National park and zoo</p>
-            <a href="events.php">
-              <h4 class="card-title">An excursion to the zoo</h4>
-            </a>
-          </div>
-        </div>
-      </div>
-     </div>
     </div>
 </section>
-
 <!-- /events -->
 
 <!-- Extra Lesson Banner Section -->
