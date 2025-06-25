@@ -18,3 +18,6 @@
   <!--Favicon-->
   <link rel="shortcut icon" href="https://themewagon.github.io/educenter/images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="https://themewagon.github.io/educenter/images/favicon.ico" type="image/x-icon">
+
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
