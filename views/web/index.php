@@ -18,7 +18,13 @@
     // Example: require_once 'config.php';
     require_once '../../components/styles.php';
   ?>
-  <!-- Entrance Exam Modal -->
+  
+</head>
+<body>
+      <?php
+include_once '../../components/header.php';
+?>
+<!-- Entrance Exam Modal -->
 <div class="modal fade show" id="entranceExamModal" tabindex="-1" aria-modal="true" role="dialog" style="display: block; background: rgba(0,0,0,0.5);">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content border-0 rounded shadow">
@@ -65,11 +71,6 @@
     </div>
   </div>
 </div>
-</head>
-<body>
-      <?php
-include_once '../../components/header.php';
-?>
 <!-- hero slider -->
 <section class="hero-section overlay bg-cover" data-background="../../assets/images/student.jpg">
   <div class="container">
