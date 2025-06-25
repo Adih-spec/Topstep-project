@@ -793,32 +793,44 @@ link:focus,
   padding-right: 30%;
 }
 
-@media (max-width: 1400px) {
+/* Base mobile reset for container */
+.feature-blocks {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+  .feature-blocks {
+    padding: 20px 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .feature-blocks {
+    padding: 30px 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .feature-blocks {
+    padding: 30px 50px 30px 50px;
+  }
+}
+
+@media (min-width: 1400px) {
   .feature-blocks {
     padding-right: 10%;
   }
 }
 
-@media (max-width: 1200px) {
-  .feature-blocks {
-    padding-right: 50px;
-    padding-left: 50px;
-    padding-top: 30px;
-  }
-  .feature-blocks h3 {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 991px) {
-  .feature-blocks {
-    margin-top: 0;
-    padding: 50px;
-  }
   .feature-blocks h3 {
     font-size: 25px;
   }
-}
+
 
 /* /banner feature */
 /* course */
@@ -938,6 +950,7 @@ link:focus,
 }
 
 /* /events */
+
 /* teacher */
 .teacher-info {
   width: 70%;
