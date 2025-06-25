@@ -108,7 +108,7 @@ include_once '../../components/header.php';
           <div class="card-body">
         <!-- location -->
         <p><i class="ti-location-pin text-primary mr-2"></i>Transcorp Hilton</p>
-        <a href="event-single.html">
+        <a href="event-details.php">
           <h4 class="card-title">Graduation and award ceremony</h4>
         </a>
           </div>
