@@ -90,6 +90,9 @@ include_once '../../components/header.php';
       </div>
     </div>
   </div>
+</div>
+</div>
+</section>
 
 <section class="section pt-0">
   <div class="container">
