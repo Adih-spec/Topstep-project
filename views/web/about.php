@@ -137,9 +137,9 @@
 
       <?php
       $teachers = [
-        ['img' => 'teacher-1.png', 'name' => 'Mrs. Jenita', 'role' => 'Head Teacher'],
-        ['img' => 'teacher-2.png', 'name' => 'Clark Malik', 'role' => 'Language Arts Instructor'],
-        ['img' => 'teacher-3.png', 'name' => 'John Doe', 'role' => 'Mathematics Specialist']
+        ['img' => 'teacher-1.jpg', 'name' => 'Mrs. Jenita', 'role' => 'Head Teacher'],
+        ['img' => 'teacher-2.jpg', 'name' => 'Clark Malik', 'role' => 'Language Arts Instructor'],
+        ['img' => 'teacher-3.jpg', 'name' => 'John Doe', 'role' => 'Mathematics Specialist']
       ];
       $delay = 0;
       foreach ($teachers as $teacher):
@@ -165,14 +165,13 @@
 
 <!-- Testimonials Section  -->
 <section class="section text-white" 
-         style="background-image: url('../../assets/about/vision-image.jpg'); 
+         style="background-image: url('../../assets/images/about/what-parents-say.jpg'); 
                 background-size: cover; 
                 background-position: center; 
                 background-repeat: no-repeat;" 
-         data-aos="fade-up">
-
+         data-aos="fade">
   <div class="container py-5">
-    <div class="row text-center mb-4">
+    <div class="row text-center mb-5">
       <div class="col-12">
         <h2 class="section-title text-white">What Parents Say</h2>
         <p class="text-white">Real stories from families who trust Topsteps Academy.</p>
@@ -180,15 +179,14 @@
     </div>
 
     <!-- Image Row -->
-    <div class="row justify-content-center">
-      <div class="col-md-6 col-10">
-        <img src="../../assets/images/about/testimonial-visual.jpg" 
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-6 col-10" 
              alt="Testimonial Visual" 
              class="img-fluid rounded shadow-sm" 
-             data-aos="zoom-in" />
+             data-aos="zoom-in">
       </div>
     </div>
-      </div>
+
     <!-- Swiper Container -->
     <div class="swiper testimonial-swiper">
       <div class="swiper-wrapper">
@@ -219,7 +217,6 @@
   </div>
 </section>
 
-
 <!-- Vision -->
 <section class="section text-center text-white" 
          style="background-color: #1a1a37; ; 
@@ -236,7 +233,7 @@
 </section>
 
 <!-- Accreditation -->
-<section class="section bg-light" data-aos="fade-up">
+<section style="background-color:rgba(147, 147, 168, 0.14);" data-aos="fade-up">
   <div class="container">
     <div class="row text-center mb-4">
       <div class="col-12">
