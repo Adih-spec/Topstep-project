@@ -116,59 +116,71 @@ Refreshments were served afterwards, and the school compound turned into a photo
 
 The 2025 graduation ceremony wasn’t just the end of a school year. It was the beginning of new stories waiting to be written.</p>
       </div>
-    </div>
-    <!-- event speakers -->
+
+<!-- event speakers -->
+<section class="section bg-light">
+  <div class="container">
     <div class="row">
       <div class="col-12">
         <h3 class="mb-4">Event Speakers</h3>
       </div>
-      <!-- speakers -->
-      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
-        <div class="media">
-          <img class="mr-3 img-fluid" src="..assets\images\events\male-teacher-1.jpg" alt="speaker">
-          <div class="media-body">
-            <h4 class="mt-0">Jack Mastio</h4>
-            Teacher
+    </div>
+
+    <div class="row">
+      <!-- Speaker 1 -->
+      <div class="col-lg-3 col-sm-6 mb-4">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="../../assets/images/events/male-teacher-1.jpg" alt="Jack Mastio">
+          <div class="card-body text-center">
+            <h4 class="card-title">Jack Mastio</h4>
+            <p>Teacher</p>
           </div>
         </div>
       </div>
-      <!-- speakers -->
-      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
-        <div class="media">
-          <img class="mr-3 img-fluid" src="..\..\assets\images\events\male-teacher-1.jpg" alt="speaker">
-          <div class="media-body">
-            <h4 class="mt-0">John Doe</h4>
-            Teacher
+
+      <!-- Speaker 2 -->
+      <div class="col-lg-3 col-sm-6 mb-4">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="../../assets/images/events/male-teacher-2.jpg" alt="John Doe">
+          <div class="card-body text-center">
+            <h4 class="card-title">John Doe</h4>
+            <p>Teacher</p>
           </div>
         </div>
       </div>
-      <!-- speakers -->
-      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
-        <div class="media">
-          <img class="mr-3 img-fluid" src="images/event-speakers/speaker-3." alt="speaker">
-          <div class="media-body">
-            <h4 class="mt-0">Randy Luis</h4>
-            Teacher
+
+      <!-- Speaker 3 -->
+      <div class="col-lg-3 col-sm-6 mb-4">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="../../assets/images/events/male-teacher-3.jpg" alt="Randy Luis">
+          <div class="card-body text-center">
+            <h4 class="card-title">Randy Luis</h4>
+            <p>Teacher</p>
           </div>
         </div>
       </div>
-      <!-- speakers -->
-      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
-        <div class="media">
-          <img class="mr-3 img-fluid" src="images/event-speakers/speaker-4.jpg" alt="speaker">
-          <div class="media-body">
-            <h4 class="mt-0">Alfred Jin</h4>
-            Teacher
+
+      <!-- Speaker 4 -->
+      <div class="col-lg-3 col-sm-6 mb-4">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="../../assets/images/events/male-teacher-4.jpg" alt="Alfred Jin">
+          <div class="card-body text-center">
+            <h4 class="card-title">Alfred Jin</h4>
+            <p>Teacher</p>
           </div>
         </div>
       </div>
-      <!-- border -->
-      <div class="col-12 mt-4 order-4">
+    </div>
+
+    <!-- border -->
+    <div class="row">
+      <div class="col-12 mt-4">
         <div class="border-bottom border-primary"></div>
       </div>
     </div>
   </div>
 </section>
+
 <!-- /event single -->
 
 <!-- more event -->
