@@ -4,19 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us | Topsteps Academy</title>
+   <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <?php require_once '../../components/styles.php'; ?>
-
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <!-- AOS Animation CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-  <!-- Animate.css (Optional for additional effects) -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-  <!-- Custom Styling (Optional, if needed) -->
-   <!-- AOS Animation CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-
   <!-- Custom Styling -->
   <style>
     
@@ -44,16 +35,15 @@
     }
     
     .section.bg-light {
-      background-color: #f1f3f7;
+      background-color: #1A1A37;
     }
     .section.bg-white {
       background-color: #ffffff;
     }
   </style>
-   <!-- mobile responsive meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-</head>
+    
+  
+
 </head>
 <body>
 
@@ -147,9 +137,9 @@
 
       <?php
       $teachers = [
-        ['img' => 'teacher-1.png', 'name' => 'Mrs. Jenita', 'role' => 'Head Teacher'],
-        ['img' => 'teacher-2.png', 'name' => 'Clark Malik', 'role' => 'Language Arts Instructor'],
-        ['img' => 'teacher-3.png', 'name' => 'John Doe', 'role' => 'Mathematics Specialist']
+        ['img' => 'teacher-1.jpg', 'name' => 'Mrs. Jenita', 'role' => 'Head Teacher'],
+        ['img' => 'teacher-2.jpg', 'name' => 'Clark Malik', 'role' => 'Language Arts Instructor'],
+        ['img' => 'teacher-3.jpg', 'name' => 'John Doe', 'role' => 'Mathematics Specialist']
       ];
       $delay = 0;
       foreach ($teachers as $teacher):
@@ -174,12 +164,26 @@
 </section>
 
 <!-- Testimonials Section  -->
-<section  class="section bg-light text-white position-relative" data-background='../../assets/images/about/testimonial.png' style="background-repeat: no-repeat; background-size: cover;" data-aos="fade-up">
+<section class="section text-white" 
+         style="background-image: url('../../assets/images/about/what-parents-say.jpg'); 
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat;" 
+         data-aos="fade">
   <div class="container py-5">
     <div class="row text-center mb-5">
       <div class="col-12">
         <h2 class="section-title text-white">What Parents Say</h2>
         <p class="text-white">Real stories from families who trust Topsteps Academy.</p>
+      </div>
+    </div>
+
+    <!-- Image Row -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-6 col-10" 
+             alt="Testimonial Visual" 
+             class="img-fluid rounded shadow-sm" 
+             data-aos="zoom-in">
       </div>
     </div>
 
@@ -213,19 +217,23 @@
   </div>
 </section>
 
-
 <!-- Vision -->
-<section class="section bg-white text-center" data-aos="fade-up">
-  <div class="container">
-    <h2 class="section-title">Our Vision</h2>
-    <p class="lead text-muted mx-auto" style="max-width: 800px;">
+<section class="section text-center text-white" 
+         style="background-color: #1a1a37; ; 
+                background-size: cover; 
+                background-position: center top; 
+                background-repeat: no-repeat;"
+         data-aos="fade-up">
+  <div class="container py-5">
+    <h2 class="section-title text-white">Our Vision</h2>
+    <p class="lead mx-auto text-white" style="max-width: 800px;">
       At Topsteps Academy, our vision is to be a beacon of transformative education—developing world-class learners who are innovative, confident, and compassionate global citizens.
     </p>
   </div>
 </section>
 
 <!-- Accreditation -->
-<section class="section bg-light" data-aos="fade-up">
+<section style="background-color:rgba(147, 147, 168, 0.14);" data-aos="fade-up">
   <div class="container">
     <div class="row text-center mb-4">
       <div class="col-12">
