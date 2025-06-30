@@ -35,7 +35,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 class="section-title">English Spoken</h2>
+        <h2 class="section-title">Party Till Dawn</h2>
       </div>
       <!-- event image -->
       <div class="col-12 mb-4">
