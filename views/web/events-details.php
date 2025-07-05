@@ -15,7 +15,7 @@
   <?php include_once '../../components/header.php'; ?>
     <!-- courses -->
 <!-- page title -->
-<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+<section class="page-title-section overlay" data-background="../../assets/images/backgrounds/graduation.jpg">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
@@ -60,7 +60,7 @@
               <i class="ti-calendar text-primary icon-md mr-2"></i>
               <div class="text-left">
                 <h6 class="mb-0">DATE</h6>
-                <p class="mb-0">December-12-18</p>
+                <p class="mb-0">December 18</p>
               </div>
             </div>
           </li>
