@@ -15,7 +15,7 @@
   <?php include_once '../../components/header.php'; ?>
     <!-- courses -->
 <!-- page title -->
-<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+<section class="page-title-section overlay" data-background="../../assets/images/backgrounds/graduation.jpg">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
@@ -35,11 +35,11 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 class="section-title">English Spoken</h2>
+        <h2 class="section-title">Party Till Dawn</h2>
       </div>
       <!-- event image -->
       <div class="col-12 mb-4">
-        <img src="images/events/event-single.jpg" alt="event thumb" class="img-fluid w-100">
+        <img src="images/events/graduation" alt="event thumb" class="img-fluid w-100">
       </div>
     </div>
     <!-- event info -->
@@ -51,7 +51,7 @@
               <i class="ti-location-pin text-primary icon-md mr-2"></i>
               <div class="text-left">
                 <h6 class="mb-0">LOCATION</h6>
-                <p class="mb-0">Dhanmondi, Dhaka</p>
+                <p class="mb-0">Transcorp Hilton </p>
               </div>
             </div>
           </li>
@@ -60,7 +60,7 @@
               <i class="ti-calendar text-primary icon-md mr-2"></i>
               <div class="text-left">
                 <h6 class="mb-0">DATE</h6>
-                <p class="mb-0">December-12-18</p>
+                <p class="mb-0">December 18</p>
               </div>
             </div>
           </li>
@@ -69,7 +69,7 @@
               <i class="ti-time text-primary icon-md mr-2"></i>
               <div class="text-left">
                 <h6 class="mb-0">TIME</h6>
-                <p class="mb-0">04: 00 pm</p>
+                <p class="mb-0">12: 00 pm</p>
               </div>
             </div>
           </li>
@@ -96,70 +96,91 @@
     <div class="row">
       <div class="col-12 mb-50">
         <h3>About Event</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-          anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-          laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-          dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-          consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
-          ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
-          labore et dolore magnam aliquam quaerat voluptatem.</p>
+        <p>A Memorable Secondary School Graduation Ceremony
+
+It was a bright Saturday morning, the sun beaming gently through the clouds, as students, teachers, and parents gathered at Bright Future Secondary School for the long-awaited graduation ceremony. The air was filled with excitement, nostalgia, and a sense of achievement — it was the day the SS3 students officially closed a significant chapter in their academic journey.
+
+The school grounds were beautifully decorated with colorful balloons, banners that read “Class of 2025 – The Sky is Only the Beginning”, and a stage adorned with flowers. Soft music played in the background as guests arrived, many dressed in their best outfits, proudly holding cameras and mobile phones to capture every moment.
+
+By 10:00 AM, the event commenced with the National Anthem and the school anthem, followed by an opening prayer. The school principal, Mrs. Olawunmi Adeyemi, delivered a heartfelt welcome speech. She spoke on the students' journey — the challenges, the victories, and the transformation she had witnessed in them over the years. Her words were laced with pride and a touch of emotion, especially when she said, “You came in as children, but you’re leaving as young adults ready to take on the world.”
+
+Next came the highlight of the day — the procession of the graduating students. Clad in their navy blue gowns and caps, the SS3 students marched in to thunderous applause, some smiling, some trying to hold back tears. Parents stood proudly, some cheering, others wiping tears of joy.
+
+There were various performances that kept the audience engaged — a touching spoken word poetry by one of the graduates, a drama skit that humorously portrayed the school life experience, and a cultural dance that earned a standing ovation. The Head Boy and Head Girl each gave farewell speeches, thanking the teachers and promising to carry the school’s values into the world beyond.
+
+Awards were then presented to outstanding students in academics, sports, leadership, and creativity. Laughter and cheers echoed across the school hall as names were called and proud students walked to the stage. The best graduating student, Ifeoma Okoro, gave a moving valedictory speech that left many emotional.
+
+As the ceremony drew to a close, the graduates sang their graduation song and tossed their caps into the air — a symbol of freedom, growth, and new beginnings. Cameras clicked nonstop, capturing hugs, group selfies, and even some emotional goodbyes.
+
+Refreshments were served afterwards, and the school compound turned into a photo studio, with graduates taking pictures with friends, teachers, and family members. It was truly a day to remember — one filled with joy, reflection, and dreams for the future.
+
+The 2025 graduation ceremony wasn’t just the end of a school year. It was the beginning of new stories waiting to be written.</p>
       </div>
-    </div>
-    <!-- event speakers -->
+
+<!-- event speakers -->
+<section class="section bg-light">
+  <div class="container">
     <div class="row">
       <div class="col-12">
         <h3 class="mb-4">Event Speakers</h3>
       </div>
-      <!-- speakers -->
-      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
-        <div class="media">
-          <img class="mr-3 img-fluid" src="images/event-speakers/speaker-1.jpg" alt="speaker">
-          <div class="media-body">
-            <h4 class="mt-0">Jack Mastio</h4>
-            Teacher
+    </div>
+
+    <div class="row">
+      <!-- Speaker 1 -->
+      <div class="col-lg-3 col-sm-6 mb-4">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="../../assets/images/events/male-teacher-1.jpg" alt="Jack Mastio">
+          <div class="card-body text-center">
+            <h4 class="card-title">Jack Mastio</h4>
+            <p>Teacher</p>
           </div>
         </div>
       </div>
-      <!-- speakers -->
-      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
-        <div class="media">
-          <img class="mr-3 img-fluid" src="images/event-speakers/speaker-2.jpg" alt="speaker">
-          <div class="media-body">
-            <h4 class="mt-0">John Doe</h4>
-            Teacher
+
+      <!-- Speaker 2 -->
+      <div class="col-lg-3 col-sm-6 mb-4">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="../../assets/images/events/male-teacher-2.jpg" alt="John Doe">
+          <div class="card-body text-center">
+            <h4 class="card-title">John Doe</h4>
+            <p>Teacher</p>
           </div>
         </div>
       </div>
-      <!-- speakers -->
-      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
-        <div class="media">
-          <img class="mr-3 img-fluid" src="images/event-speakers/speaker-3.jpg" alt="speaker">
-          <div class="media-body">
-            <h4 class="mt-0">Randy Luis</h4>
-            Teacher
+
+      <!-- Speaker 3 -->
+      <div class="col-lg-3 col-sm-6 mb-4">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="../../assets/images/events/male-teacher-3.jpg" alt="Randy Luis">
+          <div class="card-body text-center">
+            <h4 class="card-title">Randy Luis</h4>
+            <p>Teacher</p>
           </div>
         </div>
       </div>
-      <!-- speakers -->
-      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
-        <div class="media">
-          <img class="mr-3 img-fluid" src="images/event-speakers/speaker-4.jpg" alt="speaker">
-          <div class="media-body">
-            <h4 class="mt-0">Alfred Jin</h4>
-            Teacher
+
+      <!-- Speaker 4 -->
+      <div class="col-lg-3 col-sm-6 mb-4">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="../../assets/images/events/male-teacher-4.jpg" alt="Alfred Jin">
+          <div class="card-body text-center">
+            <h4 class="card-title">Alfred Jin</h4>
+            <p>Teacher</p>
           </div>
         </div>
       </div>
-      <!-- border -->
-      <div class="col-12 mt-4 order-4">
+    </div>
+
+    <!-- border -->
+    <div class="row">
+      <div class="col-12 mt-4">
         <div class="border-bottom border-primary"></div>
       </div>
     </div>
   </div>
 </section>
+
 <!-- /event single -->
 
 <!-- more event -->
