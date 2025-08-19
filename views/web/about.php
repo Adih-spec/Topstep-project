@@ -4,43 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us | Topsteps Academy</title>
+   <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <?php require_once '../../components/styles.php'; ?>
-
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <!-- AOS Animation CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-  <!-- Animate.css (Optional for additional effects) -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-  <!-- Custom Styling (Optional, if needed) -->
-   <!-- AOS Animation CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-
   <!-- Custom Styling -->
   <style>
-    
+
     .hover-shadow:hover {
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
       transition: box-shadow 0.4s ease-in-out;
-    }
-    .play-btn {
-      display: inline-block;
-      width: 60px;
-      height: 60px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 50%;
-      text-align: center;
-      line-height: 60px;
-      color: #007bff;
-      font-size: 24px;
-      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .play-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.4);
-      color: #0056b3;
     }
     .card-body ul.list-inline li a {
       transition: color 0.3s ease;
@@ -55,20 +28,22 @@
       transform: translateY(-5px);
     }
     .section-sm.bg-primary {
-      background-color: #0056b3 !important;
+      background-color: #FFBC3B !important;
     }
     .section.bg-cover {
-      background-color: #f4f9ff !important;
+      background-color: #FFBC3B !important;
     }
     
     .section.bg-light {
-      background-color: #f1f3f7;
+      background-color: #1A1A37;
     }
     .section.bg-white {
       background-color: #ffffff;
     }
   </style>
-</head>
+    
+  
+
 </head>
 <body>
 
@@ -93,15 +68,18 @@
 </section>
 
 <!-- About Section -->
-<section class="section" data-aos="fade-right">
+<section class="section">
   <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <img class="img-fluid w-100 mb-4" src="../../assets/images/about/about-page.jpg" alt="About Topsteps Academy">
-        <h2 class="section-title">About Topsteps Academy</h2>
-        <p>At Topsteps Academy, we are dedicated to transforming lives through education. As a premier learning institution, our mission is to cultivate academic excellence, character, and creativity in every student.</p>
-        <p>We provide a diverse and engaging curriculum, supported by passionate and experienced educators who are committed to student success. Our inclusive, forward-thinking environment promotes not only academic achievement but also personal growth, leadership, and lifelong learning.</p>
-        <p>With cutting-edge facilities, innovative teaching methodologies, and a strong community spirit, Topsteps Academy prepares learners to thrive in an ever-changing world. Join us and take your next step toward a brighter, empowered future.</p>
+    <div class="row align-items-center">
+      <div class="col-md-6 order-2 order-md-1">
+
+        <h2 class="section-title" >About TopSteps Academy </h2>
+        <p class= "row justify-content-center">At Topsteps Academy, we are dedicated to transforming lives through education. As a premier learning institution, our mission is to cultivate academic excellence, character, and creativity in every student.
+           We provide a diverse and engaging curriculum, supported by passionate and experienced educators who are committed to student success. Our inclusive, forward-thinking environment promotes not only academic achievement but also personal growth, leadership, and lifelong learning.
+           With cutting-edge facilities, innovative teaching methodologies, and a strong community spirit, Topsteps Academy prepares learners to thrive in an ever-changing world. Join us and take your next step toward a brighter, empowered future.</p>
+      </div>
+      <div class="col-md-6 order-1 order-md-2 mb-4 mb-md-0">
+        <img class="img-fluid w-100" src="../../assets/images/tps-logo.png" alt="about image">
       </div>
     </div>
   </div>
@@ -129,7 +107,7 @@
 </section>
 
 <!-- Success Story -->
-<section class="section bg-cover" data-background="../../assets/images/about/success-story.png"  style="background-repeat: no-repeat; background-size: cover;" data-aos="fade-left">
+<section class="section" data-background="../../assets/images/about/success-story.png"  style="background-repeat: no-repeat; background-size: cover;" data-aos="fade-left">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-sm-4 position-relative success-video">
@@ -149,7 +127,7 @@
 </section>
 
 <!-- Our Teachers -->
-<section class="section" data-aos="fade-up">
+<section class="section " data-aos="fade-up">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 text-center mb-5">
@@ -159,9 +137,9 @@
 
       <?php
       $teachers = [
-        ['img' => 'teacher-1.png', 'name' => 'Mrs. Jenita', 'role' => 'Head Teacher'],
-        ['img' => 'teacher-2.png', 'name' => 'Clark Malik', 'role' => 'Language Arts Instructor'],
-        ['img' => 'teacher-3.png', 'name' => 'John Doe', 'role' => 'Mathematics Specialist']
+        ['img' => 'teacher-1.jpg', 'name' => 'Mrs. Jenita', 'role' => 'Head Teacher'],
+        ['img' => 'teacher-2.jpg', 'name' => 'Clark Malik', 'role' => 'Language Arts Instructor'],
+        ['img' => 'teacher-3.jpg', 'name' => 'John Doe', 'role' => 'Mathematics Specialist']
       ];
       $delay = 0;
       foreach ($teachers as $teacher):
@@ -186,12 +164,26 @@
 </section>
 
 <!-- Testimonials Section  -->
-<section  class="section bg-light text-white position-relative" data-background='../../assets/images/about/testimonial.png' style="background-repeat: no-repeat; background-size: cover;" data-aos="fade-up">
+<section class="section text-white" 
+         style="background-image: url('../../assets/images/about/what-parents-say.jpg'); 
+                background-size: cover; 
+                background-position: center; 
+                background-repeat: no-repeat;" 
+         data-aos="fade">
   <div class="container py-5">
     <div class="row text-center mb-5">
       <div class="col-12">
         <h2 class="section-title text-white">What Parents Say</h2>
         <p class="text-white">Real stories from families who trust Topsteps Academy.</p>
+      </div>
+    </div>
+
+    <!-- Image Row -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-6 col-10" 
+             alt="Testimonial Visual" 
+             class="img-fluid rounded shadow-sm" 
+             data-aos="zoom-in">
       </div>
     </div>
 
@@ -225,19 +217,23 @@
   </div>
 </section>
 
-
 <!-- Vision -->
-<section class="section bg-white text-center" data-aos="fade-up">
-  <div class="container">
-    <h2 class="section-title">Our Vision</h2>
-    <p class="lead text-muted mx-auto" style="max-width: 800px;">
+<section class="section text-center text-white" 
+         style="background-color: #1a1a37; ; 
+                background-size: cover; 
+                background-position: center top; 
+                background-repeat: no-repeat;"
+         data-aos="fade-up">
+  <div class="container py-5">
+    <h2 class="section-title text-white">Our Vision</h2>
+    <p class="lead mx-auto text-white" style="max-width: 800px;">
       At Topsteps Academy, our vision is to be a beacon of transformative education—developing world-class learners who are innovative, confident, and compassionate global citizens.
     </p>
   </div>
 </section>
 
 <!-- Accreditation -->
-<section class="section bg-light" data-aos="fade-up">
+<section style="background-color:rgba(147, 147, 168, 0.14);" data-aos="fade-up">
   <div class="container">
     <div class="row text-center mb-4">
       <div class="col-12">
