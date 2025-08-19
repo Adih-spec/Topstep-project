@@ -18,7 +18,7 @@
 include_once '../../components/header.php';
 ?>
 <!-- page title -->
-<section class="page-title-section overlay" data-background="../../assets/images/scholarship-item-5.jpg">
+<section class="page-title-section overlay" data-background="../../assets/images/scholarship-item-7.jpg">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
@@ -40,7 +40,7 @@ include_once '../../components/header.php';
   <div class="container">
     <div class="row mb-5">
       <div class="col-md-6 mb-4 mb-md-0">
-        <img class="img-fluid" src="../../assets/images/scholarship/scholarship-item-1.jpg" alt="scholarship news">
+        <img class="img-fluid" src="../../assets/images/scholarship/scholarship-item-7.jpg" alt="scholarship news">
       </div>
       <div class="col-md-6">
         <h2>ADMISSION PROCESS</h2>
@@ -62,7 +62,7 @@ include_once '../../components/header.php';
     <div class="card rounded-0 hover-shadow border-top-0 border-left-0 border-right-0 w-100 h-100">
       <img
         class="card-img-top rounded-0"
-        src="../../assets/images/scholarship/scholarship-item-5.jpg"
+        src="../../assets/images/scholarship/scholarship-item-9.jpg"
         alt="scholarship-thumb"
       />
       <div class="card-body d-flex flex-column">
@@ -90,9 +90,9 @@ include_once '../../components/header.php';
       <div class="card-body d-flex flex-column">
         <h4 class="card-title mb-3">JUNIOR CLASSES</h4>
         <ul class="list-styled flex-grow-1">
-          <li><a href="application-process.php" class="btn btn-link p-0">jSS ONE</a></li>
-          <li><a href="application-process.php" class="btn btn-link p-0">JSS TWO</a></li>
-          <li><a href="application-process.php" class="btn btn-link p-0">JSS THREE</a></li>
+          <li><a href="admission-process.php" class="btn btn-link p-0">jSS ONE</a></li>
+          <li><a href="admission-process.php" class="btn btn-link p-0">JSS TWO</a></li>
+          <li><a href="admission-process.php" class="btn btn-link p-0">JSS THREE</a></li>
         </ul>
       </div>
     </div>
@@ -109,9 +109,9 @@ include_once '../../components/header.php';
       <div class="card-body d-flex flex-column">
         <h4 class="card-title mb-3">SECONDARY CLASSES</h4>
         <ul class="list-styled flex-grow-1">
-          <li><a href="application-process.php" class="btn btn-link p-0">SSS ONE</a></li>
-          <li><a href="application-process.php" class="btn btn-link p-0">SSS TWO</a></li>
-          <li><a href="application-process.php" class="btn btn-link p-0">SSS THREE</a></li>
+          <li><a href="admission-process.php" class="btn btn-link p-0">SSS ONE</a></li>
+          <li><a href="admission-process.php" class="btn btn-link p-0">SSS TWO</a></li>
+          <li><a href="admission-process.php" class="btn btn-link p-0">SSS THREE</a></li>
         </ul>
       </div>
     </div>

@@ -41,12 +41,12 @@
         <div class="d-flex">
           <div class="text-center mr-4">
             <div class="p-4 bg-primary text-white">
-                <span class="h2 d-block">30</span> APR,2019
+                <span class="h2 d-block">30</span> AUGUST,2025
             </div>
           </div>
           <!-- notice content -->
           <div>
-            <h3 class="mb-4">Application </h3>
+            <h3 class="">Application </h3>
             <ul class="list-styled mb-5">
               <li>A non-refundable fee (contact the school for more information) for the 
                 application process should be paid to any of the provided school bank account.</li>
@@ -61,7 +61,7 @@
                    <ol> 4. Photocopy of medical fitness form, health certificate/Immunization record card (this must be up-to-date at the point of admission).</ol>
                    </li>
                   </ul>
-            <h3 class="mb-4">Placement process </h3>
+          <h3 class="">Placement process </h3>
             <ul class="list-styled mb-5">
               <li>Following receipt of all documentations, applicants will be invited to the 
                 school for a placement test as appropriate for the required class. 
@@ -76,23 +76,25 @@
                     request made by his/her parent.</li>
                 <li>Any applicant relocating from a foreign country will be assessed by reference to his/her most recent school reports 
                   alongside any other available information. </li>
-            <h3 class="mb-4">Admission </h3>
+              </ul>
+        <h3 class="">Admission </h3>
             <ul class="list-styled mb-5">
               <li>After the placement test, the Head of School will discuss the results with the parent concerned and then decide on the 
                 allocation of the class. The school’s management decision is final.</li>
               <li>An offer letter will be issued to you and must be signed by the parent(s) and returned to the school. The bill for the
                  term’s fee will be issued separately.</li> 
-            <h3 class="mb-4">Payment of fees </h3>
+              </ul>
+        <h3 class="">Payment of fees </h3>
           <ul class="list-styled mb-5">
-           <li>A learner new to Shining Star will not be admitted until the term’s full fees has been paid.</li> 
+           <li>A learner new to Topsteps Academy will not be admitted until the term’s full fees has been paid.</li> 
            <li>School fees for subsequent terms are normally issued alongside result for the term and the school newsletter.</li>
            <li>The date by which school fees must be paid is clearly stated and we do respectfully request that parents note
              and keep to these dates.</li>
-           <li>All payment evidence must clearly identify the child(ren) to whom they relate</li>
-           <li>t is the school policy not to accept any payment in cash.</li>
+           <li>All payment evidence must clearly identify the children to whom they relate</li>
+           <li>It is the school policy not to accept any payment in cash.</li>
            <li>If you are out of the country when fees are due, you must make arrangement for payment to be made.</li>
-
-            <a href="notice-single.html#" class="btn btn-primary">Download</a>
+              </ul>
+            <a href="notice-single.html#" class="btn btn-primary">Apply now</a>
           </div>
         </div>
       </div>
