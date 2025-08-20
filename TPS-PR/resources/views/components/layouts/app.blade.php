@@ -292,10 +292,10 @@ $currentPage = basename($_SERVER['PHP_SELF'], ".php");
                             </a>
                             <div class="dropdown-menu dropdown-menu-right shadow rounded" aria-labelledby="loginDropdown" style="min-width: 200px;">
                                 <h6 class="dropdown-header text-uppercase text-muted mb-1" style="font-size: 13px; letter-spacing: 1px;">Login As</h6>
-                                <a class="dropdown-item d-flex align-items-center py-2" href="#" data-toggle="modal" data-target="#loginModal">
+                                <a class="dropdown-item d-flex align-items-center py-2" href="{{route('login')}}" data-toggle="#" data-target="#">
                                     <i class="ti-user mr-2 text-primary" style="font-size: 18px;"></i> Staff
                                 </a>
-                                <a class="dropdown-item d-flex align-items-center py-2" href="#" data-toggle="modal" data-target="#loginModal">
+                                <a class="dropdown-item d-flex align-items-center py-2" href="{{route('login')}}" data-toggle="#" data-target="#">
                                     <i class="ti-shield mr-2 text-warning" style="font-size: 18px;"></i> Admin
                                 </a>
                             </div>
