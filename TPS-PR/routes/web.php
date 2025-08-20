@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdmissionController;
-
+use App\Http\Controllers\ProgramsController;
 
 
 
@@ -17,7 +17,7 @@ Route::get('/', function () {
 Route::get('/home', [HomePageController::class, 'index'])->name('home.index');
 Route::get('/about', [AboutController::class, 'index'])->name('about-us');
 Route::get('/admission', [AdmissionController::class, 'index'])->name('admission.index');
-
+Route::get('/programs', [ProgramsController::class, 'index'])->name('Programs.index');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
