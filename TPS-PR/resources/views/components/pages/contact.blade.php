@@ -15,7 +15,7 @@
   </style>
 @endsection
 <!-- page title -->
-<section class="page-title-section overlay" style="background: {{asset('MainAssets/images/student.jpg')}} no-repeat center center; background-size: cover;">
+<section class="page-title-section overlay" data-background="{{asset('MainAssets/images/contact/download2.jpg')}}">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
