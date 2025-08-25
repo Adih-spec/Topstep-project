@@ -9,17 +9,6 @@
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
-        <div class="form-group">
-            <label for="role">Register as</label>
-            <select id="role" name="role" class="form-control" required>
-                <option value="student">Student</option>
-                <option value="guardian">Guardian</option>
-                <option value="teacher">Teacher</option>
-                <option value="staff">Staff</option>
-            </select>
-        </div>
-
-
         <!-- Email Address -->
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />
