@@ -11,22 +11,46 @@ class RolePermissionSeeder extends Seeder
 {
     public function run(): void
     {
-        Permission::create(['name' => 'edit articles']);
-        Permission::create(['name' => 'delete articles']);
-        Permission::create(['name' => 'publish articles']);
+        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
-        $admin = Role::create(['name' => 'admin']);
-        $admin->givePermissionTo(['edit articles', 'delete articles', 'publish articles']);
+        // ✅ Define some default permissions
+        $permissions = [
+            'view dashboard',
+            'manage students',
+            'manage teachers',
+            'manage staff',
+            'manage guardians',
+            'manage courses',
+            'manage results',
+        ];
 
-        $editor = Role::create(['name' => 'editor']);
-        $editor->givePermissionTo(['edit articles', 'publish articles']);
+        // ✅ Define roles and their permissions
+        $roles = [
+            'admin'    => ['view dashboard', 'manage students', 'manage teachers', 'manage staff', 'manage guardians', 'manage courses', 'manage results'],
+            'teacher'  => ['view dashboard', 'manage students', 'manage results'],
+            'staff'    => ['view dashboard', 'manage students'],
+            'student'  => ['view dashboard'],
+            'guardian' => ['view dashboard'],
+        ];
 
-        $user = User::factory()->create([
-            'name' => 'Admin User',
-            'email' => 'admin@example.com',
-            'password' => bcrypt('password'),
-        ]);
+        // ✅ Loop roles and assign permissions per guard
+        foreach ($roles as $roleName => $rolePermissions) {
+            // Create role with guard
+            $role = Role::firstOrCreate([
+                'name' => $roleName,
+                'guard_name' => $roleName, // 👈 each role has its own guard
+            ]);
 
-        $user->assignRole('admin');
+            // Create permissions under same guard
+            foreach ($rolePermissions as $perm) {
+                Permission::firstOrCreate([
+                    'name' => $perm,
+                    'guard_name' => $roleName, // 👈 match guard with role
+                ]);
+            }
+
+            // Assign permissions
+            $role->syncPermissions($rolePermissions);
+        }
     }
 }
