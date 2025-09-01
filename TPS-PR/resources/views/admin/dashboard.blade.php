@@ -20,3 +20,4 @@
 @hasanyrole('Admin|Teacher')
   <a href="{{ route('posts.editor') }}">Open Post Editor</a>
 @endhasanyrole
+
