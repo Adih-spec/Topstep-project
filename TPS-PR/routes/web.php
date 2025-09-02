@@ -1,28 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PermissionController;
-use App\Http\Controllers\UserRoleController;
-
-Route::middleware(['auth'])->group(function () {
-    // Dashboard home
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-
-    // Role management
-    Route::resource('roles', RoleController::class);
-
-    // Permission management
-    Route::resource('permissions', PermissionController::class);
-
-    // Assign roles to users
-    Route::get('users/{user}/roles', [UserRoleController::class, 'edit'])->name('users.roles.edit');
-    Route::post('users/{user}/roles', [UserRoleController::class, 'update'])->name('users.roles.update');
-});
-
 
 Route::get('/', function () {
     return view('welcome');
@@ -37,5 +18,26 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::controller(RoleController::class)->group(function () {
+        Route::get('/roles', 'index')->name('roles.index');
+        Route::get('/roles/create', 'create')->name('roles.create');
+        Route::post('/roles', 'store')->name('roles.store');
+        Route::get('/roles/{role}/edit', 'edit')->name('roles.edit');
+        Route::put('/roles/{role}', 'update')->name('roles.update');
+        Route::delete('/roles/{role}', 'destroy')->name('roles.destroy');
+    });
+    Route::controller(PermissionController::class)->group(function () {
+        Route::get('/permissions', 'index')->name('permissions.index');
+        Route::get('/permissions/create', 'create')->name('permissions.create');
+        Route::post('/permissions', 'store')->name('permissions.store');
+        Route::get('/permissions/{permission}/edit', 'edit')->name('permissions.edit');
+        Route::put('/permissions/{permission}', 'update')->name('permissions.update');
+        Route::delete('/permissions/{permission}', 'destroy')->name('permissions.destroy');
+    }
+    );
+});
+
 
 require __DIR__.'/auth.php';
