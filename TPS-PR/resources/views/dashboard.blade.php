@@ -1,6 +1,7 @@
-<x-app-layout>
-    <x-slot name="title">Dashboard</x-slot>
+@extends('components.layouts.app')
+    @section('PageTitle', 'Dashboard')
 
+    @section('pageContent')
     <div class="container-fluid">
         <div class="row g-3 mb-4">
             <!-- Students -->
@@ -83,4 +84,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+    @endsection
