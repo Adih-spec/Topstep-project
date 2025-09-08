@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Validation\Rule;
 
 class PermissionController extends Controller
 {
@@ -22,13 +23,22 @@ class PermissionController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:permissions,name',
+            'name' => [
+                'required',
+                Rule::unique('permissions')->where(function ($query) use ($request) {
+                    return $query->where('guard_name', $request->guard_name);
+                }),
+            ],
+            'guard_name' => 'required|string',
         ]);
 
-        Permission::create(['name' => $request->name]);
+        Permission::create([
+            'name' => $request->name,
+            'guard_name' => $request->guard_name,
+        ]);
 
         return redirect()->route('permissions.index')
-                         ->with('success', 'Permission created successfully.');
+                        ->with('success', 'Permission created successfully.');
     }
 
     public function edit(Permission $permission)
