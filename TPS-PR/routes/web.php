@@ -14,7 +14,6 @@ Route::get('/dashboard', function () {
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/students', [StudentController::class, 'index'])->name('students.index');
 
 
 
@@ -22,6 +21,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/dashboard', function() {
+        view('dashboard');
+    })->name('dashboard');
 });
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
@@ -33,6 +35,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
         Route::put('/roles/{role}', 'update')->name('roles.update');
         Route::delete('/roles/{role}', 'destroy')->name('roles.destroy');
     });
+
     Route::controller(PermissionController::class)->group(function () {
         Route::get('/permissions', 'index')->name('permissions.index');
         Route::get('/permissions/create', 'create')->name('permissions.create');
@@ -40,8 +43,8 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
         Route::get('/permissions/{permission}/edit', 'edit')->name('permissions.edit');
         Route::put('/permissions/{permission}', 'update')->name('permissions.update');
         Route::delete('/permissions/{permission}', 'destroy')->name('permissions.destroy');
-    }
-    );
+    });
+
 });
 
 
@@ -59,3 +62,4 @@ Route::middleware(['auth'])->group(function () {
 
 
 require __DIR__.'/auth.php';
+require __DIR__.'/student.php';

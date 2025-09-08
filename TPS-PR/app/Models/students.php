@@ -15,6 +15,14 @@ class students extends Authenticatable
         'dob',
         'gender',
         'address',
-        'class',
+        'class_id',
+        'admission_number',
+        'admission_date',
+        'guardian_name',
+        'guardian_phone',
+        'photo',
+        'is_active',
     ];
+    
 }
+
