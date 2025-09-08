@@ -19,7 +19,7 @@
   <div class="navbar">
     <h1>Guardian Dashboard</h1>
     <div>
-      <span>Welcome, {{ Auth::guard('guardian')->user()->fullname }}</span>
+      <span>Welcome, {{ Auth::guard('guardian')->user()->first_name }}</span>
       <a href="{{ route('guardian.logout') }}">Logout</a>
     </div>
   </div>
@@ -29,17 +29,7 @@
       <h3>Profile Info</h3>
       <p>Email: {{ Auth::guard('guardian')->user()->email }}</p>
       <p>Phone: {{ Auth::guard('guardian')->user()->phone }}</p>
-      <p>Relationship: {{ Auth::guard('guardian')->user()->relationship }}</p>
-    </div>
-
-    <div class="card">
-      <h3>Children</h3>
-      <p>(Later we will display student details here)</p>
-    </div>
-
-    <div class="card">
-      <h3>Payments</h3>
-      <p>(Later we will display payments here)</p>
+      <p>Relationship: {{ Auth::guard('guardian')->user()->relationship_with_student }}</p>
     </div>
   </div>
 </body>

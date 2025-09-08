@@ -359,7 +359,7 @@ $currentPage = basename($_SERVER['PHP_SELF'], ".php");
 </header>
 <!-- /Header -->
 <!-- Register Modal -->
-<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-,hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content rounded-0 border-0 p-4">
             <div class="modal-header border-0">

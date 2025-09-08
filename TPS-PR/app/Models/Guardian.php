@@ -18,7 +18,7 @@ class Guardian extends Authenticatable
         'country',
         'state_of_origin',
         'lga',
-        'relationship_to_student',
+        'relationship_with_student',
         'number_of_children',
         'occupation',
         'username',
@@ -27,4 +27,8 @@ class Guardian extends Authenticatable
     protected $hidden = [
         'password',
     ];
+    public function students()
+    {
+        return $this->belongsToMany(Student::class, 'guardian_student');
+    }
 }

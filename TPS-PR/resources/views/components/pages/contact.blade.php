@@ -56,17 +56,17 @@
         </form>
       </div>
       <div class="col-lg-5">
-        <h3 class="mb-4">Get in Touch</h3>
+        <h2 class="mb-4">Get in Touch</h3>
         <p class="mb-4">We are always here to help you. If you have any questions or need assistance, please feel free to reach out to us.</p>
         <p class="mb-4">You can contact us via our social media platforms, phone, email, or visit our office. We look forward to hearing from you!</p>
-        <div class="">
-        <h5 class="mt-4 mb-3">Contact Details</h5>
-        <a href="tel:+443003030266" class="text-color mr-3"><i class="fas fa-phone"></i><strong>CALL +44 300 303 0266</strong></a><br><br>
-        <a href="mailto:topstepsacademy@gmail.com" class="text-color h6 d-block">topstepsacademy@gmail.com</a><br>
-        <p class="text-color h6 d-block">plot No. 09, Road 3, Phase 4, before Panraf Hospital, Nyanya,FCT Abuja</p>
+        <div class="mb-4">
+        <strong>Contact Details</strong><br><br>
+        <a href="tel:+443003030266" class="text-color mr-3"><i class="fas fa-phone"></i>CALL +44 300 303 0266</a><br><br>
+        <a href="mailto:topstepsacademy@gmail.com" class="text-color mr-3">topstepsacademy@gmail.com</a><br>
+        <p class="mb-4">plot No. 09, Road 3, Phase 4, before Panraf Hospital, Nyanya,FCT Abuja.</p>
         </div>
         <div class="">
-        <h5 class="mb-3">Follow Us</h5>
+        <strong class="mb-3">Follow Us</strong>
         <ul class="list-inline d-inline">
             <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="contact.html#"><i class="ti-facebook"></i></a></li>
             <li class="list-inline-item mx-0"><a class="d-inline-block p-2 text-color" href="contact.html#"><i class="ti-twitter-alt"></i></a></li>

@@ -1,67 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guardian Login</title>
-  <style>
-    body {
-      margin: 0; font-family: Arial, sans-serif;
-      background: #f3f6fa; display: flex;
-      justify-content: center; align-items: center;
-      height: 100vh;
-    }
-    .login-container {
-      background: #fff; padding: 30px; border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      width: 100%; max-width: 350px; text-align: center;
-    }
-    .input-box { margin-bottom: 15px; text-align: left; }
-    .input-box label { font-size: 14px; color: #555; display: block; margin-bottom: 5px; }
-    .input-box input {
-      width: 100%; padding: 10px; border: 1px solid #ddd;
-      border-radius: 8px; font-size: 14px;
-    }
-    .login-btn {
-      width: 100%; padding: 10px; background: #0066cc;
-      border: none; color: white; font-size: 16px;
-      border-radius: 8px; cursor: pointer;
-    }
-    .login-btn:hover { background: #004d99; }
-    .extra-links { margin-top: 15px; font-size: 14px; }
-    .extra-links a { color: #0066cc; text-decoration: none; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardian Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-  <div class="login-container">
-    <h2>Guardian Login</h2>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card shadow-lg p-4 rounded-4">
+                    <h3 class="text-center mb-4">Guardian Login</h3>
 
-    {{-- Error Message --}}
-    @if(session('error'))
-      <p style="color:red;">{{ session('error') }}</p>
-    @endif
-    @if(session('success'))
-      <p style="color:green;">{{ session('success') }}</p>
-    @endif
+                    <!-- Error Messages -->
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul class="mb-0">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
-    <form action="{{ route('guardian.login') }}" method="POST">
-      @csrf
-      <div class="input-box">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" value="{{ old('username') }}" required>
-        @error('username') <small style="color:red;">{{ $message }}</small> @enderror
-      </div>
-      <div class="input-box">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-        @error('password') <small style="color:red;">{{ $message }}</small> @enderror
-      </div>
-      <button type="submit" class="login-btn">Login</button>
-    </form>
+                    <!-- Login Form -->
+                    <form method="POST" action="{{ route('guardian.login') }}">
+                        @csrf
 
-    <div class="extra-links">
-      <p>Don’t have an account? <a href="{{ route('guardian.register') }}">Register</a></p>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input id="username" type="text" 
+                                   class="form-control @error('username') is-invalid @enderror" 
+                                   name="username" value="{{ old('username') }}" required autofocus>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input id="password" type="password" 
+                                   class="form-control @error('password') is-invalid @enderror" 
+                                   name="password" required>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                        <p class="mt-3 text-center">
+                            Don't have an account? <a href="{{ route('guardian.register') }}">Register here</a>.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </body>
 </html>
