@@ -4,35 +4,46 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Validation\Rule;
 
 class PermissionController extends Controller
 {
     public function index()
-    {
-        $permissions = Permission::all();
-        return view('components.permissions.index', compact('permissions'));
-    }
+{
+    $permissions = Permission::all();
+    return view('components.permissions.index', compact('permissions'));
+}
 
+   
     public function create()
     {
-        return view('permissions.create');
+        return view('components.permissions.create');
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:permissions,name',
+            'name' => [
+                'required',
+                Rule::unique('permissions')->where(function ($query) use ($request) {
+                    return $query->where('guard_name', $request->guard_name);
+                }),
+            ],
+            'guard_name' => 'required|string',
         ]);
 
-        Permission::create(['name' => $request->name]);
+        Permission::create([
+            'name' => $request->name,
+            'guard_name' => $request->guard_name,
+        ]);
 
         return redirect()->route('permissions.index')
-                         ->with('success', 'Permission created successfully.');
+                        ->with('success', 'Permission created successfully.');
     }
 
     public function edit(Permission $permission)
     {
-        return view('permissions.edit', compact('permission'));
+        return view('components.permissions.edit', compact('permission'));
     }
 
     public function update(Request $request, Permission $permission)

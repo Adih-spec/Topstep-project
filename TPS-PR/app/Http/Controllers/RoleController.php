@@ -29,4 +29,20 @@ class RoleController extends Controller
 
         return back()->with('success', 'Role created successfully.');
     }
+    public function edit(Role $role)
+    {
+        return view('components.roles.edit', compact('role'));
+    }
+
+    public function update(Request $request, Role $role)
+    {
+        $request->validate([
+            'name' => 'required|unique:roles,name,' . $role->id . ',id,guard_name,' . $request->guard_name,
+            'guard_name' => 'required'
+        ]);
+
+        $role->update($request->only('name', 'guard_name'));
+
+        return back()->with('success', 'Role updated successfully.');
+    }
 }

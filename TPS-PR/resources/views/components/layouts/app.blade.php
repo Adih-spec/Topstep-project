@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +20,7 @@
         <a href="{{ route('dashboard') }}">Dashboard</a>
         <a href="{{ route('roles.index') }}">Manage Roles</a>
         <a href="{{ route('permissions.index') }}">Manage Permissions</a>
+        <a href="{{ route('users.index') }}">Users</a>
     </div>
     <div class="content flex-fill">
         @yield('pageContent')
