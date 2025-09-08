@@ -5,15 +5,18 @@ use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserController;
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/students', [StudentController::class, 'index'])->name('students.index');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -39,6 +42,17 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
         Route::delete('/permissions/{permission}', 'destroy')->name('permissions.destroy');
     }
     );
+});
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::post('/users/{user}/assign-role', [UserController::class, 'assignRole'])->name('users.assignRole');
+    Route::post('/users/{user}/assign-permission', [UserController::class, 'assignPermission'])->name('users.assignPermission');
+    Route::get('/users/search', [UserController::class, 'search'])->name('users.search');
+    Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
+    Route::get('/users/search', [UserController::class, 'search'])->name('users.search');
+
 });
 
 
