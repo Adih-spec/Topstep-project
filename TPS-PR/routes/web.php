@@ -52,6 +52,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/users/search', [UserController::class, 'search'])->name('users.search');
     Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
     Route::get('/users/search', [UserController::class, 'search'])->name('users.search');
+    Route::get('/users/{id}/assign', [UserController::class, 'assignForm'])->name('users.assign.form');
+    Route::post('/users/{id}/assign', [UserController::class, 'assignUpdate'])->name('users.assign.update');
 
 });
 
