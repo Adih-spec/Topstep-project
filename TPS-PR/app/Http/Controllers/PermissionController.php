@@ -8,14 +8,15 @@ use Spatie\Permission\Models\Permission;
 class PermissionController extends Controller
 {
     public function index()
-    {
-        $permissions = Permission::all();
-        return view('components.permissions.index', compact('permissions'));
-    }
+{
+    $permissions = Permission::all();
+    return view('components.permissions.index', compact('permissions'));
+}
 
+   
     public function create()
     {
-        return view('permissions.create');
+        return view('components.permissions.create');
     }
 
     public function store(Request $request)
@@ -32,7 +33,7 @@ class PermissionController extends Controller
 
     public function edit(Permission $permission)
     {
-        return view('permissions.edit', compact('permission'));
+        return view('components.permissions.edit', compact('permission'));
     }
 
     public function update(Request $request, Permission $permission)

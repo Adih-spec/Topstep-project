@@ -1,8 +1,6 @@
-@extends('component.layouts.app')
-
-@section('page_title', 'Manage Permissions')
-
-@section('page_content')
+@extends('components.layouts.app')
+@section('pageTitle', 'Permissions Management')
+@section('pageContent')
 <div class="container">
     <h2 class="mb-3">Manage Permissions</h2>
     <a href="{{ route('permissions.create') }}" class="btn btn-primary mb-3">+ Add Permission</a>
