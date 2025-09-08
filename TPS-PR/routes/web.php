@@ -44,15 +44,10 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
         Route::get('/permissions/{permission}/edit', 'edit')->name('permissions.edit');
         Route::put('/permissions/{permission}', 'update')->name('permissions.update');
         Route::delete('/permissions/{permission}', 'destroy')->name('permissions.destroy');
-<<<<<<< Updated upstream
-    });
-
-=======
     }
     );
 
     Route::resource('admins', AdminController::class);
->>>>>>> Stashed changes
 });
 
 
