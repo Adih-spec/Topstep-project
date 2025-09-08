@@ -51,5 +51,26 @@ public function show($id)
     return view('components.users.show', compact('user'));
 }
 
+public function assignForm($id)
+{
+    $user = User::with('roles', 'permissions')->findOrFail($id);
+    $roles = Role::all();
+    $permissions = Permission::all();
 
+    return view('users.assign', compact('user', 'roles', 'permissions'));
+}
+
+public function assignUpdate(Request $request, $id)
+{
+    $user = User::findOrFail($id);
+
+    // Sync roles
+    $user->syncRoles($request->input('roles', []));
+
+    // Sync permissions
+    $user->syncPermissions($request->input('permissions', []));
+
+    return redirect()->route('users.show', $user->id)
+                     ->with('success', 'Roles and permissions updated successfully.');
+}
 }
