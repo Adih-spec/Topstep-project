@@ -14,28 +14,34 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js']) 
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <!-- Styles -->
         @livewireStyles
     </head>
     <body class="font-sans antialiased">
+        <x-banner />
+
         <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+            @livewire('navigation-menu')
 
             <!-- Page Heading -->
-            @isset($header)
+            @if (isset($header))
                 <header class="bg-white shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
                 </header>
-            @endisset
+            @endif
 
             <!-- Page Content -->
             <main class="py-6 px-4 sm:px-6 lg:px-8">
                 @yield('content')
             </main>
         </div>
+
+        @stack('modals')
+
+        @livewireScripts
     </body>
 </html>

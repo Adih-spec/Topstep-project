@@ -2,11 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class students extends Model
+class students extends Authenticatable
 {
-   use HasFactory;
 
     protected $fillable = [
         'first_name',
@@ -16,6 +15,14 @@ class students extends Model
         'dob',
         'gender',
         'address',
-        'class',
+        'class_id',
+        'admission_number',
+        'admission_date',
+        'guardian_name',
+        'guardian_phone',
+        'photo',
+        'is_active',
     ];
+    
 }
+
