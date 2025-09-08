@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::with('roles', 'permissions')->get();
+        $users = User::get();
         $roles = Role::all();
         $permissions = Permission::all();
 
@@ -31,4 +31,25 @@ class UserController extends Controller
         $user->givePermissionTo($request->permission);
         return back()->with('success', 'Permission assigned successfully!');
     }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $users = User::where('name', 'LIKE', "%{$query}%")
+                     ->orWhere('email', 'LIKE', "%{$query}%")
+                     ->get();
+
+        $roles = Role::all();
+        $permissions = Permission::all();
+
+        return view('components.users.index', compact('users', 'roles', 'permissions'));
+    }
+public function show($id)
+{
+    $user = User::findOrFail($id);
+    return view('components.users.show', compact('user'));
+}
+
+
 }

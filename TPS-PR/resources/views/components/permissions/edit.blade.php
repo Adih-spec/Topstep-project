@@ -1,66 +1,66 @@
-@extends('componenpageTitle', 'Edit Permission')
+@extends('components.layouts.app')
+
+@section('pageTitle', 'Edit Permission')
 
 @section('pageContent')
-<div class="container mx-auto max-w-2xl mt-12">
-    <div class="bg-white shadow-lg rounded-xl p-8 border border-gray-100">
-        <!-- Page Header -->
-        <div class="mb-8">
-            <h2 class="text-3xl font-bold text-gray-900">Edit Permission</h2>
-            <p class="mt-2 text-sm text-gray-600">Update the details of this permission below.</p>
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">Edit Permission</h4>
+            <a href="{{ route('permissions.index') }}" class="btn btn-secondary btn-sm">← Back</a>
         </div>
+        <div class="card-body">
 
-        <!-- Form -->
-        <form action="{{ route('permissions.update', $permission->id) }}" method="POST" class="space-y-6">
-            @csrf
-            @method('PUT')
+            {{-- Show Validation Errors --}}
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul class="mb-0">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
-            <!-- Name -->
-            <div>
-                <label for="name" class="block text-sm font-semibold text-gray-700">Permission Name</label>
-                <input 
-                    type="text" 
-                    id="name" 
-                    name="name" 
-                    value="{{ old('name', $permission->name) }}" 
-                    required
-                    class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-                >
-                @error('name')
-                    <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
-                @enderror
-            </div>
+            {{-- Edit Form --}}
+            <form action="{{ route('permissions.update', $permission->id) }}" method="POST">
+                @csrf
+                @method('PUT')
 
-            <!-- Description -->
-            <div>
-                <label for="description" class="block text-sm font-semibold text-gray-700">Description</label>
-                <textarea 
-                    id="description" 
-                    name="description" 
-                    rows="4"
-                    class="mt-1 w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
-                >{{ old('description', $permission->description) }}</textarea>
-                @error('description')
-                    <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
-                @enderror
-            </div>
+                {{-- Permission Name --}}
+                <div class="mb-3">
+                    <label for="name" class="form-label fw-semibold">Permission Name</label>
+                    <input type="text" 
+                           id="name" 
+                           name="name" 
+                           value="{{ old('name', $permission->name) }}" 
+                           class="form-control @error('name') is-invalid @enderror" 
+                           required>
+                    @error('name')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
 
-            <!-- Actions -->
-            <div class="flex items-center justify-end gap-4 pt-6 border-t border-gray-100">
-                <a 
-                    href="{{ route('permissions.index') }}" 
-                    class="px-5 py-2 text-gray-600 font-medium rounded-lg hover:text-blue-600 transition"
-                >
-                    Cancel
-                </a>
-                <button 
-                    type="submit" 
-                    class="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-1 transition"
-                >
-                    Update Permission
-                </button>
-                <a href="{{ route('permissions.index') }}" class="btn btn-secondary mb-3">Back</a>
-            </div>
-        </form>
+                {{-- Guard Name --}}
+                <div class="mb-3">
+                    <label for="guard_name" class="form-label fw-semibold">Guard Name</label>
+                    <select name="guard_name" id="guard_name" class="form-select" required>
+                        <option value="web" {{ $permission->guard_name == 'web' ? 'selected' : '' }}>Web</option>
+                        <option value="admin" {{ $permission->guard_name == 'admin' ? 'selected' : '' }}>Admin</option>
+                        <option value="teacher" {{ $permission->guard_name == 'teacher' ? 'selected' : '' }}>Teacher</option>
+                        <option value="student" {{ $permission->guard_name == 'student' ? 'selected' : '' }}>Student</option>
+                        <option value="guardian" {{ $permission->guard_name == 'guardian' ? 'selected' : '' }}>Guardian</option>
+                    </select>
+                </div>
+
+                {{-- Submit --}}
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-save me-1"></i> Update Permission
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 @endsection
