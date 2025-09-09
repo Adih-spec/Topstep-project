@@ -17,7 +17,6 @@
         <div class="alert alert-danger">{{ session('error') }}</div>
     @endif
 
-
     <div class="card shadow">
         <div class="card-body table-responsive">
             <table class="table table-hover table-bordered">
@@ -44,28 +43,33 @@
                         <td>{{ $guardian->phone }}</td>
                         <td>{{ $guardian->relationship_with_student }}</td>
                         <td class="text-center">
-                            <!-- Button to assign students -->
-                            <a href="{{ url('/assign/' . $guardian->id) }}" class="btn btn-primary btn-sm">👨‍👩‍👦 Assign</a>
-                            <a href="{{ route('guardians.show', $guardian->id) }}" class="btn btn-sm btn-info text-white" >👁View</a>
-                            <div class="mt-2">
-                                <!-- Edit Button -->
-                                <a href="{{ route('guardians.edit', $guardian->id) }}" class="btn btn-sm btn-warning">✏️Edit</a>
-                                <!-- Delete Button -->
-                                <form action="{{ route('guardians.destroy', $guardian->id) }}" 
-                                      method="POST" 
-                                      style="display:inline-block;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" 
-                                            class="btn btn-sm btn-danger"
-                                            onclick="return confirm('Are you sure you want to delete this guardian?')">
-                                        🗑Delete
-                                    </button>
-                                </form>
+                            <!-- Dropdown -->
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="actionsDropdown{{ $guardian->id }}" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Actions
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="actionsDropdown{{ $guardian->id }}">
+                                    <li>
+                                        <a href="{{ route('guardians.show', $guardian->id) }}" class="dropdown-item">View</a>
+                                    </li>
+                                    <li>
+                                        <button class="dropdown-item text-warning" data-bs-toggle="modal" data-bs-target="#editGuardianModal{{ $guardian->id }}">Edit</button>
+                                    </li>
+                                    <li>
+                                        <form action="{{ route('guardians.destroy', $guardian->id) }}" method="POST" style="display:inline-block;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="dropdown-item text-danger" onclick="return confirm('Are you sure you want to delete this guardian?')">Delete</button>
+                                        </form>
+                                    </li>
+                                </ul>
                             </div>
-                            </form>
                         </td>
                     </tr>
+
+                    <!-- Include Edit Modal for this Guardian -->
+                    @include('guardians.edit-modal', ['guardian' => $guardian])
+
                     @empty
                     <tr>
                         <td colspan="8" class="text-center text-muted">No guardians found.</td>

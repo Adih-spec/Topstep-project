@@ -30,5 +30,5 @@ class Guardian extends Authenticatable
     public function students()
     {
         return $this->belongsToMany(Student::class, 'guardian_student');
-    }
+    }    
 }

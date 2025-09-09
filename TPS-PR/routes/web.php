@@ -8,6 +8,9 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GuardianController;
+use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('components.pages.home');
@@ -22,9 +25,7 @@ Route::post('/guardians/login', [GuardianController::class, 'login'])->name('gua
 Route::get('/guardians/logout', [GuardianController::class, 'logout'])->name('guardian.logout');
 Route::get('/guardians/dashboard', function () {
     return view('guardians.dashboard');})->name('guardian.dashboard')->middleware('auth:guardian');
-use App\Http\Controllers\PermissionController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\UserController;
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -50,6 +51,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/guardians/{id}/edit', 'edit')->name('guardians.edit');
         Route::put('/guardians/{id}', 'update')->name('guardians.update');
         Route::delete('/guardians/{guardian}', 'destroy')->name('guardians.destroy');
+        Route::get('/guardians/{guardian}/assign', 'showAssignForm')->name('guardians.assign');
+        Route::post('/guardians/{guardian}/assign', 'assignStudent')->name('guardians.assign.store');
     });
     Route::get('/dashboard', function() {
         view('dashboard');

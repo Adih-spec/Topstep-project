@@ -85,19 +85,27 @@
                         </div>
                     </div>
                     <div class="row mb-4">
-                        <div class="col-md-4">
-                            <label for="country" class="form-label fw-semibold text-dark">Country</label>
-                            <input type="text" id="country" name="country" class="form-control rounded-3" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="state_of_origin" class="form-label fw-semibold text-dark">State</label>
-                            <input type="text" id="state_of_origin" name="state_of_origin" class="form-control rounded-3" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="lga" class="form-label fw-semibold text-dark">LGA</label>
-                            <input type="text" id="lga" name="lga" class="form-control rounded-3" required>
-                        </div>  
-                    </div>
+                    <div class="col-md-4">
+    <label for="country" class="form-label fw-semibold text-dark">Country</label>
+    <select id="country" name="country" class="form-select rounded-3 country-select" required>
+        <option value="">-- Select Country --</option>
+    </select>
+</div>
+
+<div class="col-md-4">
+    <label for="state_of_origin" class="form-label fw-semibold text-dark">State</label>
+    <select id="state_of_origin" name="state_of_origin" class="form-select rounded-3 state-select" required>
+        <option value="">-- Select State --</option>
+    </select>
+</div>
+
+<div class="col-md-4">
+    <label for="city" class="form-label fw-semibold text-dark">LGA / City</label>
+    <select id="city" name="city" class="form-select rounded-3 city-select" required>
+        <option value="">-- Select City --</option>
+    </select>
+</div>
+
                     <!-- Login Credentials -->
                     <div class="row mb-4">
                         <div class="col-md-4">

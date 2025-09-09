@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Guardian;
+use App\Models\Student;
 use Illuminate\Support\Facades\Hash;
 
 class GuardianController extends Controller
@@ -161,6 +162,26 @@ class GuardianController extends Controller
     public function show($id)
     {
         $guardian = Guardian::findOrFail($id);
-        return view('guardians.show', compact('guardian'));
+        $students = Student::all(); 
+        return view('guardians.show', compact('guardian', 'students'));
     }
+    public function showAssignForm(Guardian $guardian)
+    {
+        // Fetch all students
+        $students = Student::all();
+    
+        return view('guardians.assign', compact('guardian', 'students'));
+    }
+
+public function assignStudent(Request $request, Guardian $guardian)
+{
+    $request->validate([
+        'students' => 'required|array',
+    ]);
+
+    // attach or sync students
+    $guardian->students()->sync($request->students);
+
+    return redirect()->route('guardians.index')->with('success', 'Students assigned successfully!');
+}
 }
