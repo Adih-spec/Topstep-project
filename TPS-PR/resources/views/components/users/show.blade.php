@@ -25,8 +25,8 @@
             <p><strong>Updated At:</strong> {{ $user->updated_at->format('d M Y, h:i A') }}</p>
         </div>
         <a href="{{ route('users.assign.form', $user->id) }}" class="btn btn-warning">
-    Assign Roles & Permissions
-</a>
+        Assign Roles & Permissions
+        </a>
 
         <div class="card-footer text-end">
             <a href="{{ route('users.search') }}" class="btn btn-secondary">Back to Search</a>

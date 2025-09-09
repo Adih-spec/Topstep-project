@@ -11,6 +11,7 @@ use App\Http\Controllers\GuardianController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return view('components.pages.home');
@@ -76,8 +77,10 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
         Route::get('/permissions/{permission}/edit', 'edit')->name('permissions.edit');
         Route::put('/permissions/{permission}', 'update')->name('permissions.update');
         Route::delete('/permissions/{permission}', 'destroy')->name('permissions.destroy');
-    });
+    }
+    );
 
+    Route::resource('admins', AdminController::class);
 });
 
 
