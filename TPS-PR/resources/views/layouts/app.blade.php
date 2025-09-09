@@ -48,6 +48,95 @@
         </div>
     </div>
 
+        @livewireScripts
+        <!-- Bootstrap Bundle with Popper (needed for modals, dropdowns, etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".country-select").forEach(countrySelect => {
+        let stateSelect = countrySelect.closest(".row").querySelector(".state-select");
+        let citySelect = countrySelect.closest(".row").querySelector(".city-select");
+
+        let selectedCountry = countrySelect.dataset.selected || "";
+        let selectedState   = stateSelect.dataset.selected || "";
+        let selectedCity    = citySelect.dataset.selected || "";
+
+        // === Load Countries ===
+        fetch("https://countriesnow.space/api/v0.1/countries/positions")
+            .then(res => res.json())
+            .then(data => {
+                data.data.forEach(c => {
+                    let option = document.createElement("option");
+                    option.value = c.name;
+                    option.textContent = c.name;
+                    if (c.name === selectedCountry) option.selected = true;
+                    countrySelect.appendChild(option);
+                });
+
+                if (selectedCountry) loadStates(selectedCountry, stateSelect, selectedState, citySelect, selectedCity);
+            });
+
+        // === Load States on Country change ===
+        countrySelect.addEventListener("change", function () {
+            loadStates(this.value, stateSelect, "", citySelect, "");
+        });
+
+        // === Load Cities on State change ===
+        stateSelect.addEventListener("change", function () {
+            loadCities(countrySelect.value, this.value, citySelect, "");
+        });
+    });
+
+    // === Function: Load States ===
+    function loadStates(country, stateSelect, selectedState, citySelect, selectedCity) {
+        stateSelect.innerHTML = '<option value="">-- Select State --</option>';
+        citySelect.innerHTML = '<option value="">-- Select City --</option>';
+
+        fetch("https://countriesnow.space/api/v0.1/countries/states", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ country })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.data && data.data.states) {
+                data.data.states.forEach(s => {
+                    let option = document.createElement("option");
+                    option.value = s.name;
+                    option.textContent = s.name;
+                    if (s.name === selectedState) option.selected = true;
+                    stateSelect.appendChild(option);
+                });
+
+                if (selectedState) loadCities(country, selectedState, citySelect, selectedCity);
+            }
+        });
+    }
+
+    // === Function: Load Cities ===
+    function loadCities(country, state, citySelect, selectedCity) {
+        citySelect.innerHTML = '<option value="">-- Select City --</option>';
+
+        fetch("https://countriesnow.space/api/v0.1/countries/state/cities", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ country, state })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.data) {
+                data.data.forEach(city => {
+                    let option = document.createElement("option");
+                    option.value = city;
+                    option.textContent = city;
+                    if (city === selectedCity) option.selected = true;
+                    citySelect.appendChild(option);
+                });
+            }
+        });
+    }
+});
+</script>
     <!-- Bootstrap Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class students extends Authenticatable
+class Student extends Authenticatable
 {
 
     protected $fillable = [
@@ -23,6 +23,10 @@ class students extends Authenticatable
         'photo',
         'is_active',
     ];
-    
+
+public function guardians()
+{
+    return $this->belongsToMany(Guardian::class, 'guardian_student');
+}
 }
 
