@@ -57,7 +57,7 @@ public function assignForm($id)
     $roles = Role::all();
     $permissions = Permission::all();
 
-    return view('users.assign', compact('user', 'roles', 'permissions'));
+    return view('components.users.assign', compact('user', 'roles', 'permissions'));
 }
 
 public function assignUpdate(Request $request, $id)
