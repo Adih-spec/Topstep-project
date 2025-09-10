@@ -7,6 +7,7 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GuardController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -62,6 +63,16 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/users/{id}/assign', [UserController::class, 'assignUpdate'])->name('users.assign.update');
 
 });
+
+
+
+Route::prefix('guards')->group(function () {
+    Route::get('/', [GuardController::class, 'index'])->name('guards.index');
+    Route::get('/create', [GuardController::class, 'create'])->name('guards.create');
+    Route::post('/store', [GuardController::class, 'store'])->name('guards.store');
+});
+
+
 
 
 require __DIR__.'/auth.php';
