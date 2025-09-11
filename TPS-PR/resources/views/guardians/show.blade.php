@@ -2,6 +2,19 @@
 
 @section('content')
 <div class="container my-4">
+@if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ session('error') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
     <h1 class="mb-5 text-center fw-bold display-5 text-primary">Guardian Details</h1>
     
     <!-- Profile Info -->
@@ -44,7 +57,7 @@
                         <p><strong>Religion:</strong> {{ $guardian->religion }}</p>
                         <p><strong>Country:</strong> {{ $guardian->country }}</p>
                         <p><strong>State of Origin:</strong> {{ $guardian->state_of_origin }}</p>
-                        <p><strong>LGA:</strong> {{ $guardian->lga }}</p>
+                        <p><strong>LGA/City:</strong> {{ $guardian->city }}</p>
                     </div>
                 </div>
             </div>
@@ -104,39 +117,53 @@
             </div>
         </div>
 
-        <!-- Assign Modal -->
-        <div class="modal fade" id="assignModal" tabindex="-1" aria-labelledby="assignModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form action="{{ route('guardians.assign.store', $guardian->id) }}" method="POST">
-                        @csrf
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="assignModalLabel">Assign Students to {{ $guardian->first_name }} {{ $guardian->last_name }} {{ $guardian->other_names }}</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <label for="students">Select Students:</label>
-                            <select name="students[]" id="students" class="form-control" multiple>
-                                @foreach($students as $student)
-                                    <option value="{{ $student->id }}"
-                                        {{ $guardian->students->contains($student->id) ? 'selected' : '' }}>
-                                        {{ $student->first_name }} {{ $student->last_name }} ({{ $student->class }})
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-success">Assign</button>
-                        </div>
-                    </form>
+<!-- Assign / Unassign Modal -->
+<div class="modal fade" id="assignModal" tabindex="-1" aria-labelledby="assignModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form action="{{ route('guardians.assign.store', $guardian->id) }}" method="POST">
+                @csrf
+                <div class="modal-header">
+                    <h5 class="modal-title" id="assignModalLabel">
+                        Manage Students for {{ $guardian->first_name }} {{ $guardian->last_name }} {{ $guardian->other_names }}
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </div>
+                
+                <div class="modal-body">
+                    <p class="fw-semibold">Select students to assign / unassign:</p>
+                    
+                    <div class="row">
+                        @foreach($students as $student)
+                            <div class="col-md-6 mb-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" 
+                                           name="students[]" 
+                                           value="{{ $student->id }}"
+                                           id="student{{ $student->id }}"
+                                           {{ $guardian->students->contains($student->id) ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="student{{ $student->id }}">
+                                        {{ $student->first_name }} {{ $student->last_name }} 
+                                        <span class="badge bg-primary">{{ $student->class }}</span>
+                                    </label>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-success">Save Changes</button>
+                </div>
+            </form>
         </div>
+    </div>
+</div>
 
         <!-- Back Button -->
         <div class="text-center mt-5">
-            <a href="{{ route('guardians.index') }}" class="btn btn-lg btn-primary">
+            <a href="{{ route('guardians.index') }}" class="btn btn-lg" style="background-color: #001f3f; color: white;">
                 Back to List
             </a>
         </div>

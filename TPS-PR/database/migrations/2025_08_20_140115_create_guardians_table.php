@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('residential_address')->nullable();
             $table->string('country')->nullable();
             $table->string('state_of_origin')->nullable();
-            $table->string('lga')->nullable();
+            $table->string('city')->nullable();
             $table->string('relationship_with_student')->nullable();
             $table->string('number_of_children')->nullable();
             $table->string('occupation')->nullable();

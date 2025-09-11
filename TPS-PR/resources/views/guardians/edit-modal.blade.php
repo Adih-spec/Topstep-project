@@ -77,13 +77,13 @@
                      value="{{ old('occupation', $guardian->occupation) }}">
             </div>
             <div class="col-md-4">
-              <label for="number_of_children{{ $guardian->id }}" class="form-label fw-semibold">Children in School</label>
+              <label for="number_of_children{{ $guardian->id }}" class="form-label fw-semibold">Number of Children in School</label>
               <input type="number" id="number_of_children{{ $guardian->id }}" name="number_of_children"
                      class="form-control rounded-3"
                      value="{{ old('number_of_children', $guardian->number_of_children) }}" required>
             </div>
             <div class="col-md-4">
-              <label for="relationship_with_student{{ $guardian->id }}" class="form-label fw-semibold">Relationship</label>
+              <label for="relationship_with_student{{ $guardian->id }}" class="form-label fw-semibold">Relationship with student</label>
               <select id="relationship_with_student{{ $guardian->id }}" name="relationship_with_student" class="form-select rounded-3" required>
                 <option value="">--Select--</option>
                 <option value="Mother" {{ old('relationship_with_student', $guardian->relationship_with_student) == 'Mother' ? 'selected' : '' }}>Mother</option>
@@ -109,7 +109,7 @@
         </select>
     </div>
     <div class="col-md-4">
-        <label for="city" class="form-label fw-semibold text-dark">City</label>
+        <label for="city" class="form-label fw-semibold text-dark">LGA / City</label>
         <select name="city" class="form-control rounded-3 city-select"
                 data-selected="{{ old('city', $guardian->city ?? '') }}" required>
         </select>

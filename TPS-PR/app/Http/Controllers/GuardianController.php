@@ -36,7 +36,7 @@ class GuardianController extends Controller
             'residential_address' => 'required|string|max:255',
             'country' => 'required|string|max:255',
             'state_of_origin' => 'nullable|string|max:255',
-            'lga' => 'nullable|string|max:255',
+            'city' => 'nullable|string|max:255',
             'relationship_with_student' => 'required|string|max:255',
             'number_of_children' => 'required|integer|min:0',
             'occupation' => 'nullable|string|max:255',
@@ -54,7 +54,7 @@ class GuardianController extends Controller
             'residential_address' => $request->residential_address,
             'country' => $request->country,
             'state_of_origin' => $request->state_of_origin,
-            'lga' => $request->lga,
+            'city' => $request->city,
             'relationship_with_student' => $request->relationship_with_student,
             'number_of_children' => $request->number_of_children,
             'occupation' => $request->occupation,
@@ -116,7 +116,7 @@ class GuardianController extends Controller
         'residential_address' => 'required|string|max:255',
         'country' => 'required|string|max:255',
         'state_of_origin' => 'nullable|string|max:255',
-        'lga' => 'nullable|string|max:255',
+        'city' => 'nullable|string|max:255',
         'relationship_with_student' => 'required|string|max:255',
         'number_of_children' => 'required|integer|min:0',
         'occupation' => 'nullable|string|max:255',
@@ -135,7 +135,7 @@ class GuardianController extends Controller
     $guardian->residential_address = $request->residential_address;
     $guardian->country = $request->country;
     $guardian->state_of_origin = $request->state_of_origin;
-    $guardian->lga = $request->lga;
+    $guardian->city = $request->city;
     $guardian->relationship_with_student = $request->relationship_with_student;
     $guardian->number_of_children = $request->number_of_children;
     $guardian->occupation = $request->occupation;
@@ -173,15 +173,14 @@ class GuardianController extends Controller
         return view('guardians.assign', compact('guardian', 'students'));
     }
 
-public function assignStudent(Request $request, Guardian $guardian)
-{
-    $request->validate([
-        'students' => 'required|array',
-    ]);
-
-    // attach or sync students
-    $guardian->students()->sync($request->students);
-
-    return redirect()->route('guardians.index')->with('success', 'Students assigned successfully!');
-}
+    public function assignStudents(Request $request, $guardianId)
+    {
+        $guardian = Guardian::findOrFail($guardianId);
+    
+        // Attach new students and detach removed ones
+        $guardian->students()->sync($request->input('students', []));
+    
+        return redirect()->route('guardians.show', $guardian->id)
+                         ->with('success', 'Students updated successfully.');
+    }
 }

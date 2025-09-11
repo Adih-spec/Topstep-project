@@ -17,7 +17,7 @@ class Guardian extends Authenticatable
         'residential_address',
         'country',
         'state_of_origin',
-        'lga',
+        'city',
         'relationship_with_student',
         'number_of_children',
         'occupation',

@@ -48,9 +48,8 @@
         </div>
     </div>
 
-        @livewireScripts
-        <!-- Bootstrap Bundle with Popper (needed for modals, dropdowns, etc.) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".country-select").forEach(countrySelect => {
@@ -136,10 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
-</script>
-    <!-- Bootstrap Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+</script>    
     {{-- Page-specific scripts --}}
     @stack('scripts')
 </body>

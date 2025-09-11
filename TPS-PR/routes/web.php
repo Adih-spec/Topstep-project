@@ -53,7 +53,7 @@ Route::middleware('auth')->group(function () {
         Route::put('/guardians/{id}', 'update')->name('guardians.update');
         Route::delete('/guardians/{guardian}', 'destroy')->name('guardians.destroy');
         Route::get('/guardians/{guardian}/assign', 'showAssignForm')->name('guardians.assign');
-        Route::post('/guardians/{guardian}/assign', 'assignStudent')->name('guardians.assign.store');
+        Route::post('/guardians/{guardian}/assign', 'assignStudents')->name('guardians.assign.store');
     });
     Route::get('/dashboard', function() {
         view('dashboard');
