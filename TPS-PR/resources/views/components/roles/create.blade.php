@@ -28,15 +28,13 @@
         </div>
 
         <div class="mb-3">
-            <label for="guard_name">Guard Name</label>
-            <select name="guard_name" class="form-control" required>
-                <option value="web">Web</option>
-                <option value="admin">Admin</option>
-                <option value="teacher">Teacher</option>
-                <option value="student">Student</option>
-                <option value="guardian">Guardian</option>
-            </select>
-        </div>
+        <label for="guard_name">Guard Name</label>
+        <select name="guard_name" class="form-control" required>
+            @foreach($guards as $guard)
+                <option value="{{ $guard }}">{{ ucfirst($guard) }}</option>
+            @endforeach
+        </select>
+    </div>
 
         <button class="btn btn-success">Save</button>
     </form>

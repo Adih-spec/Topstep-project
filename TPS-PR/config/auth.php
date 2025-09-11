@@ -62,9 +62,10 @@ return [
     'providers' => [
     'users' => [
         'driver' => 'eloquent',
-        'model' => App\Models\Guard::class,
+        'model' => App\Models\User::class, // ✅ should be User
     ],
 ],
+
 
         // 'users' => [
         //     'driver' => 'database',

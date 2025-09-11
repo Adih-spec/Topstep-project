@@ -1,30 +1,64 @@
 @extends('components.layouts.app')
 @section('pageTitle', 'Guard Management')
+
 @section('pageContent')
-
-<div class="container">
+<div class="container mt-4">
     <h1 class="mb-4">Guard Management</h1>
-    <a href="{{ route('guards.create') }}" class="btn btn-primary mb-3">+ Add Guard User</a>
 
-    @foreach ($users as $guard => $group)
-        <h3 class="mt-4 text-capitalize">{{ $guard }}</h3>
-        <table class="table table-bordered">
-            <thead>
+    {{-- Success Message --}}
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <div class="mb-3">
+        <a href="{{ route('guards.create') }}" class="btn btn-primary">+ Add New Guard</a>
+    </div>
+
+    <table class="table table-bordered table-striped align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Guard Type</th>
+                <th>Roles</th>
+                <th width="150">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @forelse($guards as $index => $guard)
                 <tr>
-                    <th>Name</th><th>Email</th><th>Role</th><th>Created At</th>
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ $guard->name }}</td>
+                    <td>{{ $guard->email }}</td>
+                    <td>{{ ucfirst($guard->guard_type) }}</td>
+                    <td>
+                        @foreach($guard->roles as $role)
+                            <span class="badge bg-info text-dark">{{ $role->name }}</span>
+                        @endforeach
+                    </td>
+                    <td>
+                        {{-- Delete Button --}}
+                        <form action="{{ route('guards.destroy', $guard->id) }}" method="POST" 
+                              onsubmit="return confirm('Are you sure you want to delete this guard?');">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger btn-sm w-100">Delete</button>
+                        </form>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach ($group as $user)
-                    <tr>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->getRoleNames()->implode(', ') }}</td>
-                        <td>{{ $user->created_at->format('Y-m-d') }}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    @endforeach
+            @empty
+                <tr>
+                    <td colspan="6" class="text-center">No guard users found.</td>
+                </tr>
+            @endforelse
+        </tbody>
+    </table>
+
+    <div>
+        {{ $guards->links() }}
+    </div>
 </div>
 @endsection

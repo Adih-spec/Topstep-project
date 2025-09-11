@@ -2,52 +2,52 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guard;
 use Illuminate\Http\Request;
-use App\Models\User;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Hash;
 
 class GuardController extends Controller
 {
-    /**
-     * Show all users grouped by guard_type
-     */
     public function index()
     {
-        $users = User::all()->groupBy('guard_type');
-        return view('guards.index', compact('users'));
+        $guards = Guard::with('roles')->latest()->paginate(10);
+        return view('components.guards.index', compact('guards'));
     }
 
-    /**
-     * Show form to create a new Guard User
-     */
     public function create()
     {
         $roles = Role::all();
-        return view('guards.create', compact('roles'));
+        return view('components.guards.create', compact('roles'));
     }
 
-    /**
-     * Store new guard user
-     */
     public function store(Request $request)
     {
         $request->validate([
-            'name'       => 'required|string|max:255',
-            'email'      => 'required|email|unique:users',
-            'password'   => 'required|min:6',
-            'guard_type' => 'required|string',
-            'role'       => 'required|string',
+            'name'=>'required|string|max:255',
+            'email'=>'required|email|unique:guards,email',
+            'password'=>'required|min:6',
+            'guard_type'=>'required|string',
+            'role'=>'required|string'
         ]);
 
-        $user = User::create([
-            'name'       => $request->name,
-            'email'      => $request->email,
-            'password'   => bcrypt($request->password),
-            'guard_type' => $request->guard_type,
+        $guard = Guard::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>Hash::make($request->password),
+            'guard_type'=>$request->guard_type,
         ]);
 
-        $user->assignRole($request->role);
+        $guard->assignRole($request->role);
 
-        return redirect()->route('guards.index')->with('success', 'Guard User created successfully!');
+        return redirect()->route('guards.index')
+            ->with('success', 'Guard user created successfully!');
     }
+        public function destroy(Guard $guard)
+{
+    $guard->delete();
+
+    return redirect()->route('guards.index')
+        ->with('success', 'Guard user deleted successfully.');
+}
 }

@@ -66,11 +66,14 @@ Route::middleware(['auth'])->group(function () {
 
 
 
+
 Route::prefix('guards')->group(function () {
     Route::get('/', [GuardController::class, 'index'])->name('guards.index');
     Route::get('/create', [GuardController::class, 'create'])->name('guards.create');
     Route::post('/store', [GuardController::class, 'store'])->name('guards.store');
+    Route::delete('/{guard}', [GuardController::class, 'destroy'])->name('guards.destroy'); 
 });
+
 
 
 
