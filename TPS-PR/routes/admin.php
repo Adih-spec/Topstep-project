@@ -9,7 +9,7 @@ Route::prefix('admin')->middleware('guest:admin')->group(function(){
 
 });
 Route::middleware('auth:admin')->group(function () {
-    Route::get('/dashboard', function () {
+    Route::get('/admin/dashboard', function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
 });
