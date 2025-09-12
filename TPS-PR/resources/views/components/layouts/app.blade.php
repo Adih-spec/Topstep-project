@@ -48,6 +48,7 @@
           class="d-block py-2 px-3 mb-2 rounded {{ request()->routeIs('users.*') ? 'bg-primary text-white' : '' }}">
           User Management
         </a>
+        <a href="{{ route('guards.index') }}" class="{{ request()->routeIs('users.*') ? 'active' : '' }}">Manage guard</a>
     </div>
     <div class="content flex-fill">
         @yield('pageContent')
