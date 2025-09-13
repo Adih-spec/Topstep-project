@@ -5,6 +5,7 @@ use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\TeachersController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ProgramsController;
@@ -41,4 +42,12 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::group(['prefix' => 'staffs'], function () {
+        Route::get('/', [TeachersController::class, 'index'])->name('teachers.index');
+        Route::get('/create', [TeachersController::class, 'create'])->name('teachers.create');
+        Route::post('/', [TeachersController::class, 'store'])->name('teachers.store');
+        Route::get('/{id}/edit', [TeachersController::class, 'edit'])->name('teachers.edit');
+        Route::put('/{id}', [TeachersController::class, 'update'])->name('teachers.update');
+        Route::delete('/{id}', [TeachersController::class, 'destroy'])->name('teachers.destroy');
+    });
 });
