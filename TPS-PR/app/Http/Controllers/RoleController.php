@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
+use App\Models\Guard;
 
 class RoleController extends Controller
 {
@@ -12,11 +13,15 @@ class RoleController extends Controller
         $data['roles'] = Role::all();
         return view('components.roles.index', $data);
     }
-
+         
     public function create()
     {
-        return view('components.roles.create');
+        // Get unique guard types you’ve already created
+        $guards = Guard::select('guard_type')->distinct()->pluck('guard_type');
+
+        return view('components.roles.create', compact('guards'));
     }
+        
 
     public function store(Request $request)
     {

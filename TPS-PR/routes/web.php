@@ -7,6 +7,7 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GuardController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -24,6 +25,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function() {
         view('dashboard');
     })->name('dashboard');
+    Route::group(['prefix' => 'staffs'], function () {
+        Route::get('/', [TeachersController::class, 'index'])->name('teachers.index');
+        Route::get('/create', [TeachersController::class, 'create'])->name('teachers.create');
+        Route::post('/', [TeachersController::class, 'store'])->name('teachers.store');
+        Route::get('/{id}/edit', [TeachersController::class, 'edit'])->name('teachers.edit');
+        Route::put('/{id}', [TeachersController::class, 'update'])->name('teachers.update');
+        Route::delete('/{id}', [TeachersController::class, 'destroy'])->name('teachers.destroy');
+    });
 });
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
@@ -61,6 +70,19 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/users/{id}/assign', [UserController::class, 'assignUpdate'])->name('users.assign.update');
 
 });
+
+
+
+
+Route::prefix('guards')->group(function () {
+    Route::get('/', [GuardController::class, 'index'])->name('guards.index');
+    Route::get('/create', [GuardController::class, 'create'])->name('guards.create');
+    Route::post('/store', [GuardController::class, 'store'])->name('guards.store');
+    Route::delete('/{guard}', [GuardController::class, 'destroy'])->name('guards.destroy'); 
+});
+
+
+
 
 
 require __DIR__.'/auth.php';
