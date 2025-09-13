@@ -2,27 +2,36 @@
 
 namespace App\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable; // ✅ Extend for login support
+use Illuminate\Notifications\Notifiable;
 
-class student extends Authenticatable
+class Student extends Authenticatable
 {
+    use HasFactory, Notifiable;
 
     protected $fillable = [
-    'first_name',
-    'last_name',
-    'email',
-    'phone',
-    'dob',
-    'gender',
-    'address',
-    'class_id',
-    'admission_number',
-    'admission_date',
-    'guardian_name',
-    'guardian_phone',
-    'photo',
-    'is_active',
-];
+        'admission_number',
+        'first_name',
+        'middle_name',
+        'last_name',
+        'email',
+        'phone',
+        'dob',
+        'gender',
+        'class',
+        'country',
+        'state_of_origin',
+        'religion',
+        'address',
+        'admission_date',
+        'status',
+        'photo',
+        'password', // ✅ make sure password is fillable
+    ];
 
+    // ✅ Hide password when returning Student object as JSON
+    protected $hidden = [
+        'password',
+    ];
 }
-
