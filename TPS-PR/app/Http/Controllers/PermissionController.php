@@ -20,22 +20,23 @@ class PermissionController extends Controller
         return view('components.permissions.create');
     }
 
+
+
     public function store(Request $request)
-    {
-        $request->validate([
-            'name' => [
-                'required',
-                Rule::unique('permissions')->where(function ($query) use ($request) {
-                    return $query->where('guard_name', $request->guard_name);
-                }),
-            ],
-            'guard_name' => 'required|string',
-        ]);
+{
+    $request->validate([
+        'name' => 'required|unique:permissions,name',
+        'guard_name' => 'required|string'
+    ]);
 
-        return redirect()->route('permissions.index')
-                        ->with('success', 'Permission created successfully.');
-    }
+    Permission::create([
+        'name' => $request->name,
+        'guard_name' => $request->guard_name
+    ]);
 
+    return redirect()->route('permissions.index')
+                     ->with('success', 'Permission created successfully!');
+}
     public function edit(Permission $permission)
     {
         return view('components.permissions.edit', compact('permission'));

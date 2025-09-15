@@ -13,22 +13,35 @@ class RoleController extends Controller
         return view('components.roles.index', compact('roles'));
     }
 
-    public function create()
-{
+   public function create()
+    {
+        // get distinct guard names (strings)
+        $guards = Guard::pluck('guard_name')->unique();
 
-    $guards = Guard::pluck('guard_name');
-    return view('components.roles.create', compact('guards'));
-}
-
+        return view('components.roles.create', compact('guards'));
+    }
 
     public function store(Request $request)
-    {
-        $request->validate(['name'=>'required', 'guard_id'=>'required']);
-        $guard = Guard::findOrFail($request->guard_id);
+{
+    // ✅ Validate the input
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'guard_name' => 'required|string'
+    ]);
 
-        $role = Role::create(['name'=>$request->name, 'guard_name'=>$guard->guard_type]);
-        $guard->assignRole($role);
+    // ✅ Create the role using the request data
+    $role = Role::create([
+        'name' => $request->name,
+        'guard_name' => $request->guard_name, // use the selected guard_name
+    ]);
 
-        return redirect()->route('roles.index')->with('success','Role created and assigned.');
-    }
+    // If you need to assign this role to a specific user or model, do it here.
+    // Example: Assign to currently authenticated user (optional)
+    // auth()->user()->assignRole($role);
+
+    return redirect()
+        ->route('roles.index')
+        ->with('success', 'Role created successfully.');
+}
+
 }
