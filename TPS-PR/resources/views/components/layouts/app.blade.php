@@ -44,7 +44,7 @@
           Admin Management
         </a>
 
-        <a href="" 
+        <a href="{{ route('admin.users.index') }}" 
           class="d-block py-2 px-3 mb-2 rounded {{ request()->routeIs('users.*') ? 'bg-primary text-white' : '' }}">
           User Management
         </a>

@@ -58,17 +58,17 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{ route('admins.show', $admin->admin_id) }}" class="btn btn-sm btn-secondary">
+                                            <!-- <a href="{{ route('admins.show', $admin->admin_id) }}" class="btn btn-sm btn-secondary">
                                                 <i class="bi bi-eye"></i>
-                                            </a>
+                                            </a> -->
                                             <a href="{{ route('admins.edit', $admin->admin_id) }}" class="btn btn-sm btn-warning">
-                                                <i class="bi bi-pencil"></i>
+                                                Edit<i class="bi bi-pencil"></i>
                                             </a>
                                             <form action="{{ route('admins.destroy', $admin->admin_id) }}" method="POST" class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this admin?')">
-                                                    <i class="bi bi-trash"></i>
+                                                    Delete<i class="bi bi-trash"></i>
                                                 </button>
                                             </form>
                                         </td>

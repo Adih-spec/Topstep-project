@@ -1,9 +1,8 @@
-@ -1,9 +0,0 @@
 @extends('components.layouts.app')
-@section('pageTitle', 'Admin Dashboard')
+@section('pageTitle', 'User Dashboard')
 @section('pageContent')
     <div class="container">
-        <h1>Welcome Admin!</h1>
+        <h1>Welcome User!</h1>
         <p>You are logged in as <strong>{{ Auth::user()->name }}</strong></p>
     </div>
 @endsection
