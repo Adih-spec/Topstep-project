@@ -6,6 +6,7 @@ use App\Models\Guard;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Permission;
 
 class GuardController extends Controller
 {
@@ -40,5 +41,37 @@ public function store(Request $request)
 
     return redirect()->route('guards.index')
         ->with('success', 'Guard user deleted successfully.');
+}
+ public function edit(Guard $guard)
+    {
+        return view('components.guards.edit', compact('guard'));
+    }
+
+    /**
+     * Update the specified guard in storage.
+     */
+    public function update(Request $request, Guard $guard)
+    {
+        $request->validate([
+            'guard_name' => 'required|unique:guards,guard_name,' . $guard->id . '|max:255',
+        ]);
+
+        $guard->update([
+            'guard_name' => $request->guard_name,
+        ]);
+
+        return redirect()->route('guards.index')
+            ->with('success', 'Guard updated successfully!');
+    }
+    public function editPermissions(Guard $guard)
+{
+    $permissions = Permission::all();
+    return view('components.guards.assign-permissions', compact('guard','permissions'));
+}
+
+public function updatePermissions(Request $request, Guard $guard)
+{
+    $guard->syncPermissions($request->permissions ?? []);
+    return redirect()->route('guards.index')->with('success','Permissions updated successfully!');
 }
 }

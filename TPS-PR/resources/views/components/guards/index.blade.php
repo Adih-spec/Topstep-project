@@ -39,6 +39,12 @@
                             <a href="{{ route('guards.edit', $guard->id) }}" class="btn btn-sm btn-warning">
                                 Edit
                             </a>
+
+                            {{-- Assign Permissions button --}}
+                            <a href="{{ route('guards.permissions', $guard->id) }}" class="btn btn-sm btn-info">
+                                Assign Permissions
+                            </a>
+
                             <form action="{{ route('guards.destroy', $guard->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
@@ -53,7 +59,6 @@
             </tbody>
         </table>
 
-        {{-- Pagination links (if using paginate() in your controller) --}}
         <div class="mt-3">
             {{ $guards->links() }}
         </div>

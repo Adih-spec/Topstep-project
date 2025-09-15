@@ -32,11 +32,6 @@ class PermissionController extends Controller
             'guard_name' => 'required|string',
         ]);
 
-        Permission::create([
-            'name' => $request->name,
-            'guard_name' => $request->guard_name,
-        ]);
-
         return redirect()->route('permissions.index')
                         ->with('success', 'Permission created successfully.');
     }

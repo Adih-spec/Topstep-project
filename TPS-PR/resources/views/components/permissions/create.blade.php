@@ -45,17 +45,6 @@
                     @enderror
                 </div>
 
-                {{-- Guard Name --}}
-                <div class="mb-3">
-                    <label for="guard_name" class="form-label fw-semibold">Guard Name</label>
-                    <select name="guard_name" id="guard_name" class="form-select" required>
-                        <option value="web" {{ old('guard_name')=='web' ? 'selected' : '' }}>Web</option>
-                        <option value="admin" {{ old('guard_name')=='admin' ? 'selected' : '' }}>Admin</option>
-                        <option value="teacher" {{ old('guard_name')=='teacher' ? 'selected' : '' }}>Teacher</option>
-                        <option value="student" {{ old('guard_name')=='student' ? 'selected' : '' }}>Student</option>
-                        <option value="guardian" {{ old('guard_name')=='guardian' ? 'selected' : '' }}>Guardian</option>
-                    </select>
-                </div>
 
                 {{-- Submit --}}
                 <div class="d-flex justify-content-end">

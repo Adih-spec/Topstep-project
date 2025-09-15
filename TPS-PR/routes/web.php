@@ -92,7 +92,12 @@ Route::prefix('guards')->group(function () {
     Route::post('/store', [GuardController::class, 'store'])->name('guards.store');
     Route::delete('/{guard}', [GuardController::class, 'destroy'])->name('guards.destroy'); 
     Route::resource('guards', GuardController::class);
-    
+    Route::get('/guards/{guard}/permissions', [GuardController::class, 'editPermissions'])
+    ->name('guards.permissions');
+Route::post('/guards/{guard}/permissions', [GuardController::class, 'updatePermissions'])
+    ->name('guards.permissions.update');
+    Route::get('/{guard}/edit', [GuardController::class, 'edit'])->name('guards.edit');
+    Route::put('/{guard}', [GuardController::class, 'update'])->name('guards.update');    
 });
 
 

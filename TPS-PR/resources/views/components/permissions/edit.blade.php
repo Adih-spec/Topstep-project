@@ -41,17 +41,7 @@
                     @enderror
                 </div>
 
-                {{-- Guard Name --}}
-                <div class="mb-3">
-                    <label for="guard_name" class="form-label fw-semibold">Guard Name</label>
-                    <select name="guard_name" id="guard_name" class="form-select" required>
-                        <option value="web" {{ $permission->guard_name == 'web' ? 'selected' : '' }}>Web</option>
-                        <option value="admin" {{ $permission->guard_name == 'admin' ? 'selected' : '' }}>Admin</option>
-                        <option value="teacher" {{ $permission->guard_name == 'teacher' ? 'selected' : '' }}>Teacher</option>
-                        <option value="student" {{ $permission->guard_name == 'student' ? 'selected' : '' }}>Student</option>
-                        <option value="guardian" {{ $permission->guard_name == 'guardian' ? 'selected' : '' }}>Guardian</option>
-                    </select>
-                </div>
+                
 
                 {{-- Submit --}}
                 <div class="d-flex justify-content-end">

@@ -21,7 +21,6 @@
                         <tr>
                             <th>#</th>
                             <th>Permission Name</th>
-                            <th>Guard</th>
                             <th>Created</th>
                             <th width="200">Actions</th>
                         </tr>

@@ -36,7 +36,5 @@
         </select>
     </div>
 
-        <button class="btn btn-success">Save</button>
-    </form>
-</div>
+        <button class="btn btn-success
 @endsection
