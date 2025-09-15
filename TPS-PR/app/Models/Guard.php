@@ -9,7 +9,7 @@ class Guard extends Authenticatable
 {
     use HasRoles;
 
-    protected $fillable = ['name','email','password','guard_type'];
+    protected $fillable = ['guard_name'];
 
     // Use the default guard name for Spatie
     protected $guard_name = 'web';

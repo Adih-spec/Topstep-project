@@ -72,6 +72,8 @@ Route::prefix('guards')->group(function () {
     Route::get('/create', [GuardController::class, 'create'])->name('guards.create');
     Route::post('/store', [GuardController::class, 'store'])->name('guards.store');
     Route::delete('/{guard}', [GuardController::class, 'destroy'])->name('guards.destroy'); 
+    Route::resource('guards', GuardController::class);
+    
 });
 
 

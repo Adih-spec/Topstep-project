@@ -11,38 +11,29 @@ class GuardController extends Controller
 {
     public function index()
     {
-        $guards = Guard::with('roles')->latest()->paginate(10);
+        $guards = Guard::latest()->paginate(10); // or ->all() if no pagination
         return view('components.guards.index', compact('guards'));
     }
 
     public function create()
-    {
-        $roles = Role::all();
-        return view('components.guards.create', compact('roles'));
-    }
+{
+    return view('components.guards.create');
+}
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name'=>'required|string|max:255',
-            'email'=>'required|email|unique:guards,email',
-            'password'=>'required|min:6',
-            'guard_type'=>'required|string',
-            'role'=>'required|string'
-        ]);
+public function store(Request $request)
+{
+    $request->validate([
+        'guard_name' => 'required|unique:guards,guard_name|max:255',
+    ]);
 
-        $guard = Guard::create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'password'=>Hash::make($request->password),
-            'guard_type'=>$request->guard_type,
-        ]);
+    Guard::create([
+        'guard_name' => $request->guard_name,
+    ]);
 
-        $guard->assignRole($request->role);
+    return redirect()->route('guards.index')
+        ->with('success', 'Guard created successfully!');
+}
 
-        return redirect()->route('guards.index')
-            ->with('success', 'Guard user created successfully!');
-    }
         public function destroy(Guard $guard)
 {
     $guard->delete();
