@@ -8,8 +8,8 @@
         <div class="col-md-10">
             <div class="card shadow-lg border-0 rounded-3">
                 <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                    <h4 class="mb-0">Add New Admin</h4>
-                    <a href="{{ route('admins.index') }}" class="btn btn-light btn-sm">
+                    <h4 class="mb-0">Add New User</h4>
+                    <a href="{{ route('admin.users.index') }}" class="btn btn-light btn-sm">
                         <i class="bi bi-arrow-left"></i> Back
                     </a>
                 </div>
@@ -24,7 +24,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('admins.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <!-- Names -->
@@ -52,6 +52,7 @@
                             <label class="form-label">Phone</label>
                             <input type="text" name="phone" class="form-control" value="{{ old('phone') }}">
                         </div>
+
                         <div class="mb-3">
                             <label class="form-label">Address</label>
                             <input type="text" name="address" class="form-control" value="{{ old('address') }}">
@@ -107,7 +108,7 @@
                             <input type="file" name="id_document" class="form-control">
                         </div>
 
-                        <!-- Role -->
+                        <!-- Role
                         <div class="mb-3">
                             <label class="form-label">Role</label>
                             <select name="role" class="form-select">
@@ -118,7 +119,7 @@
                                 <option value="finance_officer">Finance Officer</option>
                                 <option value="staff_admin" selected>Staff Admin</option>
                             </select>
-                        </div>
+                        </div> -->
 
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary">

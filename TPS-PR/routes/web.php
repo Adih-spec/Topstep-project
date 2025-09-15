@@ -8,6 +8,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GuardController;
+use App\Http\Controllers\UserManagementController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -18,7 +19,6 @@ Route::get('/', function () {
 });
 
 
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -26,6 +26,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function() {
         view('dashboard');
     })->name('dashboard');
+    Route::group(['prefix' => 'staffs'], function () {
+        Route::get('/', [TeachersController::class, 'index'])->name('teachers.index');
+        Route::get('/create', [TeachersController::class, 'create'])->name('teachers.create');
+        Route::post('/', [TeachersController::class, 'store'])->name('teachers.store');
+        Route::get('/{id}/edit', [TeachersController::class, 'edit'])->name('teachers.edit');
+        Route::put('/{id}', [TeachersController::class, 'update'])->name('teachers.update');
+        Route::delete('/{id}', [TeachersController::class, 'destroy'])->name('teachers.destroy');
+    });
 });
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
@@ -49,6 +57,17 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     );
 
     Route::resource('admins', AdminController::class);
+    Route::controller(UserManagementController::class)->group(function () {
+        Route::get('/users', 'index')->name('admin.users.index');
+        Route::get('/admins/{edit}/edit', [AdminController::class, 'edit'])->name('admins.edit');
+Route::put('/admins/{admin}', [AdminController::class, 'update'])->name('admins.update');
+
+        Route::get('/users/create', 'create')->name('admin.users.create');
+        Route::post('/users', 'store')->name('admin.users.store');
+        Route::get('/users/{user}/edit', 'edit')->name('admin.users.edit');
+        Route::put('/users/{user}', 'update')->name('admin.users.update');
+        Route::delete('/users/{user}', 'destroy')->name('admin.users.destroy');
+    });
 });
 
 
