@@ -15,13 +15,11 @@
             </ul>
         </div>
     @endif
-
     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
-
     <form action="{{ route('roles.store') }}" method="POST">
         @csrf
         <div class="mb-3">
@@ -30,15 +28,13 @@
         </div>
 
         <div class="mb-3">
-            <label for="guard_name">Guard Name</label>
-            <select name="guard_name" class="form-control" required>
-                @foreach($guards as $guard)
-                    <option value="{{ $guard }}">{{ ucfirst($guard) }}</option>
-                @endforeach
-            </select>
-        </div>
+        <label for="guard_name">Guard Name</label>
+        <select name="guard_name" class="form-control" required>
+            @foreach($guards as $guard)
+                <option value="{{ $guard }}">{{ ucfirst($guard) }}</option>
+            @endforeach
+        </select>
+    </div>
 
         <button class="btn btn-success" type="submit">Create Role</button>
-    </form>
-</div>
 @endsection

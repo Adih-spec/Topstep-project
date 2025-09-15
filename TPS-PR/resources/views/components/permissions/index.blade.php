@@ -21,6 +21,7 @@
                         <tr>
                             <th>#</th>
                             <th>Permission Name</th>
+                            <th>Guard</th>
                             <th>Created</th>
                             <th width="200">Actions</th>
                         </tr>
@@ -30,7 +31,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $permission->name }}</td>
-                            <td><span class="badge bg-secondary">{{ $permission->guard_name }}</span></td>
+                            <td><span class="badge bg-secondary">{{ $role->guard_name }}</span></td>
                             <td>{{ $permission->created_at->format('d M, Y') }}</td>
                             <td>
                                 <a href="{{ route('permissions.edit', $permission) }}" class="btn btn-sm btn-warning me-1">

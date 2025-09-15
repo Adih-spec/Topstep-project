@@ -40,10 +40,7 @@
                                 Edit
                             </a>
 
-                            {{-- Assign Permissions button --}}
-                            <a href="{{ route('guards.permissions', $guard->id) }}" class="btn btn-sm btn-info">
-                                Assign Permissions
-                            </a>
+                            
 
                             <form action="{{ route('guards.destroy', $guard->id) }}" method="POST" class="d-inline">
                                 @csrf
