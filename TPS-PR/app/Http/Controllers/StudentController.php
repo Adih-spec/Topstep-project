@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Support\Facades\Hash;
-use App\Notifications\AdminCredentialsNotification;
+use App\Notifications\UserCredentialsNotification;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -54,35 +54,35 @@ class StudentController extends Controller
         $photoPath = $request->file('photo')->store('students/photos', 'public');
     }
 
-    // ✅ Auto-generate password
     $autoPassword = \Str::random(10);
 
-    // ✅ Create Student
-    $student = Student::create([
-        'first_name'        => $request->first_name,
-        'middle_name'       => $request->middle_name,
-        'last_name'         => $request->last_name,
-        'email'             => $request->email,
-        'password'          => Hash::make($autoPassword),
-        'phone'             => $request->phone,
-        'dob'               => $request->dob,
-        'gender'            => $request->gender,
-        'class'             => $request->class,
-        'country'           => $request->country,
-        'state_of_origin'   => $request->state_of_origin,
-        'religion'          => $request->religion,
-        'address'           => $request->address,
-        'admission_number'  => $request->admission_number,
-        'admission_date'    => $request->admission_date,
-        'photo'             => $photoPath,
-        'status'            => 'active',
-    ]);
+$student = Student::create([
+    'first_name'        => $request->first_name,
+    'middle_name'       => $request->middle_name,
+    'last_name'         => $request->last_name,
+    'email'             => $request->email,
+    'password'          => Hash::make($autoPassword), // save hashed
+    'phone'             => $request->phone,
+    'dob'               => $request->dob,
+    'gender'            => $request->gender,
+    'class'             => $request->class,
+    'country'           => $request->country,
+    'state_of_origin'   => $request->state_of_origin,
+    'religion'          => $request->religion,
+    'address'           => $request->address,
+    'admission_number'  => $request->admission_number,
+    'admission_date'    => $request->admission_date,
+    'photo'             => $photoPath,
+    'status'            => 'active',
+]);
 
-    // ✅ Notify Student with credentials
-    $student->notify(new AdminCredentialsNotification(
-        $student,
-        $autoPassword
-    ));
+$student->notify(new \App\Notifications\UserCredentialsNotification(
+    $student->first_name . ' ' . $student->last_name, // name
+    $student->email,                                  // email
+    $autoPassword,                                    // plain password
+    'Student'                                         // role
+));
+
 
     return redirect()->route('students.index')
         ->with('success', 'Student created successfully and login credentials sent to email.');
@@ -137,5 +137,26 @@ class StudentController extends Controller
 
         return redirect()->route('students.index')->with('success', 'Student restored successfully.');
     }
+    
+    public function view($id)
+{
+    $student = \App\Models\Student::withTrashed()->findOrFail($id);
+    return view('components.students.view-students', compact('student'));
+
+}
+
+// Show recycle bin (trashed students only)
+public function recycle()
+{
+    $students = \App\Models\Student::onlyTrashed()->paginate(10);
+    return view('components.students.recycle', compact('students'));
+}
+public function forceDelete($id)
+{
+    $student = Student::onlyTrashed()->findOrFail($id);
+    $student->forceDelete();
+
+    return redirect()->route('students.recycle')->with('success', 'Student permanently deleted.');
+}
 }
 

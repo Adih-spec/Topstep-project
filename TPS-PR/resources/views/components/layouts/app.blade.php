@@ -56,5 +56,43 @@
 </div>
     {{-- Page-specific scripts --}}
     @stack('scripts')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function () {
+    // 🔹 Load countries on page load
+    $.get("https://countriesnow.space/api/v0.1/countries/positions", function (response) {
+        if (response.data) {
+            $.each(response.data, function (index, country) {
+                $('#country').append('<option value="' + country.name + '">' + country.name + '</option>');
+            });
+        }
+    });
+
+    // 🔹 When country changes, load states
+    $('#country').on('change', function () {
+        var country = $(this).val();
+        $('#state').empty().append('<option value="">-- Select State --</option>');
+
+        if (country) {
+            $.ajax({
+                url: "https://countriesnow.space/api/v0.1/countries/states",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({ country: country }),
+                success: function (response) {
+                    if (response.data && response.data.states) {
+                        $.each(response.data.states, function (index, state) {
+                            $('#state').append('<option value="' + state.name + '">' + state.name + '</option>');
+                        });
+                    }
+                },
+                error: function (err) {
+                    console.error("Error fetching states:", err);
+                }
+            });
+        }
+    });
+});
+</script>
 </body>
 </html>
