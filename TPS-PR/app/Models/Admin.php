@@ -3,10 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Admin extends Model
 {
     //
+    use Notifiable;
     protected $table = 'admins';
     protected $primaryKey = 'admin_id';
     protected $fillable = [
@@ -23,8 +25,8 @@ class Admin extends Model
         'id_type',
         'id_number',
         'id_document',
-        'role',
-        'permissions',
+        // 'role',
+        // 'permissions',
         'status',
         'last_login_at',
         'last_login_ip',

@@ -80,17 +80,11 @@ return [
     |
     */
     'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
-        ],
-
-        'admins' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Admin::class,
-        ],
-
-        'teachers' => [
+    'users' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\User::class, // ✅ should be User
+    ],
+    'teachers' => [
             'driver' => 'eloquent',
             'model' => App\Models\Teacher::class,
         ],
@@ -104,7 +98,17 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Guardian::class,
         ],
-    ],
+],
+
+
+        // 'users' => [
+        //     'driver' => 'database',
+        //     'table' => 'users',
+        // ],
+    
+
+        
+    
     /*
     |--------------------------------------------------------------------------
     | Resetting Passwords
