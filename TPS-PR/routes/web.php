@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GuardController;
 use App\Http\Controllers\UserManagementController;
+use App\Http\Controllers\ReportCardController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -100,6 +101,16 @@ Route::post('/guards/{guard}/permissions', [GuardController::class, 'updatePermi
     Route::get('/{guard}/edit', [GuardController::class, 'edit'])->name('guards.edit');
     Route::put('/{guard}', [GuardController::class, 'update'])->name('guards.update');    
 });
+
+
+
+
+Route::get('/report-cards/create', [ReportCardController::class, 'create'])
+    ->name('report-cards.create');
+
+Route::post('/report-cards', [ReportCardController::class, 'store'])
+    ->name('report-cards.store');
+
 
 
 
