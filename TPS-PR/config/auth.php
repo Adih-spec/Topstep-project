@@ -84,20 +84,23 @@ return [
         'driver' => 'eloquent',
         'model' => App\Models\User::class, // ✅ should be User
     ],
+    'admins' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Admin::class,
+    ],
     'teachers' => [
             'driver' => 'eloquent',
             'model' => App\Models\Teacher::class,
-        ],
+    ],
+    'students' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Student::class,
+    ],
 
-        'students' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Student::class,
-        ],
-
-        'guardians' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Guardian::class,
-        ],
+    'guardians' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Guardian::class,
+    ],
 ],
 
 
