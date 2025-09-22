@@ -88,21 +88,23 @@
             <input type="text" name="class" class="form-control" value="{{ old('class') }}">
         </div>
 
-       <select name="country" class="form-select">
-    <option value="">-- Select Country --</option>
-    @foreach(\Rinvex\Country\CountryLoader::countries() as $code => $country)
-        <option value="{{ $country['name'] }}" {{ old('country') == $country['name'] ? 'selected' : '' }}>
-            {{ $country['name'] }}
-        </option>
-    @endforeach
-</select>
+<div class="row">
+    <!-- Country -->
+    <div class="col-md-6 mb-3">
+        <label class="form-label">Country</label>
+        <select id="country" name="country" class="form-control">
+            <option value="">-- Select Country --</option>
+        </select>
+    </div>
 
-
-        <!-- State of Origin -->
-        <div class="col-md-6">
-            <label class="form-label">State of Origin</label>
-            <input type="text" name="state_of_origin" class="form-control" value="{{ old('state_of_origin') }}">
-        </div>
+    <!-- State -->
+    <div class="col-md-6 mb-3">
+        <label class="form-label">State</label>
+        <select id="state" name="state" class="form-control">
+            <option value="">-- Select State --</option>
+        </select>
+    </div>
+</div>
 
         <!-- Religion -->
         <div class="col-md-6">
@@ -136,15 +138,8 @@
                 <option value="inactive" {{ old('status') == 'inactive' ? 'selected' : '' }}>Inactive</option>
             </select>
         </div>
-        <!-- Photo Upload -->
-    <div class="col-md-6">
-        <label class="form-label">Upload Photo</label>
-        <input type="file" name="photo" class="form-control" accept="image/*">
-    </div>
-
-
-        
-    </div>
+       
+    
 
     <!-- Buttons -->
     <div class="d-flex justify-content-between mt-4">
