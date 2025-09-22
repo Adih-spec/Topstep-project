@@ -37,7 +37,7 @@
                             <td class="fw-semibold">{{ $permission->name }}</td>
                             <td>
                                 <span class="badge bg-info text-dark">
-                                    {{ $permission->guard->guard_name ?? 'N/A' }}
+                                    {{ $permission->guardRelation->guard_name ?? 'N/A' }}
                                 </span>
                             </td>
                             <td>{{ $permission->created_at->format('Y-m-d') }}</td>

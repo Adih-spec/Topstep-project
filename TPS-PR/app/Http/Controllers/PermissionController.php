@@ -30,7 +30,13 @@ class PermissionController extends Controller
 
     public function index()
     {
-        $permissions = Permission::with('guard')->paginate(10);
+        $permissions = Permission::with('guardRelation')->paginate(10);
         return view('components.permissions.index', compact('permissions'));
+    }
+     public function edit($id)
+    {
+        $permission = Permission::findOrFail($id);
+        $guards = Guard::all(); // To repopulate the guard dropdown
+        return view('components.permissions.edit', compact('permission', 'guards'));
     }
 }
