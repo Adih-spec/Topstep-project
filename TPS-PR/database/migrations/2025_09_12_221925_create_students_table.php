@@ -20,16 +20,15 @@ return new class extends Migration
     $table->string('email')->unique();
     $table->string('phone')->nullable();
     $table->date('dob')->nullable();
-    $table->enum('gender', ['male', 'female', 'other'])->nullable();
-    $table->string('class')->nullable();
+    $table->enum('gender', ['male', 'female']);
     $table->string('country')->nullable();
     $table->string('state_of_origin')->nullable();
-    $table->string('religion')->nullable();
-    $table->string('address')->nullable();
-    $table->date('admission_date')->nullable();
-    $table->enum('status', ['active', 'inactive'])->default('active');
-    $table->string('photo')->nullable();
-    $table->string('password'); 
+    $table->text('address')->nullable();
+    $table->string('class')->nullable();
+    $table->string('guardian_phone')->nullable();
+    $table->date('enrollment_date')->nullable();
+    $table->enum('status', ['active', 'suspended', 'graduated'])->default('active');
+    $table->softDeletes(); // 👈 this is required
     $table->timestamps();
 });
 

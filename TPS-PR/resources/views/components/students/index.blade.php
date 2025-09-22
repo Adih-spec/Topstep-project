@@ -25,6 +25,7 @@
                 </div>
             </div>
         </div>
+
         <div class="col-md-3">
             <div class="card text-white bg-danger shadow rounded-4">
                 <div class="card-body text-center">
@@ -43,6 +44,7 @@
                 <i class="bi bi-person-plus"></i> Add Student
             </a>
         </div>
+
         <div class="card-body p-4">
             @if($students->count() > 0)
                 <table class="table table-bordered table-hover align-middle">
@@ -66,7 +68,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($students as $student)
+                        @foreach($students as $student)
                             <tr @if($student->trashed()) class="table-danger" @endif>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $student->admission_number ?? 'N/A' }}</td>
@@ -76,7 +78,9 @@
                                 <td>
                                     {{ $student->dob ? $student->dob->format('d M Y') : 'N/A' }}
                                     @if($student->dob)
-                                        <small class="text-muted">({{ \Carbon\Carbon::parse($student->dob)->age }} yrs)</small>
+                                        <small class="text-muted">
+                                            ({{ \Carbon\Carbon::parse($student->dob)->age }} yrs)
+                                        </small>
                                     @endif
                                 </td>
                                 <td>{{ $student->country ?? 'N/A' }}</td>
@@ -93,22 +97,26 @@
                                     </span>
                                 </td>
                                 <td>
-                                    @if(!$student->trashed())
+                                    @if($student->trashed())
+                                        <!-- Restore button -->
+                                        <form action="{{ route('students.restore', $student->id) }}" method="POST" style="display:inline;">
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm btn-success">
+                                                <i class="bi bi-arrow-clockwise"></i> Restore
+                                            </button>
+                                        </form>
+                                    @else
+                                        <!-- Edit button -->
                                         <a href="{{ route('students.edit', $student->id) }}" class="btn btn-sm btn-warning">
                                             <i class="bi bi-pencil"></i> Edit
                                         </a>
+
+                                        <!-- Delete button -->
                                         <form action="{{ route('students.destroy', $student->id) }}" method="POST" style="display:inline;">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this student?');">
                                                 <i class="bi bi-trash"></i> Delete
-                                            </button>
-                                        </form>
-                                    @else
-                                        <form action="{{ route('students.restore', $student->id) }}" method="POST" style="display:inline;">
-                                            @csrf
-                                            <button type="submit" class="btn btn-sm btn-success">
-                                                <i class="bi bi-arrow-clockwise"></i> Restore
                                             </button>
                                         </form>
                                     @endif

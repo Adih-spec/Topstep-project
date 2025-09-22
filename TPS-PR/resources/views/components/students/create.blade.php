@@ -88,11 +88,15 @@
             <input type="text" name="class" class="form-control" value="{{ old('class') }}">
         </div>
 
-        <!-- Country -->
-        <div class="col-md-6">
-            <label class="form-label">Country</label>
-            <input type="text" name="country" class="form-control" value="{{ old('country') }}">
-        </div>
+       <select name="country" class="form-select">
+    <option value="">-- Select Country --</option>
+    @foreach(\Rinvex\Country\CountryLoader::countries() as $code => $country)
+        <option value="{{ $country['name'] }}" {{ old('country') == $country['name'] ? 'selected' : '' }}>
+            {{ $country['name'] }}
+        </option>
+    @endforeach
+</select>
+
 
         <!-- State of Origin -->
         <div class="col-md-6">
