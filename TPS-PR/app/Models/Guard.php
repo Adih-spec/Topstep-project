@@ -4,13 +4,14 @@ namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Database\Eloquent\Model;
 
-class Guard extends Authenticatable
+class Guard extends Model
 {
-    use HasRoles;
+    protected $fillable = ['guard_name'];
 
-    protected $fillable = ['name','email','password','guard_type'];
-
-    // Use the default guard name for Spatie
-    protected $guard_name = 'web';
+    public function permissions()
+    {
+        return $this->hasMany(Permission::class);
+    }
 }

@@ -1,64 +1,66 @@
+{{-- resources/views/guards/index.blade.php --}}
 @extends('components.layouts.app')
-@section('pageTitle', 'Guard Management')
+
+@section('pageTitle', 'Guards Management')
 
 @section('pageContent')
-<div class="container mt-4">
-    <h1 class="mb-4">Guard Management</h1>
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">Guards</h2>
+        <a href="{{ route('guards.create') }}" class="btn btn-primary">
+            <i class="bi bi-plus-lg"></i> Add New Guard
+        </a>
+    </div>
 
-    {{-- Success Message --}}
     @if(session('success'))
-        <div class="alert alert-success">
+        <div class="alert alert-success alert-dismissible fade show">
             {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
     @endif
 
-    <div class="mb-3">
-        <a href="{{ route('guards.create') }}" class="btn btn-primary">+ Add New Guard</a>
-    </div>
-
-    <table class="table table-bordered table-striped align-middle">
-        <thead class="table-dark">
-            <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Guard Type</th>
-                <th>Roles</th>
-                <th width="150">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @forelse($guards as $index => $guard)
+    @if($guards->count())
+        <table class="table table-hover table-bordered align-middle">
+            <thead class="table-dark">
                 <tr>
-                    <td>{{ $index + 1 }}</td>
-                    <td>{{ $guard->name }}</td>
-                    <td>{{ $guard->email }}</td>
-                    <td>{{ ucfirst($guard->guard_type) }}</td>
-                    <td>
-                        @foreach($guard->roles as $role)
-                            <span class="badge bg-info text-dark">{{ $role->name }}</span>
-                        @endforeach
-                    </td>
-                    <td>
-                        {{-- Delete Button --}}
-                        <form action="{{ route('guards.destroy', $guard->id) }}" method="POST" 
-                              onsubmit="return confirm('Are you sure you want to delete this guard?');">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger btn-sm w-100">Delete</button>
-                        </form>
-                    </td>
+                    <th>#</th>
+                    <th>Guard Name</th>
+                    <th>Created At</th>
+                    <th class="text-center">Actions</th>
                 </tr>
-            @empty
-                <tr>
-                    <td colspan="6" class="text-center">No guard users found.</td>
-                </tr>
-            @endforelse
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach($guards as $guard)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $guard->guard_name }}</td>
+                        <td>{{ $guard->created_at?->format('d M, Y') }}</td>
+                        <td class="text-center">
+                            <a href="{{ route('guards.edit', $guard->id) }}" class="btn btn-sm btn-warning">
+                                Edit
+                            </a>
 
-    <div>
-        {{ $guards->links() }}
-    </div>
+                            
+
+                            <form action="{{ route('guards.destroy', $guard->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-sm btn-danger"
+                                    onclick="return confirm('Are you sure you want to delete this guard?')">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+        <div class="mt-3">
+            {{ $guards->links() }}
+        </div>
+    @else
+        <div class="alert alert-info">No guards found. Start by adding one!</div>
+    @endif
 </div>
 @endsection

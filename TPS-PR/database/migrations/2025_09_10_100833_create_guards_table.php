@@ -13,11 +13,8 @@ return new class extends Migration
     {
         Schema::create('guards', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('guard_type'); // e.g., 'admin', 'staff', etc.
-            $table->timestamps();
+            $table->string('guard_name')->unique()->index(); // unique + indexed
+            $table->timestamps(); // optional, adds created_at & updated_at
         });
     }
 
