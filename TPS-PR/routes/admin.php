@@ -12,10 +12,8 @@ Route::prefix('admin')->middleware('guest:admin')->group(function(){
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
 });
-Route::middleware('auth:admin')->prefix('admin')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
+Route::middleware('is_admin:admin')->prefix('admin')->group(function () {
+    Route::get('/dashboard', fn() => view('admin.dashboard'))->name('admin.dashboard');
 
     // Other admin routes can be added here
     Route::resource('guards', GuardController::class);

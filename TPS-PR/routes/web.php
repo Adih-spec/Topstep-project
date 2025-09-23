@@ -17,7 +17,7 @@ use App\Http\Controllers\UserManagementController;
 
 
 Route::get('/', function () {
-    return view('components.pages.home');
+    return view('welcome');
 })->name('home');
 Route::get('/home', [HomePageController::class, 'index'])->name('home.index');
 Route::get('/about', [AboutController::class, 'index'])->name('about-us');
@@ -32,7 +32,7 @@ Route::get('/guardians/dashboard', function () {
 })->name('guardian.dashboard')->middleware('auth:guardian');
 
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth:web')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

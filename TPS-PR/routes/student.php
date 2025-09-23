@@ -18,10 +18,11 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
         Route::get('/students-deleted', 'deleted')->name('students.deleted');
         Route::post('/students/{id}/restore', 'restore')->name('students.restore');
     });
-});
-Route::get('/students/{id}/view', [StudentController::class, 'view'])->name('students.view');
+    Route::get('/students/{id}/view', [StudentController::class, 'view'])->name('students.view');
 
 // Recycle bin page
 Route::get('/students/recycle', [StudentController::class, 'recycle'])->name('students.recycle');
 
 Route::delete('/students/{id}/force-delete', [StudentController::class, 'forceDelete'])->name('students.forceDelete');
+});
+
