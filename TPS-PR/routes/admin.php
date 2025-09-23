@@ -5,6 +5,10 @@ use App\Http\Controllers\GuardController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ReportCardController;
+use App\Http\Controllers\ReportCardConfigurationController;
+
+
+
 
 Route::prefix('admin')->middleware('guest:admin')->group(function(){
     Route::get('/login', [AdminAuthController::class, 'showLoginForm'])->name('admin.login');
@@ -16,6 +20,9 @@ Route::middleware('auth:admin')->prefix('admin')->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
+    
+
+
 
     // Other admin routes can be added here
     Route::resource('guards', GuardController::class);
@@ -62,4 +69,9 @@ Route::middleware('auth:admin')->prefix('admin')->group(function () {
 
     Route::get('/report-cards', [ReportCardController::class, 'store'])
         ->name('report-cards.store');
+
+    Route::get('/report-configs', [ReportCardConfigurationController::class, 'index']);
+
 });
+
+    
