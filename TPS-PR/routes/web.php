@@ -57,11 +57,12 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     );
 
     Route::resource('admins', AdminController::class);
-    Route::controller(UserManagementController::class)->group(function () {
-        Route::get('/users', 'index')->name('admin.users.index');
+   
+        
         Route::get('/admins/{edit}/edit', [AdminController::class, 'edit'])->name('admins.edit');
-Route::put('/admins/{admin}', [AdminController::class, 'update'])->name('admins.update');
-
+        Route::put('/admins/{admin}', [AdminController::class, 'update'])->name('admins.update');
+ Route::controller(UserManagementController::class)->group(function () {
+        Route::get('/users', 'index')->name('admin.users.index');
         Route::get('/users/create', 'create')->name('admin.users.create');
         Route::post('/users', 'store')->name('admin.users.store');
         Route::get('/users/{user}/edit', 'edit')->name('admin.users.edit');

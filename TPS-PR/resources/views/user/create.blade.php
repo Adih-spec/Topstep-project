@@ -24,7 +24,7 @@
                         </div>
                     @endif
 
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.users.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <!-- Names -->
@@ -108,22 +108,9 @@
                             <input type="file" name="id_document" class="form-control">
                         </div>
 
-                        <!-- Role
-                        <div class="mb-3">
-                            <label class="form-label">Role</label>
-                            <select name="role" class="form-select">
-                                <option value="super_admin">Super Admin</option>
-                                <option value="principal">Principal</option>
-                                <option value="vice_principal">Vice Principal</option>
-                                <option value="exam_officer">Exam Officer</option>
-                                <option value="finance_officer">Finance Officer</option>
-                                <option value="staff_admin" selected>Staff Admin</option>
-                            </select>
-                        </div> -->
-
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary">
-                                <i class="bi bi-save"></i> Create Admin
+                                <i class="bi bi-save"></i> Create User
                             </button>
                         </div>
                     </form>
