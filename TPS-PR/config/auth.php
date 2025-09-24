@@ -84,7 +84,6 @@ return [
         'driver' => 'eloquent',
         'model' => App\Models\User::class, // ✅ should be User
     ],
-],
 
 
         // 'users' => [
@@ -107,6 +106,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Guardian::class,
         ],
+    ],
     /*
     |--------------------------------------------------------------------------
     | Resetting Passwords

@@ -15,19 +15,30 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 @endif
+
     <h1 class="mb-5 text-center fw-bold display-5 text-primary">Guardian Details</h1>
     
     <!-- Profile Info -->
     <div class="card shadow border-0 rounded-3 mb-4 text-center">
         <div class="card-body">
             <div class="mb-3">
-                <img src="https://ui-avatars.com/api/?name={{ urlencode($guardian->first_name . ' ' . $guardian->last_name) }}&background=random&color=fff&size=150" 
-                     alt="Guardian Avatar" 
-                     class="rounded-circle shadow-sm">
+            @if($guardian->photo)
+            <img src="{{ asset($guardian->photo) }}" 
+                 alt="Guardian Photo" 
+                 class="rounded-circle shadow-sm" width="150" height="150">
+        @else
+            <img src="https://ui-avatars.com/api/?name={{ urlencode($guardian->first_name . ' ' . $guardian->last_name) }}&background=random&color=fff&size=150" 
+                 alt="Guardian Avatar" 
+                 class="rounded-circle shadow-sm">
+        @endif
             </div>
             <p class="fs-5"><strong>{{ $guardian->first_name }} {{ $guardian->last_name }}</strong></p>
             <p class="text-muted fs-5">{{ $guardian->occupation }}</p>
-            <p class="fs-5"><strong>Username:</strong> {{ $guardian->username }}</p>
+
+            <!--  Change Password button -->
+            <button class="btn btn-warning btn-sm mt-3" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+                Change Password
+            </button>
         </div>
     </div>
 
@@ -70,8 +81,6 @@
                     </div>
                     <div class="card-body fs-6">
                         <p><strong>Other Names:</strong> {{ $guardian->other_names }}</p>
-                        <p><strong>Relationship:</strong> {{ $guardian->relationship_with_student }}</p>
-                        <p><strong>Children in School:</strong> {{ $guardian->number_of_children }}</p>
                     </div>
                 </div>
             </div>
@@ -157,6 +166,52 @@
                     <button type="submit" class="btn btn-success">Save Changes</button>
                 </div>
             </form>
+        </div>
+    </div>
+</div>
+
+<!--  Change Password Modal -->
+<div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow-lg rounded-3">
+            <div class="modal-header bg-warning text-dark">
+                <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="{{ route('guardians.change-password') }}">
+                    @csrf
+
+                    <div class="mb-3">
+                        <label for="current_password" class="form-label">Current Password</label>
+                        <input id="current_password" type="password"
+                               class="form-control @error('current_password') is-invalid @enderror"
+                               name="current_password" required>
+                        @error('current_password')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="new_password" class="form-label">New Password</label>
+                        <input id="new_password" type="password"
+                               class="form-control @error('new_password') is-invalid @enderror"
+                               name="new_password" required>
+                        @error('new_password')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="new_password_confirmation" class="form-label">Confirm New Password</label>
+                        <input id="new_password_confirmation" type="password"
+                               class="form-control"
+                               name="new_password_confirmation" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-warning w-100">Update Password</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
