@@ -10,7 +10,7 @@ class MediaController extends Controller
     public function index()
     {
         $media = Media::latest()->paginate(12);
-        return view('media.index', compact('media'));
+        return view('components.CMS.media.index', compact('media'));
     }
 
     public function create()

@@ -14,8 +14,8 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         // Register middleware aliases here
         $middleware->alias([
-            'role.redirect' => \App\Http\Middleware\RedirectBasedOnRole::class,
-            'role'          => \App\Http\Middleware\RoleMiddleware::class,
+            // 'role.redirect' => \App\Http\Middleware\RedirectBasedOnRole::class,
+            // 'role'          => \App\Http\Middleware\RoleMiddleware::class,
             'is_admin'      => \App\Http\Middleware\isAdmin::class,
             'is_student'    => \App\Http\Middleware\isStudent::class,
         ]);

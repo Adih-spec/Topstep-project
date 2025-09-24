@@ -5,49 +5,59 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
 
 class AdminAuthController extends Controller
 {
+    /**
+     * Display the admin dashboard
+     */
+    public function dashboard()
+    {
+        return view('admin.dashboard');
+    }
     /**
      * Show the admin login form
      */
     public function showLoginForm()
     {
-        return view('components.Auth.login')->with(['guard' => 'admin']); // Create this view
+        return view('components.auth.login', ['guard' => 'admin']);
     }
 
     /**
      * Handle admin login request
      */
-    public function login(Request $request)
+    public function login(Request $request): RedirectResponse
     {
-        // Validate form input
         $request->validate([
-            'email' => 'required|email',
+            'email'    => 'required|email',
             'password' => 'required|min:6',
         ]);
 
-        // Attempt login using the "admin" guard
-        if (Auth::guard('admin')->attempt($request->only('email', 'password'))) {
-            return redirect()->intended('/admin/dashboard');
+        $credentials = $request->only('email', 'password');
+        $remember    = $request->boolean('remember');
+
+        if (Auth::guard('admin')->attempt($credentials, $remember)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended(route('admin.dashboard'));
         }
 
-        // If login fails
         return back()->withErrors([
-            'email' => 'Invalid credentials provided.',
-        ]);
+            'email' => __('auth.failed'),
+        ])->onlyInput('email');
     }
 
     /**
      * Handle admin logout
      */
-    public function logout(Request $request)
+    public function logout(Request $request): RedirectResponse
     {
         Auth::guard('admin')->logout();
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/admin/login');
+        return redirect()->route('admin.login');
     }
 }
