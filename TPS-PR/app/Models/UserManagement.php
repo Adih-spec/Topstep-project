@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notifiable;
 
 class UserManagement extends Model
 {
-    use HasFactory, Notifiable;
+    use Notifiable;
     protected $table = 'user_management'; // custom table name
     protected $primaryKey = 'user_id';    // custom primary key
         protected $fillable = [
