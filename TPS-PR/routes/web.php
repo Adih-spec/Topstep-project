@@ -15,6 +15,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GuardController;
 use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\ReportCardController;
+use App\Http\Controllers\MediaController;
+
 
 Route::get('/', function () {
     return view('components.pages.home');
@@ -145,6 +147,9 @@ Route::post('/report-cards', [ReportCardController::class, 'store'])
     ->name('report-cards.store');
 
 
+
+
+Route::resource('media', MediaController::class);
 
 
 
