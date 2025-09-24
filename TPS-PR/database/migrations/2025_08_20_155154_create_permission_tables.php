@@ -20,14 +20,12 @@ return new class extends Migration
         throw_if(empty($tableNames), new Exception('Error: config/permission.php not loaded. Run [php artisan config:clear] and try again.'));
         throw_if($teams && empty($columnNames['team_foreign_key'] ?? null), new Exception('Error: team_foreign_key on config/permission.php not loaded. Run [php artisan config:clear] and try again.'));
 
-        Schema::create($tableNames['permissions'], static function (Blueprint $table) {
-            $table->bigIncrements('id'); // permission id
-            $table->string('name', 150);       // shortened to avoid index length issue
-            $table->string('guard_name', 150); // shortened to avoid index length issue
-            $table->timestamps();
-
-            // $table->unique(['name', 'guard_name']);
-        });
+        Schema::create('permissions', function (Blueprint $table) {
+    $table->id();
+    $table->string('name');
+    $table->string('guard_name'); // ✅ MUST exist
+    $table->timestamps();
+});
 
         Schema::create($tableNames['roles'], static function (Blueprint $table) use ($teams, $columnNames) {
             $table->bigIncrements('id'); // role id

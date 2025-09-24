@@ -2,13 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class Admin extends Model
+class Admin extends Authenticatable
 {
-    //
+    use Notifiable;
+
     protected $table = 'admins';
     protected $primaryKey = 'admin_id';
+
     protected $fillable = [
         'first_name',
         'last_name',
@@ -23,8 +26,6 @@ class Admin extends Model
         'id_type',
         'id_number',
         'id_document',
-        'role',
-        'permissions',
         'status',
         'last_login_at',
         'last_login_ip',
@@ -35,11 +36,6 @@ class Admin extends Model
         'updated_by',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays & JSON.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
@@ -47,20 +43,15 @@ class Admin extends Model
         'two_factor_recovery_codes',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
         'last_login_at' => 'datetime',
-        'permissions' => 'array', // stored as JSON
+        'permissions' => 'array',
         'status' => 'boolean',
     ];
 
     /**
-     * Get the full name of the admin.
+     * Accessor for full name.
      */
     public function getFullNameAttribute(): string
     {

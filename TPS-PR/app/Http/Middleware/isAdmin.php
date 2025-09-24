@@ -4,8 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Response;
 
 class IsAdmin
 {
@@ -13,17 +13,23 @@ class IsAdmin
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param  string|null  $guard
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, ?string $guard = 'admin'): Response
     {
-        // If using a separate guard for admins
-        if (Auth::guard('admin')->check()) {
-            return $next($request);
+        // Check if the guard exists in config
+        if (!array_key_exists($guard, config('auth.guards'))) {
+            abort(500, "Guard [$guard] is not defined.");
+        }
+        // Check if user is authenticated with the given guard
+        if (!Auth::guard($guard)->check()) {
+            // If not logged in, redirect to the login page for that guard
+            return redirect()->route("{$guard}.login");
         }
 
-        // If not authenticated as admin → redirect
-        return redirect()->route('admin.login')->with('error', 'You must be an admin to access this page.');
+        // If logged in, continue request
+        return $next($request);
     }
 }
