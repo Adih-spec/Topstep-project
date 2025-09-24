@@ -6,9 +6,10 @@ use App\Http\Controllers\GuardController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ReportCardController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\UserManagementController;
-use App\Http\Controllers\MediaController;
+use App\Http\Controllers\ReportCardConfigurationController;
+
+
+
 
 // Public admin authentication routes
 Route::prefix('admin')->middleware('guest:admin')->group(function () {
@@ -51,4 +52,11 @@ Route::middleware('is_admin:admin')->prefix('admin')->group(function () {
 
     // Media
     Route::resource('media', MediaController::class);
+    Route::get('/report-cards', [ReportCardController::class, 'store'])
+        ->name('report-cards.store');
+
+    Route::get('/report-configs', [ReportCardConfigurationController::class, 'index']);
+
 });
+
+    

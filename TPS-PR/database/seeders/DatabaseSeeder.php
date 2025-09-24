@@ -17,5 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RolePermissionSeeder::class,
         ]);
+
+        // Call ReportCardConfigurationSeeder
+         $this->call(ReportCardConfigurationSeeder::class);
     }
 }
