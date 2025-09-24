@@ -16,7 +16,10 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'role.redirect' => \App\Http\Middleware\RedirectBasedOnRole::class,
             'role'          => \App\Http\Middleware\RoleMiddleware::class,
+            'is_admin'      => \App\Http\Middleware\isAdmin::class,
+            'is_student'    => \App\Http\Middleware\isStudent::class,
         ]);
+
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up()
 {
-    Schema::table('students', function (Blueprint $table) {
-        $table->softDeletes(); // adds `deleted_at` column
-    });
+    // Schema::table('students', function (Blueprint $table) {
+    //     $table->softDeletes(); // adds `deleted_at` column
+    // });
 }
 
 public function down()
 {
-    Schema::table('students', function (Blueprint $table) {
-        $table->dropSoftDeletes();
-    });
+    // Schema::table('students', function (Blueprint $table) {
+    //     $table->dropSoftDeletes();
+    // });
 }
 };
