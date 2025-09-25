@@ -1224,6 +1224,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< Updated upstream
             "version": "v12.28.1",
             "source": {
                 "type": "git",
@@ -1234,6 +1235,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/868c1f2d3dba4df6d21e3a8d818479f094cfd942",
                 "reference": "868c1f2d3dba4df6d21e3a8d818479f094cfd942",
+=======
+            "version": "v12.28.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "aa2e8af4c7e84e83a857d5171cf784c7720da4e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/aa2e8af4c7e84e83a857d5171cf784c7720da4e6",
+                "reference": "aa2e8af4c7e84e83a857d5171cf784c7720da4e6",
+>>>>>>> Stashed changes
                 "shasum": ""
             },
             "require": {
@@ -1439,7 +1452,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
+<<<<<<< Updated upstream
             "time": "2025-09-04T14:58:12+00:00"
+=======
+            "time": "2025-09-03T17:04:36+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "laravel/jetstream",
@@ -2311,6 +2328,7 @@
         },
         {
             "name": "livewire/flux",
+<<<<<<< Updated upstream
             "version": "v2.3.2",
             "source": {
                 "type": "git",
@@ -2321,6 +2339,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/livewire/flux/zipball/e0704b125d5f9544aa32e0cfccb11baaf44d77a0",
                 "reference": "e0704b125d5f9544aa32e0cfccb11baaf44d77a0",
+=======
+            "version": "v2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/livewire/flux.git",
+                "reference": "83559c48eb929aa2aa33e351e76b501467111e9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/livewire/flux/zipball/83559c48eb929aa2aa33e351e76b501467111e9e",
+                "reference": "83559c48eb929aa2aa33e351e76b501467111e9e",
+>>>>>>> Stashed changes
                 "shasum": ""
             },
             "require": {
@@ -2371,9 +2401,15 @@
             ],
             "support": {
                 "issues": "https://github.com/livewire/flux/issues",
+<<<<<<< Updated upstream
                 "source": "https://github.com/livewire/flux/tree/v2.3.2"
             },
             "time": "2025-09-08T01:11:34+00:00"
+=======
+                "source": "https://github.com/livewire/flux/tree/v2.3.0"
+            },
+            "time": "2025-09-03T21:42:14+00:00"
+>>>>>>> Stashed changes
         },
         {
             "name": "livewire/livewire",
