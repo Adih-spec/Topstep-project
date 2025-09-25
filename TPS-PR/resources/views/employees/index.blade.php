@@ -41,12 +41,15 @@
                                         {{ ucfirst($employee->role) }}
                                     </span>
                                 </td>
-                                <td>                    
-                                    @if($employee->department)
-                        {{ $employee->department->DepartmentName }} ({{ $employee->department->Type }})
-                    @else
-                        <span class="text-muted">No Department</span>
-                    @endif</td>
+                                <td>
+                                    {!! $employee->department 
+                                        ? $employee->department->DepartmentName . 
+                                            ($employee->department->Type 
+                                                ? ' <small class="text-muted">(' . $employee->department->Type . ')</small>' 
+                                                : '') 
+                                        : '<span class="text-muted">No Department</span>'
+                                    !!}
+                                </td>
                                 <td class="text-center">
                                     <a href="{{ route('employees.edit', $employee->EmployeeID) }}" class="btn btn-sm btn-warning me-1">
                                         <i class="bi bi-pencil-square"></i> Edit

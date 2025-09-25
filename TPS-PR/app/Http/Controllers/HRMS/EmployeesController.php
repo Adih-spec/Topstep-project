@@ -16,7 +16,7 @@ class EmployeesController extends Controller
      */
     public function index()
     {
-        $employees = Employee::with('department')->paginate(10);
+        $employees = Employee::latest()->with(['department'])->paginate(10);
         return view('employees.index', compact('employees'));
     }
 
@@ -55,6 +55,9 @@ class EmployeesController extends Controller
             'EmployeeNumber'   => 'nullable|string|max:30|unique:employees,EmployeeNumber',
         ]);
 
+        $randomPassword = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, 8);
+        $request->merge(['Password' => Hash::make($randomPassword)]);
+
         // Handle profile picture upload
         $profilePath = null;
         if ($request->hasFile('ProfilePicture')) {
@@ -82,7 +85,7 @@ class EmployeesController extends Controller
             'EmergencyContact' => $request->EmergencyContact,
             'ProfilePicture'   => $profilePath,
             'EmployeeNumber'   => $request->EmployeeNumber,
-            'Password' => Hash::make($request->Password),w
+            'Password'         => $request->Password
         ]);
 
         return redirect()->route('employees.index')->with('success', 'Employee created successfully.');
@@ -98,6 +101,9 @@ class EmployeesController extends Controller
         return view('employees.edit', compact('employee', 'departments'));
     }
 
+    public function show()  {
+        
+    }
     /**
      * Update the specified employee.
      */

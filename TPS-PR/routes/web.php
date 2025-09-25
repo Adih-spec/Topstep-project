@@ -12,9 +12,6 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GuardController;
-use App\Http\Controllers\HRMS\EmployeesController;
-use App\Http\Controllers\HRMS\DepartmentController;
-use App\Http\Controllers\HRMS\EmployeesAttendanceController;
 use App\Http\Controllers\UserManagementController;
 
 
@@ -66,41 +63,41 @@ Route::middleware('auth')->group(function () {
     });
 
     // Employee Routes
-    Route::middleware(['auth'])->group(function () {
-        Route::controller(EmployeesController::class)->group(function(){
-            Route::get('/employees', 'index')->name('employees.index');
-            Route::get('/employees/create', 'create')->name('employees.create');
-            Route::post('/employees', 'store')->name('employees.store');
-            Route::get('/employees/{id}/edit', 'edit')->name('employees.edit');
-            Route::put('/employees/{id}', 'update')->name('employees.update');
-            Route::delete('/employees/{id}', 'destroy')->name('employees.destroy');
-        });
-    });
+    // Route::middleware(['auth'])->group(function () {
+    //     Route::controller(EmployeesController::class)->group(function(){
+    //         Route::get('/employees', 'index')->name('employees.index');
+    //         Route::get('/employees/create', 'create')->name('employees.create');
+    //         Route::post('/employees', 'store')->name('employees.store');
+    //         Route::get('/employees/{id}/edit', 'edit')->name('employees.edit');
+    //         Route::put('/employees/{id}', 'update')->name('employees.update');
+    //         Route::delete('/employees/{id}', 'destroy')->name('employees.destroy');
+    //     });
+    // });
     
     // Department Routes
-Route::middleware(['auth'])->group(function () {
-    Route::controller(DepartmentController::class)->group(function () {
-        Route::get('/departments', 'index')->name('departments.index');
-        Route::get('/departments/create', 'create')->name('departments.create');
-        Route::post('/departments', 'store')->name('departments.store');
-        Route::get('/departments/{id}/edit', 'edit')->name('departments.edit');
-        Route::put('/departments/{id}', 'update')->name('departments.update');
-        Route::delete('/departments/{id}', 'destroy')->name('departments.destroy');
-    });
-});
+// Route::middleware(['auth'])->group(function () {
+//     Route::controller(DepartmentController::class)->group(function () {
+//         Route::get('/departments', 'index')->name('departments.index');
+//         Route::get('/departments/create', 'create')->name('departments.create');
+//         Route::post('/departments', 'store')->name('departments.store');
+//         Route::get('/departments/{id}/edit', 'edit')->name('departments.edit');
+//         Route::put('/departments/{id}', 'update')->name('departments.update');
+//         Route::delete('/departments/{id}', 'destroy')->name('departments.destroy');
+//     });
+// });
 
 // Employee Attendance Routes
-Route::middleware(['auth'])->group(function () {
-    Route::controller(EmployeesAttendanceController::class)->group(function () {
-        Route::get('/attendances', 'index')->name('attendances.index');
-        Route::get('/attendances/create', 'create')->name('attendances.create');
-        Route::post('/attendances', 'store')->name('attendances.store');
-        Route::get('/attendances/{id}', 'show')->name('attendances.show');
-        Route::get('/attendances/{id}/edit', 'edit')->name('attendances.edit');
-        Route::put('/attendances/{id}', 'update')->name('attendances.update');
-        Route::delete('/attendances/{id}', 'destroy')->name('attendances.destroy');
-    });
-});
+// Route::middleware(['auth'])->group(function () {
+//     Route::controller(EmployeesAttendanceController::class)->group(function () {
+//         Route::get('/attendances', 'index')->name('attendances.index');
+//         Route::get('/attendances/create', 'create')->name('attendances.create');
+//         Route::post('/attendances', 'store')->name('attendances.store');
+//         Route::get('/attendances/{id}', 'show')->name('attendances.show');
+//         Route::get('/attendances/{id}/edit', 'edit')->name('attendances.edit');
+//         Route::put('/attendances/{id}', 'update')->name('attendances.update');
+//         Route::delete('/attendances/{id}', 'destroy')->name('attendances.destroy');
+//     });
+// });
 
 
 

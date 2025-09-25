@@ -27,7 +27,7 @@ class Employee extends Authenticatable
         'EmergencyContact',
         'ProfilePicture',
         'EmployeeNumber',
-        'password',
+        'Password',
         'LastLogin',
     ];
 
@@ -40,19 +40,20 @@ class Employee extends Authenticatable
         return $this->belongsTo(Department::class, 'DepartmentID', 'DepartmentID');
     }
 
+
     public function attendances()
     {
-        return $this->hasMany(EmployeeAttendance::class, 'EmployeeID', 'EmployeeID');
+        return $this->hasMany(EmployeeAttendance::class, 'EmployeeID');
     }
 
     public function leaves()
     {
-        return $this->hasMany(LeaveManagement::class, 'EmployeeID', 'EmployeeID');
+        return $this->hasMany(LeaveManagement::class, 'EmployeeID');
     }
 
     public function performanceReviews()
     {
-        return $this->hasMany(PerformanceReview::class, 'EmployeeID', 'EmployeeID');
+        return $this->hasMany(PerformanceReview::class, 'EmployeeID');
     }
 
     public function reviewsGiven()
