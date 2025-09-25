@@ -161,8 +161,6 @@
                             <option value="Inactive" {{ old('Status', $employee->Status) == 'Inactive' ? 'selected' : '' }}>Inactive</option>
                         </select>
                     </div>
-
-                    {{-- 🔑 Password fields removed (not safe to edit here) --}}
                 </div>
 
                 {{-- Submit --}}

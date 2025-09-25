@@ -63,12 +63,12 @@
                         <select name="department_id" class="form-select" required> 
                             <option value="">-- Select Department --</option>
                             @foreach($departments as $department)
-                                <option value="{{ $department->DepartmentID }}" {{ old('departmentID') == $department->DepartmentID ? 'selected' : '' }}>
+                                <option value="{{ $department->DepartmentID }}" {{ old('department_id') == $department->DepartmentID ? 'selected' : '' }}>
                                     {{ $department->DepartmentName }} ({{ $department->Type }})
                                 </option>
                             @endforeach
                         </select>
-                        @error('departmentID')
+                        @error('department_id')
                             <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
@@ -120,13 +120,9 @@
                         <label class="form-label fw-bold">Emergency Contact</label>
                         <input type="text" name="EmergencyContact" class="form-control" value="{{ old('EmergencyContact') }}">
                     </div>
-                    <div class="col-md-6">
-                        <label class="form-label fw-bold">Emergency Phone</label>
-                        <input type="text" name="EmergencyPhone" class="form-control" value="{{ old('EmergencyPhone') }}">
-                    </div>
 
                     {{-- Profile Picture --}}
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <label class="form-label fw-bold">Profile Picture</label>
                         <input type="file" name="ProfilePicture" class="form-control">
                     </div>

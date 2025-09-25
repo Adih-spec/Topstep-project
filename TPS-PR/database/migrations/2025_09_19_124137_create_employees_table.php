@@ -29,7 +29,6 @@ return new class extends Migration
             $table->string('State', 100)->nullable();
             $table->string('Country', 100)->nullable();
             $table->string('EmergencyContact', 100)->nullable();
-            $table->string('EmergencyPhone', 20)->nullable();
             $table->string('ProfilePicture')->nullable();
             $table->string('EmployeeNumber', 30)->nullable();
             $table->string('password');

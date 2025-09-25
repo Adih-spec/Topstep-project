@@ -5,6 +5,7 @@ namespace App\Http\Controllers\HRMS;
 use App\Http\Controllers\Controller;
 use App\Models\HRMS\Employee;
 use App\Models\HRMS\Department;
+use App\Models\HRMS\EmployeesAttendance;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -50,10 +51,8 @@ class EmployeesController extends Controller
             'State'            => 'required|string|max:100',
             'Country'          => 'required|string|max:100',
             'EmergencyContact' => 'required|string|max:100',
-            'EmergencyPhone'   => 'required|string|max:20',
             'ProfilePicture'   => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'EmployeeNumber'   => 'nullable|string|max:30|unique:employees,EmployeeNumber',
-            'Password'         => 'required|string|min:6|confirmed',
         ]);
 
         // Handle profile picture upload
@@ -81,10 +80,9 @@ class EmployeesController extends Controller
             'State'            => $request->State,
             'Country'          => $request->Country,
             'EmergencyContact' => $request->EmergencyContact,
-            'EmergencyPhone'   => $request->EmergencyPhone,
             'ProfilePicture'   => $profilePath,
             'EmployeeNumber'   => $request->EmployeeNumber,
-            'Password'         => Hash::make($request->Password),
+            'Password' => Hash::make($request->Password),w
         ]);
 
         return redirect()->route('employees.index')->with('success', 'Employee created successfully.');
@@ -118,13 +116,12 @@ class EmployeesController extends Controller
             'Role'             => 'required|in:teacher,non-teacher',
             'JobTitle'         => 'required|string|max:100',
             'HireDate'         => 'required|date',
-            'Status'           => 'required|in:Active,Inactive', // ✅ fixed typo
+            'Status'           => 'required|in:Active,Inactive',
             'Address'          => 'required|string|max:255',
             'City'             => 'nullable|string|max:100',
             'State'            => 'required|string|max:100',
             'Country'          => 'required|string|max:100',
             'EmergencyContact' => 'required|string|max:100',
-            'EmergencyPhone'   => 'required|string|max:20',
             'ProfilePicture'   => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'EmployeeNumber'   => 'nullable|string|max:30|unique:employees,EmployeeNumber,' . $employee->EmployeeID . ',EmployeeID',
             'Password'         => 'nullable|string|min:6|confirmed',

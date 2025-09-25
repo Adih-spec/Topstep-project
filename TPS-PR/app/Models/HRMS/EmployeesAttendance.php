@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\HRMS;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EmployeeAttendance extends Model
+class EmployeesAttendance extends Model
 {
     protected $table = 'employees_attendances';
     protected $primaryKey = 'AttendanceID';

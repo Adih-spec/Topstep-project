@@ -25,7 +25,6 @@ class Employee extends Authenticatable
         'State',
         'Country',
         'EmergencyContact',
-        'EmergencyPhone',
         'ProfilePicture',
         'EmployeeNumber',
         'password',

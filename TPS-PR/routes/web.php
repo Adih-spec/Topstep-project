@@ -8,14 +8,13 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GuardianController;
-
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GuardController;
 use App\Http\Controllers\HRMS\EmployeesController;
 use App\Http\Controllers\HRMS\DepartmentController;
-
+use App\Http\Controllers\HRMS\EmployeesAttendanceController;
 use App\Http\Controllers\UserManagementController;
 
 
@@ -91,15 +90,21 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/departments/{id}', 'destroy')->name('departments.destroy');
     });
 });
-    
-// Departments Routes
-    Route::get('/departments', [DepartmentController::class, 'index'])->name('departments.index');
-    Route::get('/departments/create', [DepartmentController::class, 'create'])->name('departments.create');
-    Route::post('/departments', [DepartmentController::class, 'store'])->name('departments.store');
-    Route::get('/departments/{department}', [DepartmentController::class, 'show'])->name('departments.show');
-    Route::get('/departments/{department}/edit', [DepartmentController::class, 'edit'])->name('departments.edit');
-            Route::put('/departments/{department}', [DepartmentController::class, 'update'])->name('departments.update');
-            Route::delete('/departments/{department}', [DepartmentController::class, 'destroy'])->name('departments.destroy');
+
+// Employee Attendance Routes
+Route::middleware(['auth'])->group(function () {
+    Route::controller(EmployeesAttendanceController::class)->group(function () {
+        Route::get('/attendances', 'index')->name('attendances.index');
+        Route::get('/attendances/create', 'create')->name('attendances.create');
+        Route::post('/attendances', 'store')->name('attendances.store');
+        Route::get('/attendances/{id}', 'show')->name('attendances.show');
+        Route::get('/attendances/{id}/edit', 'edit')->name('attendances.edit');
+        Route::put('/attendances/{id}', 'update')->name('attendances.update');
+        Route::delete('/attendances/{id}', 'destroy')->name('attendances.destroy');
+    });
+});
+
+
 
     Route::get('/dashboard', function() {
         view('dashboard');
