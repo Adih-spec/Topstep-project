@@ -53,19 +53,6 @@ return new class extends Migration {
                 $table->foreign('created_by')->references('id')->on('users')
                   ->onDelete('cascade');
         });
-
-            Schema::create('report_card_configurations', function (Blueprint $table) {
-        $table->id();
-        $table->json('grading_scale')->nullable();   // e.g., { "A": "90-100" }
-        $table->json('weights')->nullable();         // e.g., { "exam":0.6,"test":0.3 }
-        $table->boolean('show_attendance')->default(true);
-        $table->boolean('show_comments')->default(true);
-        $table->json('behavior_fields')->nullable(); // e.g., [ "Punctuality","Neatness" ]
-        $table->string('template_style',50)->default('modern');
-        $table->string('logo_url')->nullable();
-        $table->foreignId('created_by')->constrained('users')->onDelete('cascade');
-        $table->timestamps();
-    });
     }
 
     /**

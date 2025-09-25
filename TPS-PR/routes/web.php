@@ -16,9 +16,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserManagementController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', fn() => view('welcome'))->name('home');
 Route::get('/home', [HomePageController::class, 'index'])->name('home.index');
 Route::get('/about', [AboutController::class, 'index'])->name('about-us');
 Route::get('/admission', [AdmissionController::class, 'index'])->name('admission.index');
