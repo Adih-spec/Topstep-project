@@ -8,11 +8,9 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GuardianController;
-
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
-
 use App\Http\Controllers\UserManagementController;
 
 
