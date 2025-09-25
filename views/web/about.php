@@ -10,7 +10,7 @@
   <?php require_once '../../components/styles.php'; ?>
   <!-- Custom Styling -->
   <style>
-    
+
     .hover-shadow:hover {
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
       transition: box-shadow 0.4s ease-in-out;
