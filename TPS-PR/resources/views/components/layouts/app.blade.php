@@ -63,13 +63,13 @@
 			<!-- Logo -->
 			<div class="header-left active">
 				<a href="index.html" class="logo logo-normal">
-					<img src="assets/img/logo.svg" alt="Logo">
+					<img src="{{asset('adminAssets/img/logo.svg')}}" alt="Logo">
 				</a>
 				<a href="index.html" class="logo-small">
-					<img src="assets/img/logo-small.svg" alt="Logo">
+					<img src="{{asset('adminAssets/img/logo-small.svg')}}'" alt="Logo">
 				</a>
 				<a href="index.html" class="dark-logo">
-					<img src="assets/img/logo-dark.svg" alt="Logo">
+					<img src="{{asset('adminAssets/img/logo-dark.svg')}}" alt="Logo">
 				</a>
 				<a id="toggle_btn" href="javascript:void(0);">
 					<i class="ti ti-menu-deep"></i>
@@ -521,20 +521,6 @@
 										<li><a href="file-manager.html">File Manager</a></li>
 									</ul>
 								</li>
-							</ul>
-						</li>
-						<li>
-							<h6 class="submenu-hdr"><span>Layout</span></h6>
-							<ul>
-								<li><a href="layout-default.html"><i class="ti ti-layout-sidebar"></i><span>Default
-										</span></a></li>
-								<li><a href="layout-mini.html"><i
-											class="ti ti-layout-align-left"></i><span>Mini</span></a></li>
-								<li><a href="layout-rtl.html"><i
-											class="ti ti-text-direction-rtl"></i><span>RTL</span></a></li>
-								<li><a href="layout-box.html"><i
-											class="ti ti-layout-distribute-vertical"></i><span>Box</span></a></li>
-								<li><a href="layout-dark.html"><i class="ti ti-moon"></i><span>Dark</span></a></li>
 							</ul>
 						</li>
 						<li>
