@@ -356,29 +356,90 @@
 						<div class="dropdown ms-1">
 							<a href="javascript:void(0);" class="dropdown-toggle d-flex align-items-center"
 								data-bs-toggle="dropdown">
+								@php
+									$admin = Auth::guard('admin')->user();
+								@endphp
 								<span class="avatar avatar-md rounded">
-									<img src="{{asset('adminAssets/img/profiles/avatar-27.jpg')}}" alt="Img" class="img-fluid">
+									@if($admin && $admin->profile_image)
+										<img src="{{ asset($admin->profile_image) }}" alt="Profile" class="img-fluid">
+									@else
+										<span class="bg-primary text-white d-flex align-items-center justify-content-center w-100 h-100" style="font-weight: bold;">
+											{{ $admin && isset($admin->initials) ? $admin->initials : __('NA') }}
+										</span>
+									@endif
 								</span>
 							</a>
 							<div class="dropdown-menu">
 								<div class="d-block">
 									<div class="d-flex align-items-center p-2">
-										<span class="avatar avatar-md me-2 online avatar-rounded">
-											<img src="{{asset('adminAssets/img/profiles/avatar-27.jpg')}}" alt="img">
-										</span>
+										@php
+											$admin = Auth::guard('admin')->user();
+										@endphp
+										@if($admin && $admin->profile_image)
+											<span class="avatar avatar-md me-2 online avatar-rounded">
+												<img src="{{ asset($admin->profile_image) }}" alt="img">
+											</span>
+										@else
+											<span class="avatar avatar-md me-2 online avatar-rounded bg-primary text-white d-flex align-items-center justify-content-center" style="font-weight: bold;">
+												{{ $admin && isset($admin->initials) ? $admin->initials : __('NA') }}
+											</span>
+										@endif
 										<div>
-											<h6 class="">Kevin Larry</h6>
-											<p class="text-primary mb-0">Administrator</p>
+											@if(Auth::guard('admin')->check())
+												<h6 class="mb-0">{{ Auth::guard('admin')->user()->full_name }}</h6>
+											@endif
+											@auth('admin')
+												<p class="text-primary mb-0">Administrator</p>
+											@endauth
+											@auth('teacher')
+												<p class="text-success mb-0">Teacher</p>
+											@endauth
+											@auth('student')
+												<p class="text-info mb-0">Student</p>
+											@endauth
+											@auth('guardian')
+												<p class="text-warning mb-0">Guardian</p>
+											@endauth
 										</div>
 									</div>
 									<hr class="m-0">
-									<a class="dropdown-item d-inline-flex align-items-center p-2" href="profile.html">
+									<a class="dropdown-item d-inline-flex align-items-center p-2" href="{{ url('profile') }}">
 										<i class="ti ti-user-circle me-2"></i>My Profile</a>
 									<a class="dropdown-item d-inline-flex align-items-center p-2"
 										href="profile-settings.html"><i class="ti ti-settings me-2"></i>Settings</a>
 									<hr class="m-0">
-									<a class="dropdown-item d-inline-flex align-items-center p-2" href="login.html"><i
-											class="ti ti-login me-2"></i>Logout</a>
+									@auth('admin')
+										<form method="POST" action="{{ route('admin.logout') }}" class="dropdown-item p-0">
+											@csrf
+											<button type="submit" class="dropdown-item d-inline-flex align-items-center p-2">
+												<i class="ti ti-login me-2"></i>{{ __('Log Out') }}
+											</button>
+										</form>
+									@endauth
+									@auth('teacher')
+										<form method="POST" action="{{ route('teacher.logout') }}" class="dropdown-item p-0">
+											@csrf
+											<button type="submit" class="dropdown-item d-inline-flex align-items-center p-2">
+												<i class="ti ti-login me-2"></i>{{ __('Log Out') }}
+											</button>
+										</form>
+									@endauth
+									@auth('student')
+										<form method="POST" action="{{ route('student.logout') }}" class="dropdown-item p-0">
+											@csrf
+											<button type="submit" class="dropdown-item d-inline-flex align-items-center p-2">
+												<i class="ti ti-login me-2"></i>{{ __('Log Out') }}
+											</button>
+										</form>
+									@endauth
+									@auth('guardian')
+										<form method="POST" action="{{ route('guardian.logout') }}" class="dropdown-item p-0">
+											@csrf
+											<button type="submit" class="dropdown-item d-inline-flex align-items-center p-2">
+												<i class="ti ti-login me-2"></i>{{ __('Log Out') }}
+											</button>
+										</form>
+									@endauth
 								</div>
 							</div>
 						</div>
@@ -394,7 +455,14 @@
 				<div class="dropdown-menu dropdown-menu-end">
 					<a class="dropdown-item" href="profile.html">My Profile</a>
 					<a class="dropdown-item" href="profile-settings.html">Settings</a>
-					<a class="dropdown-item" href="login.html">Logout</a>
+					<!-- <a class="dropdown-item" href="login.html">Logout</a> -->
+					
+					<form method="POST" action="{{ route('admin.logout') }}" class="dropdown-item p-0">
+						@csrf
+						<button type="submit" class="dropdown-item d-inline-flex align-items-center p-2">
+							<i class="ti ti-login me-2"></i>{{ __('Log Out') }}
+						</button>
+					</form>
 				</div>
 			</div>
 			<!-- /Mobile Menu -->
@@ -410,9 +478,9 @@
 						<li>
 							<a href="javascript:void(0);"
 								class="d-flex align-items-center border bg-white rounded p-2 mb-4">
-								<img src="assets/img/icons/global-img.svg" class="avatar avatar-md img-fluid rounded"
+								<img src="{{asset('adminAssets/img/icons/global-img.svg')}}" class="avatar avatar-md img-fluid rounded"
 									alt="Profile">
-								<span class="text-dark ms-2 fw-normal">Global International</span>
+								<span class="text-dark ms-2 fw-normal">Topsteps Academy</span>
 							</a>
 						</li>
 					</ul>

@@ -50,11 +50,55 @@ class Admin extends Authenticatable
         'status' => 'boolean',
     ];
 
+    // Automatically append full_name to model arrays and JSON
+    protected $appends = ['full_name', 'initials'];
+
     /**
-     * Accessor for full name.
+     * Accessor for full name (proper case + fallback to email)
      */
     public function getFullNameAttribute(): string
     {
-        return trim("{$this->first_name} {$this->other_name} {$this->last_name}");
+        $fullName = trim("{$this->first_name} {$this->other_name} {$this->last_name}");
+        $fullName = ucwords(strtolower($fullName)); // Proper case
+        return $fullName ?: $this->email; // Fallback to email if empty
+    }
+
+    /**
+     * Mutators for automatically formatting names when saving
+     */
+    public function setFirstNameAttribute($value)
+    {
+        $this->attributes['first_name'] = ucwords(strtolower($value));
+    }
+
+    public function setOtherNameAttribute($value)
+    {
+        $this->attributes['other_name'] = ucwords(strtolower($value));
+    }
+
+    public function setLastNameAttribute($value)
+    {
+        $this->attributes['last_name'] = ucwords(strtolower($value));
+    }
+
+    /**
+     * Accessor for initials (first letters of first, other, last name)
+     */
+    public function getInitialsAttribute(): string
+    {
+        $names = [
+            $this->first_name,
+            $this->other_name,
+            $this->last_name,
+        ];
+
+        $initials = '';
+        foreach ($names as $name) {
+            if (!empty($name)) {
+                $initials .= strtoupper(mb_substr(trim($name), 0, 1));
+            }
+        }
+
+        return $initials ?: strtoupper(mb_substr($this->email, 0, 1));
     }
 }
