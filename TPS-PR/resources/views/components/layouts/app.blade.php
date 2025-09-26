@@ -22,7 +22,7 @@
 	<link rel="stylesheet" href="{{asset('adminAssets/plugins/icons/feather/feather.css')}}">
 
 	<!-- Tabler Icon CSS -->
-	<link rel="stylesheet" href="{{asset('adminAssets/plugins/tabler-icons/tabler-icons.css')}}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 
 	<!-- Daterangepikcer CSS -->
 	<link rel="stylesheet" href="{{asset('adminAssets/plugins/daterangepicker/daterangepicker.css')}}">
@@ -32,7 +32,8 @@
 
 	<!-- Fontawesome CSS -->
 	<link rel="stylesheet" href="{{asset('adminAssets/plugins/fontawesome/css/fontawesome.min.css')}}">
-	<link rel="stylesheet" href="{{asset('adminAssets/plugins/fontawesome/css/all.min.css')}}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
 	<!-- Datetimepicker CSS -->
 	<link rel="stylesheet" href="{{asset('adminAssets/css/bootstrap-datetimepicker.min.css')}}">
@@ -125,27 +126,27 @@
 						</div>
 						<div class="pe-1 ms-1">
 							<div class="dropdown">
-								<a href="index.html#"
+								<a href="#"
 									class="btn btn-outline-light bg-white btn-icon d-flex align-items-center me-1 p-2"
 									data-bs-toggle="dropdown" aria-expanded="false">
-									<img src="assets/img/flags/us.png" alt="Language" class="img-fluid rounded-pill">
+									<img src="{{ asset('adminAssets/img/flags/us.png')}}" alt="Language" class="img-fluid rounded-pill">
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
 									<a href="javascript:void(0);"
 										class="dropdown-item active d-flex align-items-center">
-										<img class="me-2 rounded-pill" src="assets/img/flags/us.png" alt="Img"
+										<img class="me-2 rounded-pill" src="{{ asset('adminAssets/img/flags/us.png')}}" alt="Img"
 											height="22" width="22"> English
 									</a>
 									<a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">
-										<img class="me-2 rounded-pill" src="assets/img/flags/fr.png" alt="Img"
+										<img class="me-2 rounded-pill" src="{{ asset('adminAssets/img/flags/fr.png')}}" alt="Img"
 											height="22" width="22"> French
 									</a>
 									<a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">
-										<img class="me-2 rounded-pill" src="assets/img/flags/es.png" alt="Img"
+										<img class="me-2 rounded-pill" src="{{ asset('adminAssets/img/flags/es.png')}}" alt="Img"
 											height="22" width="22"> Spanish
 									</a>
 									<a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">
-										<img class="me-2 rounded-pill" src="assets/img/flags/de.png" alt="Img"
+										<img class="me-2 rounded-pill" src="{{ asset('adminAssets/img/flags/de.png')}}" alt="Img"
 											height="22" width="22"> German
 									</a>
 								</div>
@@ -153,7 +154,7 @@
 						</div>
 						<div class="pe-1">
 							<div class="dropdown">
-								<a href="index.html#" class="btn btn-outline-light bg-white btn-icon me-1"
+								<a href="#" class="btn btn-outline-light bg-white btn-icon me-1"
 									data-bs-toggle="dropdown" aria-expanded="false">
 									<i class="ti ti-square-rounded-plus"></i>
 								</a>
@@ -213,11 +214,11 @@
 							</div>
 						</div>
 						<div class="pe-1">
-							<a href="index.html#" id="dark-mode-toggle"
+							<a href="#" id="dark-mode-toggle"
 								class="dark-mode-toggle activate btn btn-outline-light bg-white btn-icon me-1">
 								<i class="ti ti-moon"></i>
 							</a>
-							<a href="index.html#" id="light-mode-toggle"
+							<a href="#" id="light-mode-toggle"
 								class="dark-mode-toggle btn btn-outline-light bg-white btn-icon me-1">
 								<i class="ti ti-brightness-up"></i>
 							</a>
@@ -265,7 +266,7 @@
 											<a href="activities.html">
 												<div class="d-flex">
 													<span class="avatar avatar-lg me-2 flex-shrink-0">
-														<img src="assets/img/profiles/avatar-27.jpg" alt="Profile">
+														<img src="{{asset('adminAssets/img/profiles/avatar-27.jpg')}}" alt="Profile">
 													</span>
 													<div class="flex-grow-1">
 														<p class="mb-1"><span class="text-dark fw-semibold">Shawn</span>
@@ -280,7 +281,7 @@
 											<a href="activities.html" class="pb-0">
 												<div class="d-flex">
 													<span class="avatar avatar-lg me-2 flex-shrink-0">
-														<img src="assets/img/profiles/avatar-23.jpg" alt="Profile">
+														<img src="{{asset('adminAssets/img/profiles/avatar-23.jpg')}}" alt="Profile">
 													</span>
 													<div class="flex-grow-1">
 														<p class="mb-1"><span
@@ -301,7 +302,7 @@
 											<a href="activities.html">
 												<div class="d-flex">
 													<span class="avatar avatar-lg me-2 flex-shrink-0">
-														<img src="assets/img/profiles/avatar-25.jpg" alt="Profile">
+														<img src="{{asset('adminAssets/img/profiles/avatar-25.jpg')}}" alt="Profile">
 													</span>
 													<div class="flex-grow-1">
 														<p class="mb-1">New student record <span
@@ -317,7 +318,7 @@
 											<a href="activities.html">
 												<div class="d-flex">
 													<span class="avatar avatar-lg me-2 flex-shrink-0">
-														<img src="assets/img/profiles/avatar-01.jpg" alt="Profile">
+														<img src="{{asset('adminAssets/img/profiles/avatar-01.jpg')}}" alt="Profile">
 													</span>
 													<div class="flex-grow-1">
 														<p class="mb-1">A new teacher record for <span
@@ -331,7 +332,7 @@
 									</div>
 								</div>
 								<div class="d-flex p-0">
-									<a href="index.html#" class="btn btn-light w-100 me-2">Cancel</a>
+									<a href="#" class="btn btn-light w-100 me-2">Cancel</a>
 									<a href="activities.html" class="btn btn-primary w-100">View All</a>
 								</div>
 							</div>
@@ -343,12 +344,12 @@
 							</a>
 						</div>
 						<div class="pe-1">
-							<a href="index.html#" class="btn btn-outline-light bg-white btn-icon me-1">
+							<a href="#" class="btn btn-outline-light bg-white btn-icon me-1">
 								<i class="ti ti-chart-bar"></i>
 							</a>
 						</div>
 						<div class="pe-1">
-							<a href="index.html#" class="btn btn-outline-light bg-white btn-icon me-1" id="btnFullscreen">
+							<a href="#" class="btn btn-outline-light bg-white btn-icon me-1" id="btnFullscreen">
 								<i class="ti ti-maximize"></i>
 							</a>
 						</div>
@@ -424,10 +425,18 @@
 											class="ti ti-layout-dashboard"></i><span>Dashboard</span><span
 											class="menu-arrow"></span></a>
 									<ul>
-										<li><a href="index.html" class="active">Admin Dashboard</a></li>
-										<li><a href="teacher-dashboard.html">Teacher Dashboard</a></li>
-										<li><a href="student-dashboard.html">Student Dashboard</a></li>
-										<li><a href="parent-dashboard.html">Parent Dashboard</a></li>
+										@auth('admin')
+											<li><a href="{{ route('admin.dashboard') }}" class="active">Admin Dashboard</a></li>
+										@endauth
+										@auth('teacher')
+											<li><a href="teacher-dashboard.html">Teacher Dashboard</a></li>
+										@endauth
+										@auth('student')
+											<li><a href="student-dashboard.html">Student Dashboard</a></li>
+										@endauth
+										@auth('guardian')
+											<li><a href="parent-dashboard.html">Parent Dashboard</a></li>
+										@endauth
 									</ul>
 								</li>
 								<li class="submenu">
