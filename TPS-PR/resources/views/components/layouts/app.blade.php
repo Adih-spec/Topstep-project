@@ -62,13 +62,13 @@
 
 			<!-- Logo -->
 			<div class="header-left active">
-				<a href="index.html" class="logo logo-normal">
+				<a href="#" class="logo logo-normal">
 					<img src="assets/img/logo.svg" alt="Logo">
 				</a>
-				<a href="index.html" class="logo-small">
+				<a href="#" class="logo-small">
 					<img src="assets/img/logo-small.svg" alt="Logo">
 				</a>
-				<a href="index.html" class="dark-logo">
+				<a href="#" class="dark-logo">
 					<img src="assets/img/logo-dark.svg" alt="Logo">
 				</a>
 				<a id="toggle_btn" href="javascript:void(0);">
@@ -77,7 +77,7 @@
 			</div>
 			<!-- /Logo -->
 
-			<a id="mobile_btn" class="mobile_btn" href="index.html#sidebar">
+			<a id="mobile_btn" class="mobile_btn" href="#">
 				<span class="bar-icon">
 					<span></span>
 					<span></span>
@@ -94,7 +94,7 @@
 							<a href="javascript:void(0);" class="responsive-search">
 								<i class="fa fa-search"></i>
 							</a>
-							<form action="index.html#" class="dropdown">
+							<form action="#" class="dropdown">
 								<div class="searchinputs" id="dropdownMenuClickable">
 									<input type="text" placeholder="Search">
 									<div class="search-addon">
@@ -108,7 +108,7 @@
 
 					<div class="d-flex align-items-center">
 						<div class="dropdown me-2">
-							<a href="index.html#" class="btn btn-outline-light fw-normal bg-white d-flex align-items-center p-2"
+							<a href="#" class="btn btn-outline-light fw-normal bg-white d-flex align-items-center p-2"
 								data-bs-toggle="dropdown" aria-expanded="false">
 								<i class="ti ti-calendar-due me-1"></i>Academic Year : 2024 / 2025
 							</a>
@@ -165,7 +165,7 @@
 									<div class="p-3 pb-0">
 										<div class="row gx-2">
 											<div class="col-6">
-												<a href="add-student.html"
+												<a href="#"
 													class="d-block bg-primary-transparent ronded p-2 text-center mb-3 class-hover">
 													<div class="avatar avatar-lg mb-2">
 														<span
@@ -176,7 +176,7 @@
 												</a>
 											</div>
 											<div class="col-6">
-												<a href="add-teacher.html"
+												<a href="#"
 													class="d-block bg-success-transparent ronded p-2 text-center mb-3 class-hover">
 													<div class="avatar avatar-lg mb-2">
 														<span
@@ -187,7 +187,7 @@
 												</a>
 											</div>
 											<div class="col-6">
-												<a href="add-staff.html"
+												<a href="#"
 													class="d-block bg-warning-transparent ronded p-2 text-center mb-3 class-hover">
 													<div class="avatar avatar-lg rounded-circle mb-2">
 														<span
@@ -198,7 +198,7 @@
 												</a>
 											</div>
 											<div class="col-6">
-												<a href="add-invoice.html"
+												<a href="#"
 													class="d-block bg-info-transparent ronded p-2 text-center mb-3 class-hover">
 													<div class="avatar avatar-lg mb-2">
 														<span
@@ -224,7 +224,7 @@
 							</a>
 						</div>
 						<div class="pe-1" id="notification_item">
-							<a href="index.html#" class="btn btn-outline-light bg-white btn-icon position-relative me-1"
+							<a href="#" class="btn btn-outline-light bg-white btn-icon position-relative me-1"
 								id="notification_popup">
 								<i class="ti ti-bell"></i>
 								<span class="notification-status-dot"></span>
@@ -234,7 +234,7 @@
 									class="d-flex align-items-center justify-content-between border-bottom p-0 pb-3 mb-3">
 									<h4 class="notification-title">Notifications (2)</h4>
 									<div class="d-flex align-items-center">
-										<a href="index.html#" class="text-primary fs-15 me-3 lh-1">Mark all as read</a>
+										<a href="#" class="text-primary fs-15 me-3 lh-1">Mark all as read</a>
 										<div class="dropdown">
 											<a href="javascript:void(0);" class="bg-white dropdown-toggle"
 												data-bs-toggle="dropdown"><i class="ti ti-calendar-due me-1"></i>Today
@@ -263,7 +263,7 @@
 								<div class="noti-content">
 									<div class="d-flex flex-column">
 										<div class="border-bottom mb-3 pb-3">
-											<a href="activities.html">
+											<a href="#">
 												<div class="d-flex">
 													<span class="avatar avatar-lg me-2 flex-shrink-0">
 														<img src="{{asset('adminAssets/img/profiles/avatar-27.jpg')}}" alt="Profile">
@@ -278,7 +278,7 @@
 											</a>
 										</div>
 										<div class="border-bottom mb-3 pb-3">
-											<a href="activities.html" class="pb-0">
+											<a href="#" class="pb-0">
 												<div class="d-flex">
 													<span class="avatar avatar-lg me-2 flex-shrink-0">
 														<img src="{{asset('adminAssets/img/profiles/avatar-23.jpg')}}" alt="Profile">
@@ -299,7 +299,7 @@
 											</a>
 										</div>
 										<div class="border-bottom mb-3 pb-3">
-											<a href="activities.html">
+											<a href="#">
 												<div class="d-flex">
 													<span class="avatar avatar-lg me-2 flex-shrink-0">
 														<img src="{{asset('adminAssets/img/profiles/avatar-25.jpg')}}" alt="Profile">
@@ -315,7 +315,7 @@
 											</a>
 										</div>
 										<div class="border-0 mb-3 pb-0">
-											<a href="activities.html">
+											<a href="#">
 												<div class="d-flex">
 													<span class="avatar avatar-lg me-2 flex-shrink-0">
 														<img src="{{asset('adminAssets/img/profiles/avatar-01.jpg')}}" alt="Profile">
@@ -333,12 +333,12 @@
 								</div>
 								<div class="d-flex p-0">
 									<a href="#" class="btn btn-light w-100 me-2">Cancel</a>
-									<a href="activities.html" class="btn btn-primary w-100">View All</a>
+									<a href="#" class="btn btn-primary w-100">View All</a>
 								</div>
 							</div>
 						</div>
 						<div class="pe-1">
-							<a href="chat.html" class="btn btn-outline-light bg-white btn-icon position-relative me-1">
+							<a href="#" class="btn btn-outline-light bg-white btn-icon position-relative me-1">
 								<i class="ti ti-brand-hipchat"></i>
 								<span class="chat-status-dot"></span>
 							</a>
@@ -406,7 +406,7 @@
 									<a class="dropdown-item d-inline-flex align-items-center p-2" href="{{ url('profile') }}">
 										<i class="ti ti-user-circle me-2"></i>My Profile</a>
 									<a class="dropdown-item d-inline-flex align-items-center p-2"
-										href="profile-settings.html"><i class="ti ti-settings me-2"></i>Settings</a>
+										href="#"><i class="ti ti-settings me-2"></i>Settings</a>
 									<hr class="m-0">
 									@auth('admin')
 										<form method="POST" action="{{ route('admin.logout') }}" class="dropdown-item p-0">
@@ -453,10 +453,10 @@
 				<a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
 					aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
 				<div class="dropdown-menu dropdown-menu-end">
-					<a class="dropdown-item" href="profile.html">My Profile</a>
-					<a class="dropdown-item" href="profile-settings.html">Settings</a>
-					<!-- <a class="dropdown-item" href="login.html">Logout</a> -->
-					
+					<a class="dropdown-item" href="#">My Profile</a>
+					<a class="dropdown-item" href="#">Settings</a>
+					<!-- <a class="dropdown-item" href="#">Logout</a> -->
+
 					<form method="POST" action="{{ route('admin.logout') }}" class="dropdown-item p-0">
 						@csrf
 						<button type="submit" class="dropdown-item d-inline-flex align-items-center p-2">
@@ -497,13 +497,13 @@
 											<li><a href="{{ route('admin.dashboard') }}" class="active">Admin Dashboard</a></li>
 										@endauth
 										@auth('teacher')
-											<li><a href="teacher-dashboard.html">Teacher Dashboard</a></li>
+											<li><a href="#">Teacher Dashboard</a></li>
 										@endauth
 										@auth('student')
-											<li><a href="student-dashboard.html">Student Dashboard</a></li>
+											<li><a href="#">Student Dashboard</a></li>
 										@endauth
 										@auth('guardian')
-											<li><a href="parent-dashboard.html">Parent Dashboard</a></li>
+											<li><a href="#">Parent Dashboard</a></li>
 										@endauth
 									</ul>
 								</li>
@@ -512,13 +512,13 @@
 											class="ti ti-layout-list"></i><span>Application</span><span
 											class="menu-arrow"></span></a>
 									<ul>
-										<li><a href="chat.html">Chat</a></li>
-										<li><a href="call.html">Call</a></li>
-										<li><a href="calendar.html">Calendar</a></li>
-										<li><a href="email.html">Email</a></li>
-										<li><a href="todo.html">To Do</a></li>
-										<li><a href="notes.html">Notes</a></li>
-										<li><a href="file-manager.html">File Manager</a></li>
+										<li><a href="#">Chat</a></li>
+										<li><a href="#">Call</a></li>
+										<li><a href="#">Calendar</a></li>
+										<li><a href="#">Email</a></li>
+										<li><a href="#">To Do</a></li>
+										<li><a href="#">Notes</a></li>
+										<li><a href="#">File Manager</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -526,15 +526,15 @@
 						<li>
 							<h6 class="submenu-hdr"><span>Layout</span></h6>
 							<ul>
-								<li><a href="layout-default.html"><i class="ti ti-layout-sidebar"></i><span>Default
+								<li><a href="#"><i class="ti ti-layout-sidebar"></i><span>Default
 										</span></a></li>
-								<li><a href="layout-mini.html"><i
+								<li><a href="#"><i
 											class="ti ti-layout-align-left"></i><span>Mini</span></a></li>
-								<li><a href="layout-rtl.html"><i
+								<li><a href="#"><i
 											class="ti ti-text-direction-rtl"></i><span>RTL</span></a></li>
-								<li><a href="layout-box.html"><i
+								<li><a href="#"><i
 											class="ti ti-layout-distribute-vertical"></i><span>Box</span></a></li>
-								<li><a href="layout-dark.html"><i class="ti ti-moon"></i><span>Dark</span></a></li>
+								<li><a href="#"><i class="ti ti-moon"></i><span>Dark</span></a></li>
 							</ul>
 						</li>
 						<li>
@@ -544,10 +544,10 @@
 									<a href="javascript:void(0);"><i class="ti ti-school"></i><span>Students</span><span
 											class="menu-arrow"></span></a>
 									<ul>
-										<li><a href="student-grid.html">All Students</a></li>
-										<li><a href="students.html">Student List</a></li>
-										<li><a href="student-details.html">Student Details</a></li>
-										<li><a href="student-promotion.html">Student Promotion</a></li>
+										<li><a href="#">All Students</a></li>
+										<li><a href="#">Student List</a></li>
+										<li><a href="#">Student Details</a></li>
+										<li><a href="#">Student Promotion</a></li>
 									</ul>
 								</li>
 								<li class="submenu">
@@ -555,8 +555,8 @@
 											class="ti ti-user-bolt"></i><span>Parents</span><span
 											class="menu-arrow"></span></a>
 									<ul>
-										<li><a href="parent-grid.html">All Parents</a></li>
-										<li><a href="parents.html">Parent List</a></li>
+										<li><a href="#">All Parents</a></li>
+										<li><a href="#">Parent List</a></li>
 									</ul>
 								</li>
 								<li class="submenu">
@@ -564,8 +564,8 @@
 											class="ti ti-user-shield"></i><span>Guardians</span><span
 											class="menu-arrow"></span></a>
 									<ul>
-										<li><a href="guardian-grid.html">All Guardians</a></li>
-										<li><a href="guardians.html">Guardian List</a></li>
+										<li><a href="#">All Guardians</a></li>
+										<li><a href="#">Guardian List</a></li>
 									</ul>
 								</li>
 								<li class="submenu">
@@ -573,9 +573,9 @@
 											class="menu-arrow"></span></a>
 									<ul>
 										<li><a href="https://preskool.dreamstechnologies.com/html/template/teacher-grid.html">All Teachers</a></li>
-										<li><a href="teachers.html">Teacher List</a></li>
-										<li><a href="teacher-details.html">Teacher Details</a></li>
-										<li><a href="routine-teachers.html">Routine</a></li>
+										<li><a href="#">Teacher List</a></li>
+										<li><a href="#">Teacher Details</a></li>
+										<li><a href="#">Routine</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -588,36 +588,36 @@
 											class="ti ti-school-bell"></i><span>Classes</span><span
 											class="menu-arrow"></span></a>
 									<ul>
-										<li><a href="classes.html">All Classes</a></li>
-										<li><a href="schedule-classes.html">Schedule</a></li>
+										<li><a href="#">All Classes</a></li>
+										<li><a href="#">Schedule</a></li>
 									</ul>
 								</li>
-								<li><a href="class-room.html"><i class="ti ti-building"></i><span>Class Room</span></a>
+								<li><a href="#"><i class="ti ti-building"></i><span>Class Room</span></a>
 								</li>
-								<li><a href="class-routine.html"><i class="ti ti-bell-school"></i><span>Class
+								<li><a href="#"><i class="ti ti-bell-school"></i><span>Class
 											Routine</span></a></li>
-								<li><a href="class-section.html"><i
+								<li><a href="#"><i
 											class="ti ti-square-rotated-forbid-2"></i><span>Section</span></a></li>
-								<li><a href="class-subject.html"><i class="ti ti-book"></i><span>Subject</span></a></li>
-								<li><a href="class-syllabus.html"><i
+								<li><a href="#"><i class="ti ti-book"></i><span>Subject</span></a></li>
+								<li><a href="#"><i
 											class="ti ti-book-upload"></i><span>Syllabus</span></a></li>
-								<li><a href="class-time-table.html"><i class="ti ti-table"></i><span>Time
+								<li><a href="#"><i class="ti ti-table"></i><span>Time
 											Table</span></a></li>
-								<li><a href="class-home-work.html"><i class="ti ti-license"></i><span>Home
+								<li><a href="#"><i class="ti ti-license"></i><span>Home
 											Work</span></a></li>
 								<li class="submenu">
 									<a href="javascript:void(0);"><i
 											class="ti ti-hexagonal-prism-plus"></i><span>Examinations</span><span
 											class="menu-arrow"></span></a>
 									<ul>
-										<li><a href="exam.html">Exam</a></li>
-										<li><a href="exam-schedule.html">Exam Schedule</a></li>
-										<li><a href="grade.html">Grade</a></li>
-										<li><a href="exam-attendance.html">Exam Attendance</a></li>
-										<li><a href="exam-results.html">Exam Results</a></li>
+										<li><a href="#">Exam</a></li>
+										<li><a href="#">Exam Schedule</a></li>
+										<li><a href="#">Grade</a></li>
+										<li><a href="#">Exam Attendance</a></li>
+										<li><a href="#">Exam Results</a></li>
 									</ul>
 								</li>
-								<li><a href="academic-reasons.html"><i
+								<li><a href="#"><i
 											class="ti ti-lifebuoy"></i><span>Reasons</span></a></li>
 							</ul>
 						</li>
@@ -628,11 +628,11 @@
 									<a href="javascript:void(0);"><i class="ti ti-report-money"></i><span>Fees
 											Collection</span><span class="menu-arrow"></span></a>
 									<ul>
-										<li><a href="fees-group.html">Fees Group</a></li>
-										<li><a href="fees-type.html">Fees Type</a></li>
-										<li><a href="fees-master.html">Fees Master</a></li>
-										<li><a href="fees-assign.html">Fees Assign</a></li>
-										<li><a href="collect-fees.html">Collect Fees</a></li>
+										<li><a href="#">Fees Group</a></li>
+										<li><a href="#">Fees Type</a></li>
+										<li><a href="#">Fees Master</a></li>
+										<li><a href="#">Fees Assign</a></li>
+										<li><a href="#">Collect Fees</a></li>
 									</ul>
 								</li>
 								<li class="submenu">
@@ -640,14 +640,14 @@
 											class="ti ti-notebook"></i><span>Library</span><span
 											class="menu-arrow"></span></a>
 									<ul>
-										<li><a href="library-members.html">Library Members</a></li>
-										<li><a href="library-books.html">Books</a></li>
-										<li><a href="library-issue-book.html">Issue Book</a></li>
-										<li><a href="library-return.html">Return</a></li>
+										<li><a href="#">Library Members</a></li>
+										<li><a href="#">Books</a></li>
+										<li><a href="#">Issue Book</a></li>
+										<li><a href="#">Return</a></li>
 									</ul>
 								</li>
-								<li><a href="sports.html"><i class="ti ti-run"></i><span>Sports</span></a></li>
-								<li><a href="players.html"><i class="ti ti-play-football"></i><span>Players</span></a>
+								<li><a href="#"><i class="ti ti-run"></i><span>Sports</span></a></li>
+								<li><a href="#"><i class="ti ti-play-football"></i><span>Players</span></a>
 								</li>
 								<li class="submenu">
 									<a href="javascript:void(0);"><i
@@ -815,7 +815,7 @@
 						<li>
 							<h6 class="submenu-hdr"><span>Pages</span></h6>
 							<ul>
-								<li><a href="profile.html"><i class="ti ti-user"></i><span>Profile</span></a></li>
+								<li><a href="#"><i class="ti ti-user"></i><span>Profile</span></a></li>
 								<li class="submenu">
 									<a href="javascript:void(0);">
 										<i class="ti ti-lock-open"></i><span>Authentication</span><span
@@ -825,7 +825,7 @@
 										<li class="submenu submenu-two"><a href="javascript:void(0);"
 												class="">Login<span class="menu-arrow inside-submenu"></span></a>
 											<ul>
-												<li><a href="login.html">Cover</a></li>
+												<li><a href="#">Cover</a></li>
 												<li><a href="https://preskool.dreamstechnologies.com/html/template/login-2.html">Illustration</a></li>
 												<li><a href="https://preskool.dreamstechnologies.com/html/template/login-3.html">Basic</a></li>
 											</ul>
@@ -900,7 +900,7 @@
 											class="menu-arrow"></span>
 									</a>
 									<ul>
-										<li><a href="profile-settings.html">Profile Settings</a></li>
+										<li><a href="#">Profile Settings</a></li>
 										<li><a href="https://preskool.dreamstechnologies.com/html/template/security-settings.html">Security Settings</a></li>
 										<li><a href="https://preskool.dreamstechnologies.com/html/template/notifications-settings.html">Notifications Settings</a></li>
 										<li><a href="https://preskool.dreamstechnologies.com/html/template/connected-apps.html">Connected Apps</a></li>
