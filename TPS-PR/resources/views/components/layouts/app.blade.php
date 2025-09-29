@@ -50,7 +50,6 @@
 
 <body>
 
-<<<<<<< Updated upstream
 	<div id="global-loader">
 		<div class="page-loader"></div>
 	</div>
@@ -1036,21 +1035,6 @@
 
     <script src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="55172eabf69604c02cec51a7-|49" defer></script></body>
 
-=======
-        <a href="{{ route('admin.users.index') }}" 
-          class="d-block py-2 px-3 mb-2 rounded {{ request()->routeIs('users.*') ? 'bg-primary text-white' : '' }}">
-          User Management
-        </a>
-        <a href="{{ route('guards.index') }}" class="{{ request()->routeIs('users.*') ? 'active' : '' }}">Manage guard</a>
-        <a href="{{ route('admin.classes.index') }}" class="{{ request()->routeIs('admin.classes.*') ? 'active' : '' }}">Classes Management</a>
-        <a href="{{ route('admin.sessions.index') }}" class="{{ request()->routeIs('admin.sessions.*') ? 'active' : '' }}">Sessions Management</a>
-    </div>
-    <div class="content flex-fill">
-        @yield('pageContent')
-    </div>
-</div>
-    {{-- Page-specific scripts --}}
->>>>>>> Stashed changes
     @stack('scripts')
 </body>
 </html>

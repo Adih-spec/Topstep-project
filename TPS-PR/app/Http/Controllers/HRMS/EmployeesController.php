@@ -24,8 +24,8 @@ class EmployeesController extends Controller
      */
     public function index()
     {
-        $employees = Employee::latest()->with(['department'])->paginate(10);
-        return view('employees.index', compact('employees'));
+        $data['employees'] = Employee::latest()->with(['department'])->paginate(10);
+        return view('employees.index', $data);
     }
 
     /**
@@ -110,7 +110,10 @@ class EmployeesController extends Controller
         return view('employees.edit', compact('employee', 'departments'));
     }
 
-    public function show()  {
+    public function show($id)
+    {
+        $employee = Employee::with('department')->findOrFail($id);
+        return view('employees.show', compact('employee'));
         
     }
     /**
