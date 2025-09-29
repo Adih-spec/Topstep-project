@@ -551,7 +551,7 @@
 											class="menu-arrow"></span></a>
 									<ul>
 										<li><a href="guardian-grid.html">All Guardians</a></li>
-										<li><a href="guardians.html">Guardian List</a></li>
+										<li><a href="guardian">Guardian List</a></li>
 									</ul>
 								</li>
 								<li class="submenu">
