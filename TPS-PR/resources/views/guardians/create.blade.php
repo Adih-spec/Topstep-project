@@ -20,7 +20,7 @@
                     </div>
                 @endif
 
-                <form action="{{ route('guardian.register') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
+                <form action="{{ route('guardians.create') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
                     @csrf
 
                     <!-- Personal Info -->

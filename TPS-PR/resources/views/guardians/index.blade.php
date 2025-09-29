@@ -7,7 +7,7 @@
     <h1 class="mb-4 text-primary">Guardians Management</h1>
 
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <a href="{{ route('guardian.register') }}" class="btn btn-success">
+        <a href="{{ route('guardians.create') }}" class="btn btn-success">
             Add New Guardian
         </a>
 
@@ -49,8 +49,8 @@
                         <td>{{ $guardian->email }}</td>
                         <td>{{ $guardian->phone }}</td>
                         <td>
-                            <span class="badge {{ $guardian->deleted_at ? 'bg-danger' : 'bg-success' }}">
-                                {{ $guardian->deleted_at ? 'Inactive' : 'Active' }}
+                            <span class="badge {{ $guardian->status ? 'bg-danger' : 'bg-success' }}">
+                                {{ $guardian->status ? 'Inactive' : 'Active' }}
                             </span>
                         </td>
                         <td class="text-center">

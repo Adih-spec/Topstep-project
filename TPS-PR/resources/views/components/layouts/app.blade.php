@@ -50,6 +50,7 @@
 
 <body>
 
+<<<<<<< Updated upstream
 	<div id="global-loader">
 		<div class="page-loader"></div>
 	</div>
@@ -538,20 +539,11 @@
 								</li>
 								<li class="submenu">
 									<a href="javascript:void(0);"><i
-											class="ti ti-user-bolt"></i><span>Parents</span><span
-											class="menu-arrow"></span></a>
-									<ul>
-										<li><a href="#">All Parents</a></li>
-										<li><a href="#">Parent List</a></li>
-									</ul>
-								</li>
-								<li class="submenu">
-									<a href="javascript:void(0);"><i
 											class="ti ti-user-shield"></i><span>Guardians</span><span
 											class="menu-arrow"></span></a>
 									<ul>
-										<li><a href="#">All Guardians</a></li>
-										<li><a href="#">Guardian List</a></li>
+										<li><a href="{{ route('guardians.index') }}">All Guardians</a></li>
+										<li><a href="{{ route('guardians.index') }}">Guardian List</a></li>
 									</ul>
 								</li>
 								<li class="submenu">
@@ -1044,6 +1036,21 @@
 
     <script src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="55172eabf69604c02cec51a7-|49" defer></script></body>
 
+=======
+        <a href="{{ route('admin.users.index') }}" 
+          class="d-block py-2 px-3 mb-2 rounded {{ request()->routeIs('users.*') ? 'bg-primary text-white' : '' }}">
+          User Management
+        </a>
+        <a href="{{ route('guards.index') }}" class="{{ request()->routeIs('users.*') ? 'active' : '' }}">Manage guard</a>
+        <a href="{{ route('admin.classes.index') }}" class="{{ request()->routeIs('admin.classes.*') ? 'active' : '' }}">Classes Management</a>
+        <a href="{{ route('admin.sessions.index') }}" class="{{ request()->routeIs('admin.sessions.*') ? 'active' : '' }}">Sessions Management</a>
+    </div>
+    <div class="content flex-fill">
+        @yield('pageContent')
+    </div>
+</div>
+    {{-- Page-specific scripts --}}
+>>>>>>> Stashed changes
     @stack('scripts')
 </body>
 </html>

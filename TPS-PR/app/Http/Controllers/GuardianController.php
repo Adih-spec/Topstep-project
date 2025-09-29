@@ -13,31 +13,9 @@ use App\Mail\GuardianWelcomeMail;
 
 class GuardianController extends Controller
 {
-    public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name'  => 'required|string|max:255',
-            'email'      => 'required|email|unique:guardians,email',
-        ]);
-
-        // Generate random password
-        $plainPassword = Str::random(8);
-
-        // Create guardian
-        $guardian = Guardian::create([
-            'first_name' => $validated['first_name'],
-            'last_name'  => $validated['last_name'],
-            'email'      => $validated['email'],
-            'password'   => Hash::make($plainPassword),
-        ]);
-
-        // Send welcome email with login credentials
-        Mail::to($guardian->email)->send(new GuardianWelcomeMail($guardian, $plainPassword));
-
-        return redirect()->route('guardians.index')
-            ->with('success', "Guardian created successfully, login details sent to email.");
-    }
+    // ========================
+    // Admin Guardian Management
+    // ========================
 
     // List guardians
     public function index()
@@ -46,145 +24,49 @@ class GuardianController extends Controller
         return view('guardians.index', compact('guardians'));
     }
 
-    // Guardian self-registration form
-    public function showRegisterForm()
+    // Show form for creating a guardian (admin use only)
+    public function create()
     {
-        return view('guardians.register');
+        return view('guardians.create');
     }
 
-    // Handle guardian self-registration
-    public function register(Request $request)
+    // Store guardian in DB (admin use only)
+    public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
-            'other_names' => 'nullable|string|max:255',
-            'phone' => 'required|unique:guardians|regex:/^[0-9]{10,15}$/',
-            'email' => 'required|email|unique:guardians',
-            'religion' => 'required|string|max:255',
-            'residential_address' => 'required|string|max:255',
-            'country' => 'required|string|max:255',
+            'last_name'  => 'required|string|max:255',
+            'email'      => 'required|email|unique:guardians,email',
+            'phone'      => 'nullable|unique:guardians|regex:/^[0-9]{10,15}$/',
+            'religion'   => 'nullable|string|max:255',
+            'residential_address' => 'nullable|string|max:255',
+            'country'    => 'nullable|string|max:255',
             'state_of_origin' => 'nullable|string|max:255',
-            'city' => 'nullable|string|max:255',
+            'city'       => 'nullable|string|max:255',
             'occupation' => 'nullable|string|max:255',
-            'photo' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
-
+            'photo'      => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
         ]);
 
         // Generate random password
-        $plainPassword = Str::random(8);    // Prepare guardian data
-        $data = $request->except('photo');
-        $data['password'] = Hash::make($plainPassword);
-    
+        $plainPassword = Str::random(8);
+
         // Handle photo upload
         if ($request->hasFile('photo')) {
             $fileName = time() . '.' . $request->photo->extension();
             $request->photo->move(public_path('uploads/guardians'), $fileName);
-            $data['photo'] = 'uploads/guardians/' . $fileName;
+            $validated['photo'] = 'uploads/guardians/' . $fileName;
         }
 
+        // Save guardian
+        $validated['password'] = Hash::make($plainPassword);
 
-        $guardian = Guardian::create([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'other_names' => $request->other_names,
-            'phone' => $request->phone,
-            'email' => $request->email,
-            'religion' => $request->religion,
-            'residential_address' => $request->residential_address,
-            'country' => $request->country,
-            'state_of_origin' => $request->state_of_origin,
-            'city' => $request->city,
-            'occupation' => $request->occupation,
-            'photo' => $data['photo'] ?? null,
-            'password' => Hash::make($plainPassword),
-        ]);
+        $guardian = Guardian::create($validated);
 
-        // Auto login guardian
-        Auth::guard('guardian')->login($guardian);
+        // Send welcome email with login credentials
+        Mail::to($guardian->email)->send(new GuardianWelcomeMail($guardian, $plainPassword));
 
-        return redirect()->route('guardians.index')->with('success', 'Registration successful!');
-    }
-
-    // Show login form
-    public function showLoginForm()
-    {
-        return view('guardians.login');
-    }
-
-    // Handle login
-    public function login(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-
-        if (Auth::guard('guardian')->attempt(
-            $request->only('email', 'password'),
-            $request->filled('remember')
-        )) {
-            return redirect()->intended('/dashboard');
-        }
-
-        return back()->withErrors(['email' => 'Invalid login credentials']);
-    }
-
-    // Logout
-    public function logout()
-    {
-        Auth::guard('guardian')->logout();
-        return redirect()->route('guardians.login')->with('success', 'Logged out successfully!');
-    }
-
-
-// Update guardian 
-public function update(Request $request, $id)
-{
-    $request->validate([
-        'first_name' => 'required|string|max:255',
-        'last_name' => 'required|string|max:255',
-        'other_names' => 'nullable|string|max:255',
-        'phone' => 'required|regex:/^[0-9]{10,15}$/|unique:guardians,phone,' . $id,
-        'email' => 'required|email|unique:guardians,email,' . $id,
-        'religion' => 'required|string|max:255',
-        'residential_address' => 'required|string|max:255',
-        'country' => 'required|string|max:255',
-        'state_of_origin' => 'nullable|string|max:255',
-        'city' => 'nullable|string|max:255',
-        'occupation' => 'nullable|string|max:255',
-        'photo' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
-    ]);
-
-    $guardian = Guardian::findOrFail($id);
-
-    // Collect all request data except photo
-    $data = $request->except('photo');
-
-    // Handle photo upload if exists
-    if ($request->hasFile('photo')) {
-        $fileName = time() . '.' . $request->photo->extension();
-        $request->photo->move(public_path('uploads/guardians'), $fileName);
-
-        // Optional: delete old photo if exists
-        if ($guardian->photo && file_exists(public_path($guardian->photo))) {
-            unlink(public_path($guardian->photo));
-        }
-
-        $data['photo'] = 'uploads/guardians/' . $fileName;
-    }
-
-    // Update guardian with new data
-    $guardian->update($data);
-
-    return redirect()->route('guardians.index')->with('success', 'Guardian updated successfully.');
-}
-
-    // Delete guardian
-    public function destroy(Guardian $guardian)
-    {
-        $guardian->delete();
-        return redirect()->route('guardians.index')->with('success', 'Guardian deleted successfully.');
+        return redirect()->route('guardians.index')
+            ->with('success', "Guardian created successfully, login details sent to email.");
     }
 
     // Show guardian details
@@ -193,6 +75,13 @@ public function update(Request $request, $id)
         $guardian = Guardian::findOrFail($id);
         $students = Student::all();
         return view('guardians.show', compact('guardian', 'students'));
+    }
+
+    // Delete guardian
+    public function destroy(Guardian $guardian)
+    {
+        $guardian->delete();
+        return redirect()->route('guardians.index')->with('success', 'Guardian deleted successfully.');
     }
 
     // Show student assignment form
