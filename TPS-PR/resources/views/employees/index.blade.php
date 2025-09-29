@@ -176,7 +176,7 @@
                                         <td>{{ $staff->Phone }}</td>
                                         <td>{{ \Carbon\Carbon::parse($staff->DateOfJoin)->format('d M Y') }}</td>
                                         <td>
-                                            <span class="badge {{ $staff->status == 'Active' ? 'badge-soft-success' : 'badge-soft-danger' }}">
+                                            <span class="badge {{ $staff->Status == 'Active' ? 'badge-soft-success' : 'badge-soft-danger' }}">
                                                 <i class="ti ti-circle-filled fs-5 me-1"></i>{{ $staff->Status }}
                                             </span>
                                         </td>
