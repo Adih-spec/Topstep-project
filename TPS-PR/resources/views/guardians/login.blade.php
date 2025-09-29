@@ -29,11 +29,11 @@
                         @csrf
 
                         <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input id="username" type="text" 
-                                   class="form-control @error('username') is-invalid @enderror" 
-                                   name="username" value="{{ old('username') }}" required autofocus>
-                        </div>
+        <label for="email" class="form-label">Email</label>
+        <input id="email" type="email"
+               class="form-control @error('email') is-invalid @enderror"
+               name="email" value="{{ old('email') }}" required autofocus>
+    </div>
 
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>

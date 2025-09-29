@@ -5,7 +5,7 @@
 @section('content')
 <div class="container mt-5 mb-5">
     <div class="row justify-content-center">
-        <div class="col-md-7"><!-- Wider card -->
+        <div class="col-md-8">
             <div class="card shadow-lg p-5 rounded-4 border-0">
                 <h2 class="text-center mb-4 fw-bold">Parent / Guardian Registration</h2>
 
@@ -20,7 +20,7 @@
                     </div>
                 @endif
 
-                <form action="{{ route('guardian.register') }}" method="POST" autocomplete="off">
+                <form action="{{ route('guardian.register') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
                     @csrf
 
                     <!-- Personal Info -->
@@ -34,9 +34,9 @@
                             <input type="text" id="last_name" name="last_name" class="form-control rounded-3" required>
                         </div>
                         <div class="col-md-4">
-                        <label for="other_names" class="form-label fw-semibold text-dark">Other Name(s)</label>
-                        <input type="text" id="other_names" name="other_names" class="form-control rounded-3">
-                    </div>
+                            <label for="other_names" class="form-label fw-semibold text-dark">Other Name(s)</label>
+                            <input type="text" id="other_names" name="other_names" class="form-control rounded-3">
+                        </div>
                     </div>
 
                     <!-- Contact Info -->
@@ -59,69 +59,49 @@
                             </select>
                         </div>
                     </div>
+
                     <!-- Address -->
-                    <div class="mb-4">
+                    <div class="row mb-4">
+                    <div class="col-md-6">
                         <label for="residential_address" class="form-label fw-semibold text-dark">Residential Address</label>
                         <input type="text" id="residential_address" name="residential_address" class="form-control rounded-3" required>
                     </div>
-                    <div class="row mb-4">
-                        <div class="col-md-4">
+
+                    <!-- Occupation / Children / Relationship -->
+                    <div class="col-md-6">
                             <label for="occupation" class="form-label fw-semibold text-dark">Occupation</label>
                             <input type="text" id="occupation" name="occupation" class="form-control rounded-3">
                         </div>
+                    </div>
+
+                    <!-- Country, State, City -->
+                    <div class="row mb-4">
                         <div class="col-md-4">
-                            <label for="number_of_children" class="form-label fw-semibold text-dark">No. of Children in school</label>
-                            <input type="number" id="number_of_children" name="number_of_children" class="form-control rounded-3" required>
+                            <label for="country" class="form-label fw-semibold text-dark">Country</label>
+                            <select id="country" name="country" class="form-select rounded-3 country-select" required>
+                                <option value="">-- Select Country --</option>
+                            </select>
                         </div>
+
                         <div class="col-md-4">
-                            <label for="relationship_with_student" class="form-label fw-semibold text-dark">Relationship to student</label>
-                            <select id="relationship_with_student" name="relationship_with_student" class="form-select rounded-3" required>
-                                <option value="">--Select--</option>
-                                <option>Mother</option>
-                                <option>Father</option>
-                                <option>Guardian</option>
-                                <option>Other</option>
+                            <label for="state_of_origin" class="form-label fw-semibold text-dark">State</label>
+                            <select id="state_of_origin" name="state_of_origin" class="form-select rounded-3 state-select">
+                                <option value="">-- Select State --</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="city" class="form-label fw-semibold text-dark">LGA / City</label>
+                            <select id="city" name="city" class="form-select rounded-3 city-select">
+                                <option value="">-- Select City --</option>
                             </select>
                         </div>
                     </div>
-                    <div class="row mb-4">
-                    <div class="col-md-4">
-    <label for="country" class="form-label fw-semibold text-dark">Country</label>
-    <select id="country" name="country" class="form-select rounded-3 country-select" required>
-        <option value="">-- Select Country --</option>
-    </select>
-</div>
 
-<div class="col-md-4">
-    <label for="state_of_origin" class="form-label fw-semibold text-dark">State</label>
-    <select id="state_of_origin" name="state_of_origin" class="form-select rounded-3 state-select" required>
-        <option value="">-- Select State --</option>
-    </select>
-</div>
-
-<div class="col-md-4">
-    <label for="city" class="form-label fw-semibold text-dark">LGA / City</label>
-    <select id="city" name="city" class="form-select rounded-3 city-select" required>
-        <option value="">-- Select City --</option>
-    </select>
-</div>
-
-                    <!-- Login Credentials -->
-                    <div class="row mb-4">
-                        <div class="col-md-4">
-                            <label for="username" class="form-label fw-semibold text-dark">Username</label>
-                            <input type="text" id="username" name="username" class="form-control rounded-3" autocomplete="new-username" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="password" class="form-label fw-semibold text-dark">Password</label>
-                            <input type="password" id="password" name="password" class="form-control rounded-3" autocomplete="new-password" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="password_confirmation" class="form-label fw-semibold text-dark">Confirm Password</label>
-                            <input type="password" id="password_confirmation" name="password_confirmation" class="form-control rounded-3" autocomplete="new-password" required>
-                        </div>
-                    </div>
-
+                    <div class="mb-3">
+        <label for="photo" class="form-label fw-semibold">Upload Photo</label>
+        <input type="file" id="photo" name="photo" class="form-control" accept="image/*">
+    </div>
                     <!-- Submit -->
                     <div class="d-grid">
                         <button type="submit" class="btn btn-primary fw-bold py-2">Register</button>
@@ -135,4 +115,6 @@
         </div>
     </div>
 </div>
+
+
 @endsection

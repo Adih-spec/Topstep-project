@@ -18,16 +18,15 @@ return new class extends Migration
             $table->string('other_names')->nullable();
             $table->string('phone')->unique();
             $table->string('email')->unique();
+            $table->string('photo')->nullable();
             $table->string('religion')->nullable();
             $table->string('residential_address')->nullable();
             $table->string('country')->nullable();
             $table->string('state_of_origin')->nullable();
-            $table->string('lga')->nullable();
-            $table->string('relationship_with_student')->nullable();
-            $table->string('number_of_children')->nullable();
+            $table->string('city')->nullable();
             $table->string('occupation')->nullable();
-            $table->string('username')->unique();
-            $table->string('password');
+            $table->string('password')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

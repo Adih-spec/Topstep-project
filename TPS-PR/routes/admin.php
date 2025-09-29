@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AdminAuthController;
+use App\Http\Controllers\HRMS\EmployeesController;
+use App\Http\Controllers\HRMS\DepartmentController;
+use App\Http\Controllers\HRMS\EmployeesAttendanceController;
+use App\Http\Controllers\MediaController;
 use App\Http\Controllers\GuardController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
@@ -22,6 +26,20 @@ Route::middleware('is_admin:admin')->prefix('admin')->group(function () {
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
     Route::get('/dashboard', [AdminAuthController::class, 'dashboard'])->name('admin.dashboard');
 
+    // Departments
+    Route::resource('departments', DepartmentController::class);
+
+    // Employees
+    Route::resource('employees', EmployeesController::class);
+    Route::controller(EmployeesAttendanceController::class)->group(function () {
+        Route::get('/attendances', 'index')->name('attendances.index');
+        Route::get('/attendances/create', 'create')->name('attendances.create');
+        Route::post('/attendances', 'store')->name('attendances.store');
+        Route::get('/attendances/{id}', 'show')->name('attendances.show');
+        Route::get('/attendances/{id}/edit', 'edit')->name('attendances.edit');
+        Route::put('/attendances/{id}', 'update')->name('attendances.update');
+        Route::delete('/attendances/{id}', 'destroy')->name('attendances.destroy');
+    });
     // Guards
     Route::resource('guards', GuardController::class);
     Route::get('guards/{guard}/permissions', [GuardController::class, 'editPermissions'])->name('guards.permissions');
