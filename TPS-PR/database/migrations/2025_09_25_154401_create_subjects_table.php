@@ -4,26 +4,21 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class subjects extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up()
-{
-            Schema::create('subjects', function (Blueprint $table) {
-            $table->id('subject');
+    {
+        Schema::create('courses', function (Blueprint $table) {
+            $table->id();
             $table->string('name');
             $table->foreignId('level_id')->constrained()->onDelete('cascade');
             $table->text('description')->nullable();
             $table->timestamps();
         });
-   
-}
-
-
-    public function down(): void
-    {
-        Schema::dropIfExists('subjects');
     }
-};
+
+    public function down()
+    {
+        Schema::dropIfExists('courses');
+    }
+}
