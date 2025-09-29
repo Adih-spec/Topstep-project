@@ -52,11 +52,10 @@ Route::middleware('is_admin:admin')->prefix('admin')->group(function () {
 
     // Media
     Route::resource('media', MediaController::class);
-    Route::get('/report-cards', [ReportCardController::class, 'store'])
-        ->name('report-cards.store');
+    
+    Route::resource('report-configs', ReportCardConfigurationController::class);
 
-    Route::get('/report-configs', [ReportCardConfigurationController::class, 'index']);
-
+    
 });
 
     

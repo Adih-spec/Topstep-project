@@ -9,31 +9,34 @@ class ReportCardConfiguration extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'config_id'; // Because our PK is config_id
+    protected $primaryKey = 'report_config_id';
+
     protected $fillable = [
+        'title',
+        'description',
+        'student_info_fields',
         'grading_scale',
         'weights',
-        'show_attendance',
-        'show_comments',
+        'cognitive_domain',
+        'affective_domain',
+        'psycomotor_domain',
         'behavior_fields',
-        'template_style',
         'logo_url',
+        'stamp_url',
+        'signature_url',
+        'template_style',
+        'guard',
         'created_by',
     ];
 
     protected $casts = [
+        'student_info_fields' => 'array',
         'grading_scale' => 'array',
         'weights' => 'array',
+        'cognitive_domain' => 'array',
+        'affective_domain' => 'array',
+        'psycomotor_domain' => 'array',
         'behavior_fields' => 'array',
-        'show_attendance' => 'boolean',
-        'show_comments' => 'boolean',
     ];
-
-    // Relationship to User
-    public function creator()
-    {
-        return $this->belongsTo(User::class, 'created_by', 'id'); 
-        // Change 'user_id' to 'id' if your users table uses the default primary key
-    }
 }
-
+            
