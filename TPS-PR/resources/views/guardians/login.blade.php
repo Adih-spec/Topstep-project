@@ -46,7 +46,7 @@
                             <button type="submit" class="btn btn-primary">Login</button>
                         </div>
                         <p class="mt-3 text-center">
-                            Don't have an account? <a href="{{ route('guardian.register') }}">Register here</a>.
+                            Don't have an account? <a href="{{ route('guardians.create') }}">Register here</a>.
                         </p>
                     </form>
                 </div>

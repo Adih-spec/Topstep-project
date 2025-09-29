@@ -552,20 +552,11 @@
 								</li>
 								<li class="submenu">
 									<a href="javascript:void(0);"><i
-											class="ti ti-user-bolt"></i><span>Parents</span><span
-											class="menu-arrow"></span></a>
-									<ul>
-										<li><a href="#">All Parents</a></li>
-										<li><a href="#">Parent List</a></li>
-									</ul>
-								</li>
-								<li class="submenu">
-									<a href="javascript:void(0);"><i
 											class="ti ti-user-shield"></i><span>Guardians</span><span
 											class="menu-arrow"></span></a>
 									<ul>
-										<li><a href="#">All Guardians</a></li>
-										<li><a href="#">Guardian List</a></li>
+										<li><a href="{{ route('guardians.index') }}">All Guardians</a></li>
+										<li><a href="{{ route('guardians.index') }}">Guardian List</a></li>
 									</ul>
 								</li>
 								<li class="submenu">

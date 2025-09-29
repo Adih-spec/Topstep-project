@@ -7,6 +7,7 @@ use App\Http\Controllers\HRMS\DepartmentController;
 use App\Http\Controllers\HRMS\EmployeesAttendanceController;
 use App\Http\Controllers\MediaController;
 use App\Http\Controllers\GuardController;
+use App\Http\Controllers\GuardianController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ReportCardController;
@@ -42,16 +43,9 @@ Route::middleware('is_admin:admin')->prefix('admin')->group(function () {
     });
 
     // Guardians
-    Route::resource('guardians', \App\Http\Controllers\GuardianController::class);
+    Route::resource('guardians', GuardianController::class);
     Route::controller(GuardianController::class)->group(function(){
         // Guardian Routes
-    Route::get('/guardians', 'index')->name('guardians.index');
-    Route::get('/guardians/create', 'create')->name('guardians.create');
-    Route::post('/guardians/register', 'register')->name('guardian.register');
-    Route::get('/guardians/register', 'showRegisterForm')->name('guardian.register.form');
-    Route::get('/guardians/{id}', 'show')->name('guardians.show');
-    Route::put('/guardians/{id}', 'update')->name('guardians.update');
-    Route::delete('/guardians/{guardian}', 'destroy')->name('guardians.destroy');
     Route::get('/guardians/recycle-bin', 'recycleBin')->name('guardians.recycleBin');
     Route::post('/guardians/{id}/restore', 'restore')->name('guardians.restore');
     Route::delete('/guardians/{id}/force-delete', 'forceDelete')->name('guardians.forceDelete');
@@ -59,7 +53,6 @@ Route::middleware('is_admin:admin')->prefix('admin')->group(function () {
     Route::post('/guardians/{guardian}/assign', 'assignStudents')->name('guardians.assign.store');
     Route::get('/guardians/change-password', 'showChangePasswordForm')->name('guardians.show-change-password');
     Route::post('/guardians/change-password', 'changePassword')->name('guardians.change-password');
-
     });
     // Guards
     Route::resource('guards', GuardController::class);
