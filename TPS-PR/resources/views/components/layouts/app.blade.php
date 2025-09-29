@@ -7,7 +7,7 @@
     <meta name="keywords" content="topsteps, academy, admin, dashboard, education, management, bootstrap, html5, responsive">
     <meta name="author" content="Topsteps Academy Admin Team">
 	<meta name="robots" content="noindex, nofollow">
-	<title>TPSA || @yield('PageTitle', config('app.name'))</title>
+	<title>TPSA || @yield('pageTitle', config('app.name'))</title>
 
 	<!-- Favicon -->
 	<link rel="shortcut icon" type="image/x-icon" href="{{asset('adminAssets/img/favicon.png')}}">
@@ -45,11 +45,12 @@
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="{{asset('adminAssets/css/style.css')}}">
 
-    @stack('styles')
+    @yield('styles')
 </head>
 
 <body>
 
+<<<<<<< Updated upstream
 	<div id="global-loader">
 		<div class="page-loader"></div>
 	</div>
@@ -391,7 +392,7 @@
 											@auth('admin')
 												<p class="text-primary mb-0">Administrator</p>
 											@endauth
-											@auth('teacher')
+											@auth('staff')
 												<p class="text-success mb-0">Teacher</p>
 											@endauth
 											@auth('student')
@@ -416,8 +417,8 @@
 											</button>
 										</form>
 									@endauth
-									@auth('teacher')
-										<form method="POST" action="{{ route('teacher.logout') }}" class="dropdown-item p-0">
+									@auth('staff')
+										<form method="POST" action="{{ route('staff.logout') }}" class="dropdown-item p-0">
 											@csrf
 											<button type="submit" class="dropdown-item d-inline-flex align-items-center p-2">
 												<i class="ti ti-login me-2"></i>{{ __('Log Out') }}
@@ -496,8 +497,8 @@
 										@auth('admin')
 											<li><a href="{{ route('admin.dashboard') }}" class="active">Admin Dashboard</a></li>
 										@endauth
-										@auth('teacher')
-											<li><a href="#">Teacher Dashboard</a></li>
+										@auth('staff')
+											<li><a href="teacher-dashboard.html">Staff Dashboard</a></li>
 										@endauth
 										@auth('student')
 											<li><a href="#">Student Dashboard</a></li>
@@ -968,139 +969,6 @@
 								</li>
 							</ul>
 						</li>
-
-						<li>
-							<h6 class="submenu-hdr"><span>UI Interface</span></h6>
-							<ul>
-								<li class="submenu">
-									<a href="javascript:void(0);">
-										<i class="ti ti-hierarchy-2"></i><span>Base UI</span><span
-											class="menu-arrow"></span>
-									</a>
-									<ul>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-alerts.html">Alerts</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-accordion.html">Accordion</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-avatar.html">Avatar</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-badges.html">Badges</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-borders.html">Border</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-buttons.html">Buttons</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-buttons-group.html">Button Group</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-breadcrumb.html">Breadcrumb</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-cards.html">Card</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-carousel.html">Carousel</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-colors.html">Colors</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-dropdowns.html">Dropdowns</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-grid.html">Grid</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-images.html">Images</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-lightbox.html">Lightbox</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-media.html">Media</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-modals.html">Modals</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-offcanvas.html">Offcanvas</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-pagination.html">Pagination</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-popovers.html">Popovers</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-progress.html">Progress</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-placeholders.html">Placeholders</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-spinner.html">Spinner</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-sweetalerts.html">Sweet Alerts</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-nav-tabs.html">Tabs</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-toasts.html">Toasts</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-tooltips.html">Tooltips</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-typography.html">Typography</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-video.html">Video</a></li>
-									</ul>
-								</li>
-								<li class="submenu">
-									<a href="javascript:void(0);">
-										<i class="ti ti-hierarchy-3"></i><span>Advanced UI</span><span
-											class="menu-arrow"></span>
-									</a>
-									<ul>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-ribbon.html">Ribbon</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-clipboard.html">Clipboard</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-drag-drop.html">Drag & Drop</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-rangeslider.html">Range Slider</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-rating.html">Rating</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-text-editor.html">Text Editor</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-counter.html">Counter</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-scrollbar.html">Scrollbar</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-stickynote.html">Sticky Note</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/ui-timeline.html">Timeline</a></li>
-									</ul>
-								</li>
-								<li class="submenu">
-									<a href="javascript:void(0);"><i class="ti ti-chart-line"></i>
-										<span>Charts</span><span class="menu-arrow"></span>
-									</a>
-									<ul>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/chart-apex.html">Apex Charts</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/chart-c3.html">Chart C3</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/chart-js.html">Chart Js</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/chart-morris.html">Morris Charts</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/chart-flot.html">Flot Charts</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/chart-peity.html">Peity Charts</a></li>
-									</ul>
-								</li>
-								<li class="submenu">
-									<a href="javascript:void(0);"><i class="ti ti-icons"></i>
-										<span>Icons</span><span class="menu-arrow"></span>
-									</a>
-									<ul>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/icon-fontawesome.html">Fontawesome Icons</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/icon-feather.html">Feather Icons</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/icon-ionic.html">Ionic Icons</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/icon-material.html">Material Icons</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/icon-pe7.html">Pe7 Icons</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/icon-simpleline.html">Simpleline Icons</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/icon-themify.html">Themify Icons</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/icon-weather.html">Weather Icons</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/icon-typicon.html">Typicon Icons</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/icon-flag.html">Flag Icons</a></li>
-									</ul>
-								</li>
-								<li class="submenu">
-									<a href="javascript:void(0);">
-										<i class="ti ti-input-search"></i><span>Forms</span><span
-											class="menu-arrow"></span>
-									</a>
-									<ul>
-										<li class="submenu submenu-two">
-											<a href="javascript:void(0);">Form Elements<span
-													class="menu-arrow inside-submenu"></span></a>
-											<ul>
-												<li><a href="https://preskool.dreamstechnologies.com/html/template/form-basic-inputs.html">Basic Inputs</a></li>
-												<li><a href="https://preskool.dreamstechnologies.com/html/template/form-checkbox-radios.html">Checkbox & Radios</a></li>
-												<li><a href="https://preskool.dreamstechnologies.com/html/template/form-input-groups.html">Input Groups</a></li>
-												<li><a href="https://preskool.dreamstechnologies.com/html/template/form-grid-gutters.html">Grid & Gutters</a></li>
-												<li><a href="https://preskool.dreamstechnologies.com/html/template/form-select.html">Form Select</a></li>
-												<li><a href="https://preskool.dreamstechnologies.com/html/template/form-mask.html">Input Masks</a></li>
-												<li><a href="https://preskool.dreamstechnologies.com/html/template/form-fileupload.html">File Uploads</a></li>
-											</ul>
-										</li>
-										<li class="submenu submenu-two">
-											<a href="javascript:void(0);">Layouts<span
-													class="menu-arrow inside-submenu"></span></a>
-											<ul>
-												<li><a href="https://preskool.dreamstechnologies.com/html/template/form-horizontal.html">Horizontal Form</a></li>
-												<li><a href="https://preskool.dreamstechnologies.com/html/template/form-vertical.html">Vertical Form</a></li>
-												<li><a href="https://preskool.dreamstechnologies.com/html/template/form-floating-labels.html">Floating Labels</a></li>
-											</ul>
-										</li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/form-validation.html">Form Validation</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/form-select2.html">Select2</a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/form-wizard.html">Form Wizard</a></li>
-									</ul>
-								</li>
-								<li class="submenu">
-									<a href="javascript:void(0);"><i
-											class="ti ti-table-plus"></i><span>Tables</span><span
-											class="menu-arrow"></span></a>
-									<ul>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/tables-basic.html">Basic Tables </a></li>
-										<li><a href="https://preskool.dreamstechnologies.com/html/template/data-tables.html">Data Table </a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
 						<li>
 							<h6 class="submenu-hdr"><span>Help</span></h6>
 							<ul>
@@ -1137,9 +1005,10 @@
 		<!-- /Sidebar -->
 
 		<!-- Page Wrapper -->
-         @yield('pageContent')
-		<!-- /Page Wrapper -->
 
+        @yield('pageContent', 'My Content')
+
+		<!-- /Page Wrapper -->
         @stack('modals')
 
 	</div>
@@ -1181,6 +1050,21 @@
 
     <script src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="55172eabf69604c02cec51a7-|49" defer></script></body>
 
+=======
+        <a href="{{ route('admin.users.index') }}" 
+          class="d-block py-2 px-3 mb-2 rounded {{ request()->routeIs('users.*') ? 'bg-primary text-white' : '' }}">
+          User Management
+        </a>
+        <a href="{{ route('guards.index') }}" class="{{ request()->routeIs('users.*') ? 'active' : '' }}">Manage guard</a>
+        <a href="{{ route('admin.classes.index') }}" class="{{ request()->routeIs('admin.classes.*') ? 'active' : '' }}">Classes Management</a>
+        <a href="{{ route('admin.sessions.index') }}" class="{{ request()->routeIs('admin.sessions.*') ? 'active' : '' }}">Sessions Management</a>
+    </div>
+    <div class="content flex-fill">
+        @yield('pageContent')
+    </div>
+</div>
+    {{-- Page-specific scripts --}}
+>>>>>>> Stashed changes
     @stack('scripts')
 </body>
 </html>
