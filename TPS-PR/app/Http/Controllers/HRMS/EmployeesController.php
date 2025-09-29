@@ -3,13 +3,19 @@
 namespace App\Http\Controllers\HRMS;
 
 use App\Http\Controllers\Controller;
-use App\Models\HRMS\Employee;
-use App\Models\HRMS\Department;
-use App\Models\HRMS\EmployeesAttendance;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+
+// models
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+use App\Models\HRMS\Employee;
+use App\Models\HRMS\Department;
+use App\Models\HRMS\EmployeesAttendance;
+use App\Models\Guard;
 
 class EmployeesController extends Controller
 {
@@ -27,8 +33,9 @@ class EmployeesController extends Controller
      */
     public function create()
     {
-        $departments = Department::all();
-        return view('employees.create', compact('departments'));    
+        $data['departments'] = Department::all();
+        $data['roles'] = Role::where('guard_name', 'staff')->get();
+        return view('employees.create', $data);
     }
 
     /**
@@ -173,7 +180,7 @@ class EmployeesController extends Controller
      */
     public function showLoginForm()
     {
-        return view('auth.login'); // Jetstream default login
+        return view('components.Auth.login', ['guard' => 'staff']); // Jetstream default login
     }
 
     /**
