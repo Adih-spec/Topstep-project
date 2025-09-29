@@ -46,9 +46,9 @@ return [
             'provider' => 'admins',
         ],
 
-        'teacher' => [
+        'staff' => [
             'driver' => 'session',
-            'provider' => 'teachers',
+            'provider' => 'staffs',
         ],
 
         'student' => [
@@ -88,9 +88,9 @@ return [
         'driver' => 'eloquent',
         'model' => App\Models\Admin::class,
     ],
-    'teachers' => [
+    'staffs' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Teacher::class,
+            'model' => App\Models\HRMS\Employee::class,
     ],
     'students' => [
         'driver' => 'eloquent',
@@ -142,8 +142,8 @@ return [
             'table' => 'password_reset_tokens',
             'expire' => 60,
         ],
-        'teachers' => [
-            'provider' => 'teachers',
+        'staffs' => [
+            'provider' => 'staffs',
             'table' => 'password_reset_tokens',
             'expire' => 60,
         ],

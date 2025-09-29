@@ -94,7 +94,10 @@ Route::controller(ClassesController::class)->group(function () {
         Route::put('/sessions/{session}', 'update')->name('admin.sessions.update');
         Route::delete('/sessions/{session}', 'destroy')->name('admin.sessions.destroy');
     });
+    
+    Route::resource('report-configs', ReportCardConfigurationController::class);
 
+    
 });
 
     
