@@ -8,6 +8,8 @@ use App\Models\HRMS\Department;
 use App\Models\HRMS\EmployeesAttendance;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class EmployeesController extends Controller
 {
@@ -163,5 +165,121 @@ class EmployeesController extends Controller
         $employee->delete();
 
         return redirect()->route('employees.index')->with('success', 'Employee deleted successfully.');
+    }
+
+    // Additional methods for employee-specific actions can be added here
+     /**
+     * Show login page
+     */
+    public function showLoginForm()
+    {
+        return view('auth.login'); // Jetstream default login
+    }
+
+    /**
+     * Handle login request
+     */
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email'    => 'required|email',
+            'password' => 'required|string|min:6',
+        ]);
+
+        if (Auth::attempt(['Email' => $request->email, 'password' => $request->password])) {
+            $request->session()->regenerate();
+            return redirect()->route('dashboard')->with('success', 'Login successful!');
+        }
+
+        return back()->withErrors(['email' => 'Invalid credentials provided']);
+    }
+
+    /**
+     * Logout user
+     */
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('login')->with('success', 'You have been logged out.');
+    }
+
+    /**
+     * Dashboard after login
+     */
+    public function dashboard()
+    {
+        $employeesCount = Employee::count();
+        $departmentsCount = Department::count();
+        return view('dashboard', compact('employeesCount', 'departmentsCount'));
+    }
+
+    /**
+     * Show profile page
+     */
+    public function profile()
+    {
+        $employee = Auth::user();
+        return view('profile.show', compact('employee'));
+    }
+
+    /**
+     * Update profile info
+     */
+    public function updateProfile(Request $request)
+    {
+        $employee = Auth::user();
+
+        $request->validate([
+            'FirstName' => 'required|string|max:100',
+            'LastName'  => 'required|string|max:100',
+            'Email'     => [
+                'required',
+                'email',
+                Rule::unique('employees', 'Email')->ignore($employee->EmployeeID, 'EmployeeID')
+            ],
+            'PhoneNumber' => 'nullable|string|max:20',
+            'ProfilePicture' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        $data = $request->only(['FirstName', 'LastName', 'Email', 'PhoneNumber']);
+
+        // Handle profile picture upload
+        if ($request->hasFile('ProfilePicture')) {
+            if ($employee->ProfilePicture && \Storage::disk('public')->exists($employee->ProfilePicture)) {
+                \Storage::disk('public')->delete($employee->ProfilePicture);
+            }
+            $file = $request->file('ProfilePicture');
+            $filename = time().'_'.$file->getClientOriginalName();
+            $data['ProfilePicture'] = $file->storeAs('uploads/profile_pictures', $filename, 'public');
+        }
+
+        $employee->update($data);
+
+        return back()->with('success', 'Profile updated successfully.');
+    }
+
+    /**
+     * Update password
+     */
+    public function updatePassword(Request $request)
+    {
+        $employee = Auth::user();
+
+        $request->validate([
+            'current_password' => 'required|string',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+        if (!Hash::check($request->current_password, $employee->Password)) {
+            return back()->withErrors(['current_password' => 'Current password is incorrect']);
+        }
+
+        $employee->update([
+            'Password' => Hash::make($request->password),
+        ]);
+
+        return back()->with('success', 'Password updated successfully.');
     }
 }

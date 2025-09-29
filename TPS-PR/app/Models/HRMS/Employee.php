@@ -3,9 +3,14 @@
 namespace App\Models\HRMS;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Laravel\Jetstream\HasProfilePhoto;
 
 class Employee extends Authenticatable
 {
+    use HasApiTokens, HasFactory, HasProfilePhoto;
+
     protected $primaryKey = 'EmployeeID';
 
     protected $fillable = [
@@ -29,17 +34,29 @@ class Employee extends Authenticatable
         'EmployeeNumber',
         'Password',
         'LastLogin',
+        'email_verified_at',
     ];
 
-    protected $hidden = ['password'];
+    protected $hidden = [
+        'password',
+        'remember_token',
+        'two_factor_recovery_codes',
+        'two_factor_secret',
+    ];
 
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+
+    protected $appends = [
+        'profile_photo_url',
+    ];
 
     // Relationships
     public function department()
     {
         return $this->belongsTo(Department::class, 'DepartmentID', 'DepartmentID');
     }
-
 
     public function attendances()
     {
