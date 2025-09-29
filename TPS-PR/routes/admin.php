@@ -11,6 +11,9 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ReportCardController;
 use App\Http\Controllers\ReportCardConfigurationController;
+use App\Http\Controllers\ClassesController;
+use App\Http\Controllers\SessionController;
+
 
 
 
@@ -74,6 +77,23 @@ Route::middleware('is_admin:admin')->prefix('admin')->group(function () {
         ->name('report-cards.store');
 
     Route::get('/report-configs', [ReportCardConfigurationController::class, 'index']);
+ 
+
+Route::controller(ClassesController::class)->group(function () {
+    Route::get('/classes', 'index')->name('admin.classes.index');
+    Route::post('/classes', 'store')->name('admin.classes.store');
+    Route::get('/classes/{class}/edit', 'edit')->name('admin.classes.edit');
+    Route::put('/classes/{class}', 'update')->name('admin.classes.update');
+    Route::delete('/classes/{class}', 'destroy')->name('admin.classes.destroy');
+});
+
+    Route::controller(SessionController::class)->group(function () {
+        Route::get('/sessions', 'index')->name('admin.sessions.index');
+        Route::post('/sessions', 'store')->name('admin.sessions.store');
+        Route::get('/sessions/{session}/edit', 'edit')->name('admin.sessions.edit');
+        Route::put('/sessions/{session}', 'update')->name('admin.sessions.update');
+        Route::delete('/sessions/{session}', 'destroy')->name('admin.sessions.destroy');
+    });
 
 });
 

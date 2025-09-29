@@ -49,9 +49,7 @@ return new class extends Migration {
             $table->timestamps(); // Adds created_at and updated_at
 
             // Foreign key linking created_by to users.user_id
-            $table->foreign('created_by')->references('id')->on('users');
-                $table->foreign('created_by')->references('id')->on('users')
-                  ->onDelete('cascade');
+            $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

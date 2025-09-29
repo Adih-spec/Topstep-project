@@ -1,6 +1,7 @@
 @extends('components.layouts.app')
 @section('pageTitle', 'Admin Dashboard')
 @section('pageContent')
+<<<<<<< Updated upstream
 		<div class="page-wrapper">
 			<div class="content">
 
@@ -1427,6 +1428,12 @@
 			</div>
 
 		</div>
+=======
+    <div class="container">
+        <h1>Welcome Admin!</h1>
+        <p>You are logged in as  <strong>{{ Auth::guard('admin')->user()->name }}</strong><p>
+    </div>
+>>>>>>> Stashed changes
 @endsection
 
 @push('modals')
