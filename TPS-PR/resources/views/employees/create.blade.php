@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('components.layouts.app')
 
 @section('content')
 <div class="container my-4">
@@ -52,7 +52,7 @@
                     {{-- Role & Department --}}
                     <div class="col-md-6">
                         <label class="form-label fw-bold">Role</label>
-                        <select name="role" class="form-select" required>
+                        <select name="Role" class="form-select" required>
                             <option value="">-- Select Role --</option>
                             <option value="teacher" {{ old('role') == 'teacher' ? 'selected' : '' }}>Teacher</option>
                             <option value="non-teacher" {{ old('role') == 'non-teacher' ? 'selected' : '' }}>Non-Teacher</option>
@@ -135,14 +135,6 @@
                             <option value="Active" {{ old('Status') == 'Active' ? 'selected' : '' }}>Active</option>
                             <option value="Inactive" {{ old('Status') == 'Inactive' ? 'selected' : '' }}>Inactive</option>
                         </select>
-                    </div>
-                    <div class="col-md-4">
-                        <label class="form-label fw-bold">Password</label>
-                        <input type="password" name="password" class="form-control" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label class="form-label fw-bold">Confirm Password</label>
-                        <input type="password" name="password_confirmation" class="form-control" required>
                     </div>
                 </div>
 

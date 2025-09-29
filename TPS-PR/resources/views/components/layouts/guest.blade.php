@@ -4,26 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('PageTitle') – TOPSTEPS ACADEMY</title>
-     <!-- ** Plugins Needed for the Project ** -->
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="{{ asset('MainAssets/plugins/bootstrap/bootstrap.min.css') }}">
-  <!-- slick slider -->
-  <link rel="stylesheet" href="{{ asset('MainAssets/plugins/slick/slick.css') }}">
-  <!-- themefy-icon -->
-  <link rel="stylesheet" href="{{ asset('MainAssets/plugins/themify-icons/themify-icons.css') }}">
-  <!-- animation css -->
-  <link rel="stylesheet" href="{{ asset('MainAssets/plugins/animate/animate.css') }}">
-  <!-- aos -->
-  <link rel="stylesheet" href="{{ asset('MainAssets/plugins/aos/aos.css') }}">
-  <!-- venobox popup -->
-  <link rel="stylesheet" href="{{ asset('MainAssets/plugins/venobox/venobox.css') }}">
-
-  <!-- Main Stylesheet -->
-  <link href="{{ asset('MainAssets/css/style.css') }}" rel="stylesheet">
-
-  <!--Favicon-->
-  <link rel="shortcut icon" href="https://themewagon.github.io/educenter/images/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="https://themewagon.github.io/educenter/images/favicon.ico" type="image/x-icon">
 
   <!-- Swiper CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -255,7 +235,6 @@
     60%  { transform: translateY(0);}
     100% { transform: translateY(0);}
   }
-</style>
 </style>
 
 </head>

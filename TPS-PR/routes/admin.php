@@ -2,11 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AdminAuthController;
+use App\Http\Controllers\HRMS\EmployeesController;
+use App\Http\Controllers\HRMS\DepartmentController;
+use App\Http\Controllers\HRMS\EmployeesAttendanceController;
+use App\Http\Controllers\MediaController;
 use App\Http\Controllers\GuardController;
+use App\Http\Controllers\GuardianController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ReportCardController;
 use App\Http\Controllers\ReportCardConfigurationController;
+use App\Http\Controllers\ClassesController;
+use App\Http\Controllers\SessionController;
+
 
 
 
@@ -22,6 +30,33 @@ Route::middleware('is_admin:admin')->prefix('admin')->group(function () {
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
     Route::get('/dashboard', [AdminAuthController::class, 'dashboard'])->name('admin.dashboard');
 
+    // Departments
+    Route::resource('departments', DepartmentController::class);
+
+    // Employees
+    Route::resource('employees', EmployeesController::class);
+    Route::controller(EmployeesAttendanceController::class)->group(function () {
+        Route::get('/attendances', 'index')->name('attendances.index');
+        Route::get('/attendances/create', 'create')->name('attendances.create');
+        Route::post('/attendances', 'store')->name('attendances.store');
+        Route::get('/attendances/{id}', 'show')->name('attendances.show');
+        Route::get('/attendances/{id}/edit', 'edit')->name('attendances.edit');
+        Route::put('/attendances/{id}', 'update')->name('attendances.update');
+        Route::delete('/attendances/{id}', 'destroy')->name('attendances.destroy');
+    });
+
+    // Guardians
+    Route::resource('guardians', GuardianController::class);
+    Route::controller(GuardianController::class)->group(function(){
+        // Guardian Routes
+    Route::get('/guardians/recycle-bin', 'recycleBin')->name('guardians.recycleBin');
+    Route::post('/guardians/{id}/restore', 'restore')->name('guardians.restore');
+    Route::delete('/guardians/{id}/force-delete', 'forceDelete')->name('guardians.forceDelete');
+    Route::get('/guardians/{guardian}/assign', 'showAssignForm')->name('guardians.assign');
+    Route::post('/guardians/{guardian}/assign', 'assignStudents')->name('guardians.assign.store');
+    Route::get('/guardians/change-password', 'showChangePasswordForm')->name('guardians.show-change-password');
+    Route::post('/guardians/change-password', 'changePassword')->name('guardians.change-password');
+    });
     // Guards
     Route::resource('guards', GuardController::class);
     Route::get('guards/{guard}/permissions', [GuardController::class, 'editPermissions'])->name('guards.permissions');
@@ -56,7 +91,27 @@ Route::middleware('is_admin:admin')->prefix('admin')->group(function () {
         ->name('report-cards.store');
 
     Route::get('/report-configs', [ReportCardConfigurationController::class, 'index']);
+ 
 
+Route::controller(ClassesController::class)->group(function () {
+    Route::get('/classes', 'index')->name('admin.classes.index');
+    Route::post('/classes', 'store')->name('admin.classes.store');
+    Route::get('/classes/{class}/edit', 'edit')->name('admin.classes.edit');
+    Route::put('/classes/{class}', 'update')->name('admin.classes.update');
+    Route::delete('/classes/{class}', 'destroy')->name('admin.classes.destroy');
+});
+
+    Route::controller(SessionController::class)->group(function () {
+        Route::get('/sessions', 'index')->name('admin.sessions.index');
+        Route::post('/sessions', 'store')->name('admin.sessions.store');
+        Route::get('/sessions/{session}/edit', 'edit')->name('admin.sessions.edit');
+        Route::put('/sessions/{session}', 'update')->name('admin.sessions.update');
+        Route::delete('/sessions/{session}', 'destroy')->name('admin.sessions.destroy');
+    });
+    
+    Route::resource('report-configs', ReportCardConfigurationController::class);
+
+    
 });
 
     
