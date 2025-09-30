@@ -50,7 +50,6 @@
 
 <body>
 
-<<<<<<< Updated upstream
 	<div id="global-loader">
 		<div class="page-loader"></div>
 	</div>
@@ -188,7 +187,7 @@
 												</a>
 											</div>
 											<div class="col-6">
-												<a href="#"
+												<a href="{{ route('employees.index') }}"
 													class="d-block bg-warning-transparent ronded p-2 text-center mb-3 class-hover">
 													<div class="avatar avatar-lg rounded-circle mb-2">
 														<span
@@ -525,20 +524,6 @@
 							</ul>
 						</li>
 						<li>
-							<h6 class="submenu-hdr"><span>Layout</span></h6>
-							<ul>
-								<li><a href="#"><i class="ti ti-layout-sidebar"></i><span>Default
-										</span></a></li>
-								<li><a href="#"><i
-											class="ti ti-layout-align-left"></i><span>Mini</span></a></li>
-								<li><a href="#"><i
-											class="ti ti-text-direction-rtl"></i><span>RTL</span></a></li>
-								<li><a href="#"><i
-											class="ti ti-layout-distribute-vertical"></i><span>Box</span></a></li>
-								<li><a href="#"><i class="ti ti-moon"></i><span>Dark</span></a></li>
-							</ul>
-						</li>
-						<li>
 							<h6 class="submenu-hdr"><span>Peoples</span></h6>
 							<ul>
 								<li class="submenu">
@@ -667,8 +652,8 @@
 						<li>
 							<h6 class="submenu-hdr"><span>HRM</span></h6>
 							<ul>
-								<li><a href="https://preskool.dreamstechnologies.com/html/template/staffs.html"><i class="ti ti-users-group"></i><span>Staffs</span></a></li>
-								<li><a href="https://preskool.dreamstechnologies.com/html/template/departments.html"><i
+								<li><a href="{{ route('employees.index') }}"><i class="ti ti-users-group"></i><span>Staffs</span></a></li>
+								<li><a href="{{ route('departments.index') }}"><i
 											class="ti ti-layout-distribute-horizontal"></i><span>Departments</span></a>
 								</li>
 								<li><a href="https://preskool.dreamstechnologies.com/html/template/designation.html"><i
@@ -1050,21 +1035,6 @@
 
     <script src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="55172eabf69604c02cec51a7-|49" defer></script></body>
 
-=======
-        <a href="{{ route('admin.users.index') }}" 
-          class="d-block py-2 px-3 mb-2 rounded {{ request()->routeIs('users.*') ? 'bg-primary text-white' : '' }}">
-          User Management
-        </a>
-        <a href="{{ route('guards.index') }}" class="{{ request()->routeIs('users.*') ? 'active' : '' }}">Manage guard</a>
-        <a href="{{ route('admin.classes.index') }}" class="{{ request()->routeIs('admin.classes.*') ? 'active' : '' }}">Classes Management</a>
-        <a href="{{ route('admin.sessions.index') }}" class="{{ request()->routeIs('admin.sessions.*') ? 'active' : '' }}">Sessions Management</a>
-    </div>
-    <div class="content flex-fill">
-        @yield('pageContent')
-    </div>
-</div>
-    {{-- Page-specific scripts --}}
->>>>>>> Stashed changes
     @stack('scripts')
 </body>
 </html>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\HRMS;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\HRMS\Employee;
+
 use Illuminate\Support\Facades\Hash;
 
 use App\Models\HRMS\EmployeesAttendance;
@@ -14,15 +15,17 @@ class EmployeesAttendanceController extends Controller
     // Show all attendance records
     public function index()
     {
-        $attendances = EmployeesAttendance::with('employee')->latest()->paginate(10);
-        return view('attendances.index', compact('attendances'));
+        $data['attendances'] = EmployeesAttendance::with('employee')->latest()->paginate(10);
+        
+        return view('attendances.index', $data);
     }
 
     // Show form to create new attendance
     public function create()
     {
-        $employees = Employee::all();
-        return view('attendances.create', compact('employees'));
+        $data['employees'] = Employee::all();
+        
+        return view('attendances.create', $data);
     }
 
     // Store attendance
