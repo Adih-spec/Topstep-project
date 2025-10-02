@@ -58,7 +58,6 @@
                 <div class="row justify-content-center align-items-center vh-100 overflow-auto flex-wrap ">
                     <div class="col-md-8 mx-auto p-4">
                         {{ $slot }}
-
                     </div>
 
                 </div>

@@ -7,7 +7,6 @@ use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\GuardianController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
@@ -43,24 +42,24 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::controller(GuardianController::class)->group(function(){
-        // Guardian Routes
-    Route::get('/guardians', 'index')->name('guardians.index');
-    Route::get('/guardians/create', 'create')->name('guardians.create');
-    Route::post('/guardians/register', 'register')->name('guardian.register');
-    Route::get('/guardians/register', 'showRegisterForm')->name('guardian.register.form');
-    Route::get('/guardians/{id}', 'show')->name('guardians.show');
-    Route::put('/guardians/{id}', 'update')->name('guardians.update');
-    Route::delete('/guardians/{guardian}', 'destroy')->name('guardians.destroy');
-    Route::get('/guardians/recycle-bin', 'recycleBin')->name('guardians.recycleBin');
-    Route::post('/guardians/{id}/restore', 'restore')->name('guardians.restore');
-    Route::delete('/guardians/{id}/force-delete', 'forceDelete')->name('guardians.forceDelete');
-    Route::get('/guardians/{guardian}/assign', 'showAssignForm')->name('guardians.assign');
-    Route::post('/guardians/{guardian}/assign', 'assignStudents')->name('guardians.assign.store');
-    Route::get('/guardians/change-password', 'showChangePasswordForm')->name('guardians.show-change-password');
-    Route::post('/guardians/change-password', 'changePassword')->name('guardians.change-password');
+    // Route::controller(GuardianController::class)->group(function(){
+    //     // Guardian Routes
+    // Route::get('/guardians', 'index')->name('guardians.index');
+    // Route::get('/guardians/create', 'create')->name('guardians.create');
+    // Route::post('/guardians/register', 'register')->name('guardian.register');
+    // Route::get('/guardians/register', 'showRegisterForm')->name('guardian.register.form');
+    // Route::get('/guardians/{id}', 'show')->name('guardians.show');
+    // Route::put('/guardians/{id}', 'update')->name('guardians.update');
+    // Route::delete('/guardians/{guardian}', 'destroy')->name('guardians.destroy');
+    // Route::get('/guardians/recycle-bin', 'recycleBin')->name('guardians.recycleBin');
+    // Route::post('/guardians/{id}/restore', 'restore')->name('guardians.restore');
+    // Route::delete('/guardians/{id}/force-delete', 'forceDelete')->name('guardians.forceDelete');
+    // Route::get('/guardians/{guardian}/assign', 'showAssignForm')->name('guardians.assign');
+    // Route::post('/guardians/{guardian}/assign', 'assignStudents')->name('guardians.assign.store');
+    // Route::get('/guardians/change-password', 'showChangePasswordForm')->name('guardians.show-change-password');
+    // Route::post('/guardians/change-password', 'changePassword')->name('guardians.change-password');
 
-    });
+    // });
 
     // Employee Routes
     // Route::middleware(['auth'])->group(function () {

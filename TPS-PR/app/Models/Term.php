@@ -9,6 +9,13 @@ class Term extends Model
 {
     use HasFactory;
 
-    // Optional: specify table if it's not "terms"
-    // protected $table = 'terms';
+    protected $table = 'terms';      
+    protected $primaryKey = 'termID'; 
+
+    protected $fillable = [
+        'term_title',
+        'term_status',
+    ];
+
+  
 }

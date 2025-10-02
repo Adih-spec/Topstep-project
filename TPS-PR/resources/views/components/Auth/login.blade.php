@@ -1,7 +1,8 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <x-authentication-card-logo />
+                <img src="https://preskool.dreamstechnologies.com/html/template/assets/img/authentication/authentication-01.jpg"
+                class="img-fluid" alt="Logo">
         </x-slot>
 
 
