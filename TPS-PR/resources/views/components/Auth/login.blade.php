@@ -14,9 +14,9 @@
         <form action="{{ route($guard.'.login') }}" method="POST" class="needs-validation" novalidate>
             @csrf
             <div class="text-center mb-4">
-                <img src="https://preskool.dreamstechnologies.com/html/template/assets/img/authentication/authentication-logo.svg"
-                     class="img-fluid mb-3" alt="Logo" style="max-width:150px;">
-                <h2 class="mb-2">Welcome</h2>
+                <!-- <img src="https://preskool.dreamstechnologies.com/html/template/assets/img/authentication/authentication-logo.svg"
+                     class="img-fluid mb-3" alt="Logo" style="max-width:150px;"> -->
+                <h2 class="mb-2">Admin</h2>
                 <p class="text-muted">Please enter your details to sign in</p>
             </div>
 
@@ -39,9 +39,9 @@
                 <x-label for="email" :value="__('Email Address')" />
                 <!-- Email Field -->
                 <x-input
-                    name="email" 
-                    type="email" 
-                    icon="ti ti-mail" 
+                    name="email"
+                    type="email"
+                    icon="ti ti-mail"
                     placeholder="Enter your email"
                     required
                     autocomplete="username"
@@ -79,9 +79,15 @@
             </div>
 
             <!-- Register Link -->
-            <div class="text-center">
+            <!-- <div class="text-center">
                 <p class="mb-0">Don’t have an account?
                     <a href="{{ route('register') }}" class="text-decoration-none">Create Account</a>
+                </p>
+            </div> -->
+            <!-- Register Link -->
+            <div class="text-center">
+                <p class="mb-0">Don’t have an account?
+                    <a href="#" class="text-decoration-none">Create Account</a>
                 </p>
             </div>
 

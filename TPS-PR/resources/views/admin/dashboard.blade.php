@@ -18,7 +18,7 @@
 					<nav>
 						<ol class="breadcrumb mb-0">
 							<li class="breadcrumb-item">
-								<a href="index.html">Dashboard</a>
+								<a href="#">Dashboard</a>
 							</li>
 							<li class="breadcrumb-item active" aria-current="page">Admin Dashboard</li>
 						</ol>
@@ -26,11 +26,11 @@
 				</div>
 				<div class="d-flex my-xl-auto right-content align-items-center flex-wrap">
 					<div class="mb-2">
-						<a href="add-student.html" class="btn btn-primary d-flex align-items-center me-3"><i
+						<a href="{{ route('students.create') }}" class="btn btn-primary d-flex align-items-center me-3"><i
 								class="ti ti-square-rounded-plus me-2"></i>Add New Student</a>
 					</div>
 					<div class="mb-2">
-						<a href="collect-fees.html" class="btn btn-light d-flex align-items-center">Fees Details</a>
+						<a href="#" class="btn btn-light d-flex align-items-center">Fees Details</a>
 					</div>
 				</div>
 			</div>
@@ -66,7 +66,7 @@
 								<div class="mb-3 mb-xl-0">
 									<div class="d-flex align-items-center flex-wrap mb-2">
 										<h1 class="text-white me-2">Welcome Back, <span class="text-capitalize">{{ Auth::guard('admin')->user()->first_name }}</span></h1>
-										<a href="profile.html"
+										<a href="#"
 											class="avatar avatar-sm img-rounded bg-gray-800 dark-hover"><i
 												class="ti ti-edit text-white"></i></a>
 									</div>
@@ -207,7 +207,7 @@
                             <i class="ti ti-x"></i>
                         </button>
                     </div>
-                    <form action="index.html">
+                    <form action="#">
                         <div class="modal-body">
                             <div class="row">
                                 <div class="col-md-12">
@@ -299,7 +299,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <a href="index.html#" class="btn btn-light me-2" data-bs-dismiss="modal">Cancel</a>
+                            <a href="#" class="btn btn-light me-2" data-bs-dismiss="modal">Cancel</a>
                             <button type="submit" class="btn btn-primary">Add Class Routine</button>
                         </div>
                     </form>
@@ -320,7 +320,7 @@
                         <i class="ti ti-x"></i>
                     </button>
                 </div>
-                <form action="index.html">
+                <form action="#">
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-12">
@@ -488,7 +488,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <a href="index.html#" class="btn btn-light me-2" data-bs-dismiss="modal">Cancel</a>
+                        <a href="#" class="btn btn-light me-2" data-bs-dismiss="modal">Cancel</a>
                         <button type="submit" class="btn btn-primary">Save Changes</button>
                     </div>
                 </form>
