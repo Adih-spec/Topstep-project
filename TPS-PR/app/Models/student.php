@@ -5,40 +5,45 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Notifications\Notifiable;
 
 class Student extends Model
 {
-    use Notifiable;
     use HasFactory, SoftDeletes;
 
-   protected $fillable = [
-    'admission_number',
-    'first_name',
-    'middle_name',
-    'last_name',
-    'email',
-    'password',
-    'phone',
-    'dob',
-    'gender',
-    'country',
-    'state_of_origin',
-    'religion',
-    'address',
-    'class',
-    'guardian_phone',
-    'enrollment_date',
-    'admission_date',
-    'photo',
-    'status'
-];
+    protected $fillable = [
+        'first_name',
+        'middle_name',
+        'last_name',
+        'email',
+        'password',
+        'phone',
+        'dob',
+        'gender',
+        'class_level_id',
+        'stream_id',
+        'country',
+        'state_of_origin',
+        'religion',
+        'address',
+        'admission_number',
+        'admission_date',
+        'photo',
+        'status',
+    ];
 
-protected $casts = [
-    'dob' => 'date',
-    'enrollment_date' => 'date',
-    'admission_date' => 'date',
-];
+    public function classLevel()
+    {
+        return $this->belongsTo(ClassLevel::class);
+    }
 
+    public function stream()
+    {
+        return $this->belongsTo(Stream::class);
+    }
 
+    public function subjects()
+    {
+        return $this->belongsToMany(Subject::class, 'student_subject');
+    }
+    
 }

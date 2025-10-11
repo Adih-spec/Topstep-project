@@ -123,6 +123,15 @@ Route::middleware('auth')->group(function () {
     Route::post('/users/{id}/assign', [UserController::class, 'assignUpdate'])->name('users.assign.update');
 });
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+// Redirect authenticated users to admin dashboard
+Route::middleware('auth')->get('/dashboard', function () {
+    return redirect()->route('admin.students.index');
+})->name('dashboard');
+
 require __DIR__.'/auth.php';
 require __DIR__.'/student.php';
 require __DIR__.'/admin.php';
