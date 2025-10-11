@@ -24,6 +24,7 @@ class Guardian extends Authenticatable
         'occupation',
         'photo',
         'password',
+        'deleted_at',
     ];
     protected $hidden = [
         'password',

@@ -72,8 +72,11 @@ class GuardianController extends Controller
     // Show guardian details
     public function show($id)
     {
+        
         $guardian = Guardian::findOrFail($id);
+        
         $students = Student::all();
+        return "hello";
         return view('guardians.show', compact('guardian', 'students'));
     }
 

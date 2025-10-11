@@ -1,3 +1,4 @@
+```php
 @extends('components.layouts.app')
 
 @section('PageTitle', 'Admin Management')
@@ -11,8 +12,17 @@
                 <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                     <h4 class="mb-0">Admin Management</h4>
                     <div>
-                        <a href="{{ url()->previous() }}" class="btn btn-light btn-sm me-2">
-                            <i class="bi bi-arrow-left"></i> Back
+                        <a href="{{ route('admin.dashboard') }}" class="btn btn-light btn-sm me-2">
+                            <i class="bi bi-house"></i> Dashboard
+                        </a>
+                        <a href="{{ route('admin.classes.index') }}" class="btn btn-light btn-sm me-2">
+                            <i class="bi bi-book"></i> View Classes
+                        </a>
+                        <a href="{{ route('admin.subjects.index') }}" class="btn btn-light btn-sm me-2">
+                            <i class="bi bi-journal-text"></i> Manage Subjects
+                        </a>
+                        <a href="{{ route('admin.students.recycle') }}" class="btn btn-light btn-sm me-2">
+                            <i class="bi bi-recycle"></i> Recycle Bin
                         </a>
                         <a href="{{ route('admins.create') }}" class="btn btn-light btn-sm">
                             <i class="bi bi-plus-circle"></i> Add Admin
@@ -26,6 +36,13 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                         </div>
                     @endif
+
+                    <!-- Student Stats -->
+                    <div class="mb-4 p-4 bg-light rounded">
+                        <p class="mb-1"><strong>Total Students:</strong> {{ $totalStudents }}</p>
+                        <p class="mb-1"><strong>Male Students:</strong> {{ $maleStudents }}</p>
+                        <p class="mb-1"><strong>Female Students:</strong> {{ $femaleStudents }}</p>
+                    </div>
 
                     <div class="table-responsive">
                         <table class="table table-hover align-middle">
@@ -41,36 +58,47 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse($admins as $index => $admin)
+                                @forelse($users as $index => $user)
                                     <tr>
                                         <td>{{ $index + 1 }}</td>
-                                        <td>{{ $admin->full_name }}</td>
-                                        <td>{{ $admin->email }}</td>
-                                        <td>{{ $admin->phone ?? 'N/A' }}</td>
+                                        <td>{{ $user->full_name }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>{{ $user->phone ?? 'N/A' }}</td>
                                         <td>
-                                            <span class="badge bg-info text-dark">{{ ucfirst($admin->role) }}</span>
+                                            <span class="badge bg-info text-dark">{{ ucfirst($user->role) }}</span>
                                         </td>
                                         <td>
-                                            @if($admin->status)
+                                            @if($user->trashed())
+                                                <span class="badge bg-danger">Deleted</span>
+                                            @elseif($user->status)
                                                 <span class="badge bg-success">Active</span>
                                             @else
                                                 <span class="badge bg-danger">Inactive</span>
                                             @endif
                                         </td>
                                         <td>
-                                            <!-- <a href="{{ route('admins.show', $admin->admin_id) }}" class="btn btn-sm btn-secondary">
-                                                <i class="bi bi-eye"></i>
-                                            </a> -->
-                                            <a href="{{ route('admins.edit', $admin->admin_id) }}" class="btn btn-sm btn-warning">
-                                                Edit<i class="bi bi-pencil"></i>
+                                            <a href="{{ route('admins.show', $user->admin_id) }}" class="btn btn-sm btn-secondary">
+                                                <i class="bi bi-eye"></i> View
                                             </a>
-                                            <form action="{{ route('admins.destroy', $admin->admin_id) }}" method="POST" class="d-inline">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this admin?')">
-                                                    Delete<i class="bi bi-trash"></i>
-                                                </button>
-                                            </form>
+                                            <a href="{{ route('admins.edit', $user->admin_id) }}" class="btn btn-sm btn-warning">
+                                                <i class="bi bi-pencil"></i> Edit
+                                            </a>
+                                            @if($user->trashed())
+                                                <form action="{{ route('admins.restore', $user->admin_id) }}" method="POST" class="d-inline">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-sm btn-primary" onclick="return confirm('Restore this admin?')">
+                                                        <i class="bi bi-arrow-counterclockwise"></i> Restore
+                                                    </button>
+                                                </form>
+                                            @else
+                                                <form action="{{ route('admins.destroy', $user->admin_id) }}" method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this admin?')">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </form>
+                                            @endif
                                         </td>
                                     </tr>
                                 @empty
@@ -84,7 +112,7 @@
 
                     <!-- Pagination -->
                     <div class="d-flex justify-content-center mt-3">
-                        {{ $admins->links() }}
+                        {{ $users->links() }}
                     </div>
                 </div>
             </div>

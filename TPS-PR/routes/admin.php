@@ -14,6 +14,9 @@ use App\Http\Controllers\ReportCardController;
 use App\Http\Controllers\ReportCardConfigurationController;
 use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\ClassController;
+use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\StudentController;
 
 
 
@@ -108,10 +111,11 @@ Route::controller(ClassesController::class)->group(function () {
         Route::put('/sessions/{session}', 'update')->name('admin.sessions.update');
         Route::delete('/sessions/{session}', 'destroy')->name('admin.sessions.destroy');
     });
-    
+    Route::controller(SubjectController::class)->group(function () {
+        Route::get('/subjects', 'index')->name('admin.sessions.index');
+    });
     Route::resource('report-configs', ReportCardConfigurationController::class);
 
     
 });
 
-    
