@@ -1,7 +1,7 @@
 <?php
-
 namespace App\Http\Controllers;
 
+use App\Models\Guard;
 use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
 
@@ -9,24 +9,39 @@ class RoleController extends Controller
 {
     public function index()
     {
-        $data['roles'] = Role::all();
-        return view('components.roles.index', $data);
+        $roles = Role::with('permissions')->paginate(10);
+        return view('components.roles.index', compact('roles'));
     }
 
-    public function create()
+   public function create()
     {
-        return view('components.roles.create');
+        // get distinct guard names (strings)
+        $guards = Guard::pluck('guard_name')->unique();
+
+        return view('components.roles.create', compact('guards'));
     }
 
     public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|unique:roles,name,NULL,id,guard_name,' . $request->guard_name,
-            'guard_name' => 'required'
-        ]);
+{
+    // ✅ Validate the input
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'guard_name' => 'required|string'
+    ]);
 
-        Role::create($request->only('name', 'guard_name'));
+    // ✅ Create the role using the request data
+    $role = Role::create([
+        'name' => $request->name,
+        'guard_name' => $request->guard_name, // use the selected guard_name
+    ]);
 
-        return back()->with('success', 'Role created successfully.');
-    }
+    // If you need to assign this role to a specific user or model, do it here.
+    // Example: Assign to currently authenticated user (optional)
+    // auth()->user()->assignRole($role);
+
+    return redirect()
+        ->route('roles.index')
+        ->with('success', 'Role created successfully.');
+}
+
 }

@@ -9,9 +9,14 @@
             <div class="card shadow-lg border-0 rounded-3">
                 <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                     <h4 class="mb-0">Roles Management</h4>
-                    <a href="{{ route('roles.create') }}" class="btn btn-light btn-sm">
-                        <i class="bi bi-plus-circle"></i> Add Role
-                    </a>
+                    <div>
+                        <a href="{{ url()->previous() }}" class="btn btn-light btn-sm me-2">
+                            <i class="bi bi-arrow-left"></i> Back
+                        </a>
+                        <a href="{{ route('roles.create') }}" class="btn btn-light btn-sm">
+                            <i class="bi bi-plus-circle"></i> Add Role
+                        </a>
+                    </div>
                 </div>
 
                 <div class="card-body">

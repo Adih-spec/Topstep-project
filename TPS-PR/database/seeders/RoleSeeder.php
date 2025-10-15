@@ -17,3 +17,12 @@ class RoleSeeder extends Seeder
         }
     }
 }
+
+class RoleSeeder extends Seeder {
+    public function run(): void {
+        $roles = ['admin','teacher','staff','student','guardian'];
+        foreach ($roles as $role) {
+            Role::firstOrCreate(['name' => $role, 'guard_name' => 'web']);
+        }
+    }
+}

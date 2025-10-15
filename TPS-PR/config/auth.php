@@ -40,7 +40,28 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+        'staff' => [
+            'driver' => 'session',
+            'provider' => 'staffs',
+        ],
+
+        'student' => [
+            'driver' => 'session',
+            'provider' => 'students',
+        ],
+
+        'guardian' => [
+            'driver' => 'session',
+            'provider' => 'guardians',
+        ],
     ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -58,19 +79,39 @@ return [
     | Supported: "database", "eloquent"
     |
     */
-
     'providers' => [
-        'users' => [
+    'users' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\User::class, // ✅ should be User
+    ],
+    'admins' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Admin::class,
+    ],
+    'staffs' => [
             'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\User::class),
-        ],
+            'model' => App\Models\HRMS\Employee::class,
+    ],
+    'students' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Student::class,
+    ],
+
+    'guardians' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Guardian::class,
+    ],
+],
+
 
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
-    ],
+    
 
+        
+    
     /*
     |--------------------------------------------------------------------------
     | Resetting Passwords
@@ -93,11 +134,31 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
-            'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
+            'table' => 'password_reset_tokens',
             'expire' => 60,
-            'throttle' => 60,
+        ],
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_reset_tokens',
+            'expire' => 60,
+        ],
+        'staffs' => [
+            'provider' => 'staffs',
+            'table' => 'password_reset_tokens',
+            'expire' => 60,
+        ],
+        'students' => [
+            'provider' => 'students',
+            'table' => 'password_reset_tokens',
+            'expire' => 60,
+        ],
+        'parents' => [
+            'provider' => 'guardians',
+            'table' => 'password_reset_tokens',
+            'expire' => 60,
         ],
     ],
+
 
     /*
     |--------------------------------------------------------------------------

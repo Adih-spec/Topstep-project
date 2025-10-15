@@ -1,57 +1,42 @@
 <?php
-
 namespace App\Http\Controllers;
 
+use App\Models\Permission;
+use App\Models\Guard;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Permission;
 
 class PermissionController extends Controller
 {
-    public function index()
-    {
-        $permissions = Permission::all();
-        return view('components.permissions.index', compact('permissions'));
-    }
-
     public function create()
     {
-        return view('permissions.create');
+        $guards = Guard::all();
+        return view('components.permissions.create', compact('guards'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|unique:permissions,name',
+            'guard_id' => 'required|exists:guards,id',
         ]);
 
-        Permission::create(['name' => $request->name]);
-
-        return redirect()->route('permissions.index')
-                         ->with('success', 'Permission created successfully.');
-    }
-
-    public function edit(Permission $permission)
-    {
-        return view('permissions.edit', compact('permission'));
-    }
-
-    public function update(Request $request, Permission $permission)
-    {
-        $request->validate([
-            'name' => 'required|unique:permissions,name,' . $permission->id,
+        Permission::create([
+            'name' => $request->name,
+            'guard_id' => $request->guard_id,
         ]);
 
-        $permission->update(['name' => $request->name]);
-
-        return redirect()->route('permissions.index')
-                         ->with('success', 'Permission updated successfully.');
+        return redirect()->route('permissions.index')->with('success', 'Permission created successfully.');
     }
 
-    public function destroy(Permission $permission)
+    public function index()
     {
-        $permission->delete();
-
-        return redirect()->route('permissions.index')
-                         ->with('success', 'Permission deleted successfully.');
+        $permissions = Permission::with('guardRelation')->paginate(10);
+        return view('components.permissions.index', compact('permissions'));
+    }
+     public function edit($id)
+    {
+        $permission = Permission::findOrFail($id);
+        $guards = Guard::all(); // To repopulate the guard dropdown
+        return view('components.permissions.edit', compact('permission', 'guards'));
     }
 }

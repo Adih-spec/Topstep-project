@@ -1,28 +1,1040 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>@yield('PageTitle') – TOPSTEPS ACADEMY</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  <style>
-    body { background: #f5f6fa; }
-    .sidebar { min-height: 100vh; background: #2c3e50; color: #fff; }
-    .sidebar a { color: #ecf0f1; display: block; padding: 10px; text-decoration: none; }
-    .sidebar a:hover { background: #34495e; }
-    .content { padding: 20px; }
-  </style>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="Topsteps Academy - Admin Dashboard">
+    <meta name="keywords" content="topsteps, academy, admin, dashboard, education, management, bootstrap, html5, responsive">
+    <meta name="author" content="Topsteps Academy Admin Team">
+	<meta name="robots" content="noindex, nofollow">
+	<title>TPSA || @yield('pageTitle', config('app.name'))</title>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="{{asset('adminAssets/img/favicon.png')}}">
+
+	<!-- Theme Script js -->
+	<script src="{{asset('adminAssets/js/theme-script.js')}}" type="55172eabf69604c02cec51a7-text/javascript"></script>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{{asset('adminAssets/css/bootstrap.min.css')}}">
+
+	<!-- Feather CSS -->
+	<link rel="stylesheet" href="{{asset('adminAssets/plugins/icons/feather/feather.css')}}">
+
+	<!-- Tabler Icon CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+	<!-- Daterangepikcer CSS -->
+	<link rel="stylesheet" href="{{asset('adminAssets/plugins/daterangepicker/daterangepicker.css')}}">
+
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" href="{{asset('adminAssets/plugins/select2/css/select2.min.css')}}">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="{{asset('adminAssets/plugins/fontawesome/css/fontawesome.min.css')}}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+	<!-- Datetimepicker CSS -->
+	<link rel="stylesheet" href="{{asset('adminAssets/css/bootstrap-datetimepicker.min.css')}}">
+
+	<!-- Owl Carousel CSS -->
+	<link rel="stylesheet" href="{{asset('adminAssets/plugins/owlcarousel/owl.carousel.min.css')}}">
+	<link rel="stylesheet" href="{{asset('adminAssets/plugins/owlcarousel/owl.theme.default.min.css')}}">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="{{asset('adminAssets/css/style.css')}}">
+
+    @yield('styles')
 </head>
+
 <body>
-<div class="d-flex">
-    <div class="sidebar p-3">
-        <h4>RBAC</h4>
-        <a href="{{ route('dashboard') }}">Dashboard</a>
-        <a href="{{ route('roles.index') }}">Manage Roles</a>
-        <a href="{{ route('permissions.index') }}">Manage Permissions</a>
-    </div>
-    <div class="content flex-fill">
-        @yield('pageContent')
-    </div>
-</div>
+
+	<div id="global-loader">
+		<div class="page-loader"></div>
+	</div>
+
+	<!-- Main Wrapper -->
+	<div class="main-wrapper">
+
+		<!-- Header -->
+		<div class="header">
+
+			<!-- Logo -->
+			<div class="header-left active">
+				<a href="#" class="logo logo-normal">
+					<img src="assets/img/logo.svg" alt="Logo">
+				</a>
+				<a href="#" class="logo-small">
+					<img src="assets/img/logo-small.svg" alt="Logo">
+				</a>
+				<a href="#" class="dark-logo">
+					<img src="assets/img/logo-dark.svg" alt="Logo">
+				</a>
+				<a id="toggle_btn" href="javascript:void(0);">
+					<i class="ti ti-menu-deep"></i>
+				</a>
+			</div>
+			<!-- /Logo -->
+
+			<a id="mobile_btn" class="mobile_btn" href="#">
+				<span class="bar-icon">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</a>
+
+			<div class="header-user">
+				<div class="nav user-menu">
+
+					<!-- Search -->
+					<div class="nav-item nav-search-inputs me-auto">
+						<div class="top-nav-search">
+							<a href="javascript:void(0);" class="responsive-search">
+								<i class="fa fa-search"></i>
+							</a>
+							<form action="#" class="dropdown">
+								<div class="searchinputs" id="dropdownMenuClickable">
+									<input type="text" placeholder="Search">
+									<div class="search-addon">
+										<button type="submit"><i class="ti ti-command"></i></button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- /Search -->
+
+					<div class="d-flex align-items-center">
+						<div class="dropdown me-2">
+							<a href="#" class="btn btn-outline-light fw-normal bg-white d-flex align-items-center p-2"
+								data-bs-toggle="dropdown" aria-expanded="false">
+								<i class="ti ti-calendar-due me-1"></i>Academic Year : 2024 / 2025
+							</a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">
+									Academic Year : 2023 / 2024
+								</a>
+								<a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">
+									Academic Year : 2022 / 2023
+								</a>
+								<a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">
+									Academic Year : 2021 / 2022
+								</a>
+							</div>
+						</div>
+						<div class="pe-1 ms-1">
+							<div class="dropdown">
+								<a href="#"
+									class="btn btn-outline-light bg-white btn-icon d-flex align-items-center me-1 p-2"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<img src="{{ asset('adminAssets/img/flags/us.png')}}" alt="Language" class="img-fluid rounded-pill">
+								</a>
+								<div class="dropdown-menu dropdown-menu-right">
+									<a href="javascript:void(0);"
+										class="dropdown-item active d-flex align-items-center">
+										<img class="me-2 rounded-pill" src="{{ asset('adminAssets/img/flags/us.png')}}" alt="Img"
+											height="22" width="22"> English
+									</a>
+									<a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">
+										<img class="me-2 rounded-pill" src="{{ asset('adminAssets/img/flags/fr.png')}}" alt="Img"
+											height="22" width="22"> French
+									</a>
+									<a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">
+										<img class="me-2 rounded-pill" src="{{ asset('adminAssets/img/flags/es.png')}}" alt="Img"
+											height="22" width="22"> Spanish
+									</a>
+									<a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">
+										<img class="me-2 rounded-pill" src="{{ asset('adminAssets/img/flags/de.png')}}" alt="Img"
+											height="22" width="22"> German
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="pe-1">
+							<div class="dropdown">
+								<a href="#" class="btn btn-outline-light bg-white btn-icon me-1"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="ti ti-square-rounded-plus"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right border shadow-sm dropdown-md">
+									<div class="p-3 border-bottom">
+										<h5>Add New</h5>
+									</div>
+									<div class="p-3 pb-0">
+										<div class="row gx-2">
+											<div class="col-6">
+												<a href="#"
+													class="d-block bg-primary-transparent ronded p-2 text-center mb-3 class-hover">
+													<div class="avatar avatar-lg mb-2">
+														<span
+															class="d-inline-flex align-items-center justify-content-center w-100 h-100 bg-primary rounded-circle"><i
+																class="ti ti-school"></i></span>
+													</div>
+													<p class="text-dark">Students</p>
+												</a>
+											</div>
+											<div class="col-6">
+												<a href="#"
+													class="d-block bg-success-transparent ronded p-2 text-center mb-3 class-hover">
+													<div class="avatar avatar-lg mb-2">
+														<span
+															class="d-inline-flex align-items-center justify-content-center w-100 h-100 bg-success rounded-circle"><i
+																class="ti ti-users"></i></span>
+													</div>
+													<p class="text-dark">Teachers</p>
+												</a>
+											</div>
+											<div class="col-6">
+												<a href="{{ route('employees.index') }}"
+													class="d-block bg-warning-transparent ronded p-2 text-center mb-3 class-hover">
+													<div class="avatar avatar-lg rounded-circle mb-2">
+														<span
+															class="d-inline-flex align-items-center justify-content-center w-100 h-100 bg-warning rounded-circle"><i
+																class="ti ti-users-group"></i></span>
+													</div>
+													<p class="text-dark">Staffs</p>
+												</a>
+											</div>
+											<div class="col-6">
+												<a href="#"
+													class="d-block bg-info-transparent ronded p-2 text-center mb-3 class-hover">
+													<div class="avatar avatar-lg mb-2">
+														<span
+															class="d-inline-flex align-items-center justify-content-center w-100 h-100 bg-info rounded-circle"><i
+																class="ti ti-license"></i></span>
+													</div>
+													<p class="text-dark">Invoice</p>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pe-1">
+							<a href="#" id="dark-mode-toggle"
+								class="dark-mode-toggle activate btn btn-outline-light bg-white btn-icon me-1">
+								<i class="ti ti-moon"></i>
+							</a>
+							<a href="#" id="light-mode-toggle"
+								class="dark-mode-toggle btn btn-outline-light bg-white btn-icon me-1">
+								<i class="ti ti-brightness-up"></i>
+							</a>
+						</div>
+						<div class="pe-1" id="notification_item">
+							<a href="#" class="btn btn-outline-light bg-white btn-icon position-relative me-1"
+								id="notification_popup">
+								<i class="ti ti-bell"></i>
+								<span class="notification-status-dot"></span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end notification-dropdown p-4">
+								<div
+									class="d-flex align-items-center justify-content-between border-bottom p-0 pb-3 mb-3">
+									<h4 class="notification-title">Notifications (2)</h4>
+									<div class="d-flex align-items-center">
+										<a href="#" class="text-primary fs-15 me-3 lh-1">Mark all as read</a>
+										<div class="dropdown">
+											<a href="javascript:void(0);" class="bg-white dropdown-toggle"
+												data-bs-toggle="dropdown"><i class="ti ti-calendar-due me-1"></i>Today
+											</a>
+											<ul class="dropdown-menu mt-2 p-3">
+												<li>
+													<a href="javascript:void(0);" class="dropdown-item rounded-1">
+														This Week
+													</a>
+												</li>
+												<li>
+													<a href="javascript:void(0);" class="dropdown-item rounded-1">
+														Last Week
+													</a>
+												</li>
+												<li>
+													<a href="javascript:void(0);" class="dropdown-item rounded-1">
+														Last Week
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="noti-content">
+									<div class="d-flex flex-column">
+										<div class="border-bottom mb-3 pb-3">
+											<a href="#">
+												<div class="d-flex">
+													<span class="avatar avatar-lg me-2 flex-shrink-0">
+														<img src="{{asset('adminAssets/img/profiles/avatar-27.jpg')}}" alt="Profile">
+													</span>
+													<div class="flex-grow-1">
+														<p class="mb-1"><span class="text-dark fw-semibold">Shawn</span>
+															performance in Math is
+															below the threshold.</p>
+														<span>Just Now</span>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="border-bottom mb-3 pb-3">
+											<a href="#" class="pb-0">
+												<div class="d-flex">
+													<span class="avatar avatar-lg me-2 flex-shrink-0">
+														<img src="{{asset('adminAssets/img/profiles/avatar-23.jpg')}}" alt="Profile">
+													</span>
+													<div class="flex-grow-1">
+														<p class="mb-1"><span
+																class="text-dark fw-semibold">Sylvia</span> added
+															appointment on
+															02:00 PM</p>
+														<span>10 mins ago</span>
+														<div
+															class="d-flex justify-content-start align-items-center mt-1">
+															<span class="btn btn-light btn-sm me-2">Deny</span>
+															<span class="btn btn-primary btn-sm">Approve</span>
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="border-bottom mb-3 pb-3">
+											<a href="#">
+												<div class="d-flex">
+													<span class="avatar avatar-lg me-2 flex-shrink-0">
+														<img src="{{asset('adminAssets/img/profiles/avatar-25.jpg')}}" alt="Profile">
+													</span>
+													<div class="flex-grow-1">
+														<p class="mb-1">New student record <span
+																class="text-dark fw-semibold"> George</span> is
+															created by <span class="text-dark fw-semibold">
+																Teressa</span></p>
+														<span>2 hrs ago</span>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="border-0 mb-3 pb-0">
+											<a href="#">
+												<div class="d-flex">
+													<span class="avatar avatar-lg me-2 flex-shrink-0">
+														<img src="{{asset('adminAssets/img/profiles/avatar-01.jpg')}}" alt="Profile">
+													</span>
+													<div class="flex-grow-1">
+														<p class="mb-1">A new teacher record for <span
+																class="text-dark fw-semibold">Elisa</span>
+														</p>
+														<span>09:45 AM</span>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="d-flex p-0">
+									<a href="#" class="btn btn-light w-100 me-2">Cancel</a>
+									<a href="#" class="btn btn-primary w-100">View All</a>
+								</div>
+							</div>
+						</div>
+						<div class="pe-1">
+							<a href="#" class="btn btn-outline-light bg-white btn-icon position-relative me-1">
+								<i class="ti ti-brand-hipchat"></i>
+								<span class="chat-status-dot"></span>
+							</a>
+						</div>
+						<div class="pe-1">
+							<a href="#" class="btn btn-outline-light bg-white btn-icon me-1">
+								<i class="ti ti-chart-bar"></i>
+							</a>
+						</div>
+						<div class="pe-1">
+							<a href="#" class="btn btn-outline-light bg-white btn-icon me-1" id="btnFullscreen">
+								<i class="ti ti-maximize"></i>
+							</a>
+						</div>
+						<div class="dropdown ms-1">
+							<a href="javascript:void(0);" class="dropdown-toggle d-flex align-items-center"
+								data-bs-toggle="dropdown">
+								@php
+									$admin = Auth::guard('admin')->user();
+								@endphp
+								<span class="avatar avatar-md rounded">
+									@if($admin && $admin->profile_image)
+										<img src="{{ asset($admin->profile_image) }}" alt="Profile" class="img-fluid">
+									@else
+										<span class="bg-primary text-white d-flex align-items-center justify-content-center w-100 h-100" style="font-weight: bold;">
+											{{ $admin && isset($admin->initials) ? $admin->initials : __('NA') }}
+										</span>
+									@endif
+								</span>
+							</a>
+							<div class="dropdown-menu">
+								<div class="d-block">
+									<div class="d-flex align-items-center p-2">
+										@php
+											$admin = Auth::guard('admin')->user();
+										@endphp
+										@if($admin && $admin->profile_image)
+											<span class="avatar avatar-md me-2 online avatar-rounded">
+												<img src="{{ asset($admin->profile_image) }}" alt="img">
+											</span>
+										@else
+											<span class="avatar avatar-md me-2 online avatar-rounded bg-primary text-white d-flex align-items-center justify-content-center" style="font-weight: bold;">
+												{{ $admin && isset($admin->initials) ? $admin->initials : __('NA') }}
+											</span>
+										@endif
+										<div>
+											@if(Auth::guard('admin')->check())
+												<h6 class="mb-0">{{ Auth::guard('admin')->user()->full_name }}</h6>
+											@endif
+											@auth('admin')
+												<p class="text-primary mb-0">Administrator</p>
+											@endauth
+											@auth('staff')
+												<p class="text-success mb-0">Teacher</p>
+											@endauth
+											@auth('student')
+												<p class="text-info mb-0">Student</p>
+											@endauth
+											@auth('guardian')
+												<p class="text-warning mb-0">Guardian</p>
+											@endauth
+										</div>
+									</div>
+									<hr class="m-0">
+									<a class="dropdown-item d-inline-flex align-items-center p-2" href="{{ url('profile') }}">
+										<i class="ti ti-user-circle me-2"></i>My Profile</a>
+									<a class="dropdown-item d-inline-flex align-items-center p-2"
+										href="#"><i class="ti ti-settings me-2"></i>Settings</a>
+									<hr class="m-0">
+									@auth('admin')
+										<form method="POST" action="{{ route('admin.logout') }}" class="dropdown-item p-0">
+											@csrf
+											<button type="submit" class="dropdown-item d-inline-flex align-items-center p-2">
+												<i class="ti ti-login me-2"></i>{{ __('Log Out') }}
+											</button>
+										</form>
+									@endauth
+									@auth('staff')
+										<form method="POST" action="{{ route('staff.logout') }}" class="dropdown-item p-0">
+											@csrf
+											<button type="submit" class="dropdown-item d-inline-flex align-items-center p-2">
+												<i class="ti ti-login me-2"></i>{{ __('Log Out') }}
+											</button>
+										</form>
+									@endauth
+									@auth('student')
+										<form method="POST" action="{{ route('student.logout') }}" class="dropdown-item p-0">
+											@csrf
+											<button type="submit" class="dropdown-item d-inline-flex align-items-center p-2">
+												<i class="ti ti-login me-2"></i>{{ __('Log Out') }}
+											</button>
+										</form>
+									@endauth
+									@auth('guardian')
+										<form method="POST" action="{{ route('guardian.logout') }}" class="dropdown-item p-0">
+											@csrf
+											<button type="submit" class="dropdown-item d-inline-flex align-items-center p-2">
+												<i class="ti ti-login me-2"></i>{{ __('Log Out') }}
+											</button>
+										</form>
+									@endauth
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Mobile Menu -->
+			<div class="dropdown mobile-user-menu">
+				<a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+					aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+				<div class="dropdown-menu dropdown-menu-end">
+					<a class="dropdown-item" href="#">My Profile</a>
+					<a class="dropdown-item" href="#">Settings</a>
+					<!-- <a class="dropdown-item" href="#">Logout</a> -->
+
+					<form method="POST" action="{{ route('admin.logout') }}" class="dropdown-item p-0">
+						@csrf
+						<button type="submit" class="dropdown-item d-inline-flex align-items-center p-2">
+							<i class="ti ti-login me-2"></i>{{ __('Log Out') }}
+						</button>
+					</form>
+				</div>
+			</div>
+			<!-- /Mobile Menu -->
+
+		</div>
+		<!-- /Header -->
+
+		<!-- Sidebar -->
+		<div class="sidebar" id="sidebar">
+			<div class="sidebar-inner slimscroll">
+				<div id="sidebar-menu" class="sidebar-menu">
+					<ul>
+						<li>
+							<a href="javascript:void(0);"
+								class="d-flex align-items-center border bg-white rounded p-2 mb-4">
+								<img src="{{asset('adminAssets/img/icons/global-img.svg')}}" class="avatar avatar-md img-fluid rounded"
+									alt="Profile">
+								<span class="text-dark ms-2 fw-normal">Topsteps Academy</span>
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<h6 class="submenu-hdr"><span>Main</span></h6>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);" class="subdrop active"><i
+											class="ti ti-layout-dashboard"></i><span>Dashboard</span><span
+											class="menu-arrow"></span></a>
+									<ul>
+										@auth('admin')
+											<li><a href="{{ route('admin.dashboard') }}" class="active">Admin Dashboard</a></li>
+										@endauth
+										@auth('staff')
+											<li><a href="teacher-dashboard.html">Staff Dashboard</a></li>
+										@endauth
+										@auth('student')
+											<li><a href="#">Student Dashboard</a></li>
+										@endauth
+										@auth('guardian')
+											<li><a href="#">Parent Dashboard</a></li>
+										@endauth
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i
+											class="ti ti-layout-list"></i><span>Application</span><span
+											class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="#">Chat</a></li>
+										<li><a href="#">Call</a></li>
+										<li><a href="#">Calendar</a></li>
+										<li><a href="#">Email</a></li>
+										<li><a href="#">To Do</a></li>
+										<li><a href="#">Notes</a></li>
+										<li><a href="#">File Manager</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h6 class="submenu-hdr"><span>Peoples</span></h6>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-school"></i><span>Students</span><span
+											class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="#">All Students</a></li>
+										<li><a href="#">Student List</a></li>
+										<li><a href="#">Student Details</a></li>
+										<li><a href="#">Student Promotion</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i
+											class="ti ti-user-shield"></i><span>Guardians</span><span
+											class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="{{ route('guardians.index') }}">All Guardians</a></li>
+										<li><a href="{{ route('guardians.index') }}">Guardian List</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-users"></i><span>Teachers</span><span
+											class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/teacher-grid.html">All Teachers</a></li>
+										<li><a href="#">Teacher List</a></li>
+										<li><a href="#">Teacher Details</a></li>
+										<li><a href="#">Routine</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h6 class="submenu-hdr"><span>Academic</span></h6>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i
+											class="ti ti-school-bell"></i><span>Classes</span><span
+											class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="#">All Classes</a></li>
+										<li><a href="#">Schedule</a></li>
+									</ul>
+								</li>
+								<li><a href="#"><i class="ti ti-building"></i><span>Class Room</span></a>
+								</li>
+								<li><a href="#"><i class="ti ti-bell-school"></i><span>Class
+											Routine</span></a></li>
+								<li><a href="#"><i
+											class="ti ti-square-rotated-forbid-2"></i><span>Section</span></a></li>
+								<li><a href="#"><i class="ti ti-book"></i><span>Subject</span></a></li>
+								<li><a href="#"><i
+											class="ti ti-book-upload"></i><span>Syllabus</span></a></li>
+								<li><a href="#"><i class="ti ti-table"></i><span>Time
+											Table</span></a></li>
+								<li><a href="#"><i class="ti ti-license"></i><span>Home
+											Work</span></a></li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i
+											class="ti ti-hexagonal-prism-plus"></i><span>Examinations</span><span
+											class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="#">Exam</a></li>
+										<li><a href="#">Exam Schedule</a></li>
+										<li><a href="#">Grade</a></li>
+										<li><a href="#">Exam Attendance</a></li>
+										<li><a href="#">Exam Results</a></li>
+									</ul>
+								</li>
+								<li><a href="#"><i
+											class="ti ti-lifebuoy"></i><span>Reasons</span></a></li>
+							</ul>
+						</li>
+						<li>
+							<h6 class="submenu-hdr"><span>Management</span></h6>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-report-money"></i><span>Fees
+											Collection</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="#">Fees Group</a></li>
+										<li><a href="#">Fees Type</a></li>
+										<li><a href="#">Fees Master</a></li>
+										<li><a href="#">Fees Assign</a></li>
+										<li><a href="#">Collect Fees</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i
+											class="ti ti-notebook"></i><span>Library</span><span
+											class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="#">Library Members</a></li>
+										<li><a href="#">Books</a></li>
+										<li><a href="#">Issue Book</a></li>
+										<li><a href="#">Return</a></li>
+									</ul>
+								</li>
+								<li><a href="#"><i class="ti ti-run"></i><span>Sports</span></a></li>
+								<li><a href="#"><i class="ti ti-play-football"></i><span>Players</span></a>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i
+											class="ti ti-building-fortress"></i><span>Hostel</span><span
+											class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/hostel-list.html">Hostel List</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/hostel-rooms.html">Hostel Rooms</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/hostel-room-type.html">Room Type</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-bus"></i><span>Transport</span><span
+											class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/transport-routes.html">Routes</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/transport-pickup-points.html">Pickup Points</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/transport-vehicle-drivers.html">Vehicle Drivers</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/transport-vehicle.html">Vehicle</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/transport-assign-vehicle.html">Assign Vehicle</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h6 class="submenu-hdr"><span>HRM</span></h6>
+							<ul>
+								<li><a href="{{ route('employees.index') }}"><i class="ti ti-users-group"></i><span>Staffs</span></a></li>
+								<li><a href="{{ route('departments.index') }}"><i
+											class="ti ti-layout-distribute-horizontal"></i><span>Departments</span></a>
+								</li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/designation.html"><i
+											class="ti ti-user-exclamation"></i><span>Designation</span></a></li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i
+											class="ti ti-calendar-share"></i><span>Attendance</span><span
+											class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/student-attendance.html">Student Attendance</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/teacher-attendance.html">Teacher Attendance</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/staff-attendance.html">Staff Attendance</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i
+											class="ti ti-calendar-stats"></i><span>Leaves</span><span
+											class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/list-leaves.html">List of leaves</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/approve-request.html">Approve Request</a></li>
+									</ul>
+								</li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/holidays.html"><i class="ti ti-briefcase"></i><span>Holidays</span></a>
+								</li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/payroll.html"><i class="ti ti-moneybag"></i><span>Payroll</span></a></li>
+							</ul>
+						</li>
+						<li>
+							<h6 class="submenu-hdr"><span>Finance & Accounts</span></h6>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-swipe"></i><span>Accounts</span><span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/expenses.html">Expenses</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/expenses-category.html">Expense Category</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/accounts-income.html">Income</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/accounts-invoices.html">Invoices</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/invoice.html">Invoice View</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/accounts-transactions.html">Transactions</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+
+						<li>
+							<h6 class="submenu-hdr"><span>Announcements</span></h6>
+							<ul>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/notice-board.html"><i class="ti ti-clipboard-data"></i><span>Notice
+											Board</span></a></li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/events.html"><i class="ti ti-calendar-question"></i><span>Events</span></a>
+								</li>
+							</ul>
+
+						</li>
+						<li>
+							<h6 class="submenu-hdr"><span>Reports</span></h6>
+							<ul>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/attendance-report.html"><i class="ti ti-calendar-due"></i><span>Attendance
+											Report</span></a></li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/class-report.html"><i class="ti ti-graph"></i><span>Class Report</span></a>
+								</li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/student-report.html"><i class="ti ti-chart-infographic"></i><span>Student
+											Report</span></a></li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/grade-report.html"><i class="ti ti-calendar-x"></i><span>Grade
+											Report</span></a></li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/leave-report.html"><i class="ti ti-line"></i><span>Leave Report</span></a>
+								</li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/fees-report.html"><i class="ti ti-mask"></i><span>Fees Report</span></a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h6 class="submenu-hdr"><span>User Management</span></h6>
+							<ul>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/users.html"><i class="ti ti-users-minus"></i><span>Users</span></a></li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/roles-permission.html"><i class="ti ti-shield-plus"></i><span>Roles &
+											Permissions</span></a></li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/delete-account.html"><i class="ti ti-user-question"></i><span>Delete
+											Account Request</span></a></li>
+							</ul>
+						</li>
+						<li>
+							<h6 class="submenu-hdr"><span>Membership</span></h6>
+							<ul>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/membership-plans.html"><i class="ti ti-user-plus"></i><span>Membership
+											Plans</span></a></li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/membership-addons.html"><i class="ti ti-cone-plus"></i><span>Membership
+											Addons</span></a></li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/membership-transactions.html"><i
+											class="ti ti-file-power"></i><span>Transactions</span></a></li>
+							</ul>
+						</li>
+						<li>
+							<h6 class="submenu-hdr"><span>Content</span></h6>
+							<ul>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/pages.html"><i class="ti ti-page-break"></i><span>Pages</span></a></li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-brand-blogger"></i><span>Blog</span><span
+											class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/blog.html">All Blogs</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/blog-categories.html">Categories</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/blog-comments.html">Comments</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/blog-tags.html">Tags</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-map-pin-search"></i><span>Location</span><span
+											class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/countries.html">Countries</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/states.html">States</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/cities.html">Cities</a></li>
+									</ul>
+								</li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/testimonials.html"><i class="ti ti-quote"></i><span>Testimonials</span></a>
+								</li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/faq.html"><i class="ti ti-question-mark"></i><span>FAQ</span></a></li>
+							</ul>
+						</li>
+						<li>
+							<h6 class="submenu-hdr"><span>Support</span></h6>
+							<ul>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/contact-messages.html"><i class="ti ti-message"></i><span>Contact
+											Messages</span></a></li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/tickets.html"><i class="ti ti-ticket"></i><span>Tickets</span></a></li>
+							</ul>
+						</li>
+						<li>
+							<h6 class="submenu-hdr"><span>Pages</span></h6>
+							<ul>
+								<li><a href="#"><i class="ti ti-user"></i><span>Profile</span></a></li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-lock-open"></i><span>Authentication</span><span
+											class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li class="submenu submenu-two"><a href="javascript:void(0);"
+												class="">Login<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="#">Cover</a></li>
+												<li><a href="https://preskool.dreamstechnologies.com/html/template/login-2.html">Illustration</a></li>
+												<li><a href="https://preskool.dreamstechnologies.com/html/template/login-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);"
+												class="">Register<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="https://preskool.dreamstechnologies.com/html/template/register.html">Cover</a></li>
+												<li><a href="https://preskool.dreamstechnologies.com/html/template/register-2.html">Illustration</a></li>
+												<li><a href="https://preskool.dreamstechnologies.com/html/template/register-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Forgot
+												Password<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="https://preskool.dreamstechnologies.com/html/template/forgot-password.html">Cover</a></li>
+												<li><a href="https://preskool.dreamstechnologies.com/html/template/forgot-password-2.html">Illustration</a></li>
+												<li><a href="https://preskool.dreamstechnologies.com/html/template/forgot-password-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Reset
+												Password<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="https://preskool.dreamstechnologies.com/html/template/reset-password.html">Cover</a></li>
+												<li><a href="https://preskool.dreamstechnologies.com/html/template/reset-password-2.html">Illustration</a></li>
+												<li><a href="https://preskool.dreamstechnologies.com/html/template/reset-password-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Email
+												Verification<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="https://preskool.dreamstechnologies.com/html/template/email-verification.html">Cover</a></li>
+												<li><a href="https://preskool.dreamstechnologies.com/html/template/email-verification-2.html">Illustration</a></li>
+												<li><a href="https://preskool.dreamstechnologies.com/html/template/email-verification-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">2 Step
+												Verification<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="https://preskool.dreamstechnologies.com/html/template/two-step-verification.html">Cover</a></li>
+												<li><a href="https://preskool.dreamstechnologies.com/html/template/two-step-verification-2.html">Illustration</a></li>
+												<li><a href="https://preskool.dreamstechnologies.com/html/template/two-step-verification-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/lock-screen.html">Lock Screen</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-error-404"></i><span>Error Pages</span><span
+											class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/404-error.html">404 Error</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/500-error.html">500 Error</a></li>
+									</ul>
+								</li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/blank-page.html"><i class="ti ti-brand-nuxt"></i><span>Blank
+											Page</span></a></li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/coming-soon.html"><i class="ti ti-file"></i><span>Coming Soon</span></a>
+								</li>
+								<li><a href="https://preskool.dreamstechnologies.com/html/template/under-maintenance.html"><i class="ti ti-moon-2"></i><span>Under
+											Maintenance</span></a></li>
+							</ul>
+						</li>
+						<li>
+							<h6 class="submenu-hdr"><span>Settings</span></h6>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-shield-cog"></i><span>General Settings</span><span
+											class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="#">Profile Settings</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/security-settings.html">Security Settings</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/notifications-settings.html">Notifications Settings</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/connected-apps.html">Connected Apps</a></li>
+									</ul>
+								</li>
+
+								<!-- Till -->
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-device-laptop"></i><span>Website Settings</span><span
+											class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/company-settings.html">Company Settings</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/localization.html">Localization</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/prefixes.html">Prefixes</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/preferences.html">Preferences</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/social-authentication.html">Social Authentication</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/language.html">Language</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-apps"></i><span>App Settings</span><span
+											class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/invoice-settings.html">Invoice Settings</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/custom-fields.html">Custom Fields</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-file-symlink"></i><span>System Settings</span><span
+											class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/email-settings.html">Email Settings</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/email-templates.html">Email Templates</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/sms-settings.html">SMS Settings</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/otp-settings.html">OTP</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/gdpr-cookies.html">GDPR Cookies</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-zoom-money"></i><span>Financial Settings</span><span
+											class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/payment-gateways.html">Payment Gateways </a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/tax-rates.html">Tax Rates</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-calendar-repeat"></i><span>Academic Settings</span><span
+											class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/school-settings.html">School Settings </a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/religion.html">Religion</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-flag-cog"></i><span>Other Settings</span><span
+											class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/storage.html">Storage</a></li>
+										<li><a href="https://preskool.dreamstechnologies.com/html/template/ban-ip-address.html">Ban IP Address</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<h6 class="submenu-hdr"><span>Help</span></h6>
+							<ul>
+								<li><a href="https://preschool.dreamstechnologies.com/documentation/index.html"><i class="ti ti-file-text"></i><span>Documentation</span></a></li>
+								<li><a href="https://preschool.dreamstechnologies.com/documentation/changelog.html"><i class="ti ti-exchange"></i><span>Changelog</span><span class="badge badge-primary badge-xs text-white fs-10 ms-auto">v1.8.3</span></a></li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-menu-2"></i><span>Multi
+											Level</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="javascript:void(0);">Multilevel 1</a></li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Multilevel 2<span
+													class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="javascript:void(0);">Multilevel 2.1</a></li>
+												<li class="submenu submenu-two submenu-three"><a
+														href="javascript:void(0);">Multilevel 2.2<span
+															class="menu-arrow inside-submenu inside-submenu-two"></span></a>
+													<ul>
+														<li><a href="javascript:void(0);">Multilevel 2.2.1</a></li>
+														<li><a href="javascript:void(0);">Multilevel 2.2.2</a></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li><a href="javascript:void(0);">Multilevel 3</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- /Sidebar -->
+
+		<!-- Page Wrapper -->
+
+        @yield('pageContent', 'My Content')
+
+		<!-- /Page Wrapper -->
+        @stack('modals')
+
+	</div>
+	<!-- /Main Wrapper -->
+
+	<!-- jQuery -->
+	<script src="https://preskool.dreamstechnologies.com/html/template/assets/js/jquery-3.7.1.min.js" type="55172eabf69604c02cec51a7-text/javascript"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="https://preskool.dreamstechnologies.com/html/template/assets/js/bootstrap.bundle.min.js" type="55172eabf69604c02cec51a7-text/javascript"></script>
+
+	<!-- Daterangepikcer JS -->
+	<script src="https://preskool.dreamstechnologies.com/html/template/assets/js/moment.js" type="55172eabf69604c02cec51a7-text/javascript"></script>
+	<script src="https://preskool.dreamstechnologies.com/html/template/assets/plugins/daterangepicker/daterangepicker.js" type="55172eabf69604c02cec51a7-text/javascript"></script>
+	<script src="https://preskool.dreamstechnologies.com/html/template/assets/js/bootstrap-datetimepicker.min.js" type="55172eabf69604c02cec51a7-text/javascript"></script>
+
+	<!-- Feather Icon JS -->
+	<script src="https://preskool.dreamstechnologies.com/html/template/assets/js/feather.min.js" type="55172eabf69604c02cec51a7-text/javascript"></script>
+
+	<!-- Slimscroll JS -->
+	<script src="https://preskool.dreamstechnologies.com/html/template/assets/js/jquery.slimscroll.min.js" type="55172eabf69604c02cec51a7-text/javascript"></script>
+
+	<!-- Chart JS -->
+	<script src="https://preskool.dreamstechnologies.com/html/template/assets/plugins/apexchart/apexcharts.min.js" type="55172eabf69604c02cec51a7-text/javascript"></script>
+	<script src="https://preskool.dreamstechnologies.com/html/template/assets/plugins/apexchart/chart-data.js" type="55172eabf69604c02cec51a7-text/javascript"></script>
+
+	<!-- Owl JS -->
+	<script src="https://preskool.dreamstechnologies.com/html/template/assets/plugins/owlcarousel/owl.carousel.min.js" type="55172eabf69604c02cec51a7-text/javascript"></script>
+
+	<!-- Select2 JS -->
+	<script src="https://preskool.dreamstechnologies.com/html/template/assets/plugins/select2/js/select2.min.js" type="55172eabf69604c02cec51a7-text/javascript"></script>
+
+	<!-- Counter JS -->
+	<script src="https://preskool.dreamstechnologies.com/html/template/assets/plugins/countup/jquery.counterup.min.js" type="55172eabf69604c02cec51a7-text/javascript"></script>
+	<script src="https://preskool.dreamstechnologies.com/html/template/assets/plugins/countup/jquery.waypoints.min.js" type="55172eabf69604c02cec51a7-text/javascript">	</script>
+
+	<!-- Custom JS -->
+	<script src="https://preskool.dreamstechnologies.com/html/template/assets/js/script.js" type="55172eabf69604c02cec51a7-text/javascript"></script>
+
+    <script src="https://preskool.dreamstechnologies.com/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="55172eabf69604c02cec51a7-|49" defer></script></body>
+
+    @stack('scripts')
 </body>
 </html>
