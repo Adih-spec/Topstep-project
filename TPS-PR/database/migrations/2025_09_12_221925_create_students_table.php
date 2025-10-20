@@ -43,9 +43,9 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
-    {
-        Schema::dropIfExists('students');
-        $table->dropSoftDeletes();
-    }
+ public function down(): void
+{
+    Schema::dropIfExists('students');
+}
+
 };
