@@ -99,7 +99,6 @@ Route::middleware('auth')->group(function () {
 // });
 
 
-
     Route::get('/dashboard', function() {
         view('dashboard');
     })->name('dashboard');
@@ -127,10 +126,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Redirect authenticated users to admin dashboard
-Route::middleware('auth')->get('/dashboard', function () {
-    return redirect()->route('admin.students.index');
-})->name('dashboard');
+
 
 require __DIR__.'/auth.php';
 require __DIR__.'/student.php';
